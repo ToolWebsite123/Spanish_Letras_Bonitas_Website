@@ -22,7 +22,7 @@ const navCategories: NavCategory[] = [
     title: "Nicks para Juegos",
     items: [
       { label: "Free Fire", href: "/nicks-para-juegos/nick-free-fire" },
-      { label: "Roblox", href: "#" },
+      { label: "Roblox", href: "/nicks-para-juegos/nombres-para-roblox" },
       { label: "Símbolos FF", href: "#" },
       { label: "FF Femenino", href: "#" },
       { label: "FF Masculino", href: "#" },
@@ -34,7 +34,7 @@ const navCategories: NavCategory[] = [
     title: "Fuentes para Instagram",
     items: [
       { label: "Bio Instagram", href: "/fuentes-para-instagram/bio-para-instagram" },
-      { label: "Facebook", href: "#" },
+      { label: "Facebook", href: "/fuentes-para-instagram/fuentes-para-facebook" },
       { label: "Telegram", href: "#" },
       { label: "Discord", href: "#" },
       { label: "Steam", href: "#" },
@@ -43,7 +43,7 @@ const navCategories: NavCategory[] = [
   {
     title: "Símbolos Aesthetic",
     items: [
-      { label: "Símbolos Nick", href: "#" },
+      { label: "Símbolos Nick", href: "/simbolos-aesthetic/simbolos-para-nick" },
       { label: "Coquette", href: "#" },
       { label: "Emojis", href: "/simbolos-aesthetic/emojis-para-copiar" },
     ],
@@ -62,7 +62,7 @@ const navCategories: NavCategory[] = [
     items: [
       { label: "Lettering", href: "#" },
       { label: "Graffiti", href: "#" },
-      { label: "Cursivo", href: "#" },
+      { label: "Cursivo", href: "/alfabeto-completo/alfabeto-cursivo" },
     ],
   },
 ];
