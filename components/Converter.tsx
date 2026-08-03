@@ -30,9 +30,11 @@ export default function Converter({ initialCategory = "All" }: ConverterProps) {
     return fontStyles.filter((style) => style.category === selectedCategory);
   }, [selectedCategory]);
 
-  // Exclude 'invisible' style from the random mix pool
+  // Exclude 'invisible' and 'reverse' styles from the random mix pool
   const mixableStyles = useMemo(() => {
-    return fontStyles.filter((style) => style.id !== "invisible");
+    return fontStyles.filter(
+      (style) => style.id !== "invisible" && style.id !== "reverse"
+    );
   }, []);
 
   // Recalculates whenever inputText or isMixEnabled changes
@@ -302,7 +304,8 @@ export default function Converter({ initialCategory = "All" }: ConverterProps) {
         {filteredStyles.map((style) => {
           const styledText = convertText(
             inputText || "Escribe tu texto arriba",
-            style.map
+            style.map,
+            style.id
           );
           const isCopied = copiedId === style.id;
 

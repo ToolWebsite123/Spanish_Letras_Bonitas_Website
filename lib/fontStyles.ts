@@ -161,6 +161,12 @@ export const fontStyles: FontStyle[] = [
     category: "Tatuajes",
     map: createCharMap(0x1d468, 0x1d482),
   },
+  {
+    id: "reverse",
+    name: "Invertido",
+    category: "Especial",
+    map: {},
+  },
 ];
 
 export default fontStyles;

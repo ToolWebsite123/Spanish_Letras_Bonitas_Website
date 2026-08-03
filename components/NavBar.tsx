@@ -13,7 +13,7 @@ const navCategories: NavCategory[] = [
     items: [
       { label: "Cursivas", href: "/letras-bonitas/letras-cursivas" },
       { label: "Graffiti", href: "/letras-bonitas/letras-graffiti" },
-      { label: "Caligrafía", href: "#" },
+      { label: "Caligrafía", href: "/letras-bonitas/caligrafia" },
       { label: "Aesthetic", href: "#" },
       { label: "Japonesas", href: "#" },
     ],
@@ -33,7 +33,7 @@ const navCategories: NavCategory[] = [
   {
     title: "Fuentes para Instagram",
     items: [
-      { label: "Bio Instagram", href: "#" },
+      { label: "Bio Instagram", href: "/fuentes-para-instagram/bio-para-instagram" },
       { label: "Facebook", href: "#" },
       { label: "Telegram", href: "#" },
       { label: "Discord", href: "#" },
@@ -45,7 +45,7 @@ const navCategories: NavCategory[] = [
     items: [
       { label: "Símbolos Nick", href: "#" },
       { label: "Coquette", href: "#" },
-      { label: "Emojis", href: "#" },
+      { label: "Emojis", href: "/simbolos-aesthetic/emojis-para-copiar" },
     ],
   },
   {
@@ -53,7 +53,7 @@ const navCategories: NavCategory[] = [
     items: [
       { label: "Negrita", href: "/letras-personalizadas/texto-en-negrita" },
       { label: "Itálico", href: "#" },
-      { label: "Invertir Texto", href: "#" },
+      { label: "Invertir Texto", href: "/letras-personalizadas/invertir-texto" },
       { label: "Nombres Personalizados", href: "#" },
     ],
   },
