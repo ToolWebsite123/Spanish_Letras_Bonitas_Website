@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { fontStyles } from "@/lib/fontStyles";
 import { convertText } from "@/lib/convertText";
 
@@ -9,6 +9,11 @@ export default function Converter() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [isMixEnabled, setIsMixEnabled] = useState(false);
+
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
   // Extract unique categories dynamically from fontStyles
   const categories = useMemo(() => {
@@ -21,19 +26,24 @@ export default function Converter() {
     return fontStyles.filter((style) => style.category === selectedCategory);
   }, [selectedCategory]);
 
+  // Exclude 'invisible' style from the random mix pool
+  const mixableStyles = useMemo(() => {
+    return fontStyles.filter((style) => style.id !== "invisible");
+  }, []);
+
   // Recalculates whenever inputText or isMixEnabled changes
   const mixedText = useMemo(() => {
-    if (!isMixEnabled || fontStyles.length < 2) return "";
+    if (!isMixEnabled || mixableStyles.length < 2) return "";
 
-    // Pick 2 random distinct styles from fontStyles
-    const idx1 = Math.floor(Math.random() * fontStyles.length);
-    let idx2 = Math.floor(Math.random() * fontStyles.length);
-    while (idx2 === idx1 && fontStyles.length > 1) {
-      idx2 = Math.floor(Math.random() * fontStyles.length);
+    // Pick 2 random distinct styles from mixableStyles
+    const idx1 = Math.floor(Math.random() * mixableStyles.length);
+    let idx2 = Math.floor(Math.random() * mixableStyles.length);
+    while (idx2 === idx1 && mixableStyles.length > 1) {
+      idx2 = Math.floor(Math.random() * mixableStyles.length);
     }
 
-    const style1 = fontStyles[idx1];
-    const style2 = fontStyles[idx2];
+    const style1 = mixableStyles[idx1];
+    const style2 = mixableStyles[idx2];
 
     const textToConvert = inputText || "Escribe tu texto arriba";
 
@@ -44,7 +54,39 @@ export default function Converter() {
         return activeMap[char] ?? char;
       })
       .join("");
-  }, [inputText, isMixEnabled]);
+  }, [inputText, isMixEnabled, mixableStyles]);
+
+  // Track scroll position and updates scroll progress bar & button states
+  const handleScroll = () => {
+    const container = tabsContainerRef.current;
+    if (!container) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+    const maxScroll = scrollWidth - clientWidth;
+
+    setCanScrollLeft(scrollLeft > 2);
+    setCanScrollRight(scrollLeft < maxScroll - 2);
+
+    if (maxScroll > 0) {
+      setScrollProgress((scrollLeft / maxScroll) * 100);
+    } else {
+      setScrollProgress(100);
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("resize", handleScroll);
+    return () => window.removeEventListener("resize", handleScroll);
+  }, [categories]);
+
+  const scrollTabs = (direction: "left" | "right") => {
+    const container = tabsContainerRef.current;
+    if (!container) return;
+
+    const scrollAmount = direction === "left" ? -220 : 220;
+    container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  };
 
   const handleCopy = async (id: string, text: string) => {
     try {
@@ -90,28 +132,72 @@ export default function Converter() {
         </div>
       </div>
 
-      {/* Control Bar: Categories & Mix Toggle */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        {/* Category Filter Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1">
-          {categories.map((category) => (
+      {/* Control Bar: Scrollable Category Carousel & Mix Toggle */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        {/* Category Filter Bar Carousel */}
+        <div className="flex-1 min-w-0 flex flex-col gap-1.5">
+          <div className="relative flex items-center gap-1.5">
+            {/* Scroll Left Button */}
             <button
-              key={category}
               type="button"
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
-                selectedCategory === category
-                  ? "bg-purple-600 text-white shadow-sm"
-                  : "bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300"
-              }`}
+              onClick={() => scrollTabs("left")}
+              disabled={!canScrollLeft}
+              aria-label="Scroll left"
+              className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors shrink-0 cursor-pointer"
             >
-              {category}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+              </svg>
             </button>
-          ))}
+
+            {/* Horizontal Scrollable Tabs Container */}
+            <div
+              ref={tabsContainerRef}
+              onScroll={handleScroll}
+              className="flex items-center gap-2 overflow-x-auto scroll-smooth py-1 px-0.5 flex-1 min-w-0"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                    selectedCategory === category
+                      ? "bg-purple-600 text-white shadow-sm"
+                      : "bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            {/* Scroll Right Button */}
+            <button
+              type="button"
+              onClick={() => scrollTabs("right")}
+              disabled={!canScrollRight}
+              aria-label="Scroll right"
+              className="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors shrink-0 cursor-pointer"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Thin Progress / Scroll Indicator Bar */}
+          <div className="w-full h-1 bg-neutral-200 dark:bg-neutral-800 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-purple-600 rounded-full transition-all duration-150"
+              style={{ width: `${Math.max(10, Math.min(100, scrollProgress))}%` }}
+            />
+          </div>
         </div>
 
-        {/* Mix Styles Toggle Switch */}
-        <div className="flex items-center gap-2.5 shrink-0 self-end sm:self-center">
+        {/* Mix Styles Toggle Switch (positioned to the right) */}
+        <div className="flex items-center gap-2.5 shrink-0 self-end md:self-center">
           <label
             htmlFor="mix-toggle"
             className="text-sm font-medium text-neutral-700 dark:text-neutral-300 cursor-pointer select-none"
@@ -198,7 +284,7 @@ export default function Converter() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
                     />
                   </svg>
                   <span>Copiar</span>
