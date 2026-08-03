@@ -12,7 +12,7 @@ const navCategories: NavCategory[] = [
     title: "Letras Bonitas",
     items: [
       { label: "Cursivas", href: "/letras-bonitas/letras-cursivas" },
-      { label: "Graffiti", href: "#" },
+      { label: "Graffiti", href: "/letras-bonitas/letras-graffiti" },
       { label: "Caligrafía", href: "#" },
       { label: "Aesthetic", href: "#" },
       { label: "Japonesas", href: "#" },
@@ -21,7 +21,7 @@ const navCategories: NavCategory[] = [
   {
     title: "Nicks para Juegos",
     items: [
-      { label: "Free Fire", href: "#" },
+      { label: "Free Fire", href: "/nicks-para-juegos/nick-free-fire" },
       { label: "Roblox", href: "#" },
       { label: "Símbolos FF", href: "#" },
       { label: "FF Femenino", href: "#" },
@@ -51,7 +51,7 @@ const navCategories: NavCategory[] = [
   {
     title: "Letras Personalizadas",
     items: [
-      { label: "Negrita", href: "#" },
+      { label: "Negrita", href: "/letras-personalizadas/texto-en-negrita" },
       { label: "Itálico", href: "#" },
       { label: "Invertir Texto", href: "#" },
       { label: "Nombres Personalizados", href: "#" },
