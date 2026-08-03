@@ -4,10 +4,14 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { fontStyles } from "@/lib/fontStyles";
 import { convertText } from "@/lib/convertText";
 
-export default function Converter() {
+interface ConverterProps {
+  initialCategory?: string;
+}
+
+export default function Converter({ initialCategory = "All" }: ConverterProps) {
   const [inputText, setInputText] = useState("Letras Bonitas");
   const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [isMixEnabled, setIsMixEnabled] = useState(false);
 
   const tabsContainerRef = useRef<HTMLDivElement>(null);

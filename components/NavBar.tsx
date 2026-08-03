@@ -11,7 +11,7 @@ const navCategories: NavCategory[] = [
   {
     title: "Letras Bonitas",
     items: [
-      { label: "Cursivas", href: "#" },
+      { label: "Cursivas", href: "/letras-bonitas/letras-cursivas" },
       { label: "Graffiti", href: "#" },
       { label: "Caligrafía", href: "#" },
       { label: "Aesthetic", href: "#" },
