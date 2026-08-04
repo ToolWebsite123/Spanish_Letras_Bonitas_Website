@@ -24,7 +24,7 @@ const navCategories: NavCategory[] = [
       { label: "Free Fire", href: "/nicks-para-juegos/nick-free-fire" },
       { label: "Roblox", href: "/nicks-para-juegos/nombres-para-roblox" },
       { label: "Símbolos FF", href: "#" },
-      { label: "FF Femenino", href: "#" },
+      { label: "FF Femenino", href: "/nicks-para-juegos/nick-free-fire-femenino" },
       { label: "FF Masculino", href: "#" },
       { label: "Bio FF", href: "#" },
       { label: "Cambiar Nick FF", href: "#" },
@@ -35,8 +35,8 @@ const navCategories: NavCategory[] = [
     items: [
       { label: "Bio Instagram", href: "/fuentes-para-instagram/bio-para-instagram" },
       { label: "Facebook", href: "/fuentes-para-instagram/fuentes-para-facebook" },
-      { label: "Telegram", href: "#" },
-      { label: "Discord", href: "#" },
+      { label: "WhatsApp", href: "/fuentes-para-instagram/fuentes-para-whatsapp" },
+      { label: "Discord", href: "/fuentes-para-instagram/fuentes-para-discord" },
       { label: "Steam", href: "#" },
     ],
   },
@@ -52,7 +52,7 @@ const navCategories: NavCategory[] = [
     title: "Letras Personalizadas",
     items: [
       { label: "Negrita", href: "/letras-personalizadas/texto-en-negrita" },
-      { label: "Itálico", href: "#" },
+      { label: "Itálico", href: "/letras-personalizadas/texto-italico" },
       { label: "Invertir Texto", href: "/letras-personalizadas/invertir-texto" },
       { label: "Nombres Personalizados", href: "#" },
     ],

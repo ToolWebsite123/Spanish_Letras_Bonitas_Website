@@ -4,11 +4,20 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { fontStyles } from "@/lib/fontStyles";
 import { convertText } from "@/lib/convertText";
 
-interface ConverterProps {
-  initialCategory?: string;
+export interface StyleOverride {
+  name?: string;
+  category?: string;
 }
 
-export default function Converter({ initialCategory = "All" }: ConverterProps) {
+interface ConverterProps {
+  initialCategory?: string;
+  styleOverrides?: Record<string, StyleOverride>;
+}
+
+export default function Converter({
+  initialCategory = "All",
+  styleOverrides,
+}: ConverterProps) {
   const [inputText, setInputText] = useState("Letras Bonitas");
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
@@ -19,23 +28,40 @@ export default function Converter({ initialCategory = "All" }: ConverterProps) {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
 
-  // Extract unique categories dynamically from fontStyles
+  // Apply per-page style overrides if provided
+  const effectiveStyles = useMemo(() => {
+    if (!styleOverrides) return fontStyles;
+    return fontStyles.map((style) => {
+      const override = styleOverrides[style.id];
+      if (!override) return style;
+      return {
+        ...style,
+        name: override.name ?? style.name,
+        category: override.category ?? style.category,
+      };
+    });
+  }, [styleOverrides]);
+
+  // Extract unique categories dynamically from effectiveStyles
   const categories = useMemo(() => {
-    return ["All", ...Array.from(new Set(fontStyles.map((style) => style.category)))];
-  }, []);
+    return [
+      "All",
+      ...Array.from(new Set(effectiveStyles.map((style) => style.category))),
+    ];
+  }, [effectiveStyles]);
 
   // Filter font styles based on selected category
   const filteredStyles = useMemo(() => {
-    if (selectedCategory === "All") return fontStyles;
-    return fontStyles.filter((style) => style.category === selectedCategory);
-  }, [selectedCategory]);
+    if (selectedCategory === "All") return effectiveStyles;
+    return effectiveStyles.filter((style) => style.category === selectedCategory);
+  }, [selectedCategory, effectiveStyles]);
 
   // Exclude 'invisible' and 'reverse' styles from the random mix pool
   const mixableStyles = useMemo(() => {
-    return fontStyles.filter(
+    return effectiveStyles.filter(
       (style) => style.id !== "invisible" && style.id !== "reverse"
     );
-  }, []);
+  }, [effectiveStyles]);
 
   // Recalculates whenever inputText or isMixEnabled changes
   const mixedText = useMemo(() => {
