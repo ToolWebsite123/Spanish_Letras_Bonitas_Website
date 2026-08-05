@@ -137,9 +137,9 @@ export default function TextoItalicoPage() {
             </p>
           </header>
 
-          {/* Interactive Converter Pre-filtered to Personalizado / Itálico */}
+          {/* Interactive Converter with Itálico Highlighted */}
           <Converter
-            initialCategory="Personalizado"
+            highlightStyleId="serif-bold-italic"
             styleOverrides={{
               "serif-bold-italic": {
                 name: "Itálico",

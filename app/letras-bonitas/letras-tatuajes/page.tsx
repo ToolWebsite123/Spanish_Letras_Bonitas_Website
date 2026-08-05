@@ -4,98 +4,99 @@ import ExamplesSection from "@/components/ExamplesSection";
 import FaqSection from "@/components/FaqSection";
 
 export const metadata = {
-  title: "Nick Free Fire Femenino | Nombres Chidos para Chicas Gamer",
+  title: "Letras para Tatuajes | Convertidor de Tipografías y Lettering",
   description:
-    "Crea nicks femeninos e insanos para Free Fire. Nombres para chicas gamer con coronas, moños, letras bonitas y símbolos rosas gratis.",
+    "Convierte tu frase o nombre a letras para tatuajes en estilo Serif Bold Italic. Encuentra ideas de lettering, frases cortas con significado y nombres para tatuar gratis.",
 };
 
-const charLimits = [
-  { platform: "Free Fire (Nick Máximo)", limit: "12 caracteres (¡Estricto!)" },
-  { platform: "Free Fire Clan Femenino", limit: "12 caracteres" },
-  { platform: "Free Fire Firma / Bio", limit: "50 caracteres" },
-  { platform: "PUBG Mobile (Nick)", limit: "16 caracteres" },
-  { platform: "Roblox Display Name", limit: "20 caracteres" },
+const tattooLimits = [
+  { platform: "Frases Cortas en Muñeca / Antebrazo", limit: "Recomendado: 2 - 5 palabras" },
+  { platform: "Nombres / Fechas en Costilla", limit: "Recomendado: 1 - 3 palabras" },
+  { platform: "Lettering Pecho / Espalda", limit: "Recomendado: 3 - 8 palabras" },
+  { platform: "Tatuaje de Tobillo / Cuello", limit: "Recomendado: 1 - 2 palabras" },
+  { platform: "Frase en Clavícula / Homoplato", limit: "Recomendado: 3 - 6 palabras" },
+  { platform: "Iniciales / Monogramas", limit: "1 - 3 letras" },
 ];
 
-const feminineNickExamples = [
+const tattooExamples = [
   {
-    persona: "Reina Gamer",
-    text: "𝒬𝓊ℯℯ𝓃𝒴𝓊𝓇𝒾 👑",
+    persona: "Frase de Vida / Motivación",
+    text: "𝑭𝒂𝒎𝒊𝒍𝒊𝒂 𝒆𝒔 𝒕𝒐𝒅𝒐 🌿",
   },
   {
-    persona: "Coquette Gamer",
-    text: "𝒮𝓌ℯℯ𝓉𝒦𝒾𝓁𝓁 🎀",
+    persona: "Amor Propio / Fuerza",
+    text: "𝑺𝒊𝒆𝒎𝒑𝒓𝒆 𝒇𝒖𝒆𝒓𝒕𝒆 ⚔️",
   },
   {
-    persona: "Princesa Sniper",
-    text: "𝒫𝓇𝒾𝓃𝒸ℯ𝓈𝓈𝐹𝐹 🌸",
+    persona: "Frase Corta en Latín",
+    text: "𝑪𝒂𝒓𝒑𝒆 𝒅𝒊𝒆𝒎 🌙",
   },
   {
-    persona: "Chica Insana PvP",
-    text: "𝐼𝓃𝓈𝒶𝓃𝒶𝒢𝒾𝓇𝓁 ☠️",
+    persona: "Recordatorio Personal",
+    text: "𝑨𝒎𝒐𝒓 𝒇𝒂𝒕𝒊 ✨",
   },
   {
-    persona: "Líder Clan Femenino",
-    text: "𝒢𝒾𝓇𝓁ℬℴ𝓈𝓈 💖",
+    persona: "Nombre de Hijo / Familiar",
+    text: "𝑽𝒂𝒍𝒆𝒏𝒕𝒊𝒏𝒂 🤍 𝟏𝟒.𝟎𝟓.𝟐𝟎𝟐𝟒",
   },
   {
-    persona: "Estilo Flor de Cerezos",
-    text: "𝒮𝒶𝓀𝓊𝓇𝒶𝒫𝓇ℴ ✿",
+    persona: "Frase de Resiliencia",
+    text: "𝑵𝒂𝒅𝒂 𝒆𝒔 𝒑𝒂𝒓𝒂 𝒔𝒊𝒆𝒎𝒑𝒓𝒆",
   },
   {
-    persona: "Sombra Femenina",
-    text: "𝒮𝒽𝒶𝒹ℴ𝓌𝒬𝓊ℯℯ𝓃 🌙",
+    persona: "Inspiración de Arte / Pasión",
+    text: "𝑺𝒖𝒆ñ𝒂 𝒔𝒊𝒏 𝒎𝒊𝒆𝒅𝒐 🕊️",
   },
   {
-    persona: "Ángel Guerrero",
-    text: "𝒜𝓃ℊℯ𝓁𝒦𝒾𝓁𝓁ℯ𝓇 𓆩♡𓆪",
+    persona: "Frase Minimalista en Elegante",
+    text: "𝑽𝒊𝒗𝒆 𝒚 𝒅𝒆𝒋𝒂 𝒗𝒊𝒗𝒊𝒓",
   },
   {
-    persona: "Valkiria / Mítica",
-    text: "𝒱𝒶𝓁𝓀𝓎𝓇𝒾𝒶 💎",
+    persona: "Lettering para Brazo",
+    text: "𝑺𝒊𝒆𝒎𝒑𝒓𝒆 𝒆𝒏 𝒎𝒊 𝒎𝒆𝒎𝒐𝒓𝒊𝒂 🖤",
   },
   {
-    persona: "Star Girl Roblox / FF",
-    text: "𝒮𝓉𝒶𝓇𝒢𝒾𝓇𝓁 ✨",
+    persona: "Tatuaje de Pareja / Promesa",
+    text: "𝑱𝒖𝒏𝒕𝒐𝒔 𝒑𝒐𝒓 𝒔𝒊𝒆𝒎𝒑𝒓𝒆 ♾️",
   },
 ];
 
 const faqs = [
   {
-    q: "¿Cuál es la mejor combinación para un nick femenino en Free Fire?",
-    a: "Combinar una letra elegante o cursiva con símbolos como coronas (👑), moños (🎀), flores (🌸) o corazones (💖) respetando el límite de 12 caracteres.",
+    q: "¿Cómo funciona el generador de letras para tatuajes?",
+    a: "El convertidor transforma tu texto ingresado a caracteres tipográficos Unicode Serif Bold Italic, permitiéndote visualizar instantáneamente cómo luciría tu frase o nombre en lettering curvo remarcado.",
   },
   {
-    q: "¿Cuál es el límite máximo de letras para un nick femenino en Free Fire?",
-    a: "El límite de Free Fire es de 12 caracteres para el nick o nombre de usuario.",
+    q: "¿Puedo llevar estos diseños a mi tatuador?",
+    a: "¡Sí! Puedes copiar la frase estilizada o tomar una captura de pantalla para mostrársela a tu tatuador como referencia visual del estilo de letra y distribución.",
   },
   {
-    q: "¿Cómo cambio mi nick en Free Fire a un nombre de chica gamer?",
-    a: "Abre Free Fire, toca tu Perfil, presiona el icono de lápiz para editar tu nombre, pega el nick femenino generado y confirma con tu Tarjeta de Cambio de Nombre o diamantes.",
+    q: "¿Cuáles son las frases más populares para tatuarse?",
+    a: "Las frases más buscadas incluyen recordar a la familia ('Familia es todo'), resiliencia ('Siempre fuerte'), frases en latín ('Carpe diem') y nombres o fechas de nacimiento.",
   },
   {
-    q: "¿Son compatibles los moños y coronas en Free Fire MAX?",
-    a: "Sí, todos los símbolos e íconos probados en nuestra herramienta son 100% compatibles tanto en Free Fire estándar como en Free Fire MAX.",
+    q: "¿Qué tamaño de letra se recomienda para un tatuaje en la muñeca?",
+    a: "Para zonas pequeñas como la muñeca o clavícula, se recomiendan frases cortas de 2 a 4 palabras con tipografía clara para evitar que con los años la tinta se expanda excesivamente.",
   },
   {
-    q: "¿Se pueden crear nombres para clanes de puras mujeres (Clan Femenino)?",
-    a: "¡Sí! Puedes crear tags y nombres insanos para clanes femeninos de torneos y duelos de escuadras.",
+    q: "¿Es gratis usar el diseñador de letras para tatuaje?",
+    a: "Sí, la herramienta es totalmente gratuita y sin límites de generación o copia.",
   },
   {
-    q: "¿Es gratis guardar e interactuar con estos nombres?",
-    a: "Sí, la herramienta y los ejemplos son 100% gratuitos y de libre copia.",
+    q: "¿Puedo convertir números y fechas para tatuajes?",
+    a: "Sí, el convertidor permite números romanos, fechas con puntos o barras y nombres combinados con símbolos minimalistas.",
   },
   {
-    q: "¿Por qué rechaza Free Fire algunos espacios?",
-    a: "Si deseas colocar un espacio en tu nick femenino de Free Fire, utiliza el carácter de espacio transparente Unicode (U+3164) o nuestro estilo 'Texto Invisible'.",
+    q: "¿Cómo asegurar que el lettering del tatuaje envejezca bien?",
+    a: "Elige un tamaño de letra adecuado con espacio suficiente entre trazos. Las tipografías tipo Serif Bold Italic ofrecen una estructura definida que mantiene excelente legibilidad.",
   },
   {
-    q: "¿Sirven estos nicks para Roblox, TikTok y PUBG?",
-    a: "Sí, son compatibles en todas las redes sociales y plataformas de videojuegos.",
+    q: "¿Se pueden copiar las letras directamente al teléfono?",
+    a: "Sí, solo debes hacer clic en 'Copiar' y podrás guardar la frase en tus notas o enviarla por WhatsApp a tu estudio de tatuajes.",
   },
 ];
 
-export default function NickFreeFireFemeninoPage() {
+export default function LetrasTatuajesPage() {
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
       {/* Site Header Navigation */}
@@ -114,12 +115,12 @@ export default function NickFreeFireFemeninoPage() {
               <li>/</li>
               <li>
                 <a href="#" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                  Nicks para Juegos
+                  Letras Bonitas
                 </a>
               </li>
               <li>/</li>
               <li className="font-semibold text-neutral-800 dark:text-neutral-200">
-                FF Femenino
+                Letras para Tatuajes
               </li>
             </ol>
           </nav>
@@ -127,22 +128,22 @@ export default function NickFreeFireFemeninoPage() {
           {/* Page Heading & Intro */}
           <header className="flex flex-col gap-4">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
-              Nick Free Fire Femenino: Creador de Nombres para Chicas
+              Letras para Tatuajes: Generador de Lettering y Tipografías
             </h1>
             <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Crea nombres insanos, bonitos y elegantes para chicas gamer en Free Fire. Combina letras refinadas
-              con coronas, moños coquette, estrellas y flores rosas. Genera tu nick femenino ideal sin exceder los 12
-              caracteres, copia con un clic y domina el campo de batalla con estilo.
+              Encuentra la tipografía perfecta para tu próximo tatuaje. Genera letras remarcadas e inclinadas
+              en estilo Serif Bold Italic ideales para nombres, frases inspiradoras, fechas especiales e iniciales.
+              Visualiza tus palabras, copia con un clic y comparte la idea con tu artista del tatuaje.
             </p>
           </header>
 
-          {/* Interactive Converter with Cursive Highlighted */}
-          <Converter highlightStyleId="cursive" />
+          {/* Interactive Converter with Tatuajes (Serif Bold Italic) Highlighted */}
+          <Converter highlightStyleId="serif-bold-italic" />
 
           {/* Section: Cómo Usar */}
           <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-sm isolate relative z-0">
             <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              Cómo Crear tu Nick Femenino en 3 Pasos
+              Cómo Diseñar tu Frase para Tatuaje en 3 Pasos
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex flex-col gap-2 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
@@ -150,10 +151,10 @@ export default function NickFreeFireFemeninoPage() {
                   1
                 </span>
                 <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-200">
-                  Escribe tu Nombre
+                  Ingresa tu Frase o Nombre
                 </h3>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  Ingresa tu apodo o palabra base en la casilla del generador.
+                  Escribe la palabra, cita célebre o fecha que planeas tatuarte.
                 </p>
               </div>
 
@@ -162,10 +163,10 @@ export default function NickFreeFireFemeninoPage() {
                   2
                 </span>
                 <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-200">
-                  Selecciona la Fuente Femenina
+                  Explora el Lettering
                 </h3>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  Explora las opciones de letras bonitas y elegantes generadas.
+                  Visualiza el resultado en estilo tatuaje con trazos inclinados y serifas.
                 </p>
               </div>
 
@@ -174,30 +175,30 @@ export default function NickFreeFireFemeninoPage() {
                   3
                 </span>
                 <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-200">
-                  Copia y Pega en Free Fire
+                  Copia o Guarda
                 </h3>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  Haz clic en &quot;Copiar&quot; y pégalo en la casilla de cambiar nombre en tu perfil.
+                  Haz clic en &quot;Copiar&quot; y envía la referencia directamente a tu tatuador.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Section: Tabla de Límites de Caracteres */}
+          {/* Section: Tabla de Guía de Longitud */}
           <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-sm isolate relative z-0">
             <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              Límites de Caracteres para Nicks Femeninos
+              Guía de Longitudes Recomendadas según la Zona del Cuerpo
             </h2>
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-neutral-200 dark:border-neutral-800 text-sm font-semibold text-neutral-600 dark:text-neutral-400">
-                    <th className="py-3 px-4">Juego / Perfil</th>
-                    <th className="py-3 px-4">Límite Permitido</th>
+                    <th className="py-3 px-4">Zona del Cuerpo</th>
+                    <th className="py-3 px-4">Longitud Recomendada</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800 text-sm text-neutral-700 dark:text-neutral-300">
-                  {charLimits.map((item) => (
+                  {tattooLimits.map((item) => (
                     <tr key={item.platform} className="hover:bg-neutral-50/50 dark:hover:bg-neutral-800/30 transition-colors">
                       <td className="py-3.5 px-4 font-medium">{item.platform}</td>
                       <td className="py-3.5 px-4">{item.limit}</td>
@@ -210,13 +211,13 @@ export default function NickFreeFireFemeninoPage() {
 
           {/* Section: Ejemplos Listos para Copiar */}
           <ExamplesSection
-            title="Ideas de Nicks Femeninos Insanos"
-            examples={feminineNickExamples}
+            title="Ejemplos e Ideas de Frases para Tatuajes"
+            examples={tattooExamples}
           />
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection
-            title="Preguntas Frecuentes sobre Nicks Femeninos"
+            title="Preguntas Frecuentes sobre Letras para Tatuajes"
             faqs={faqs}
           />
         </div>

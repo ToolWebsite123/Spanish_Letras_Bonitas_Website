@@ -14,8 +14,10 @@ const navCategories: NavCategory[] = [
       { label: "Cursivas", href: "/letras-bonitas/letras-cursivas" },
       { label: "Graffiti", href: "/letras-bonitas/letras-graffiti" },
       { label: "Caligrafía", href: "/letras-bonitas/caligrafia" },
-      { label: "Aesthetic", href: "#" },
-      { label: "Japonesas", href: "#" },
+      { label: "Letras para Firma", href: "/letras-bonitas/letras-firma" },
+      { label: "Letras para Tatuajes", href: "/letras-bonitas/letras-tatuajes" },
+      { label: "Aesthetic", href: "/letras-bonitas/letras-aesthetic" },
+      { label: "Japonesas", href: "/letras-bonitas/letras-japonesas" },
     ],
   },
   {
@@ -23,11 +25,10 @@ const navCategories: NavCategory[] = [
     items: [
       { label: "Free Fire", href: "/nicks-para-juegos/nick-free-fire" },
       { label: "Roblox", href: "/nicks-para-juegos/nombres-para-roblox" },
-      { label: "Símbolos FF", href: "#" },
       { label: "FF Femenino", href: "/nicks-para-juegos/nick-free-fire-femenino" },
-      { label: "FF Masculino", href: "#" },
-      { label: "Bio FF", href: "#" },
-      { label: "Cambiar Nick FF", href: "#" },
+      { label: "FF Masculino", href: "/nicks-para-juegos/nick-free-fire-masculino" },
+      { label: "Cambiar Nick FF", href: "/nicks-para-juegos/cambiar-nick-free-fire" },
+      { label: "Bio Colorida FF", href: "/nicks-para-juegos/bio-colorida-free-fire" },
     ],
   },
   {
@@ -37,15 +38,14 @@ const navCategories: NavCategory[] = [
       { label: "Facebook", href: "/fuentes-para-instagram/fuentes-para-facebook" },
       { label: "WhatsApp", href: "/fuentes-para-instagram/fuentes-para-whatsapp" },
       { label: "Discord", href: "/fuentes-para-instagram/fuentes-para-discord" },
-      { label: "Steam", href: "#" },
     ],
   },
   {
     title: "Símbolos Aesthetic",
     items: [
       { label: "Símbolos Nick", href: "/simbolos-aesthetic/simbolos-para-nick" },
-      { label: "Coquette", href: "#" },
       { label: "Emojis", href: "/simbolos-aesthetic/emojis-para-copiar" },
+      { label: "Coquette", href: "/simbolos-aesthetic/simbolos-coquette" },
     ],
   },
   {
@@ -54,15 +54,14 @@ const navCategories: NavCategory[] = [
       { label: "Negrita", href: "/letras-personalizadas/texto-en-negrita" },
       { label: "Itálico", href: "/letras-personalizadas/texto-italico" },
       { label: "Invertir Texto", href: "/letras-personalizadas/invertir-texto" },
-      { label: "Nombres Personalizados", href: "#" },
+      { label: "Nombres Personalizados", href: "/letras-personalizadas/nombres-personalizados" },
     ],
   },
   {
     title: "Alfabeto Completo",
     items: [
-      { label: "Lettering", href: "#" },
-      { label: "Graffiti", href: "#" },
       { label: "Cursivo", href: "/alfabeto-completo/alfabeto-cursivo" },
+      { label: "Graffiti", href: "/alfabeto-completo/alfabeto-graffiti" },
     ],
   },
 ];
@@ -80,7 +79,7 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Brand / Home Link */}
         <a
-          href="#"
+          href="/"
           className="text-lg font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
         >
           Letras Bonitas

@@ -136,8 +136,8 @@ export default function FuentesParaWhatsAppPage() {
             </p>
           </header>
 
-          {/* Interactive Converter Pre-filtered to Script / Cursive */}
-          <Converter initialCategory="Script" />
+          {/* Interactive Converter with Cursive Highlighted */}
+          <Converter highlightStyleId="cursive" />
 
           {/* Section: Cómo Usar */}
           <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-sm isolate relative z-0">

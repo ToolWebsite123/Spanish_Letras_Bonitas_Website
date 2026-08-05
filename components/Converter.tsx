@@ -4,6 +4,8 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { fontStyles } from "@/lib/fontStyles";
 import { convertText } from "@/lib/convertText";
 
+import { decorators, Decorator } from "@/lib/decorators";
+
 export interface StyleOverride {
   name?: string;
   category?: string;
@@ -11,36 +13,50 @@ export interface StyleOverride {
 
 interface ConverterProps {
   initialCategory?: string;
+  highlightStyleId?: string;
   styleOverrides?: Record<string, StyleOverride>;
 }
 
 export default function Converter({
   initialCategory = "All",
+  highlightStyleId,
   styleOverrides,
 }: ConverterProps) {
   const [inputText, setInputText] = useState("Letras Bonitas");
   const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [selectedCategory, setSelectedCategory] = useState(
+    highlightStyleId ? "All" : initialCategory
+  );
   const [isMixEnabled, setIsMixEnabled] = useState(false);
+  const [selectedDecorator, setSelectedDecorator] = useState<Decorator | null>(null);
 
   const tabsContainerRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
 
-  // Apply per-page style overrides if provided
+  // Apply per-page style overrides if provided and move highlightStyleId to first position
   const effectiveStyles = useMemo(() => {
-    if (!styleOverrides) return fontStyles;
-    return fontStyles.map((style) => {
-      const override = styleOverrides[style.id];
-      if (!override) return style;
-      return {
-        ...style,
-        name: override.name ?? style.name,
-        category: override.category ?? style.category,
-      };
-    });
-  }, [styleOverrides]);
+    let styles = styleOverrides
+      ? fontStyles.map((style) => {
+          const override = styleOverrides[style.id];
+          if (!override) return style;
+          return {
+            ...style,
+            name: override.name ?? style.name,
+            category: override.category ?? style.category,
+          };
+        })
+      : fontStyles;
+
+    if (highlightStyleId) {
+      const highlighted = styles.find((s) => s.id === highlightStyleId);
+      if (highlighted) {
+        styles = [highlighted, ...styles.filter((s) => s.id !== highlightStyleId)];
+      }
+    }
+    return styles;
+  }, [styleOverrides, highlightStyleId]);
 
   // Extract unique categories dynamically from effectiveStyles
   const categories = useMemo(() => {
@@ -256,149 +272,204 @@ export default function Converter({
         </div>
       </div>
 
-      {/* Live-Updating Results Section */}
-      <div className="flex flex-col gap-4">
-        {/* Extra "Mezcla" Result Row when Mix styles is enabled */}
-        {isMixEnabled && (
-          <div
-            key="mix"
-            className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border border-purple-300 dark:border-purple-800/60 bg-purple-50/50 dark:bg-purple-950/30 backdrop-blur-sm shadow-sm hover:shadow-md transition-all"
+      {/* Decorators Selection Bar & Combinations Counter Badge */}
+      <div className="flex flex-col gap-2 p-3 rounded-xl bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200/80 dark:border-neutral-800">
+        <div className="flex items-center justify-between gap-2 px-1">
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-neutral-700 dark:text-neutral-300">
+            <span>Decoraciones (Opcional):</span>
+          </div>
+          <span className="text-xs px-2.5 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 font-semibold border border-purple-200/50 dark:border-purple-800/40">
+            {effectiveStyles.length} estilos × {decorators.length} decoraciones = {effectiveStyles.length * decorators.length}+ combinaciones
+          </span>
+        </div>
+
+        {/* Scrollable Decorator Chips Container */}
+        <div className="flex items-center gap-1.5 overflow-x-auto py-1 px-0.5">
+          <button
+            type="button"
+            onClick={() => setSelectedDecorator(null)}
+            className={`px-3 py-1 rounded-lg text-xs font-medium transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+              selectedDecorator === null
+                ? "bg-purple-600 text-white shadow-xs"
+                : "bg-white hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700"
+            }`}
           >
-            <div className="flex flex-col gap-1 min-w-0 flex-1">
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-sm text-purple-900 dark:text-purple-200">
-                  Mezcla
-                </span>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-purple-200/60 dark:bg-purple-900/60 text-purple-800 dark:text-purple-300 font-medium">
-                  Mix
-                </span>
+            Sin decoración
+          </button>
+          {decorators.map((dec) => {
+            const isSelected = selectedDecorator?.id === dec.id;
+            return (
+              <button
+                key={dec.id}
+                type="button"
+                onClick={() =>
+                  setSelectedDecorator((prev) => (prev?.id === dec.id ? null : dec))
+                }
+                className={`px-3 py-1 rounded-lg text-xs font-medium transition-all whitespace-nowrap shrink-0 cursor-pointer flex items-center gap-1 ${
+                  isSelected
+                    ? "bg-purple-600 text-white shadow-xs scale-105"
+                    : "bg-white hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700"
+                }`}
+              >
+                <span>{dec.name}</span>
+                <span className="opacity-75">{dec.wrap("a").replace("a", "")}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Live-Updating Results Section (Responsive 3-Column Grid) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Extra "Mezcla" Result Card when Mix styles is enabled */}
+        {isMixEnabled && (() => {
+          const displayMixedText = selectedDecorator
+            ? selectedDecorator.wrap(mixedText)
+            : mixedText;
+          return (
+            <div
+              key="mix"
+              className="col-span-full flex flex-col justify-between gap-3 p-4 rounded-xl border border-purple-300 dark:border-purple-800/60 bg-purple-50/50 dark:bg-purple-950/30 backdrop-blur-sm shadow-xs hover:shadow-sm transition-all"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-sm text-purple-900 dark:text-purple-200">
+                    Mezcla
+                  </span>
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-purple-200/60 dark:bg-purple-900/60 text-purple-800 dark:text-purple-300 font-medium">
+                    Mix
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleCopy("mix", displayMixedText)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 shrink-0 flex items-center gap-1 cursor-pointer ${
+                    copiedId === "mix"
+                      ? "bg-green-600 text-white shadow-xs scale-105"
+                      : "bg-purple-600 hover:bg-purple-700 text-white shadow-xs hover:shadow-xs active:scale-95"
+                  }`}
+                >
+                  {copiedId === "mix" ? (
+                    <>
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Copiado</span>
+                    </>
+                  ) : (
+                    <>
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                      <span>Copiar</span>
+                    </>
+                  )}
+                </button>
               </div>
-              <p className="text-xl sm:text-2xl text-neutral-900 dark:text-neutral-50 break-words select-all font-normal mt-1">
-                {mixedText}
+              <p className="text-lg sm:text-xl text-neutral-900 dark:text-neutral-50 break-words select-all font-normal">
+                {displayMixedText}
               </p>
             </div>
+          );
+        })()}
 
-            <button
-              type="button"
-              onClick={() => handleCopy("mix", mixedText)}
-              className={`self-start sm:self-center px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 shrink-0 flex items-center gap-1.5 cursor-pointer ${
-                copiedId === "mix"
-                  ? "bg-green-600 text-white shadow-sm scale-105"
-                  : "bg-purple-600 hover:bg-purple-700 text-white shadow-sm hover:shadow active:scale-95"
-              }`}
-            >
-              {copiedId === "mix" ? (
-                <>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span>Copiado</span>
-                </>
-              ) : (
-                <>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span>Copiar</span>
-                </>
-              )}
-            </button>
-          </div>
-        )}
-
-        {/* Existing Style Rows */}
+        {/* Style Grid Cards */}
         {filteredStyles.map((style) => {
-          const styledText = convertText(
+          const rawStyledText = convertText(
             inputText || "Escribe tu texto arriba",
             style.map,
             style.id
           );
+          const styledText = selectedDecorator
+            ? selectedDecorator.wrap(rawStyledText)
+            : rawStyledText;
           const isCopied = copiedId === style.id;
+          const isHighlighted = style.id === highlightStyleId;
 
           return (
             <div
               key={style.id}
-              className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 backdrop-blur-sm shadow-sm hover:shadow-md transition-all"
+              className={`flex flex-col justify-between gap-3 p-4 rounded-xl backdrop-blur-sm shadow-xs hover:shadow-sm transition-all ${
+                isHighlighted
+                  ? "border border-purple-300 dark:border-purple-800/60 bg-purple-50/50 dark:bg-purple-950/30 ring-1 ring-purple-400/30 dark:ring-purple-700/30"
+                  : "border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60"
+              }`}
             >
-              <div className="flex flex-col gap-1 min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold text-sm text-neutral-800 dark:text-neutral-200">
-                    {style.name}
-                  </span>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 font-medium">
-                    {style.category}
-                  </span>
-                </div>
-                <p className="text-xl sm:text-2xl text-neutral-900 dark:text-neutral-50 break-words select-all font-normal mt-1">
-                  {styledText}
-                </p>
+              {/* Card Header: Style Name + Category Tag */}
+              <div className="flex items-center justify-between gap-2">
+                <span
+                  className={`font-semibold text-sm truncate ${
+                    isHighlighted
+                      ? "text-purple-900 dark:text-purple-200"
+                      : "text-neutral-800 dark:text-neutral-200"
+                  }`}
+                >
+                  {style.name}
+                </span>
+                <span
+                  className={`text-xs px-2 py-0.5 rounded-full font-medium shrink-0 ${
+                    isHighlighted
+                      ? "bg-purple-200/80 dark:bg-purple-900/80 text-purple-800 dark:text-purple-200 font-semibold"
+                      : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400"
+                  }`}
+                >
+                  {style.category}
+                </span>
               </div>
 
-              <button
-                type="button"
-                onClick={() => handleCopy(style.id, styledText)}
-                className={`self-start sm:self-center px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 shrink-0 flex items-center gap-1.5 cursor-pointer ${
-                  isCopied
-                    ? "bg-green-600 text-white shadow-sm scale-105"
-                    : "bg-purple-600 hover:bg-purple-700 text-white shadow-sm hover:shadow active:scale-95"
-                }`}
-              >
-                {isCopied ? (
-                  <>
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span>Copiado</span>
-                  </>
-                ) : (
-                  <>
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <span>Copiar</span>
-                  </>
-                )}
-              </button>
+              {/* Card Body: Styled Output Text */}
+              <p className="text-lg sm:text-xl text-neutral-900 dark:text-neutral-50 break-words select-all font-normal min-h-[2.5rem] flex items-center">
+                {styledText}
+              </p>
+
+              {/* Card Footer: Corner Copy Button */}
+              <div className="flex justify-end pt-1">
+                <button
+                  type="button"
+                  onClick={() => handleCopy(style.id, styledText)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 shrink-0 flex items-center gap-1 cursor-pointer ${
+                    isCopied
+                      ? "bg-green-600 text-white shadow-xs scale-105"
+                      : "bg-purple-600 hover:bg-purple-700 text-white shadow-xs hover:shadow-xs active:scale-95"
+                  }`}
+                >
+                  {isCopied ? (
+                    <>
+                      <svg
+                        className="w-3.5 h-3.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>Copiado</span>
+                    </>
+                  ) : (
+                    <>
+                      <svg
+                        className="w-3.5 h-3.5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <span>Copiar</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           );
         })}

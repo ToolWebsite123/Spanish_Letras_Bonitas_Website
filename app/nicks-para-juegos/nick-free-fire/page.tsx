@@ -1,5 +1,6 @@
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import ExamplesSection from "@/components/ExamplesSection";
 import FaqSection from "@/components/FaqSection";
 
@@ -138,8 +139,8 @@ export default function NickFreeFirePage() {
             </p>
           </header>
 
-          {/* Interactive Converter Pre-filtered for Gaming Nicks */}
-          <Converter initialCategory="Script" />
+          {/* Interactive Converter with Gothic Highlighted */}
+          <Converter highlightStyleId="gothic" />
 
           {/* Section: Cómo Usar */}
           <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-sm isolate relative z-0">
@@ -209,6 +210,9 @@ export default function NickFreeFirePage() {
               </table>
             </div>
           </section>
+
+          {/* Section: Cómo Funciona el Generador de Letras (Unicode) */}
+          <HowItWorksSection />
 
           {/* Section: Ejemplos de Nicks de Juego Listos para Copiar */}
           <ExamplesSection
