@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import NavBar from "@/components/NavBar";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -160,6 +161,9 @@ export default function SimbolosParaNickPage() {
               cruzadas, calaveras insanas, alas elegantes y marcas de clan como 【】 y ꧁꧂. Personaliza tu apodo
               para Free Fire, Roblox, PUBG y Call of Duty en segundos.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              La selección de símbolos para nick destaca por aportar un distintivo visual inmediato a nombres de jugador y tags de escuadra. A menudo es muy popular entre competidores de Free Fire, PUBG y Roblox para enmarcar su apodo. Se usa comúnmente en torneos PvP, y si deseas combinar estos elementos con tipografías especiales te aconsejamos visitar la sección de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire masculino</Link> o revisar la colección de <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos coquette</Link>.
+            </p>
           </header>
 
           {/* Symbol Category Grids */}
@@ -196,6 +200,9 @@ export default function SimbolosParaNickPage() {
                 </div>
               </section>
             ))}
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed p-4 rounded-xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800">
+              Toca el botón &apos;Copiar&apos; en el adorno que desees para llevarlo directamente a tu juego. Puedes complementar tu perfil con nuestros <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link> o revisar el tutorial para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">cambiar nick Free Fire</Link>.
+            </p>
           </div>
 
           {/* Section: Ejemplos Listos para Copiar */}
@@ -203,6 +210,11 @@ export default function SimbolosParaNickPage() {
             title="Nicks Gamer con Símbolos Listos para Copiar"
             examples={nickExamples}
           />
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Para otras redes sociales y plataformas de juego, descubre nuestras opciones de <Link href="/fuentes-para-instagram/fuentes-para-discord" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Discord</Link> o los <Link href="/nicks-para-juegos/nombres-para-roblox" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nombres para Roblox</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

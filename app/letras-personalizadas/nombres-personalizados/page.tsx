@@ -30,6 +30,9 @@ export default function NombresPersonalizadosPage() {
             <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Personaliza tu nombre o apellido con tipografías elegantes, cursivas, góticas y marcos decorativos. Ideal para firmas digitales, nicks de usuario, redes sociales y tarjetas de presentación.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El servicio de nombres personalizados destaca por adaptar cualquier apelativo o nombre propio a estilos artísticos deslumbrantes. A menudo es muy popular entre personas que buscan firmar correos con clase o diferenciarse en comunidades en línea. Se usa comúnmente en encabezados de perfil y firmas electrónicas, y si quieres explorar alternativas de diseño te sugerimos visitar la sección de <Link href="/letras-bonitas/letras-firma" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras para firma</Link> o la colección de <Link href="/letras-bonitas/caligrafia" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">caligrafía</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter Tool */}
@@ -109,6 +112,14 @@ export default function NombresPersonalizadosPage() {
                 </tbody>
               </table>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Elige el estilo perfecto según el uso deseado, ya sea empresarial o gamer. También puedes engalanar tu nombre con <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos coquette</Link> o descubrir nuestro convertidor de <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>.
+            </p>
+          </section>
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si estás buscando nombres optimizados para gaming, no olvides revisar nuestra guía para <Link href="/nicks-para-juegos/nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire</Link> o la categoría de <Link href="/letras-bonitas/letras-aesthetic" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras aesthetic</Link>.
           </section>
 
           {/* FAQs */}

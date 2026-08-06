@@ -30,6 +30,9 @@ export default function LetrasAestheticPage() {
             <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Descubre y genera tipografías aesthetic, minimalistas y delicadas para tu biografía de Instagram, TikTok, Tumblr y redes sociales. Elige entre estilos suaves, letras pequeñas y bordes decorativos aesthetic para darle un toque único a tu perfil.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El concepto de letras aesthetic destaca por ofrecer una estética limpia, armónica y sofisticada en plataformas digitales. A menudo es popular entre creadores de contenido porque brinda elegancia visual sin recargar el texto. Se usa comúnmente en descripciones de foto y subtítulos, y si buscas estilos complementarios puedes probar nuestras <Link href="/letras-bonitas/letras-japonesas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras japonesas</Link> estilizadas o combinar frases con <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter Tool */}
@@ -114,6 +117,14 @@ export default function LetrasAestheticPage() {
                 </tbody>
               </table>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Copia de forma directa caracteres de superíndices o mayúsculas pequeñas. Puedes integrar este formato a tu perfil de <Link href="/fuentes-para-instagram/fuentes-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Instagram</Link> o aplicarlo a <Link href="/nicks-para-juegos/nombres-para-roblox" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nombres para Roblox</Link>.
+            </p>
+          </section>
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Descubre otras alternativas de personalización: si deseas un estilo llamativo revisa las <Link href="/letras-bonitas/letras-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras graffiti</Link> o prueba las fuentes de <Link href="/fuentes-para-instagram/fuentes-para-facebook" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Facebook</Link>.
           </section>
 
           {/* FAQs */}

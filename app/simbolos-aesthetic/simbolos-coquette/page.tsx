@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import NavBar from "@/components/NavBar";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -169,6 +170,9 @@ export default function SimbolosCoquettePage() {
               mariposas delicadas (ʚɞ), perlas y estrellas decorativas. Personaliza tu biografía de Instagram,
               nombres de Roblox, TikTok y estados de WhatsApp con un toque delicado y aesthetic.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              La moda de símbolos coquette destaca por impregnar tu presencia digital con moños, corazones y tonos de delicadeza romántica. A menudo es muy popular entre creadoras de contenido y usuarios que prefieren perfiles suaves y vintage. Se usa comúnmente en descripciones de Instagram y TikTok, y si deseas complementar con otras fuentes te recomendamos revisar nuestras páginas de <Link href="/letras-bonitas/letras-aesthetic" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras aesthetic</Link> o la colección de <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link>.
+            </p>
           </header>
 
           {/* Coquette Symbol Category Grids */}
@@ -230,6 +234,9 @@ export default function SimbolosCoquettePage() {
                 </tbody>
               </table>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Combina los moños coquette con nuestras opciones para <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio para Instagram</Link> o prueba a diseñar un estilo delicado en tus <Link href="/nicks-para-juegos/nombres-para-roblox" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nombres para Roblox</Link>.
+            </p>
           </section>
 
           {/* Section: Ejemplos Listos para Copiar */}
@@ -237,6 +244,11 @@ export default function SimbolosCoquettePage() {
             title="Combos y Bios Coquette Listas para Copiar"
             examples={coquetteExamples}
           />
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Descubre otras formas de engalanar tu perfil explorando nuestras <Link href="/letras-bonitas/caligrafia" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes de caligrafía</Link> o el catálogo de <Link href="/letras-bonitas/letras-cursivas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras cursivas</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

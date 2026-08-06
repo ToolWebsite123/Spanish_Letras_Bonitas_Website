@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import NavBar from "@/components/NavBar";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -169,6 +170,9 @@ export default function EmojisParaCopiarPage() {
               Haz clic en cualquier símbolo para copiarlo directamente al portapapeles y personalizar tu biografía de Instagram,
               nicks de Free Fire, estados de WhatsApp y mensajes de TikTok.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El uso de emojis para copiar destaca por brindar expresividad, frescura y dinamismo visual a tus textos cotidianos. A menudo es muy popular entre creadores de tendencias y perfiles de moda para decorar historias y presentaciones. Se usa comúnmente en la estilización de bios, y si buscas elementos de diseño afines te invitamos a conocer nuestras páginas de <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos coquette</Link> o la colección de <Link href="/letras-bonitas/letras-aesthetic" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras aesthetic</Link>.
+            </p>
           </header>
 
           {/* Aesthetic Symbol Category Grids */}
@@ -205,6 +209,9 @@ export default function EmojisParaCopiarPage() {
                 </div>
               </section>
             ))}
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed p-4 rounded-xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800">
+              Haz clic en cualquier casilla para guardar el emoji al instante en el portapapeles. Si deseas acompañar tus combinaciones con fuentes para perfil, puedes consultar nuestras <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para biografía de Instagram</Link> o descubrir nuestro creador de <Link href="/letras-personalizadas/nombres-personalizados" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nombres personalizados</Link>.
+            </p>
           </div>
 
           {/* Section: Ejemplos Listos para Copiar */}
@@ -212,6 +219,11 @@ export default function EmojisParaCopiarPage() {
             title="Combos y Frases Aesthetic Listas para Copiar"
             examples={emojiExamples}
           />
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si también te interesa personalizar nombres de juego o firmas digitales, no te pierdas la colección de <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos para nick</Link> o nuestras <Link href="/fuentes-para-instagram/fuentes-para-whatsapp" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para WhatsApp</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

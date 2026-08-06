@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -135,6 +136,9 @@ export default function FuentesParaFacebookPage() {
               títulos a letras en negrita, cursiva y fuentes estilizadas compatibles con Facebook. Escribe tu aviso,
               copia el texto formateado y capta más reacciones al instante.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El uso de fuentes para Facebook destaca por otorgar dinamismo visual y destacar encabezados en publicaciones de feed. A menudo es muy popular en páginas comerciales y grupos para llamar la atención entre decenas de noticias. Se usa comúnmente en títulos de ofertas y eventos, y si deseas complementar tu alcance te sugerimos explorar la sección de <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio para Instagram</Link> o revisar nuestro convertidor de <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Bold Highlighted */}
@@ -182,6 +186,9 @@ export default function FuentesParaFacebookPage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Aprovecha el amplio límite de caracteres en publicaciones para estructurar párrafos legibles. Puedes combinar las fuentes con <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link> o darles dinamismo con <Link href="/letras-personalizadas/texto-italico" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en itálico</Link>.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres */}
@@ -214,6 +221,11 @@ export default function FuentesParaFacebookPage() {
             title="Ejemplos Formateados para Facebook"
             examples={facebookExamples}
           />
+
+          {/* Section: Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Para otras necesidades de comunicación digital, te invitamos a probar nuestras <Link href="/fuentes-para-instagram/fuentes-para-whatsapp" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para WhatsApp</Link> o la colección de <Link href="/letras-bonitas/letras-firma" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras para firma</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

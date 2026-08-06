@@ -30,6 +30,9 @@ export default function LetrasJaponesasPage() {
             <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Genera letras estilo japonés, fuentes tipo anime y caracteres de ancho completo (Fullwidth Latin) para tus nombres de usuario en juegos, perfiles de Discord, Instagram y redes sociales. Nota: Estas tipografías son variaciones del alfabeto latino estilo aesthetic oriental y no escritura en idioma japonés real (Kanji/Hiragana).
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              Las letras estilo japonés (Fullwidth) destacan por ofrecer un espaciado amplio inspirado en la estética visual de Asia Oriental. A menudo son muy populares en la cultura gamer y otaku para destacar apodos con un acabado futurista. Se usan comúnmente en perfiles de videojuegos, y si deseas crear combinaciones sorprendentes puedes probar los <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos coquette</Link> o bien revisar nuestro generador de <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter Tool */}
@@ -109,6 +112,14 @@ export default function LetrasJaponesasPage() {
                 </tbody>
               </table>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              El sistema convierte tus caracteres al alfabético de ancho completo. Este diseño se adapta perfectamente a una <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio para Instagram</Link> de anime o para personalizar tus <Link href="/fuentes-para-instagram/fuentes-para-discord" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Discord</Link>.
+            </p>
+          </section>
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si quieres explorar otras opciones tipográficas para tus nicks, te recomendamos mirar el convertidor de <Link href="/letras-bonitas/letras-aesthetic" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras aesthetic</Link> o nuestras alternativas de <Link href="/letras-bonitas/letras-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras graffiti</Link>.
           </section>
 
           {/* FAQs */}

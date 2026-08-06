@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -134,6 +135,9 @@ export default function NickFreeFireFemeninoPage() {
               con coronas, moños coquette, estrellas y flores rosas. Genera tu nick femenino ideal sin exceder los 12
               caracteres, copia con un clic y domina el campo de batalla con estilo.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              Los nicks femeninos para Free Fire destacan por combinar la dulzura de detalles delicados con la fuerza de un perfil de chica gamer competitiva. A menudo son muy populares en escuadras y salas privadas para mostrar identidad y personalidad en el juego. Se usan comúnmente en apodos de duelos de escuadra, y si buscas estilos alternativos masculinos puedes visitar la sección de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire masculino</Link> o explorar nuestra categoría general de <Link href="/nicks-para-juegos/nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Cursive Highlighted */}
@@ -181,6 +185,9 @@ export default function NickFreeFireFemeninoPage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Combina moños o coronas sin exceder los 12 caracteres máximos. Puedes usar nuestro tutorial de <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">cambiar nick Free Fire</Link> para aprender a pegarlo en el juego o añadir <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos coquette</Link> decorativos.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres */}
@@ -213,6 +220,11 @@ export default function NickFreeFireFemeninoPage() {
             title="Ideas de Nicks Femeninos Insanos"
             examples={feminineNickExamples}
           />
+
+          {/* Section: Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si deseas adornar la firma de tu perfil dentro del juego, te recomendamos crear una <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio colorida Free Fire</Link> o probar opciones de <Link href="/letras-bonitas/letras-cursivas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras cursivas</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

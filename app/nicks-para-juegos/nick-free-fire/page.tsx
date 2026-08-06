@@ -1,6 +1,8 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 import ExamplesSection from "@/components/ExamplesSection";
 import FaqSection from "@/components/FaqSection";
 
@@ -137,6 +139,9 @@ export default function NickFreeFirePage() {
               tu apodo habitual en letras chidas compatibles con el juego, respetando el límite máximo de
               12 caracteres. Diseña tu nick ideal, copia el código con un clic y destaca en el campo de batalla.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El diseño de apodos para videojuegos destaca por infundir un estilo temible e intimidante a tus rivales en la partida. A menudo es muy popular entre jugadores competitivos para reflejar un nivel insano en salas clasificatorias. Se usa comúnmente en tags de clan y escuadras, y si buscas recomendaciones según tu estilo te invitamos a consultar opciones de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire masculino</Link> o explorar alternativas en nuestro <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire femenino</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Gothic Highlighted */}
@@ -184,6 +189,9 @@ export default function NickFreeFirePage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Asegúrate de no exceder los 12 caracteres máximos establecidos por Garena. Puedes aprender paso a paso a <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">cambiar nick Free Fire</Link> o utilizar los <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos para nick</Link> incluidos.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres en Juegos */}
@@ -211,6 +219,9 @@ export default function NickFreeFirePage() {
             </div>
           </section>
 
+          {/* Alphabet Reference Table */}
+          <AlphabetReferenceTable styleId="elegant-script" />
+
           {/* Section: Cómo Funciona el Generador de Letras (Unicode) */}
           <HowItWorksSection />
 
@@ -219,6 +230,21 @@ export default function NickFreeFirePage() {
             title="Ideas de Nicks Insanos para Free Fire"
             examples={gamingNickExamples}
           />
+
+          {/* Section: Conclusión */}
+          <section className="flex flex-col gap-4 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
+              <span>💡</span> Conclusión
+            </h2>
+            <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Tener un nick único e insano en Free Fire es esencial para causar una gran impresión en las salas privadas y partidas clasificatorias. Al combinar letras de impacto con símbolos especiales en un formato de menos de 12 caracteres, asegurarás que tu presencia sea recordada por rivales y aliados por igual.
+            </p>
+          </section>
+
+          {/* Section: Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Para complementar tu perfil de gamer, revisa nuestra guía sobre <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio colorida Free Fire</Link> o descubre tipografías alternativas en la sección de <Link href="/nicks-para-juegos/nombres-para-roblox" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nombres para Roblox</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes sobre Nicks de Free Fire */}
           <FaqSection

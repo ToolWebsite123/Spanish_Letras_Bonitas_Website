@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -53,7 +54,7 @@ const robloxExamples = [
   },
   {
     persona: "Anime Fighting / Blade Ball",
-    text: "Ⓢ𝒽𝒶𝒹ℴⓦⓃⓘⓝⓙ𝒶 🗡️",
+    text: "Ⓢ𝒽𝒶𝒹ℴⓃⓘⓝⓙ𝒶 🗡️",
   },
   {
     persona: "Femenino / Coquette",
@@ -135,6 +136,9 @@ export default function NombresParaRobloxPage() {
               letras burbuja, fuentes circulares y símbolos aesthetic compatibles con el juego. Respeta el
               límite de 20 caracteres, copia con un clic y renueva el perfil de tu avatar de Roblox gratis.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              Los nombres personalizados para Roblox destacan por permitir una personalización vistosa del Display Name en mundos virtuales. A menudo son muy populares en experiencias de rol como Adopt Me o Brookhaven para lucir un perfil tierno. Se usan comúnmente en usuarios de comunidad, y si buscas otras opciones para el mundo gamer puedes mirar los estilos de <Link href="/nicks-para-juegos/nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire</Link> o revisar nuestras <Link href="/letras-bonitas/letras-aesthetic" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras aesthetic</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Bubble Highlighted */}
@@ -182,6 +186,9 @@ export default function NombresParaRobloxPage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Aprovecha los 20 caracteres máximos permitidos en el Display Name para añadir fuentes burbuja. Puedes acompañar estos diseños con <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos coquette</Link> o darles formato mediante <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres */}
@@ -214,6 +221,11 @@ export default function NombresParaRobloxPage() {
             title="Ideas de Nombres Bonitos para Roblox"
             examples={robloxExamples}
           />
+
+          {/* Section: Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Descubre más ideas para tus redes conectadas: explora nuestro creador de <Link href="/fuentes-para-instagram/fuentes-para-discord" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Discord</Link> o echa un vistazo al mapa de <Link href="/letras-bonitas/letras-japonesas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras japonesas</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

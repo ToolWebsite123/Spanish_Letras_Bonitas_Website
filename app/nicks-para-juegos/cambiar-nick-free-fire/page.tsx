@@ -30,6 +30,9 @@ export default function CambiarNickFreeFirePage() {
             <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Aprende el procedimiento exacto para modificar tu nombre de jugador en Garena Free Fire utilizando una Tarjeta de Cambio de Nombre o Diamantes. Genera tu nuevo nick estilizado con letras góticas y símbolos guerreros para destacar en el campo de batalla.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El proceso de cambiar nick en Free Fire destaca por permitir una renovación completa de tu identidad de jugador en la plataforma de Garena. A menudo es muy buscado cuando quieres ingresar a un nuevo clan o dar un salto de nivel competitivo. Se usa comúnmente en la gestión de cuentas, y para obtener mejores ideas te aconsejamos visitar la sección de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire masculino</Link> o revisar opciones de <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire femenino</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter Tool */}
@@ -70,6 +73,14 @@ export default function CambiarNickFreeFirePage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Asegúrate de copiar tu nombre personalizado sin pasarte de los 12 caracteres. También puedes utilizar nuestros <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos para nick</Link> o explorar tipografías de <Link href="/letras-bonitas/letras-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras graffiti</Link>.
+            </p>
+          </section>
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si también buscas decorar tu perfil interno, te sugerimos consultar nuestro tutorial de <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio colorida Free Fire</Link> o descubrir nuestro creador de <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>.
           </section>
 
           {/* Section: Ejemplos de Nicks Únicos */}

@@ -30,6 +30,9 @@ export default function BioColoridaFreeFirePage() {
             <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Crea firmas y biografías con colores deslumbrantes en tu perfil de Free Fire. Utiliza los códigos de color HEX entre corchetes combinados con letras estilizadas para personalizar tu firma del juego.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El diseño de bio colorida para Free Fire destaca por transformar el cuadro de firma en una presentación vibrante y llamativa. A menudo es muy popular entre jugadores que buscan resaltar lemas de clan o redes sociales dentro del juego. Se usa comúnmente en tarjetas de jugador, y si deseas combinar la bio con el nombre perfecto puedes leer nuestra guía para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">cambiar nick Free Fire</Link> o revisar opciones de <Link href="/nicks-para-juegos/nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter Tool */}
@@ -106,6 +109,14 @@ export default function BioColoridaFreeFirePage() {
                 </tbody>
               </table>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Añade corchetes como [b] o [i] para darle formato negrita o itálico a tu firma. También puedes complementar el diseño con nuestra recopilación de <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos para nick</Link> o explorar nuestra herramienta de <Link href="/letras-bonitas/caligrafia" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">caligrafía</Link>.
+            </p>
+          </section>
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Descubre otras formas de llamar la atención en tus perfiles: prueba nuestro creador de <Link href="/fuentes-para-instagram/fuentes-para-facebook" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Facebook</Link> o adorna tus textos con <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link>.
           </section>
 
           {/* FAQs */}

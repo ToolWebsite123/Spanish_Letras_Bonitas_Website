@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -57,7 +58,7 @@ const instagramBioExamples = [
   },
   {
     persona: "Aesthetic Vibe",
-    text: "𓆩♡𓆪 𝒮ℴ𝒻𝓉 𝓋𝒾𝒷ℯ𝓈 & 𝒶ℯ𝓈𝓉𝒽ℯ𝓉𝒾𝒸 𝓅𝒽ℴ𝓉ℴ𝓈 🌙 𝒮ℯ𝒶𝓂ℴ𝓈 𝒻ℯ𝓁𝒾𝒸ℯ𝓈, 𝓃ℴ 𝓅ℯ𝓇𝒻ℯ𝒸𝓉ℴ𝓈",
+    text: "𓆩♡𓆪 𝒮ℴ𝒻𝓉 𝓋𝒾𝓋ℯ𝓈 & 𝒶ℯ𝓈𝓉𝒽ℯ𝓉𝒾𝒸 𝓅𝒽ℴ𝓉ℴ𝓈 🌙 𝒮ℯ𝒶𝓂ℴ𝓈 𝒻ℯ𝓁𝒾𝒸ℯ𝓈, 𝓃ℴ 𝓅ℯ𝓇𝒻ℯ𝒸𝓉ℴ𝓈",
   },
 ];
 
@@ -135,6 +136,9 @@ export default function BioParaInstagramPage() {
               en fuentes bonitas, cursivas, negritas y estilizadas con un solo clic. Personaliza la presentación
               de tu cuenta, atrae más seguidores y destaca del resto.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              La creación de una bio para Instagram destaca por ser la carta de presentación principal de tu marca o perfil personal en redes. A menudo es muy popular entre influencers y emprendedores para causar una primera impresión memorable. Se usa comúnmente en descripciones de cuenta, y si buscas alternativas para otras aplicaciones puedes consultar nuestras <Link href="/fuentes-para-instagram/fuentes-para-whatsapp" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para WhatsApp</Link> o revisar la colección de <Link href="/fuentes-para-instagram/fuentes-para-facebook" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Facebook</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Cursive Highlighted */}
@@ -182,6 +186,9 @@ export default function BioParaInstagramPage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Recuerda no superar los 150 caracteres máximos permitidos en la presentación de Instagram. Puedes combinar tus textos con <Link href="/letras-bonitas/letras-aesthetic" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras aesthetic</Link> o darles estructura mediante <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres */}
@@ -214,6 +221,11 @@ export default function BioParaInstagramPage() {
             title="Ejemplos Formateados para Bio de Instagram"
             examples={instagramBioExamples}
           />
+
+          {/* Section: Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si deseas descubrir más elementos decorativos para tus publicaciones, te sugerimos utilizar los <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link> o explorar nuestras fuentes para <Link href="/fuentes-para-instagram/fuentes-para-discord" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Discord</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

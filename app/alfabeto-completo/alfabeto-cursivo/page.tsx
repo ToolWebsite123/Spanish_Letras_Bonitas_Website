@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
@@ -203,6 +204,9 @@ export default function AlfabetoCursivoPage() {
               individualmente o utiliza nuestro convertidor automático en tiempo real para transformar tus frases
               completas a letra manuscrita bonita.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              La consulta del alfabeto cursivo completo destaca por facilitar la selección de iniciales individuales y caracteres sueltos para crear composiciones personalizadas. A menudo es muy buscado por calígrafos y usuarios que arman firmas a mano o digitales. Se usa comúnmente en proyectos de diseño, y para ver aplicaciones prácticas te invitamos a visitar la sección de <Link href="/letras-bonitas/letras-cursivas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras cursivas</Link> o consultar el <Link href="/alfabeto-completo/alfabeto-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">alfabeto graffiti</Link>.
+            </p>
           </header>
 
           {/* Cursive Alphabet Reference Grid: Mayúsculas */}
@@ -285,6 +289,9 @@ export default function AlfabetoCursivoPage() {
                 </tbody>
               </table>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Toca cualquier letra para copiarla en el portapapeles. También puedes probar nuestra herramienta de <Link href="/letras-bonitas/letras-firma" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras para firma</Link> o descubrir variantes de <Link href="/letras-bonitas/caligrafia" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">caligrafía</Link>.
+            </p>
           </section>
 
           {/* Section: Ejemplos de Palabras en Cursivo Listos para Copiar */}
@@ -292,6 +299,11 @@ export default function AlfabetoCursivoPage() {
             title="Ejemplos de Palabras en Cursiva"
             examples={cursiveWordExamples}
           />
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si estás buscando personalizar nombres de perfil en tus aplicaciones preferidas, consulta la guía de <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio para Instagram</Link> o crea un <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire femenino</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

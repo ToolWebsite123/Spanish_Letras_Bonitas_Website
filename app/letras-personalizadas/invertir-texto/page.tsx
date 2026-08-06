@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -135,6 +136,9 @@ export default function InvertirTextoPage() {
               para crear acertijos en chats, nicks de juegos divertidos, códigos secretos y publicaciones
               originales en redes sociales. Escribe tu texto y copia el resultado invertido con un clic.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              La función de invertir texto destaca por transformar secuencias estándar de caracteres en enigma y juegos de palabras espejados. A menudo es muy popular entre jugadores y creadores que buscan crear nicks indescifrables o acertijos para su comunidad. Se usa comúnmente en dinámicas de grupos, y si deseas complementar con otras herramientas creativas te invitamos a conocer nuestras páginas de <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link> o la colección de <Link href="/letras-bonitas/letras-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras graffiti</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Invertido Highlighted */}
@@ -182,6 +186,9 @@ export default function InvertirTextoPage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Ten en cuenta que al invertir el orden de los caracteres los emojis también cambian de posición. Combina este efecto con <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos para nick</Link> o explora nuestra sección de <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">cambiar nick Free Fire</Link>.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres */}
@@ -214,6 +221,11 @@ export default function InvertirTextoPage() {
             title="Ejemplos de Texto Invertido"
             examples={reverseExamples}
           />
+
+          {/* Section: Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si también quieres generar estilos vistosos para tus chats diarios, consulta nuestras <Link href="/fuentes-para-instagram/fuentes-para-whatsapp" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para WhatsApp</Link> o descubre la herramienta de <Link href="/letras-personalizadas/nombres-personalizados" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nombres personalizados</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -135,6 +136,9 @@ export default function CaligrafiaPage() {
               generador crea trazos refinados ideales para biografías distinguidas, invitaciones digitales,
               firmas de correo y posts en redes sociales. Escribe tu frase, copia el resultado y destaca con clase.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El arte de la caligrafía destaca por evocar manuscritos clásicos y trazados artesanales de alta calidad. A menudo es popular en plataformas creativas porque brinda distinción y sobriedad. Se usa comúnmente en encabezados de invitaciones y publicaciones ejecutivas, y si buscas estilos similares te sugerimos explorar nuestras <Link href="/letras-bonitas/letras-firma" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras para firma</Link> o la categoría de <Link href="/letras-bonitas/letras-tatuajes" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras para tatuajes</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Firma / Caligrafía Highlighted */}
@@ -182,6 +186,9 @@ export default function CaligrafiaPage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Al ingresar tu frase, la herramienta aplica glifos caligráficos matemáticos con trazo fino. Puedes utilizar estas fuentes en tus mensajes de <Link href="/fuentes-para-instagram/fuentes-para-whatsapp" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para WhatsApp</Link> o para decorar una <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio colorida Free Fire</Link>.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres */}
@@ -214,6 +221,11 @@ export default function CaligrafiaPage() {
             title="Ejemplos de Caligrafía Elegante"
             examples={calligraphyExamples}
           />
+
+          {/* Section: Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si deseas descubrir más estilos de letras refinadas, te invitamos a probar nuestro convertidor de <Link href="/letras-personalizadas/texto-italico" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en itálico</Link> o revisar la colección de <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos coquette</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

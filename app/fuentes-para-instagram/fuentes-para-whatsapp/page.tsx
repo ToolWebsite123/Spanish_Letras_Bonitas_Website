@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -134,6 +135,9 @@ export default function FuentesParaWhatsAppPage() {
               cursivas. Genera frases únicas para tus chats y nombres de grupo, copia con un clic y sorprende a todos
               tus contactos.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El uso de fuentes para WhatsApp destaca por transformar aburridas líneas de texto en mensajes expresivos e impactantes. A menudo es muy popular entre usuarios que desean destacar su estado personal o llamar la atención en chats grupales. Se usa comúnmente en anuncios y reflexiones diarias, y si deseas complementar con otras redes te invitamos a visitar la sección de <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio para Instagram</Link> o probar nuestro conversor de <Link href="/letras-bonitas/letras-cursivas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras cursivas</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Cursive Highlighted */}
@@ -181,6 +185,9 @@ export default function FuentesParaWhatsAppPage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Asegúrate de respetar el límite de 139 caracteres en tu sección de Info. Puedes decorar tus mensajes con <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link> o aplicar un formato de <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres */}
@@ -213,6 +220,11 @@ export default function FuentesParaWhatsAppPage() {
             title="Ejemplos Formateados para WhatsApp"
             examples={whatsappExamples}
           />
+
+          {/* Section: Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si también quieres renovar tu presencia en otras plataformas sociales, consulta nuestro generador de <Link href="/fuentes-para-instagram/fuentes-para-facebook" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Facebook</Link> o las opciones de <Link href="/letras-bonitas/letras-aesthetic" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras aesthetic</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

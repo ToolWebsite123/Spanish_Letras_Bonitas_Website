@@ -44,6 +44,9 @@ export default function AlfabetoGraffitiPage() {
             <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Explora la tabla de letras de alfabeto estilo graffiti y gótico (Fraktur Unicode). Consulta todas las letras mayúsculas y minúsculas de la A a la Z para diseñar nicks urbanos y firmas con personalidad.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El abecedario de alfabeto graffiti destaca por ofrecer una colección completa de caracteres con estética urbana, alternativa y gótica. A menudo es muy buscado por diseñadores y gamers que quieren armar nombres con presencia imponente. Se usa comúnmente en nicks de combate y tags de clan, y si deseas ver palabras completas formadas en este estilo puedes visitar la página de <Link href="/letras-bonitas/letras-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras graffiti</Link> o revisar el <Link href="/alfabeto-completo/alfabeto-cursivo" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">alfabeto cursivo</Link>.
+            </p>
           </header>
 
           {/* Section: Mayúsculas Góticas / Graffiti */}
@@ -127,6 +130,14 @@ export default function AlfabetoGraffitiPage() {
                 </tbody>
               </table>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Consulta las equivalencias de bloques alfanuméricos en la tabla de referencia. Si buscas aplicar este abecedario a tus juegos preferidos, no te pierdas nuestra guía de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire masculino</Link> o adorna tus frases con <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos para nick</Link>.
+            </p>
+          </section>
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Para explorar más posibilidades de personalización en comunidades digitales, descubre nuestras <Link href="/fuentes-para-instagram/fuentes-para-discord" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Discord</Link> o dale un estilo único a tus publicaciones con <Link href="/letras-bonitas/letras-japonesas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras japonesas</Link>.
           </section>
 
           {/* FAQs */}

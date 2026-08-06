@@ -1,5 +1,7 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
+import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 import ExamplesSection from "@/components/ExamplesSection";
 import FaqSection from "@/components/FaqSection";
 
@@ -41,7 +43,7 @@ const italicExamples = [
   },
   {
     persona: "Perfil Profesional / Bio",
-    text: "📖 𝑨𝒑𝒂𝒔𝒊𝒐𝒏𝒂𝒅𝒐 𝒑𝒐𝒓 𝒍𝒂 𝒍𝒆𝒄𝒕𝒖𝒓𝒂, 𝒆𝒍 𝒂𝒓𝒕𝒆 𝒚 𝒍𝒂 𝒇𝒐𝒕𝒐𝒈𝒓𝒂𝒇𝒊́𝒂.",
+    text: "📖 𝑨𝒑𝒂𝓈𝒊𝒐𝒏𝒶𝒅𝒐 𝒑𝒐𝒓 𝒍𝒂 𝒍𝒆𝒄𝒕𝒖𝒓𝒂, 𝒆𝒍 𝒂𝒓𝒕𝒆 𝒚 𝒍𝒂 𝒇𝒐𝒕𝒐𝒈𝒓𝒂𝒇𝒊́𝒂.",
   },
   {
     persona: "Llamado a la Reflexión",
@@ -135,6 +137,9 @@ export default function TextoItalicoPage() {
               Genera letras inclinadas de gran impacto ideales para citas célebres, descripciones de Instagram,
               títulos de artículos y diseños de lettering. Convierte tu texto, copia con un clic y destaca tus palabras.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El convertidor de texto en itálico destaca por brindar un toque delicado, sutil y elegante a citas célebres y reflexiones. A menudo es muy popular entre amantes de la literatura y diseñadores que buscan un trazo oblicuo pulido. Se usa comúnmente en subtítulos y dedicatorias, y si deseas explorar alternativas tipográficas te sugerimos visitar la sección de <Link href="/letras-bonitas/letras-cursivas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras cursivas</Link> o revisar la herramienta de <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Itálico Highlighted */}
@@ -190,6 +195,9 @@ export default function TextoItalicoPage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Revisa los límites recomendados por plataforma antes de publicar. También puedes enriquecer tus publicaciones con <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos coquette</Link> o descubrir nuestro creador de <Link href="/letras-personalizadas/invertir-texto" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">invertir texto</Link>.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres */}
@@ -217,11 +225,29 @@ export default function TextoItalicoPage() {
             </div>
           </section>
 
+          {/* Alphabet Reference Table */}
+          <AlphabetReferenceTable styleId="serif-bold-italic" />
+
           {/* Section: Ejemplos Listos para Copiar */}
           <ExamplesSection
             title="Ejemplos de Frases y Citas en Itálico"
             examples={italicExamples}
           />
+
+          {/* Section: Conclusión */}
+          <section className="flex flex-col gap-4 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
+              <span>💡</span> Conclusión
+            </h2>
+            <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              La tipografía en itálica es el recurso estético perfecto para comunicar sofisticación, dar énfasis a citas de autores y enriquecer leyendas o publicaciones. Su sutil inclinación angular transforma cualquier mensaje simple en una frase distinguida y profesional en todas las plataformas digitales.
+            </p>
+          </section>
+
+          {/* Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Para complementar el formato en tus redes sociales principales, te recomendamos consultar nuestras <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para biografía de Instagram</Link> o la colección de <Link href="/letras-bonitas/letras-tatuajes" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras para tatuajes</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection

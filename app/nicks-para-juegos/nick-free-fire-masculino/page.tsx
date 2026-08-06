@@ -1,3 +1,4 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import ExamplesSection from "@/components/ExamplesSection";
@@ -41,7 +42,7 @@ const masculineNickExamples = [
   },
   {
     persona: "Nick Titán / Bestia",
-    text: "⚡ 𝔗𝔦𝔱𝔞𝔫ℌ𝔢𝔞𝔡 ⚡",
+    text: "⚡ 𝔗𝔦𝔱𝔞𝔫ℌ𝔢𝔞𝔢 ⚡",
   },
   {
     persona: "Nombre para Competitivo",
@@ -135,6 +136,9 @@ export default function NickFreeFireMasculinoPage() {
               con los mejores símbolos masculinos (⚔️👑🔥☠️). Genera tu nombre pro para PvP, salas clasificatorias
               y clanes competitivos. Copia con un clic y destaca en el campo de batalla.
             </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              El estilo de nick masculino para Free Fire destaca por transmitir una presencia imponente, competitiva y dominante frente a los oponentes. A menudo es popular entre jugadores fraggers y líderes de escuadra para marcar respeto en salas clasificatorias. Se usa comúnmente en torneos competitivos, y si buscas alternativas puedes explorar nuestras <Link href="/letras-bonitas/letras-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras graffiti</Link> o revisar la sección de <Link href="/nicks-para-juegos/nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire</Link>.
+            </p>
           </header>
 
           {/* Interactive Converter with Fraktur (Gothic) Highlighted */}
@@ -182,6 +186,9 @@ export default function NickFreeFireMasculinoPage() {
                 </p>
               </div>
             </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
+              Recuerda no sobrepasar los 12 caracteres máximos en el campo de apodo. Consulta nuestro tutorial para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">cambiar nick Free Fire</Link> o adorna tu perfil con <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos para nick</Link>.
+            </p>
           </section>
 
           {/* Section: Tabla de Límites de Caracteres */}
@@ -214,6 +221,11 @@ export default function NickFreeFireMasculinoPage() {
             title="Ejemplos de Nicks Masculinos Pro para Free Fire"
             examples={masculineNickExamples}
           />
+
+          {/* Section: Pre-FAQ Related Links */}
+          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Si deseas darle un toque colorido a la firma de tu clan, consulta la guía de <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio colorida Free Fire</Link> o prueba el convertidor de <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>.
+          </section>
 
           {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
           <FaqSection
