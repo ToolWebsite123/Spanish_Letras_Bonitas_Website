@@ -1,6 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
+
+export const metadata: Metadata = {
+  title: "Letras Japonesas | Fuentes Fullwidth y Anime Aesthetic",
+  description:
+    "Genera letras estilo japonés y fuentes anime de ancho completo para copiar y pegar. Destaca tu nick en Roblox, Discord o Instagram con estética otaku.",
+};
 
 export default function LetrasJaponesasPage() {
   return (

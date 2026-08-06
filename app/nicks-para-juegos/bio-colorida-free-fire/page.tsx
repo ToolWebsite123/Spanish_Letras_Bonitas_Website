@@ -1,6 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
+
+export const metadata: Metadata = {
+  title: "Bio Colorida Free Fire | Generador de Códigos de Color",
+  description:
+    "Crea firmas coloridas para tu perfil de Free Fire con códigos HEX y letras bonitas. Personaliza la biografía de tu cuenta de forma gratis y rápida.",
+};
 
 export default function BioColoridaFreeFirePage() {
   return (

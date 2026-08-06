@@ -1,6 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
+
+export const metadata: Metadata = {
+  title: "Letras Aesthetic | Tipografías Lindas para Instagram",
+  description:
+    "Convierte tu texto en letras aesthetic, minimalistas y letras pequeñas para copiar y pegar. Decora la biografía de tu Instagram, TikTok y Tumblr fácil.",
+};
 
 export default function LetrasAestheticPage() {
   return (

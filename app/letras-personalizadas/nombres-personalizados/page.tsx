@@ -1,6 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
+
+export const metadata: Metadata = {
+  title: "Nombres Personalizados | Generador de Letras Elegantes",
+  description:
+    "Personaliza tu nombre o apellido con letras elegantes, cursivas y decoraciones visuales. Crea firmas digitales únicas y nicks para tus redes sociales.",
+};
 
 export default function NombresPersonalizadosPage() {
   return (

@@ -1,6 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
+
+export const metadata: Metadata = {
+  title: "Cambiar Nick Free Fire | Guía Paso a Paso y Consejos",
+  description:
+    "Aprende cómo cambiar tu nick en Free Fire paso a paso. Descubre los costos en diamantes, uso de tarjetas de cambio y crea nombres geniales con letras.",
+};
 
 export default function CambiarNickFreeFirePage() {
   return (

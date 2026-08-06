@@ -1,8 +1,15 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import fontStyles from "@/lib/fontStyles";
 import { convertText } from "@/lib/convertText";
+
+export const metadata: Metadata = {
+  title: "Alfabeto Graffiti | Letras Góticas de la A a la Z",
+  description:
+    "Explora el alfabeto graffiti y gótico completo de la A a la Z. Copia letras mayúsculas y minúsculas individuales para diseñar nicks urbanos e insanos.",
+};
 
 const gothicStyle = fontStyles.find((s) => s.id === "gothic")!;
 
