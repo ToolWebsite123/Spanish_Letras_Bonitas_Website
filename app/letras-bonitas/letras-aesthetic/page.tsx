@@ -48,25 +48,25 @@ export default function LetrasAestheticPage() {
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
         {/* Breadcrumbs Navigation */}
         <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
-          <Link href="/" className="hover:text-pink-400 transition-colors">
+          <Link href="/" className="hover:text-teal-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
           <span className="text-slate-400">Letras Bonitas</span>
           <span>/</span>
-          <span className="text-pink-400 font-bold">Letras Aesthetic</span>
+          <span className="text-teal-400 font-bold">Letras Aesthetic</span>
         </nav>
 
         {/* Hero Header */}
         <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
             <span>✨</span> Estética Vaporwave, Soft & Minimalista
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
             Conversor de Letras Aesthetic ✨
           </h1>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
-            Transforma cualquier palabra en letras de espacio amplio (Fullwidth), caracteres diminutos, fuentes retro y combinaciones de estrellas para personalizar tus <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-pink-400 underline font-bold hover:text-pink-300">biografías de Instagram</Link>, historias y perfiles sociales.
+            Transforma cualquier palabra en letras de espacio amplio (Fullwidth), caracteres diminutos, fuentes retro y combinaciones de estrellas para personalizar tus <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-teal-400 underline font-bold hover:text-teal-300">biografías de Instagram</Link>, historias y perfiles sociales.
           </p>
         </header>
 
@@ -76,41 +76,41 @@ export default function LetrasAestheticPage() {
         {/* ARTÍCULO DETALLADO DEEP 1: Las 4 Variantes de la Estética Aesthetic */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
               ✨ Variantes Estéticas
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
               Guía de Estilo: Las 4 Tendencias Tipográficas Aesthetic Más Populares
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-              La estética aesthetic abarca distintos estados de ánimo visuales. Combina tus letras con nuestros <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-pink-400 underline font-bold hover:text-pink-300">símbolos coquette con moños</Link> y elige la corriente que mejor defina tu canal:
+              La estética aesthetic abarca distintos estados de ánimo visuales. Combina tus letras con nuestros <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-teal-400 underline font-bold hover:text-teal-300">símbolos coquette con moños</Link> y elige la corriente que mejor defina tu canal:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">1. Fullwidth o Ancho Retro (Ｆｕｌｌｗｉｄｔｈ)</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">1. Fullwidth o Ancho Retro (Ｆｕｌｌｗｉｄｔｈ)</span>
               <p className="text-slate-300 leading-relaxed">
                 Inspirado en la estética cibernética de los 90 y los teclados japoneses. Ocupa el doble de espacio horizontal transmitiendo elegancia espacial.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">2. Small Caps o Letras Diminutas (ꜱᴍᴀʟʟ ᴄᴀᴘꜱ)</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">2. Small Caps o Letras Diminutas (ꜱᴍᴀʟʟ ᴄᴀᴘꜱ)</span>
               <p className="text-slate-300 leading-relaxed">
                 Minimiza el tamaño visual de las letras mayúsculas creando un look sofisticado y editorial para biografías ordenadas.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">3. Script Cursivo Romántico (𝓡𝓸𝓶á𝓷𝓽𝓲𝓬𝓸)</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">3. Script Cursivo Romántico (𝓡𝓸𝓶á𝓷𝓽𝓲𝓬𝓸)</span>
               <p className="text-slate-300 leading-relaxed">
                 Trazos continuos delicados con curvas suaves para transmitir calidez, poesía e introspección.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">4. Marcos de Estrellas y Lunas (✨ 🌙)</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">4. Marcos de Estrellas y Lunas (✨ 🌙)</span>
               <p className="text-slate-300 leading-relaxed">
                 Acompaña tu frase con viñetas estelares en los extremos para enmarcar el texto con magia visual.
               </p>

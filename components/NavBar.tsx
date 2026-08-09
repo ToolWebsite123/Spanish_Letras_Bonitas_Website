@@ -77,19 +77,19 @@ export default function NavBar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0f0c1b]/90 backdrop-blur-xl border-b border-purple-900/40 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 sm:h-20">
-        {/* Brand Logo Link with Sunset Pink Emblem */}
+        {/* Brand Logo Link with Teal-Indigo Emblem */}
         <a
           href="/"
           className="flex items-center gap-3 group cursor-pointer"
         >
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 via-rose-500 to-purple-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-pink-500/20 group-hover:scale-105 transition-transform">
+          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-teal-400 via-emerald-500 to-indigo-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-teal-500/20 group-hover:scale-105 transition-transform">
             🌸
           </div>
           <div className="flex flex-col">
-            <span className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent tracking-tight">
+            <span className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent tracking-tight">
               Letras Bonitas
             </span>
-            <span className="text-[10px] font-bold text-pink-400/80 tracking-widest uppercase">
+            <span className="text-[10px] font-bold text-teal-400/80 tracking-widest uppercase">
               Conversor Oficial 300+
             </span>
           </div>
@@ -101,11 +101,11 @@ export default function NavBar() {
             <div key={category.title} className="relative group">
               <button
                 type="button"
-                className="flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-200 hover:text-pink-400 hover:bg-[#1b1530] transition-all cursor-pointer border border-transparent hover:border-purple-900/40"
+                className="flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-200 hover:text-teal-400 hover:bg-[#1b1530] transition-all cursor-pointer border border-transparent hover:border-purple-900/40"
               >
                 <span>{category.title}</span>
                 <svg
-                  className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-pink-400"
+                  className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-teal-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -121,10 +121,10 @@ export default function NavBar() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-pink-400 hover:bg-[#231c3d] transition-colors flex items-center justify-between group/item"
+                      className="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-teal-400 hover:bg-[#231c3d] transition-colors flex items-center justify-between group/item"
                     >
                       <span>{item.label}</span>
-                      <span className="opacity-0 group-hover/item:opacity-100 text-pink-400 transition-opacity">→</span>
+                      <span className="opacity-0 group-hover/item:opacity-100 text-teal-400 transition-opacity">→</span>
                     </a>
                   ))}
                 </div>
@@ -167,7 +167,7 @@ export default function NavBar() {
                   >
                     <span>{category.title}</span>
                     <svg
-                      className={`w-4 h-4 transition-transform duration-200 text-pink-400 ${
+                      className={`w-4 h-4 transition-transform duration-200 text-teal-400 ${
                         isExpanded ? "rotate-180" : ""
                       }`}
                       fill="none"
@@ -185,7 +185,7 @@ export default function NavBar() {
                           key={item.label}
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="py-2 px-3 rounded-lg text-xs font-medium text-slate-400 hover:text-pink-400 hover:bg-[#1b1530] transition-colors"
+                          className="py-2 px-3 rounded-lg text-xs font-medium text-slate-400 hover:text-teal-400 hover:bg-[#1b1530] transition-colors"
                         >
                           {item.label}
                         </a>

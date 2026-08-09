@@ -94,7 +94,7 @@ export default function PlatformLimitsWidget({ currentPlatform }: PlatformLimits
   return (
     <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>📏</span> Simulador de Límites en Vivo
         </div>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
@@ -117,7 +117,7 @@ export default function PlatformLimitsWidget({ currentPlatform }: PlatformLimits
                 onClick={() => setSelectedPlatform(rule.id)}
                 className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
                   isActive
-                    ? "bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white shadow-lg shadow-pink-500/25 scale-105"
+                    ? "bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 text-white shadow-lg shadow-teal-500/25 scale-105"
                     : "bg-[#231c3d] hover:bg-[#2c234a] text-slate-300 border border-purple-900/40"
                 }`}
               >
@@ -136,7 +136,7 @@ export default function PlatformLimitsWidget({ currentPlatform }: PlatformLimits
               value={testText}
               onChange={(e) => setTestText(e.target.value)}
               placeholder="Prueba tu texto..."
-              className="w-full sm:flex-1 px-4 py-2.5 rounded-xl text-sm border border-purple-900/50 bg-[#1b1530] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-pink-500/30"
+              className="w-full sm:flex-1 px-4 py-2.5 rounded-xl text-sm border border-purple-900/50 bg-[#1b1530] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
             />
             <div className="flex items-center gap-2 shrink-0">
               <span

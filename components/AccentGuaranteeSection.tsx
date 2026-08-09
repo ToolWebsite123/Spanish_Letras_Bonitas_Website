@@ -29,9 +29,9 @@ export default function AccentGuaranteeSection() {
         {ACCENT_SAMPLES.map((sample, idx) => (
           <div
             key={idx}
-            className="p-5 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col gap-2 hover:border-pink-500/60 transition-colors"
+            className="p-5 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col gap-2 hover:border-teal-400/60 transition-colors"
           >
-            <span className="text-xs font-black text-pink-400">
+            <span className="text-xs font-black text-teal-400">
               {sample.accented}
             </span>
             <span className="text-lg font-normal text-slate-100 font-mono pt-1">

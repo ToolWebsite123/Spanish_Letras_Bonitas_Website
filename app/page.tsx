@@ -59,16 +59,16 @@ export default function Home() {
       <main className="flex-1 py-10 sm:py-14 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
         {/* Sleek Hero Header */}
         <header className="text-center flex flex-col gap-4 w-full max-w-3xl mx-auto pt-2">
-          <div className="inline-flex items-center justify-center gap-2 self-center px-4 py-1.5 rounded-full bg-pink-500/10 text-pink-400 font-extrabold text-xs border border-pink-500/30 shadow-lg shadow-pink-500/10">
+          <div className="inline-flex items-center justify-center gap-2 self-center px-4 py-1.5 rounded-full bg-teal-500/10 text-teal-400 font-extrabold text-xs border border-teal-500/30 shadow-lg shadow-teal-500/10">
             <span>✨</span> Conversor Oficial con {totalStyles}+ Tipografías & {totalDecorators} Marcos Decorativos
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
             Letras Bonitas: Conversor de Fuentes para Copiar y Pegar 🌸
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
-            Eleva tu presencia digital y dale una personalidad única a tus publicaciones. Transforma cualquier texto plano en hermosas <Link href="/letras-bonitas/letras-cursivas" className="text-pink-400 underline font-bold hover:text-pink-300">letras cursivas elegantes</Link>, tipografías aesthetic y trazos de impacto. Copia en 1 toque y destaca con los mejores <Link href="/nicks-para-juegos/nick-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">nicks para Free Fire</Link>, biografías de Instagram, WhatsApp y TikTok de forma 100% gratuita.
+            Eleva tu presencia digital y dale una personalidad única a tus publicaciones. Transforma cualquier texto plano en hermosas <Link href="/letras-bonitas/letras-cursivas" className="text-teal-400 underline font-bold hover:text-teal-300">letras cursivas elegantes</Link>, tipografías aesthetic y trazos de impacto. Copia en 1 toque y destaca con los mejores <Link href="/nicks-para-juegos/nick-free-fire" className="text-teal-400 underline font-bold hover:text-teal-300">nicks para Free Fire</Link>, biografías de Instagram, WhatsApp y TikTok de forma 100% gratuita.
           </p>
 
           {/* Value Badges */}
@@ -94,20 +94,20 @@ export default function Home() {
         {/* GUÍA 1: El Motor Unicode y el Soporte de Acentos en Español */}
         <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
               🌐 Tecnología Tipográfica & Compatibilidad
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
               Guía Definitiva: El Motor Unicode y el Soporte Real para Acentos en Español (á, é, í, ó, ú, ñ)
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-              Muchos usuarios se preguntan por qué al intentar transformar su nombre en conversores convencionales de la web, palabras tan comunes como <strong className="text-pink-400">"Corazón"</strong>, <strong className="text-pink-400">"Información"</strong>, <strong className="text-pink-400">"España"</strong> o <strong className="text-pink-400">"Niño"</strong> pierden sus tildes o se convierten en extraños símbolos rotos como <code className="text-rose-400 bg-rose-950/80 border border-rose-800/80 px-2 py-0.5 rounded font-mono font-bold">[?]</code>. Prueba nuestro <Link href="/letras-bonitas/caligrafia" className="text-pink-400 underline font-bold hover:text-pink-300">conversor de caligrafía</Link> o consulta el <Link href="/alfabeto-completo/alfabeto-cursivo" className="text-pink-400 underline font-bold hover:text-pink-300">abecedario cursivo completo</Link> para verificar la ortografía.
+              Muchos usuarios se preguntan por qué al intentar transformar su nombre en conversores convencionales de la web, palabras tan comunes como <strong className="text-teal-400">"Corazón"</strong>, <strong className="text-teal-400">"Información"</strong>, <strong className="text-teal-400">"España"</strong> o <strong className="text-teal-400">"Niño"</strong> pierden sus tildes o se convierten en extraños símbolos rotos como <code className="text-rose-400 bg-rose-950/80 border border-rose-800/80 px-2 py-0.5 rounded font-mono font-bold">[?]</code>. Prueba nuestro <Link href="/letras-bonitas/caligrafia" className="text-teal-400 underline font-bold hover:text-teal-300">conversor de caligrafía</Link> o consulta el <Link href="/alfabeto-completo/alfabeto-cursivo" className="text-teal-400 underline font-bold hover:text-teal-300">abecedario cursivo completo</Link> para verificar la ortografía.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
             <div className="flex flex-col gap-3 p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40">
-              <h3 className="font-extrabold text-base text-purple-400 flex items-center gap-2">
+              <h3 className="font-extrabold text-base text-teal-400 flex items-center gap-2">
                 <span>❌</span> El Problema de los Conversores en Inglés (ASCII Simple)
               </h3>
               <p>
@@ -135,7 +135,7 @@ export default function Home() {
         {/* GUÍA 2: Manual Completo de Límites de Caracteres y Bytes por Plataforma */}
         <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 self-start border border-pink-500/30">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
               📱 Guía Técnica por Plataforma
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
@@ -158,7 +158,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-slate-300 leading-relaxed">
-                Free Fire no mide la longitud en caracteres simples, sino en <strong>bytes de memoria UTF-8</strong>. Revisa nuestras colecciones dedicadas de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-pink-400 underline font-bold hover:text-pink-300">nicks masculinos</Link>, <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-pink-400 underline font-bold hover:text-pink-300">nicks femeninos</Link>, la guía para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">cambiar tu apodo en Free Fire</Link> y los códigos para <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">firmas de colores</Link>.
+                Free Fire no mide la longitud en caracteres simples, sino en <strong>bytes de memoria UTF-8</strong>. Revisa nuestras colecciones dedicadas de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-teal-400 underline font-bold hover:text-teal-300">nicks masculinos</Link>, <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-teal-400 underline font-bold hover:text-teal-300">nicks femeninos</Link>, la guía para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-teal-400 underline font-bold hover:text-teal-300">cambiar tu apodo en Free Fire</Link> y los códigos para <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-teal-400 underline font-bold hover:text-teal-300">firmas de colores</Link>.
               </p>
             </div>
 
@@ -173,7 +173,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-slate-300 leading-relaxed">
-                El campo de la <strong>Presentación (Bio)</strong> admite 150 caracteres. Complementa tu perfil con nuestra guía de <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-pink-400 underline font-bold hover:text-pink-300">fuentes para la Bio de Instagram</Link>, <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-pink-400 underline font-bold hover:text-pink-300">emojis para copiar</Link> y <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-pink-400 underline font-bold hover:text-pink-300">símbolos coquette</Link>.
+                El campo de la <strong>Presentación (Bio)</strong> admite 150 caracteres. Complementa tu perfil con nuestra guía de <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-teal-400 underline font-bold hover:text-teal-300">fuentes para la Bio de Instagram</Link>, <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-teal-400 underline font-bold hover:text-teal-300">emojis para copiar</Link> y <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-teal-400 underline font-bold hover:text-teal-300">símbolos coquette</Link>.
               </p>
             </div>
           </div>

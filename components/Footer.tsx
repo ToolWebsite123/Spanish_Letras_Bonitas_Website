@@ -58,10 +58,10 @@ export default function Footer() {
           {/* Brand Info Column */}
           <div className="lg:col-span-1 flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-pink-500 via-rose-500 to-purple-600 flex items-center justify-center text-white font-black text-lg shadow-md shadow-pink-500/20 group-hover:scale-105 transition-transform">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-teal-400 via-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black text-lg shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform">
                 🌸
               </div>
-              <span className="text-lg font-black bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-lg font-black bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">
                 Letras Bonitas
               </span>
             </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
           {/* Nav Link Groups */}
           {footerLinkGroups.map((group) => (
             <div key={group.title} className="flex flex-col gap-3">
-              <h3 className="text-xs font-black uppercase tracking-wider text-pink-400">
+              <h3 className="text-xs font-black uppercase tracking-wider text-teal-400">
                 {group.title}
               </h3>
               <ul className="flex flex-col gap-2">
@@ -81,7 +81,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-xs text-slate-400 hover:text-pink-400 transition-colors"
+                      className="text-xs text-slate-400 hover:text-teal-400 transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -96,13 +96,13 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-medium">
           <p>© {currentYear} Letras Bonitas. Todos los derechos reservados.</p>
           <div className="flex items-center gap-4">
-            <Link href="/" className="hover:text-pink-400 transition-colors">
+            <Link href="/" className="hover:text-teal-400 transition-colors">
               Inicio
             </Link>
-            <Link href="/letras-bonitas/letras-cursivas" className="hover:text-pink-400 transition-colors">
+            <Link href="/letras-bonitas/letras-cursivas" className="hover:text-teal-400 transition-colors">
               Cursivas
             </Link>
-            <Link href="/nicks-para-juegos/nick-free-fire" className="hover:text-pink-400 transition-colors">
+            <Link href="/nicks-para-juegos/nick-free-fire" className="hover:text-teal-400 transition-colors">
               Free Fire
             </Link>
           </div>

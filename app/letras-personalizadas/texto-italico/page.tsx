@@ -47,69 +47,69 @@ export default function TextoItalicoPage() {
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
         {/* Breadcrumbs Navigation */}
         <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
-          <Link href="/" className="hover:text-pink-400 transition-colors">
+          <Link href="/" className="hover:text-teal-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
           <span className="text-slate-400">Letras Personalizadas</span>
           <span>/</span>
-          <span className="text-pink-400 font-bold">Texto Itálico</span>
+          <span className="text-teal-400 font-bold">Texto Itálico</span>
         </nav>
 
         {/* Hero Header */}
         <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
             <span>✨</span> Conversor de Fuentes Itálicas e Inclinadas Unicode
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
             Conversor de Texto Itálico e Inclinado (Italic Text Generator) ✨
           </h1>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
-            Transforma cualquier texto convencional en <strong className="text-pink-400 font-extrabold">letras itálicas Sans, Serif, Cursivas Inclinadas y Negritas Itálicas</strong>. Copia con 1 solo toque y dale un toque de refinamiento a tus publicaciones, notas de perfil e historias.
+            Convierte cualquier frase o palabra en letras inclinadas de inclinación suave. Ideal para enfatizar conceptos clave en biografías, comentarios de Instagram, tweets y mensajes de WhatsApp. Explora también <Link href="/letras-personalizadas/texto-en-negrita" className="text-teal-400 underline font-bold hover:text-teal-300">texto en negrita</Link>, <Link href="/letras-bonitas/letras-cursivas" className="text-teal-400 underline font-bold hover:text-teal-300">letras cursivas manuscritas</Link> y <Link href="/letras-personalizadas/nombres-personalizados" className="text-teal-400 underline font-bold hover:text-teal-300">nombres personalizados</Link>.
           </p>
         </header>
 
         {/* Converter Tool */}
-        <Converter highlightStyleId="italic-sans" />
+        <Converter highlightStyleId="italic-serif" />
 
         {/* ARTÍCULO DETALLADO DEEP 1: El Arte del Texto Itálico Digital */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
-              ✨ Usos Tipográficos del Estilo Inclinado
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
+              𝘐 Tipografía Editorial
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
-              Guía de Estilo: Cuándo y Cómo Utilizar Texto Itálico Digital
+              Cuándo Usar Texto en Itálica en Redes Sociales
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-              El formato itálico o cursivo inclinado fue creado históricamente en la Venecia del Renacimiento para imitar la caligrafía rápida y ahorrar espacio en imprenta. En el mundo digital actual, el texto en itálica cumple 4 funciones comunicativas esenciales:
+              El formato itálico proporciona dinamismo visual y énfasis sutil en composiciones escritas:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">1. Citas Cuestionables y Frases Célebres</span>
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">1. Citas y Frases Célebres</span>
               <p className="text-slate-300 leading-relaxed">
-                Presentar una frase motivacional o pasaje poético en <code className="text-pink-400 font-bold">𝘐𝘵𝘢𝘭𝘪𝘤 𝘚𝘢𝘯𝘴</code> aporta elegancia e indica inmediatamente que se trata de un pensamiento citado.
+                Utiliza Serif Itálica (ej: <code className="text-teal-400 font-bold">𝑕𝑎𝑧𝑙𝑜 𝑐𝑜𝑛 𝑝𝑎𝑠𝑖ó𝑛</code>) para diferenciar testimonios, citas bibliográficas o versos en publicaciones.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">2. Subtítulos y Cargos Profesionales</span>
+              <p className="text-slate-300 leading-relaxed">
+                Aplica Sans Itálica para la segunda línea de tu biografía de Instagram o LinkedIn, creando una distinción clara frente al título principal.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">2. Títulos de Obras y Canciones</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">3. Términos en Idiomas Extranjeros</span>
               <p className="text-slate-300 leading-relaxed">
-                Cumple con las normas ortográficas internacionales destacando los títulos de libros, películas, podcasts o canciones en formato inclinado dentro de tus publicaciones.
+                Destaca expresiones en inglés, francés o latín (ej: <code className="text-teal-400 font-bold">𝑐𝑎𝑟𝑝𝑒 𝑑𝑖𝑒𝑚</code>) para mantener una impecable redacción editorial.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">3. Términos en Idiomas Extranjeros</span>
-              <p className="text-slate-300 leading-relaxed">
-                Destaca expresiones en inglés, francés o latín (ej: <code className="text-pink-400 font-bold">𝑐𝑎𝑟𝑝𝑒 𝑑𝑖𝑒𝑚</code>) para mantener una impecable redacción editorial.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">4. Énfasis Sutil y Reflexión</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">4. Énfasis Sutil y Reflexión</span>
               <p className="text-slate-300 leading-relaxed">
                 A diferencia de la negrita (que grita atención), la itálica sugiere un susurro o un matiz de voz interior más personal e introspectivo.
               </p>
@@ -118,7 +118,7 @@ export default function TextoItalicoPage() {
         </section>
 
         {/* Alphabet Reference Table */}
-        <AlphabetReferenceTable highlightStyleId="italic-sans" />
+        <AlphabetReferenceTable highlightStyleId="sans-italic" />
 
         {/* Examples */}
         <ExamplesSection />

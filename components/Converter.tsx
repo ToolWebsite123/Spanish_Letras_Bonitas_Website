@@ -174,7 +174,7 @@ export default function Converter({
             onChange={(e) => setInputText(e.target.value)}
             placeholder="Escribe o pega tu texto aquí..."
             rows={3}
-            className="w-full p-5 sm:p-6 rounded-2xl border border-purple-900/50 bg-[#231c3d] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-pink-500/30 focus:border-pink-500 shadow-inner text-xl sm:text-3xl font-normal leading-relaxed resize-y transition-all"
+            className="w-full p-5 sm:p-6 rounded-2xl border border-purple-900/50 bg-[#231c3d] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 shadow-inner text-xl sm:text-3xl font-normal leading-relaxed resize-y transition-all"
           />
           {inputText && (
             <button
@@ -194,7 +194,7 @@ export default function Converter({
         <div className="flex flex-wrap items-center justify-between gap-3 px-1 text-xs text-slate-400 font-semibold">
           {/* Font Size Slider */}
           <div className="flex items-center gap-2 flex-1 min-w-[220px] bg-[#231c3d] p-2.5 rounded-xl border border-purple-900/40">
-            <span className="text-[11px] font-extrabold text-pink-400 shrink-0">Tamaño</span>
+            <span className="text-[11px] font-extrabold text-teal-400 shrink-0">Tamaño</span>
             <span className="text-[10px] text-slate-500 font-bold">A</span>
             <input
               type="range"
@@ -202,11 +202,11 @@ export default function Converter({
               max={36}
               value={fontSize}
               onChange={(e) => setFontSize(Number(e.target.value))}
-              className="w-28 sm:w-36 h-2 bg-purple-950 rounded-lg appearance-none cursor-pointer accent-pink-500"
+              className="w-28 sm:w-36 h-2 bg-purple-950 rounded-lg appearance-none cursor-pointer accent-teal-400"
               title="Ajustar tamaño de fuente"
             />
             <span className="text-sm font-bold text-slate-300">A</span>
-            <span className="text-[11px] font-mono text-pink-400 font-extrabold ml-1">{fontSize}px</span>
+            <span className="text-[11px] font-mono text-teal-400 font-extrabold ml-1">{fontSize}px</span>
           </div>
 
           {/* Decorator Selector */}
@@ -218,7 +218,7 @@ export default function Converter({
                 const dec = decorators.find((d) => d.id === e.target.value) || null;
                 setSelectedDecorator(dec);
               }}
-              className="px-3 py-1 rounded-lg text-xs font-bold border border-purple-900/50 bg-[#1b1530] text-slate-100 focus:outline-none focus:ring-2 focus:ring-pink-500/30 cursor-pointer"
+              className="px-3 py-1 rounded-lg text-xs font-bold border border-purple-900/50 bg-[#1b1530] text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30 cursor-pointer"
             >
               <option value="">Sin marco</option>
               {decorators.map((dec) => (
@@ -268,7 +268,7 @@ export default function Converter({
                   onClick={() => setActiveCategory(cat)}
                   className={`px-4.5 py-2 rounded-2xl text-xs font-extrabold whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
                     isActive
-                      ? "bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white shadow-lg shadow-pink-500/25 scale-105"
+                      ? "bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 text-white shadow-lg shadow-teal-500/25 scale-105"
                       : "bg-[#1b1530] hover:bg-[#231c3d] text-slate-300 border border-purple-900/40"
                   }`}
                 >
@@ -297,9 +297,9 @@ export default function Converter({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar estilo o fuente..."
-              className="w-full pl-9 pr-4 py-2 rounded-2xl text-xs font-bold border border-purple-900/40 bg-[#1b1530] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-pink-500/30 focus:border-pink-500"
+              className="w-full pl-9 pr-4 py-2 rounded-2xl text-xs font-bold border border-purple-900/40 bg-[#1b1530] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400"
             />
-            <span className="absolute left-3 top-2.5 text-xs text-purple-400">🔍</span>
+            <span className="absolute left-3 top-2.5 text-xs text-teal-400">🔍</span>
             {searchQuery && (
               <button
                 type="button"
@@ -349,18 +349,18 @@ export default function Converter({
                 <div
                   key={style.id}
                   onClick={() => handleCopy(style.id, styledText)}
-                  className="group relative flex flex-col justify-between gap-3 p-5 sm:p-6 rounded-3xl border border-purple-900/40 bg-[#1b1530] hover:border-pink-500/60 hover:shadow-2xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden min-h-[130px]"
+                  className="group relative flex flex-col justify-between gap-3 p-5 sm:p-6 rounded-3xl border border-purple-900/40 bg-[#1b1530] hover:border-teal-400/60 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden min-h-[130px]"
                 >
                   {/* Top Bar: Font Name + Heart Icon */}
                   <div className="flex items-center justify-between gap-2 z-10">
-                    <span className="text-xs font-extrabold text-slate-400 group-hover:text-pink-400 transition-colors">
+                    <span className="text-xs font-extrabold text-slate-400 group-hover:text-teal-400 transition-colors">
                       {style.name}
                     </span>
                     <button
                       type="button"
                       onClick={(e) => toggleFavorite(style.id, e)}
                       className={`p-1 text-base transition-transform hover:scale-125 cursor-pointer ${
-                        isFav ? "text-pink-500 opacity-100" : "text-slate-600 hover:text-pink-400"
+                        isFav ? "text-teal-400 opacity-100" : "text-slate-600 hover:text-teal-400"
                       }`}
                       title={isFav ? "Quitar de favoritos" : "Guardar en favoritos"}
                     >
@@ -380,10 +380,10 @@ export default function Converter({
 
                   {/* Bottom Action Hint */}
                   <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1 z-10">
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity text-pink-400 font-bold">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity text-teal-400 font-bold">
                       Toca para copiar
                     </span>
-                    <span className="text-[11px] font-bold text-pink-400 group-hover:underline flex items-center gap-1.5">
+                    <span className="text-[11px] font-bold text-teal-400 group-hover:underline flex items-center gap-1.5">
                       <span>Copiar</span>
                       <span>📋</span>
                     </span>
@@ -391,7 +391,7 @@ export default function Converter({
 
                   {/* Copied Toast Overlay Effect */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 flex items-center justify-center text-white font-black text-base tracking-wide transition-all duration-200 z-20 ${
+                    className={`absolute inset-0 bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black text-base tracking-wide transition-all duration-200 z-20 ${
                       isCopied ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full pointer-events-none"
                     }`}
                   >
@@ -416,8 +416,8 @@ export default function Converter({
                   onClick={() => handleCopy(card.id, styledText)}
                   className={`group relative flex flex-col justify-between gap-3 p-5 sm:p-6 rounded-3xl border transition-all duration-200 cursor-pointer overflow-hidden min-h-[130px] ${
                     card.isFeatured
-                      ? "border-2 border-pink-500 bg-pink-950/30 shadow-xl shadow-pink-500/10"
-                      : "border border-purple-900/40 bg-[#1b1530]"
+                      ? "border-2 border-teal-400 bg-teal-950/30 shadow-xl shadow-teal-500/10"
+                      : "border border-purple-900/40 bg-[#1b1530] hover:border-teal-400/60"
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2 z-10">
@@ -439,13 +439,13 @@ export default function Converter({
                   </div>
 
                   <div className="flex justify-end pt-1 z-10">
-                    <span className="text-[11px] font-bold text-pink-400">
+                    <span className="text-[11px] font-bold text-teal-400">
                       Copiar 📋
                     </span>
                   </div>
 
                   <div
-                    className={`absolute inset-0 bg-gradient-to-r from-pink-600 via-rose-600 to-purple-600 flex items-center justify-center text-white font-black text-base tracking-wide transition-all duration-200 z-20 ${
+                    className={`absolute inset-0 bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black text-base tracking-wide transition-all duration-200 z-20 ${
                       isCopied ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full pointer-events-none"
                     }`}
                   >

@@ -202,7 +202,7 @@ export default function RelatedCategoriesWidget({ currentPath }: RelatedCategori
   return (
     <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>🔗</span> Navegación Recomendada
         </div>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
@@ -218,17 +218,17 @@ export default function RelatedCategoriesWidget({ currentPath }: RelatedCategori
           <Link
             key={hub.href}
             href={hub.href}
-            className="group relative flex flex-col justify-between p-5 rounded-2xl border border-purple-900/40 bg-[#231c3d] hover:border-pink-500/60 hover:shadow-xl hover:shadow-pink-500/10 hover:-translate-y-1 transition-all duration-200"
+            className="group relative flex flex-col justify-between p-5 rounded-2xl border border-purple-900/40 bg-[#231c3d] hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-500/10 hover:-translate-y-1 transition-all duration-200"
           >
             <div className="flex items-center justify-between gap-2">
               <span className="text-2xl">{hub.icon}</span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-pink-500/10 text-pink-400 border border-pink-500/30">
+              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-teal-500/10 text-teal-400 border border-teal-500/30">
                 {hub.badge}
               </span>
             </div>
 
             <div className="flex flex-col gap-1 my-3">
-              <h3 className="font-extrabold text-sm text-slate-100 group-hover:text-pink-400 transition-colors">
+              <h3 className="font-extrabold text-sm text-slate-100 group-hover:text-teal-400 transition-colors">
                 {hub.title}
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
@@ -236,7 +236,7 @@ export default function RelatedCategoriesWidget({ currentPath }: RelatedCategori
               </p>
             </div>
 
-            <div className="flex items-center gap-1 text-[11px] font-bold text-pink-400 group-hover:underline">
+            <div className="flex items-center gap-1 text-[11px] font-bold text-teal-400 group-hover:underline">
               <span>Probar conversor</span>
               <span>→</span>
             </div>

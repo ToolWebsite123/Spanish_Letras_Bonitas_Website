@@ -42,24 +42,24 @@ export default function EmojisParaCopiarPage() {
 
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
         <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
-          <Link href="/" className="hover:text-pink-400 transition-colors">
+          <Link href="/" className="hover:text-teal-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
           <span className="text-slate-400">Símbolos Aesthetic</span>
           <span>/</span>
-          <span className="text-pink-400 font-bold">Emojis para Copiar</span>
+          <span className="text-teal-400 font-bold">Emojis para Copiar</span>
         </nav>
 
         <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
             <span>🌸</span> Emojis Aesthetic Categorizados en 1-Clic
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
             Emojis Bonitos para Copiar y Pegar 🌸
           </h1>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
-            Descubre la selección más cuidada de emojis aesthetic, caritas kawaii, flores, destellos, corazones de colores y símbolos temáticos. Combínalos con <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-pink-400 underline font-bold hover:text-pink-300">símbolos coquette con moños</Link>, <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-pink-400 underline font-bold hover:text-pink-300">fuentes para la Bio de Instagram</Link>, <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-pink-400 underline font-bold hover:text-pink-300">símbolos para nick de juegos</Link> y <Link href="/letras-bonitas/letras-aesthetic" className="text-pink-400 underline font-bold hover:text-pink-300">letras aesthetic</Link>.
+            Descubre la selección más cuidada de emojis aesthetic, caritas kawaii, flores, destellos, corazones de colores y símbolos temáticos. Combínalos con <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-teal-400 underline font-bold hover:text-teal-300">símbolos coquette con moños</Link>, <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-teal-400 underline font-bold hover:text-teal-300">fuentes para la Bio de Instagram</Link>, <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-teal-400 underline font-bold hover:text-teal-300">símbolos para nick de juegos</Link> y <Link href="/letras-bonitas/letras-aesthetic" className="text-teal-400 underline font-bold hover:text-teal-300">letras aesthetic</Link>.
           </p>
         </header>
 
@@ -67,7 +67,7 @@ export default function EmojisParaCopiarPage() {
 
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
               🌸 Psicología del Emoji
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
@@ -81,7 +81,7 @@ export default function EmojisParaCopiarPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-xs sm:text-sm">
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
               <span className="text-2xl">🌸 🌿 ☕</span>
-              <h3 className="font-extrabold text-base text-pink-400">1. Estilo Soft & Minimal</h3>
+              <h3 className="font-extrabold text-base text-teal-400">1. Estilo Soft & Minimal</h3>
               <p className="text-slate-300 leading-relaxed">
                 Tonos relajantes, naturaleza y cafeína (🌸, 🌿, ☕, 📖, ☁️). Transmite calma, lectura y vida diaria.
               </p>
@@ -89,7 +89,7 @@ export default function EmojisParaCopiarPage() {
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
               <span className="text-2xl">🎀 💕 🩰</span>
-              <h3 className="font-extrabold text-base text-pink-400">2. Estilo Coquette & Chic</h3>
+              <h3 className="font-extrabold text-base text-teal-400">2. Estilo Coquette & Chic</h3>
               <p className="text-slate-300 leading-relaxed">
                 Moños rosados, perlas y corazones (🎀, 💕, 🩰, 🦪, 💖). Ideal para perfiles de moda, belleza y estilo personal.
               </p>
@@ -97,7 +97,7 @@ export default function EmojisParaCopiarPage() {
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
               <span className="text-2xl">🔥 ⚡ 🎮</span>
-              <h3 className="font-extrabold text-base text-pink-400">3. Estilo Gamer & Fuego</h3>
+              <h3 className="font-extrabold text-base text-teal-400">3. Estilo Gamer & Fuego</h3>
               <p className="text-slate-300 leading-relaxed">
                 Intensidad y competencia (🔥, ⚡, 🎮, 🏆, 💥). Perfecto para streamers de TikTok, Twitch y jugadores de eSports.
               </p>

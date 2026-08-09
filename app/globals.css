@@ -19,7 +19,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Sleek Scrollbar in Neon Rose / Pink */
+/* Custom Sleek Scrollbar in Neon Teal / Indigo */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -28,11 +28,11 @@ body {
   background: #0f0c1b;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(236, 72, 153, 0.35);
+  background: rgba(20, 184, 166, 0.4);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(236, 72, 153, 0.7);
+  background: rgba(20, 184, 166, 0.8);
 }
 
 /* Glassmorphism & Custom Dark Utilities */

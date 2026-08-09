@@ -83,18 +83,18 @@ export default function TroubleshootingSection() {
           return (
             <div
               key={item.id}
-              className="p-6 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col justify-between gap-4 hover:border-pink-500/60 transition-colors"
+              className="p-6 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col justify-between gap-4 hover:border-teal-400/60 transition-colors"
             >
               <div className="flex flex-col gap-2.5">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl p-2.5 rounded-xl bg-purple-950/80 border border-purple-800 text-pink-400 shrink-0">
+                  <span className="text-2xl p-2.5 rounded-xl bg-purple-950/80 border border-purple-800 text-teal-400 shrink-0">
                     {item.icon}
                   </span>
                   <h3 className="font-extrabold text-base text-slate-100 leading-snug">
                     {item.question}
                   </h3>
                 </div>
-                <p className="text-xs font-extrabold text-pink-400 pt-1">
+                <p className="text-xs font-extrabold text-teal-400 pt-1">
                   {item.shortText}
                 </p>
                 <p className="text-xs text-slate-300 leading-relaxed">
@@ -110,7 +110,7 @@ export default function TroubleshootingSection() {
                     className={`w-full py-2.5 px-4 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md ${
                       isCopied
                         ? "bg-emerald-600 text-white"
-                        : "bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white shadow-pink-500/20"
+                        : "bg-gradient-to-r from-teal-500 to-indigo-600 hover:from-teal-600 hover:to-indigo-700 text-white shadow-teal-500/20"
                     }`}
                   >
                     <span>{isCopied ? "✨ ¡Espacio Invisible Copiado!" : item.copyLabel}</span>

@@ -44,30 +44,30 @@ export default function BioParaInstagramPage() {
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
         {/* Breadcrumbs Navigation */}
         <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
-          <Link href="/" className="hover:text-pink-400 transition-colors">
+          <Link href="/" className="hover:text-teal-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
           <span className="text-slate-400">Fuentes para Instagram</span>
           <span>/</span>
-          <span className="text-pink-400 font-bold">Bio de Instagram</span>
+          <span className="text-teal-400 font-bold">Bio de Instagram</span>
         </nav>
 
         {/* Hero Header */}
         <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
             <span>📸</span> Optimización de Biografías & Marca Personal
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
             Fuentes Bonitas para Bio de Instagram 📸
           </h1>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
-            Personaliza tu perfil con las mejores <Link href="/letras-bonitas/letras-cursivas" className="text-pink-400 underline font-bold hover:text-pink-300">letras cursivas finas</Link>, fuentes pequeñas (Small Caps), símbolos aesthetic y estructuras de 4 renglones diseñadas para convertir visitantes en seguidores.
+            Personaliza tu perfil con las mejores <Link href="/letras-bonitas/letras-cursivas" className="text-teal-400 underline font-bold hover:text-teal-300">letras cursivas finas</Link>, fuentes pequeñas (Small Caps), símbolos aesthetic y estructuras de 4 renglones diseñadas para convertir visitantes en seguidores.
           </p>
         </header>
 
         {/* Converter Tool */}
-        <Converter highlightStyleId="script-italic" />
+        <Converter highlightStyleId="cursive" />
 
         {/* Platform Limits Widget */}
         <PlatformLimitsWidget currentPlatform="instagram" />
@@ -75,43 +75,43 @@ export default function BioParaInstagramPage() {
         {/* ARTÍCULO DETALLADO DEEP 1: La Fórmula de la Bio Perfecta */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
               📸 Estrategia de Perfil
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
               Anatomía de una Biografía de Instagram que Convierte: Estructura de 4 Renglones
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-              Tu biografía de Instagram es tu carta de presentación digital. Acompáñala con nuestros <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-pink-400 underline font-bold hover:text-pink-300">emojis para copiar</Link> y sigue esta estructura en 4 niveles para garantizar el mayor crecimiento:
+              Tu biografía de Instagram es tu carta de presentación digital. Acompáñala con nuestros <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-teal-400 underline font-bold hover:text-teal-300">emojis para copiar</Link> y sigue esta estructura en 4 niveles para garantizar el mayor crecimiento:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">Renglón 1: Título o Propuesta de Valor</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">Renglón 1: Título o Propuesta de Valor</span>
               <p className="text-slate-300 leading-relaxed">
-                Define quién eres o qué haces utilizando letras en negrita limpias (ej: <code className="text-pink-400 font-bold">✨ 𝖢𝗋𝖾𝖺𝖽𝗈𝗋𝖺 𝖽𝖾 𝖢𝗈𝗇𝗍𝖾𝗇𝗂𝖽𝗈</code>).
+                Define quién eres o qué haces utilizando letras en negrita limpias (ej: <code className="text-teal-400 font-bold">✨ 𝖢𝗋𝖾𝖺𝖽𝗈𝗋𝖺 𝖽𝖾 𝖢𝗈𝗇𝗍𝖾𝗇𝗂𝖽𝗈</code>).
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">Renglón 2: Nicho o Pasión</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">Renglón 2: Nicho o Pasión</span>
               <p className="text-slate-300 leading-relaxed">
                 Menciona tu especialidad o temáticas (Moda, Viajes, Fitness, Gaming) usando fuentes pequeñas (Small Caps) ordenadas con emojis de viñetas.
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">Renglón 3: Prueba Social o Ubicación</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">Renglón 3: Prueba Social o Ubicación</span>
               <p className="text-slate-300 leading-relaxed">
-                Añade tu ciudad o un logro breve (ej: <code className="text-pink-400 font-bold">📍 Madrid | 💌 Colaboraciones</code>).
+                Añade tu ciudad o un logro breve (ej: <code className="text-teal-400 font-bold">📍 Madrid | 💌 Colaboraciones</code>).
               </p>
             </div>
 
             <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">Renglón 4: Llamado a la Acción (CTA)</span>
+              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">Renglón 4: Llamado a la Acción (CTA)</span>
               <p className="text-slate-300 leading-relaxed">
-                Dirige el tráfico hacia tu enlace con una flecha o emoji de dedo apuntando hacia abajo (ej: <code className="text-pink-400 font-bold">👇 Descarga mi guía gratis</code>).
+                Dirige el tráfico hacia tu enlace con una flecha o emoji de dedo apuntando hacia abajo (ej: <code className="text-teal-400 font-bold">👇 Descarga mi guía gratis</code>).
               </p>
             </div>
           </div>

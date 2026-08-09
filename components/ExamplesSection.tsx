@@ -78,7 +78,7 @@ export default function ExamplesSection() {
   return (
     <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>🎁</span> Plantillas Listas en 1-Clic
         </div>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
@@ -95,7 +95,7 @@ export default function ExamplesSection() {
             key={cat.id}
             className="p-6 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col gap-4"
           >
-            <h3 className="font-extrabold text-base text-pink-400 flex items-center gap-2 pb-2.5 border-b border-purple-900/40">
+            <h3 className="font-extrabold text-base text-teal-400 flex items-center gap-2 pb-2.5 border-b border-purple-900/40">
               <span className="text-xl">{cat.categoryIcon}</span> {cat.categoryTitle}
             </h3>
 
@@ -107,10 +107,10 @@ export default function ExamplesSection() {
                 return (
                   <div
                     key={itemKey}
-                    className="p-4 rounded-xl bg-[#1b1530] border border-purple-900/40 flex flex-col gap-2.5 relative overflow-hidden group hover:border-pink-500/60 transition-colors"
+                    className="p-4 rounded-xl bg-[#1b1530] border border-purple-900/40 flex flex-col gap-2.5 relative overflow-hidden group hover:border-teal-400/60 transition-colors"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[11px] font-extrabold text-pink-400">
+                      <span className="text-[11px] font-extrabold text-teal-400">
                         {item.persona}
                       </span>
                       <button
@@ -119,7 +119,7 @@ export default function ExamplesSection() {
                         className={`px-3.5 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer flex items-center gap-1 shrink-0 ${
                           isCopied
                             ? "bg-emerald-600 text-white"
-                            : "bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white shadow-md shadow-pink-500/20"
+                            : "bg-gradient-to-r from-teal-500 to-indigo-600 hover:from-teal-600 hover:to-indigo-700 text-white shadow-md shadow-teal-500/20"
                         }`}
                       >
                         <span>{isCopied ? "¡Copiado!" : "Copiar"}</span>
