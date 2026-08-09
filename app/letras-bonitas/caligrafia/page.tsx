@@ -3,57 +3,97 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
+import ExamplesSection from "@/components/ExamplesSection";
+import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
+import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Caligrafía Artística - Conversor de Letras de Pluma y Tinta ✒️",
+  title: "Caligrafía - Conversor de Letras Caligráficas y Trazo Elegante ✍️",
   description:
-    "Convierte tu texto en caligrafía artística, trazos clásicos de plumilla y lettering artesanal para copiar y pegar. Ideal para invitaciones y diplomas.",
+    "Convierte texto en hermosa caligrafía clásica, trazos artísticos y letras elegantes para tarjetas, firmas e Instagram.",
 };
 
 const caligrafiaFaqs = [
   {
-    q: "¿Qué diferencia hay entre caligrafía y tipografía común?",
-    a: "La caligrafía es el arte de escribir a mano con trazos armoniosos de grosor variable. Nuestro conversor imita esa presión de plumilla mediante caracteres Unicode de trazo caligráfico de precisión.",
+    q: "¿Qué diferencia a la caligrafía de las letras cursivas estándar?",
+    a: "La caligrafía imita el trazo artesanal de pluma de estilográfica o pincel japonés, ofreciendo variaciones de grosor y remates floridos.",
+  },
+  {
+    q: "¿Puedo usar fuentes caligráficas para invitaciones digitales?",
+    a: "¡Sí! Es la mejor opción para personalizar nombres de invitados en tarjetas digitales de boda, graduación o aniversarios.",
+  },
+  {
+    q: "¿Cómo copiar un texto en caligrafía?",
+    a: "Ingresa tu frase en el recuadro superior y toca la tarjeta de caligrafía deseada para copiarla directamente.",
   },
 ];
 
 export default function CaligrafiaPage() {
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
       <NavBar />
 
-      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-          <Link href="/" className="hover:text-purple-600 transition-colors">
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
+          <Link href="/" className="hover:text-pink-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-neutral-400">Letras Bonitas</span>
+          <span className="text-slate-400">Letras Bonitas</span>
           <span>/</span>
-          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Caligrafía</span>
+          <span className="text-pink-400 font-bold">Caligrafía</span>
         </nav>
 
-        <header className="flex flex-col gap-3">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50">
-            Caligrafía Artística y Trazos de Pluma ✒️
+        <header className="flex flex-col gap-4">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+            <span>✍️</span> Arte Tipográfico Tradicional
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+            Conversor de Letras de Caligrafía ✍️
           </h1>
-          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Convierte cualquier texto en trazos caligráficos dignos de manuscritos medievales, tarjetas de gala e invitaciones distinguidas.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
+            Genera textos caligráficos elegantes para <Link href="/letras-bonitas/letras-firma" className="text-pink-400 underline font-bold hover:text-pink-300">firmas de correo</Link>, <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-pink-400 underline font-bold hover:text-pink-300">biografías de Instagram</Link> y <Link href="/letras-bonitas/letras-cursivas" className="text-pink-400 underline font-bold hover:text-pink-300">fuentes cursivas finas</Link>.
           </p>
         </header>
 
-        <Converter highlightStyleId="cursive" />
+        <Converter highlightStyleId="script-bold" />
 
-        <section className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-            <span>📜</span> Caligrafía Clásica y Spenceriana en la Era Digital
-          </h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            La belleza de la caligrafía reside en el contraste entre líneas finas de ascenso y trazos gruesos de descenso. Al convertir tus palabras en caracteres Unicode de alta precisión, garantizas que ese encanto caligráfico se preserve en cualquier dispositivo.
-          </p>
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+              ✍️ Elegancia Tipográfica
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+              Usos Recomendados de la Caligrafía Digital
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+              Aporta un toque artesanal y distinguido a tus creaciones digitales. Combina con nuestro <Link href="/alfabeto-completo/alfabeto-cursivo" className="text-pink-400 underline font-bold hover:text-pink-300">abecedario cursivo A-Z</Link> y <Link href="/letras-personalizadas/nombres-personalizados" className="text-pink-400 underline font-bold hover:text-pink-300">nombres personalizados</Link>:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">1. Invitaciones & Eventos</span>
+              <p className="text-slate-300 leading-relaxed">
+                Ideal para personalizar nombres en tarjetas digitales de boda o graduación.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">2. Marcas Personales</span>
+              <p className="text-slate-300 leading-relaxed">
+                Añade prestigio al encabezado de tu sitio web o pie de fotos de Instagram.
+              </p>
+            </div>
+          </div>
         </section>
 
-        <FaqSection title="Preguntas Frecuentes sobre Caligrafía Artística" faqs={caligrafiaFaqs} />
+        <AlphabetReferenceTable highlightStyleId="script-bold" />
+
+        <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-cursivas" />
+
+        <ExamplesSection />
+
+        <FaqSection title="Preguntas Frecuentes sobre Caligrafía" faqs={caligrafiaFaqs} />
       </main>
     </div>
   );

@@ -2,177 +2,159 @@
 
 import { useState } from "react";
 
-interface PlatformLimit {
+interface PlatformRule {
+  id: string;
   name: string;
-  field: string;
-  limit: number;
   icon: string;
-  tip: string;
+  limit: number;
+  type: "bytes" | "chars";
+  notes: string;
+  recommendedStyles: string[];
 }
 
-const PLATFORMS: PlatformLimit[] = [
+const PLATFORM_RULES: PlatformRule[] = [
   {
-    name: "Free Fire",
-    field: "Nick de Jugador",
-    limit: 12,
+    id: "ff",
+    name: "Free Fire (Garena)",
     icon: "🎮",
-    tip: "⚠️ Los caracteres especiales ocupan más espacio. Recomendamos letras pequeñas o góticas simples.",
+    limit: 12,
+    type: "bytes",
+    notes:
+      "Límite estricto de 12 BYTES en los servidores del juego. Caracteres Unicode complejos ocupan de 2 a 4 bytes.",
+    recommendedStyles: ["Small Caps (Pequeñas)", "Negrita Sans", "Espacio Invisible U+3164"],
   },
   {
-    name: "Instagram",
-    field: "Biografía (Bio)",
-    limit: 150,
+    id: "instagram",
+    name: "Instagram (Bio)",
     icon: "📸",
-    tip: "✅ Las fuentes cursivas y decoradas funcionan de maravilla. Combina 1-2 estilos.",
+    limit: 150,
+    type: "chars",
+    notes:
+      "Admite 150 caracteres con soporte total para fuentes cursivas, góticas y emojis en listas.",
+    recommendedStyles: ["Cursiva Script", "Small Caps", "Marco Decorativo"],
   },
   {
-    name: "TikTok",
-    field: "Descripción de Perfil",
-    limit: 80,
+    id: "tiktok",
+    name: "TikTok (Descripción)",
     icon: "🎵",
-    tip: "✨ El espacio es limitado. Usa letras aesthetic minimalistas para un look impecable.",
+    limit: 80,
+    type: "chars",
+    notes:
+      "Límite de 80 caracteres. Diseños delgados y limpios garantizan legibilidad perfecta.",
+    recommendedStyles: ["Doble Trazado (Outline)", "Small Caps"],
   },
   {
-    name: "WhatsApp",
-    field: "Info / Estado",
-    limit: 139,
+    id: "whatsapp",
+    name: "WhatsApp (Info / Estado)",
     icon: "💬",
-    tip: "✅ Totalmente compatible con fuentes cursivas, negritas sans y símbolos decorativos.",
+    limit: 139,
+    type: "chars",
+    notes:
+      "Admite 139 caracteres con soporte completo en celulares Android e iPhone.",
+    recommendedStyles: ["Cursiva Caligráfica", "Negrita Sans"],
   },
   {
-    name: "Discord",
-    field: "Apodo de Servidor",
-    limit: 32,
+    id: "facebook",
+    name: "Facebook (Post / Grupo)",
+    icon: "📘",
+    limit: 500,
+    type: "chars",
+    notes:
+      "Admite texto formateado en publicaciones, anuncios y nombres de grupos.",
+    recommendedStyles: ["Negrita Sans", "Bold Serif"],
+  },
+  {
+    id: "discord",
+    name: "Discord (Nick / Canales)",
     icon: "👾",
-    tip: "🔥 Admite marcos decorativos complejos como coronas, espadas y diamantes.",
-  },
-  {
-    name: "Roblox",
-    field: "Nombre en Pantalla",
-    limit: 20,
-    icon: "🧱",
-    tip: "⚠️ Evita caracteres muy extraños que el filtro de Roblox pueda censurar.",
-  },
-  {
-    name: "PUBG Mobile",
-    field: "Nick de Combate",
-    limit: 16,
-    icon: "⚔️",
-    tip: "⚠️ Usa fuentes pequeñas y símbolos limpios para evitar que el nick se corte.",
-  },
-  {
-    name: "Twitter / X",
-    field: "Biografía de Usuario",
-    limit: 160,
-    icon: "🐦",
-    tip: "✅ Excelente soporte para tipografías manuscritas y negritas matemáticas.",
+    limit: 32,
+    type: "chars",
+    notes:
+      "Admite 32 caracteres con compatibilidad para espadas, alas y marcas de rol.",
+    recommendedStyles: ["Gótica Fraktur", "Símbolos de Armas"],
   },
 ];
 
-export default function PlatformLimitsWidget() {
-  const [testText, setTestText] = useState("");
+interface PlatformLimitsWidgetProps {
+  currentPlatform?: string;
+}
 
-  const testLength = testText.length;
+export default function PlatformLimitsWidget({ currentPlatform }: PlatformLimitsWidgetProps) {
+  const defaultId = currentPlatform && PLATFORM_RULES.some((p) => p.id === currentPlatform) ? currentPlatform : "ff";
+  const [selectedPlatform, setSelectedPlatform] = useState<string>(defaultId);
+  const [testText, setTestText] = useState<string>("Letras Bonitas");
+
+  const currentRule = PLATFORM_RULES.find((p) => p.id === selectedPlatform) || PLATFORM_RULES[0];
+
+  const getByteLength = (str: string) => new TextEncoder().encode(str).length;
+  const currentCount = currentRule.type === "bytes" ? getByteLength(testText) : testText.length;
+
+  const isExceeded = currentCount > currentRule.limit;
 
   return (
-    <section className="w-full flex flex-col gap-6 p-6 sm:p-9 rounded-3xl border border-neutral-200/90 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-sm">
-      {/* Header */}
+    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
       <div className="flex flex-col gap-2">
-        <h2 className="text-xl sm:text-2xl font-black text-neutral-900 dark:text-neutral-100 flex items-center gap-2.5">
-          <span className="text-2xl">⚠️</span> Verificador Interactivo de Límites por Plataforma
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+          <span>📏</span> Simulador de Límites en Vivo
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
+          Calculadora de Límites por Red Social y Juego
         </h2>
-        <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-medium">
-          Los caracteres Unicode ocupan más bytes que el texto común. Prueba tu texto aquí para comprobar si se ajusta a los límites de cada red social o juego:
+        <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-medium">
+          Selecciona una plataforma y comprueba en tiempo real si tu nombre o frase cumple los límites oficiales de memoria o caracteres.
         </p>
       </div>
 
-      {/* Test Input Box */}
-      <div className="flex flex-col sm:flex-row items-center gap-3 p-4 rounded-2xl bg-purple-50/70 dark:bg-purple-950/30 border border-purple-200/70 dark:border-purple-800/50">
-        <span className="text-xs font-extrabold text-purple-900 dark:text-purple-200 shrink-0">
-          Probar longitud de texto:
-        </span>
-        <input
-          type="text"
-          value={testText}
-          onChange={(e) => setTestText(e.target.value)}
-          placeholder="Escribe tu apodo o frase aquí para probar..."
-          className="w-full px-4 py-2.5 rounded-xl text-sm border border-purple-200 dark:border-purple-800 bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 focus:outline-none focus:ring-2 focus:ring-purple-500/50 shadow-2xs font-medium"
-        />
-        {testText && (
-          <span className="text-xs font-mono font-extrabold text-purple-700 dark:text-purple-300 shrink-0 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/60">
-            {testLength} caracteres
-          </span>
-        )}
-      </div>
+      <div className="flex flex-col gap-5 pt-2">
+        {/* Platform Tabs */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+          {PLATFORM_RULES.map((rule) => {
+            const isActive = rule.id === selectedPlatform;
+            return (
+              <button
+                key={rule.id}
+                type="button"
+                onClick={() => setSelectedPlatform(rule.id)}
+                className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
+                  isActive
+                    ? "bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white shadow-lg shadow-pink-500/25 scale-105"
+                    : "bg-[#231c3d] hover:bg-[#2c234a] text-slate-300 border border-purple-900/40"
+                }`}
+              >
+                <span>{rule.icon}</span>
+                <span>{rule.name}</span>
+              </button>
+            );
+          })}
+        </div>
 
-      {/* Platforms Grid (4 cols x 2 rows on desktop) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {PLATFORMS.map((platform) => {
-          const isExceeded = testText ? testLength > platform.limit : false;
-          const percentage = testText
-            ? Math.min(100, Math.round((testLength / platform.limit) * 100))
-            : 0;
-
-          return (
-            <div
-              key={platform.name}
-              className={`p-4 sm:p-5 rounded-2xl border transition-all flex flex-col justify-between gap-3 ${
-                isExceeded
-                  ? "border-red-300 dark:border-red-800 bg-red-50/50 dark:bg-red-950/20"
-                  : testText && percentage >= 80
-                  ? "border-amber-300 dark:border-amber-800 bg-amber-50/50 dark:bg-amber-950/20"
-                  : "border-neutral-200/90 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-950/50"
-              }`}
-            >
-              {/* Header: Icon + Name + Limit Badge */}
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-extrabold text-sm text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
-                  <span>{platform.icon}</span>
-                  <span>{platform.name}</span>
-                </span>
-                <span
-                  className={`text-[10px] px-2.5 py-0.5 rounded-full font-bold ${
-                    isExceeded
-                      ? "bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300"
-                      : testText
-                      ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
-                      : "bg-neutral-200/80 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
-                  }`}
-                >
-                  {isExceeded ? "Excede" : testText ? "Encaja" : `${platform.limit} max`}
-                </span>
-              </div>
-
-              {/* Field Label */}
-              <div className="text-xs text-neutral-500 dark:text-neutral-400">
-                <span>Campo: </span>
-                <strong className="text-neutral-800 dark:text-neutral-200 font-bold">{platform.field}</strong>
-              </div>
-
-              {/* Dynamic Progress Bar vs Tip */}
-              {testText ? (
-                <div className="flex flex-col gap-1 pt-1">
-                  <div className="flex justify-between text-[10px] font-bold text-neutral-500">
-                    <span>Usado: {testLength}/{platform.limit}</span>
-                    <span>{percentage}%</span>
-                  </div>
-                  <div className="w-full h-2 bg-neutral-200 dark:bg-neutral-800 rounded-full overflow-hidden">
-                    <div
-                      className={`h-full transition-all ${
-                        isExceeded ? "bg-red-500" : percentage >= 80 ? "bg-amber-500" : "bg-purple-600"
-                      }`}
-                      style={{ width: `${percentage}%` }}
-                    />
-                  </div>
-                </div>
-              ) : (
-                <p className="text-[11px] text-neutral-600 dark:text-neutral-400 leading-relaxed font-medium">
-                  {platform.tip}
-                </p>
-              )}
+        {/* Live Calculation Panel */}
+        <div className="p-6 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <input
+              type="text"
+              value={testText}
+              onChange={(e) => setTestText(e.target.value)}
+              placeholder="Prueba tu texto..."
+              className="w-full sm:flex-1 px-4 py-2.5 rounded-xl text-sm border border-purple-900/50 bg-[#1b1530] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-pink-500/30"
+            />
+            <div className="flex items-center gap-2 shrink-0">
+              <span
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-black border ${
+                  isExceeded
+                    ? "bg-rose-950/80 text-rose-300 border-rose-800"
+                    : "bg-emerald-950/80 text-emerald-300 border-emerald-800"
+                }`}
+              >
+                {currentCount} / {currentRule.limit} {currentRule.type === "bytes" ? "Bytes" : "Chars"}
+              </span>
             </div>
-          );
-        })}
+          </div>
+
+          <p className="text-xs text-slate-300 leading-relaxed">
+            {currentRule.notes}
+          </p>
+        </div>
       </div>
     </section>
   );

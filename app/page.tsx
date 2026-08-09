@@ -1,8 +1,10 @@
+import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import ExamplesSection from "@/components/ExamplesSection";
 import TroubleshootingSection from "@/components/TroubleshootingSection";
 import FaqSection from "@/components/FaqSection";
+import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 import fontStyles from "@/lib/fontStyles";
 import decorators from "@/lib/decorators";
 
@@ -16,8 +18,8 @@ export default function Home() {
       a: "Sí, es totalmente gratuito para siempre. Todos los estilos, marcos decorativos, contadores de caracteres y funciones de copia están disponibles sin costo, sin anuncios invasivos y sin necesidad de crear cuenta ni descargar aplicaciones.",
     },
     {
-      q: "¿Por qué este conversor es el único que preserva los acentos en español (á, é, í, ó, ú, ñ, ç)?",
-      a: "La gran mayoría de conversores en internet fueron desarrollados para el mercado anglosajón (alfabeto ASCII simple), por lo que palabras en español como 'Corazón', 'Información' o 'Niño' pierden sus tildes o se convierten en símbolos rotos [?]. Nuestro conversor integra un motor adaptado para el idioma español que preserva y estiliza automáticamente todas las vocales acentuadas, la Ñ y la Ç.",
+      q: "¿Por qué este conversor es el único que preserva los acentos en español (á, é, í, ó, ú, ñ)?",
+      a: "La gran mayoría de conversores en internet fueron desarrollados para el mercado anglosajón (alfabeto ASCII simple), por lo que palabras en español como 'Corazón', 'Información' o 'Niño' pierden sus tildes o se convierten en símbolos rotos [?]. Nuestro conversor integra un motor adaptado exclusivamente para el idioma español que preserva y estiliza automáticamente todas las vocales acentuadas (á, é, í, ó, ú) y la letra Ñ.",
     },
     {
       q: "¿Por qué las fuentes generadas funcionan en cualquier red social o juego sin instalar nada?",
@@ -66,7 +68,7 @@ export default function Home() {
           </h1>
 
           <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
-            Transforma cualquier texto convencional en <strong className="text-pink-400 font-extrabold">letras cursivas elegantes, góticas de batalla, tipografías aesthetic, letras pequeñas y símbolos decorados</strong> al instante. Copia con un solo toque y personaliza tus perfiles de Instagram, TikTok, WhatsApp, Free Fire, Discord y Roblox de forma 100% gratuita y sin instalar aplicaciones.
+            Eleva tu presencia digital y dale una personalidad única a tus publicaciones. Transforma cualquier texto plano en hermosas <Link href="/letras-bonitas/letras-cursivas" className="text-pink-400 underline font-bold hover:text-pink-300">letras cursivas elegantes</Link>, tipografías aesthetic y trazos de impacto. Copia en 1 toque y destaca con los mejores <Link href="/nicks-para-juegos/nick-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">nicks para Free Fire</Link>, biografías de Instagram, WhatsApp y TikTok de forma 100% gratuita.
           </p>
 
           {/* Value Badges */}
@@ -96,10 +98,10 @@ export default function Home() {
               🌐 Tecnología Tipográfica & Compatibilidad
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
-              Guía Definitiva: El Motor Unicode y el Soporte Real para Acentos en Español (á, é, í, ó, ú, ñ, ç)
+              Guía Definitiva: El Motor Unicode y el Soporte Real para Acentos en Español (á, é, í, ó, ú, ñ)
             </h2>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-              Muchos usuarios se preguntan por qué al intentar transformar su nombre en conversores convencionales de la web, palabras tan comunes como <strong className="text-pink-400">"Corazón"</strong>, <strong className="text-pink-400">"Información"</strong>, <strong className="text-pink-400">"España"</strong> o <strong className="text-pink-400">"Niño"</strong> pierden sus tildes o se convierten en extraños símbolos rotos como <code className="text-rose-400 bg-rose-950/80 border border-rose-800/80 px-2 py-0.5 rounded font-mono font-bold">[?]</code>.
+              Muchos usuarios se preguntan por qué al intentar transformar su nombre en conversores convencionales de la web, palabras tan comunes como <strong className="text-pink-400">"Corazón"</strong>, <strong className="text-pink-400">"Información"</strong>, <strong className="text-pink-400">"España"</strong> o <strong className="text-pink-400">"Niño"</strong> pierden sus tildes o se convierten en extraños símbolos rotos como <code className="text-rose-400 bg-rose-950/80 border border-rose-800/80 px-2 py-0.5 rounded font-mono font-bold">[?]</code>. Prueba nuestro <Link href="/letras-bonitas/caligrafia" className="text-pink-400 underline font-bold hover:text-pink-300">conversor de caligrafía</Link> o consulta el <Link href="/alfabeto-completo/alfabeto-cursivo" className="text-pink-400 underline font-bold hover:text-pink-300">abecedario cursivo completo</Link> para verificar la ortografía.
             </p>
           </div>
 
@@ -121,7 +123,7 @@ export default function Home() {
                 <span>✅</span> La Solución de Letras Bonitas: Mapeo Nativo en Español
               </h3>
               <p>
-                Nuestro conversor fue construido desde cero pensando en los hablantes del idioma español y portugués. Posee un motor de traducción diferencial que detecta automáticamente vocales con tildes (á, é, í, ó, ú), diéresis (ü), la letra Ñ (mayúscula y minúscula) y la Ç.
+                Nuestro conversor fue construido desde cero pensando en los hablantes del idioma español. Posee un motor de traducción diferencial que detecta automáticamente vocales con tildes (á, é, í, ó, ú), diéresis (ü) y la letra Ñ (mayúscula y minúscula).
               </p>
               <p>
                 En lugar de ignorar el acento, nuestro sistema busca en el mapa estándar internacional Unicode el glifo estilizado correspondiente o aplica un diacrítico combinatorio perfecto, asegurando que tu texto mantenga una ortografía impecable sin importar el estilo elegido.
@@ -156,10 +158,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-slate-300 leading-relaxed">
-                Free Fire no mide la longitud en caracteres simples, sino en <strong>bytes de memoria UTF-8</strong>. Una letra normal ocupa 1 byte, pero un carácter Unicode ornamentado o símbolo matemático puede ocupar entre 2 y 4 bytes.
-              </p>
-              <p className="text-pink-400 leading-relaxed font-semibold">
-                💡 <em>Recomendación:</em> Si deseas incluir símbolos o espacios invisibles, mantén la palabra base entre 4 y 6 letras, o utiliza nuestro estilo <strong>"Pequeñas (Small Caps)"</strong> que optimiza el consumo de memoria.
+                Free Fire no mide la longitud en caracteres simples, sino en <strong>bytes de memoria UTF-8</strong>. Revisa nuestras colecciones dedicadas de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-pink-400 underline font-bold hover:text-pink-300">nicks masculinos</Link>, <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-pink-400 underline font-bold hover:text-pink-300">nicks femeninos</Link>, la guía para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">cambiar tu apodo en Free Fire</Link> y los códigos para <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">firmas de colores</Link>.
               </p>
             </div>
 
@@ -174,103 +173,14 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-slate-300 leading-relaxed">
-                El campo de la <strong>Presentación (Bio)</strong> admite 150 caracteres y permite el uso completo de tipografías cursivas, góticas y marcos decorados. Sin embargo, para el <strong>Nombre de Usuario (@handle)</strong> te sugerimos usar letras estándar para facilitar que tus amigos te etiqueten.
-              </p>
-              <p className="text-pink-400 leading-relaxed font-semibold">
-                💡 <em>Recomendación:</em> Combina 1 fuente llamativa para el nombre principal y fuentes pequeñas para la línea de ocupación o llamados a la acción.
-              </p>
-            </div>
-
-            {/* TikTok */}
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <div className="flex items-center justify-between border-b border-purple-900/40 pb-3">
-                <h3 className="font-extrabold text-base text-slate-100 flex items-center gap-2">
-                  <span>🎵</span> TikTok
-                </h3>
-                <span className="px-3 py-1 rounded-full bg-cyan-950/80 text-cyan-400 text-xs font-bold border border-cyan-800">
-                  Límite: 80 Caracteres
-                </span>
-              </div>
-              <p className="text-slate-300 leading-relaxed">
-                En TikTok la descripción de perfil es concisa (máximo 80 caracteres). Los diseños minimalistas y fuentes de trazo delgado (como <em>Outline Double-Struck</em> o <em>Small Caps</em>) funcionan excepcionalmente bien para proyectar un perfil aesthetic y profesional.
-              </p>
-            </div>
-
-            {/* WhatsApp & Discord */}
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <div className="flex items-center justify-between border-b border-purple-900/40 pb-3">
-                <h3 className="font-extrabold text-base text-slate-100 flex items-center gap-2">
-                  <span>💬</span> WhatsApp & Discord
-                </h3>
-                <span className="px-3 py-1 rounded-full bg-emerald-950/80 text-emerald-400 text-xs font-bold border border-emerald-800">
-                  139 y 32 Caracteres
-                </span>
-              </div>
-              <p className="text-slate-300 leading-relaxed">
-                En WhatsApp, el área de <strong>Info / Estado</strong> soporta 139 caracteres con compatibilidad total para fuentes cursivas, negritas y símbolos. En Discord, el apodo de servidor (32 caracteres) permite insertar coronas, alas y marcos góticos de forma vistosa.
+                El campo de la <strong>Presentación (Bio)</strong> admite 150 caracteres. Complementa tu perfil con nuestra guía de <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-pink-400 underline font-bold hover:text-pink-300">fuentes para la Bio de Instagram</Link>, <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-pink-400 underline font-bold hover:text-pink-300">emojis para copiar</Link> y <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-pink-400 underline font-bold hover:text-pink-300">símbolos coquette</Link>.
               </p>
             </div>
           </div>
         </section>
 
-        {/* GUÍA 3: El Arte de la Tipografía Digital - 6 Principios */}
-        <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
-          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
-              🎨 Diseño & Estética Digital
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
-              El Arte de la Tipografía Digital: 6 Principios para Crear Perfiles Aesthetic
-            </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-              Un perfil atractivo en redes sociales o un nick imponente en videojuegos no depende únicamente de cambiar la letra, sino de aplicar principios fundamentales de diseño gráfico y legibilidad:
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-xs sm:text-sm">
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2">
-              <span className="text-pink-400 font-extrabold text-sm">1. Principio de Jerarquía Visual</span>
-              <p className="text-slate-300 leading-relaxed">
-                Combina un máximo de 2 estilos tipográficos distintos. Usa 𝓒𝓾𝓻𝓼𝓲𝓿𝓪 para tu nombre principal y Small Caps para tus pasatiempos o enlaces.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2">
-              <span className="text-pink-400 font-extrabold text-sm">2. La Regla de Oro con los Emojis</span>
-              <p className="text-slate-300 leading-relaxed">
-                Utiliza 1 único emoji por renglón como viñeta ordenadora. Evita saturar el texto con cadenas de emojis consecutivos que distraigan la lectura.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2">
-              <span className="text-pink-400 font-extrabold text-sm">3. Pre-verificación en Bloc de Notas</span>
-              <p className="text-slate-300 leading-relaxed">
-                Antes de gastar diamantes en Free Fire o modificar tu bio de Instagram, pega el texto en la aplicación de notas de tu celular para comprobar la alineación.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2">
-              <span className="text-pink-400 font-extrabold text-sm">4. Ahorro de Espacio con Small Caps</span>
-              <p className="text-slate-300 leading-relaxed">
-                Las letras pequeñas en formato ᴘᴇǫᴜᴇñᴀs ocuparás un 30% menos de ancho visual, permitiéndote escribir frases más extensas sin cortar la línea.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2">
-              <span className="text-pink-400 font-extrabold text-sm">5. Espacio Invisible (U+3164) en Clanes</span>
-              <p className="text-slate-300 leading-relaxed">
-                Inserta el carácter transparente Unicode (U+3164) para separar la sigla de tu clan del apodo personal en eSports, creando un estilo pro y ordenado.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2">
-              <span className="text-pink-400 font-extrabold text-sm">6. Adaptación según el Contexto</span>
-              <p className="text-slate-300 leading-relaxed">
-                Utiliza tipografías sobrias para perfiles profesionales y reserva estilos góticos o con símbolos llamativos para comunidades de videojuegos y entretenimiento.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Related Categories internal linking widget for Homepage */}
+        <RelatedCategoriesWidget currentPath="/" />
 
         {/* GUÍA 4: Solución de Problemas Frecuentes (Troubleshooting) */}
         <TroubleshootingSection />

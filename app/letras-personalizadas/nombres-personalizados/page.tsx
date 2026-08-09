@@ -3,56 +3,127 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
+import ExamplesSection from "@/components/ExamplesSection";
+import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 
 export const metadata: Metadata = {
-  title: "Nombres Personalizados - Creador de Estilos para Nombres y Marcas 🏷️",
+  title: "Nombres Personalizados - Generador de Nombres Bonitos y Estéticos ✨",
   description:
-    "Diseña nombres personalizados con letras bonitas, marcos decorativos y símbolos para copiar y pegar en perfiles y tarjetas.",
+    "Personaliza cualquier nombre propio con letras cursivas, góticas, pequeñas y decoradas para copiar y pegar en Instagram, TikTok y Free Fire.",
 };
 
 const nombresFaqs = [
   {
-    q: "¿Cómo elegir la mejor combinación para mi nombre personal?",
-    a: "Usa un estilo limpio (como Cursiva Elegante o Small Caps) para las palabras principales y añade un solo marco de adorno (como Estrellas o Corazones) para mantener equilibrio visual.",
+    q: "¿Cómo personalizar mi nombre propio con letras bonitas y símbolos?",
+    a: "Escribe tu nombre de pila o apodo en el conversor dinámico superior. El sistema generará automáticamente más de 300 variaciones estilizadas en letras cursivas, góticas, diminutas, encuadradas y adornadas con coronas y alas.",
+  },
+  {
+    q: "¿Puedo usar un nombre personalizado en el Nombre de Usuario de Instagram?",
+    a: "Para el campo 'Nombre de Usuario' (@handle) se deben utilizar letras normales sin acentos. Sin embargo, para la casilla 'Nombre Principal' (el título en negrita que aparece arriba de la biografía) puedes usar cualquier fuente estilizada de nuestro conversor.",
+  },
+  {
+    q: "¿Cuál es el mejor estilo de letras bonitas para un nombre personal?",
+    a: "Para un perfil elegante o profesional, recomendamos la variante Script Cursiva (𝓒𝓪𝓻𝓵𝓸𝓼) o Negrita Sans (𝗕𝗼𝗹𝗱). Para nicks de videojuegos o marcas eSports, las letras Góticas (𝕶𝖎𝖑𝖑𝖊𝖗) o encuadradas son las más demandadas.",
+  },
+  {
+    q: "¿Preservan los nombres personalizados las tildes en español (Ángel, Sofía, Raúl, María)?",
+    a: "¡Sí! Nuestro motor está programado para el idioma español y preserva automáticamente las vocales acentuadas en nombres como 'Sofía', 'Ángel', 'María' o 'Ramón'.",
+  },
+  {
+    q: "¿Se pueden guardar los nombres personalizados creados?",
+    a: "¡Sí! Cada tarjeta de nombre tiene un botón de corazón (❤️). Al pulsarlo, el nombre se guarda automáticamente en la pestaña 'Favoritos' de tu navegador sin necesidad de registrarte.",
+  },
+  {
+    q: "¿Cómo copiar un nombre personalizado al portapapeles en 1 segundo?",
+    a: "Simplemente toca la tarjeta con el diseño que más te guste y el texto se copiará inmediatamente para que lo pegues donde quieras.",
   },
 ];
 
 export default function NombresPersonalizadosPage() {
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
       <NavBar />
 
-      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-          <Link href="/" className="hover:text-purple-600 transition-colors">
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        {/* Breadcrumbs Navigation */}
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
+          <Link href="/" className="hover:text-pink-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-neutral-400">Letras Personalizadas</span>
+          <span className="text-slate-400">Letras Personalizadas</span>
           <span>/</span>
-          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Nombres Personalizados</span>
+          <span className="text-pink-400 font-bold">Nombres Personalizados</span>
         </nav>
 
-        <header className="flex flex-col gap-3">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50">
-            Diseñador de Nombres Personalizados 🏷️
+        {/* Hero Header */}
+        <header className="flex flex-col gap-4">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+            <span>✨</span> Generador de Nombres Bonitos & Estéticos Unicode
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+            Generador de Nombres Personalizados ✨
           </h1>
-          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Dale identidad única a tu nombre o marca. Genera decenas de estilos en segundos con decoraciones exclusivas.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
+            Transforma cualquier nombre propio o apodo en <strong className="text-pink-400 font-extrabold">combinaciones estéticas, marcas artísticas, firmas elegantes e íconos para redes sociales y videojuegos</strong> de forma 100% gratuita.
           </p>
         </header>
 
-        <Converter highlightStyleId="cursive" />
+        {/* Converter Tool */}
+        <Converter highlightStyleId="script-bold" />
 
-        <section className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-            <span>🏷️</span> Identidad Visual para Marcas Personales
-          </h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            Un nombre estilizado permite que tus seguidores reconozcan al instante la personalidad de tu contenido.
-          </p>
+        {/* ARTÍCULO DETALLADO DEEP 1: Cómo Diseñar Nombres de Impacto */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+              ✨ Estrategia de Marca Personal
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+              Guía Definitiva: 4 Formas de Personalizar tu Nombre para Redes Sociales y Juegos
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+              Tu nombre es tu firma digital. A la hora de construir una presencia atractiva en Instagram, TikTok o servidores de juegos, existen 4 composiciones tipográficas recomendadas:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">1. Estilo Cursiva Elegante (Script)</span>
+              <p className="text-slate-300 leading-relaxed">
+                Utiliza la fuente Script Cursiva (ej: <code className="text-pink-400 font-bold">𝓢𝓸𝓯í𝓪 𝓜𝓪𝓻𝓽í𝓷𝓮𝔔</code>) para transmitir refinamiento, creatividad y caligrafía de firma personal en perfiles artísticos o de moda.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">2. Estilo Minimalista (Small Caps)</span>
+              <p className="text-slate-300 leading-relaxed">
+                Transforma tu nombre a letras diminutas en mayúsculas (ej: <code className="text-pink-400 font-bold">ᴅᴀɴɪᴇʟ ᴍᴏʀᴇɴᴏ</code>). Ocupa menos espacio horizontal y da una estética limpia y moderna.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">3. Estilo Guerrero eSports (Gótica)</span>
+              <p className="text-slate-300 leading-relaxed">
+                Combina fuentes góticas con coronas y alas (ej: <code className="text-pink-400 font-bold">꧁👑𝕮𝖆𝖗𝖑𝖔𝖘👑꧂</code>) para infundir respeto en Free Fire, Roblox y Discord.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">4. Estilo Coquette & Cute</span>
+              <p className="text-slate-300 leading-relaxed">
+                Acompaña tu nombre de pila con moños y destellos (ej: <code className="text-pink-400 font-bold">🎀 𝓛𝓾𝓬í𝓪 🌸</code>) para perfiles dulces y románticos.
+              </p>
+            </div>
+          </div>
         </section>
 
+        {/* Alphabet Reference Table */}
+        <AlphabetReferenceTable highlightStyleId="script-bold" />
+
+        {/* Examples */}
+        <ExamplesSection />
+
+        {/* Comprehensive FAQ Section */}
         <FaqSection title="Preguntas Frecuentes sobre Nombres Personalizados" faqs={nombresFaqs} />
       </main>
     </div>

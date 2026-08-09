@@ -3,55 +3,88 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
+import ExamplesSection from "@/components/ExamplesSection";
+import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Letras para Firma - Generador de Firmas Digitales y Manuscritas ✒️",
+  title: "Letras para Firma - Generador de Estilos de Firma Personal 🖋️",
   description:
-    "Crea letras estilo firma personal, rúbricas elegantes y cierres de correo para copiar y pegar gratis. Dale un toque profesional y distinguido a tus mensajes.",
+    "Crea estilos de firma elegante en letras manuscritas para nombres personales, emails y marcas de agua.",
 };
 
 const firmaFaqs = [
   {
-    q: "¿Puedo usar estas letras para firmar correos electrónicos?",
-    a: "¡Sí! Puedes usar la conversión en la línea final o despido de tus correos (ej: 𝓐𝓉ℯ𝓃𝓉𝒶𝓂ℯ𝓃𝓉ℯ, 𝓜𝒶𝓇𝒾𝒶) para dar un toque distinguido y personal a tu correspondencia.",
+    q: "¿Cómo crear una firma elegante con el conversor?",
+    a: "Escribe tu nombre y apellido en el recuadro superior y selecciona cualquiera de las fuentes manuscritas o de trazo continuo para obtener una firma personal única.",
+  },
+  {
+    q: "¿Se pueden usar firmas estilizadas al final de correos electrónicos?",
+    a: "¡Sí! Copia tu firma desde el conversor y pégala directamente en el panel de firma de Gmail, Outlook o Apple Mail.",
   },
 ];
 
 export default function LetrasFirmaPage() {
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
       <NavBar />
 
-      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-          <Link href="/" className="hover:text-purple-600 transition-colors">
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
+          <Link href="/" className="hover:text-pink-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-neutral-400">Letras Bonitas</span>
+          <span className="text-slate-400">Letras Bonitas</span>
           <span>/</span>
-          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Letras para Firma</span>
+          <span className="text-pink-400 font-bold">Letras para Firma</span>
         </nav>
 
-        <header className="flex flex-col gap-3">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50">
-            Letras para Firma Personal y Rúbrica ✒️
+        <header className="flex flex-col gap-4">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+            <span>🖋️</span> Identidad & Firma Personal
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+            Conversor de Letras para Firma 🖋️
           </h1>
-          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Genera trazos elegantes de firma manuscrita para cerrar mensajes, firmar correos o agregar distinción al pie de tus publicaciones digitales.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
+            Diseña una firma estilizada para tu <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-pink-400 underline font-bold hover:text-pink-300">biografía de Instagram</Link>, firma de email o <Link href="/letras-bonitas/caligrafia" className="text-pink-400 underline font-bold hover:text-pink-300">trazos de caligrafía</Link>. Combínalo con <Link href="/letras-personalizadas/nombres-personalizados" className="text-pink-400 underline font-bold hover:text-pink-300">nombres personalizados</Link> y <Link href="/letras-bonitas/letras-cursivas" className="text-pink-400 underline font-bold hover:text-pink-300">fuentes cursivas</Link>.
           </p>
         </header>
 
-        <Converter highlightStyleId="elegant-script" />
+        <Converter highlightStyleId="script-italic" />
 
-        <section className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-            <span>✒️</span> La Firma como Sello de Identidad Digital
-          </h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            Una firma manuscrita transmite compromiso y cercanía. En el ámbito digital, las tipografías de doble trazado y cursiva fluida permiten añadir esa rúbrica personal sin importar la plataforma.
-          </p>
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+              🖋️ Firma Digital
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+              Diseño de Firmas Personalizadas
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+              Consigue una presentación profesional en todas tus plataformas digitales:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">1. Firma en Email</span>
+              <p className="text-slate-300 leading-relaxed">
+                Pega tu firma al final de tus mails de trabajo para transmitir distinción.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">2. Marcas de Agua</span>
+              <p className="text-slate-300 leading-relaxed">
+                Firma tus fotografías e infografías para redes sociales.
+              </p>
+            </div>
+          </div>
         </section>
+
+        <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-cursivas" />
+
+        <ExamplesSection />
 
         <FaqSection title="Preguntas Frecuentes sobre Letras para Firma" faqs={firmaFaqs} />
       </main>

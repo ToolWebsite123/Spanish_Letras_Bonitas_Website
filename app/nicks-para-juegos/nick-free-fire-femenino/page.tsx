@@ -3,57 +3,113 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
+import ExamplesSection from "@/components/ExamplesSection";
+import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Nicks Femeninos para Free Fire - Estilos Delicados y Letales 🌸",
+  title: "Nicks Free Fire Femeninos - Estilos Lindos, Reinas y Chicas Gamer 🌸",
   description:
-    "Genera nicks femeninos aesthetic, lindos e intimidantes para Free Fire. Combina fuentes cursivas, flores, estrellas y mariposas para copiar y pegar.",
+    "Copia los mejores nicks femeninos para Free Fire. Coronas de reina, moños, flores, estrellas y tipografía cursiva delicada.",
 };
 
 const femeninoFaqs = [
   {
-    q: "¿Cómo lograr un nick femenino aesthetic y letal al mismo tiempo?",
-    a: "Mezcla palabras dulces o refinadas con símbolos de precisión (como miras, coronas de reina 👑, estrellas 💫 o corazones oscuros ♡). Esta combinación proyecta estilo y nivel de juego alto.",
+    q: "¿Cómo crear un nick femenino lindo y respetado en Free Fire?",
+    a: "Combina fuentes cursivas elegantes (Script) con coronas de reina (👑), corazones delicados (💕), flores de cerezo (🌸) o moños (🎀), utilizando el espacio transparente (U+3164) para ordenar el nombre.",
+  },
+  {
+    q: "¿Cuáles son los símbolos más usados por las chicas gamer en Free Fire?",
+    a: "Los símbolos más populares son las alas simétricas (꧁༺ ༻꧂), lunas crecientes (🌙), coronas (👑) y flores (🌸).",
+  },
+  {
+    q: "¿Cómo poner la tag de mi clan femenino sin sobrepasar el límite de 12 bytes?",
+    a: "Utiliza letras pequeñas voladas para el clan (ej: ᴳᴵᴿᴸ, ᶠᶠ) y mantén el nombre personal entre 4 y 6 letras en formato Small Caps.",
+  },
+  {
+    q: "¿Funcionan las letras cursivas en perfiles femeninos de Android e iOS?",
+    a: "¡Sí! Las fuentes cursivas Unicode son completamente universales y se muestran exactamente igual en celulares Android e iPhone.",
+  },
+  {
+    q: "¿Cómo copiar un nick femenino completo en 1 clic?",
+    a: "Explora la sección de plantillas listas abajo y toca el botón 'Copiar' para llevarlo directo al portapapeles de tu teléfono.",
   },
 ];
 
 export default function NickFreeFireFemeninoPage() {
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
       <NavBar />
 
-      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-          <Link href="/" className="hover:text-purple-600 transition-colors">
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
+          <Link href="/" className="hover:text-pink-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-neutral-400">Nicks para Juegos</span>
+          <span className="text-slate-400">Nicks para Juegos</span>
           <span>/</span>
-          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Nicks Femeninos Free Fire</span>
+          <span className="text-pink-400 font-bold">FF Femenino</span>
         </nav>
 
-        <header className="flex flex-col gap-3">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50">
-            Nicks Femeninos para Free Fire 🌸
+        <header className="flex flex-col gap-4">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+            <span>🌸</span> Nicks Femeninos & Chicas Gamer
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+            Nicks para Free Fire Femeninos 🌸
           </h1>
-          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Crea apodos elegantes, aesthetic y poderosos. Combina tipografías cursivas, coronas de reina y flores para destacar en la escuadra.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
+            Genera apodos hermosos, estéticos y respetados para liderar tu escuadra femenina en Free Fire. Combina <Link href="/letras-bonitas/letras-cursivas" className="text-pink-400 underline font-bold hover:text-pink-300">fuentes cursivas delicadas</Link> con <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-pink-400 underline font-bold hover:text-pink-300">símbolos coquette de moños y flores</Link>, <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">firmas de colores</Link> y <Link href="/nicks-para-juegos/nick-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">nicks de Free Fire pro</Link>.
           </p>
         </header>
 
-        <Converter highlightStyleId="cursive" />
+        <Converter highlightStyleId="script-italic" />
 
-        <section className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-            <span>✨</span> Tendencias de Nombres para Jugadoras
-          </h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            Las fuentes en minúsculas pequeñas (Small Caps) con mariposas (🦋) o lazos (🎀) están en tendencia dentro del circuito competitivo femenino por su estética limpia.
-          </p>
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+              🌸 Diseños Femeninos
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+              Ideas de Estilos Femeninos para Escuadras
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+              3 tendencias de nombres femeninos más populares:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-2xl">👑</span>
+              <h3 className="font-extrabold text-base text-pink-400">1. Estilo Reina (Queen)</h3>
+              <p className="text-slate-300 leading-relaxed">
+                Coronas y alas delicadas (ej: <code className="text-pink-400 font-bold">꧁♡𝓟𝓻𝓲𝓷𝓬𝓮𝓼𝓼♡꧂</code>).
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-2xl">🌸</span>
+              <h3 className="font-extrabold text-base text-pink-400">2. Estilo Soft & Aesthetic</h3>
+              <p className="text-slate-300 leading-relaxed">
+                Flores y lunas suaves (ej: <code className="text-pink-400 font-bold">🌸 𝒬𝓊𝑒𝑒𝓃 🌸</code>).
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-2xl">⚡</span>
+              <h3 className="font-extrabold text-base text-pink-400">3. Estilo Rusher Femenina</h3>
+              <p className="text-slate-300 leading-relaxed">
+                Letras góticas con destellos (ej: <code className="text-pink-400 font-bold">⚡ ᴬⁿᵍᵉˡ 𝔽𝔉 ⚡</code>).
+              </p>
+            </div>
+          </div>
         </section>
 
-        <FaqSection title="Preguntas Frecuentes sobre Nicks Femeninos" faqs={femeninoFaqs} />
+        <RelatedCategoriesWidget currentPath="/nicks-para-juegos/nick-free-fire" />
+
+        <ExamplesSection />
+
+        <FaqSection title="Preguntas Frecuentes sobre FF Femenino" faqs={femeninoFaqs} />
       </main>
     </div>
   );

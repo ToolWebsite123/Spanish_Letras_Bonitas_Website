@@ -3,59 +3,88 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
+import ExamplesSection from "@/components/ExamplesSection";
+import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Letras Japonesas - Conversor de Estilo Otaku y Símbolos Asiáticos ⛩️",
+  title: "Letras Japonesas - Conversor de Estilos Otaku y Anime ⛩️",
   description:
-    "Convierte tu texto en letras japonesas, caracteres Kanji/Katakana falsos y símbolos asiáticos para copiar y pegar. Decora perfiles de anime, TikTok y Discord.",
+    "Convierte tu nombre en letras con estilo asiático, caracteres orientales, trazos de kanji y símbolos anime para copiar.",
 };
 
 const japonesasFaqs = [
   {
-    q: "¿Son estos caracteres japoneses reales o imitaciones tipográficas?",
-    a: "Son caracteres Unicode que imitan visualmente la forma de los alfabetos Katakana, Hiragana y Kanji japoneses, pero representan letras de nuestro alfabeto para que sigan siendo entendibles en tus nombres y bios.",
+    q: "¿Las letras japonesas sustituyen los caracteres reales de kanji o hiragana?",
+    a: "Son caracteres del alfabeto latino estilizados con trazos de orientación oriental (CJK strokes) para mantener la lectura en español con estética otaku.",
   },
   {
-    q: "¿Por qué el estilo de letras japonesas es popular entre la comunidad gamer y otaku?",
-    a: "Porque aporta un aire místico, ninja y futurista inspirado en la cultura anime, los videojuegos de combate y el universo cyberpunk.",
+    q: "¿Puedo usarlas en apodos de Discord y Roblox?",
+    a: "¡Sí! Son ideales para personalizar nombres de canales en servidores de anime, bios de TikTok y Display Names de Roblox.",
   },
 ];
 
 export default function LetrasJaponesasPage() {
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
       <NavBar />
 
-      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-          <Link href="/" className="hover:text-purple-600 transition-colors">
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
+          <Link href="/" className="hover:text-pink-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-neutral-400">Letras Bonitas</span>
+          <span className="text-slate-400">Letras Bonitas</span>
           <span>/</span>
-          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Letras Japonesas</span>
+          <span className="text-pink-400 font-bold">Letras Japonesas</span>
         </nav>
 
-        <header className="flex flex-col gap-3">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50">
-            Letras Japonesas y Símbolos Asiáticos ⛩️
+        <header className="flex flex-col gap-4">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+            <span>⛩️</span> Estética Otaku & Anime
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+            Conversor de Letras Japonesas y Orientales ⛩️
           </h1>
-          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Personaliza tus palabras con la estética del país del sol naciente. Convierte tu apodo o biografía en tipografías inspiradas en el alfabeto nipón, ideal para la comunidad otaku, anime y gaming.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
+            Personaliza tus nicks con trazos orientales, caracteres estilo kanji y símbolos anime para <Link href="/nicks-para-juegos/nombres-para-roblox" className="text-pink-400 underline font-bold hover:text-pink-300">Roblox</Link>, <Link href="/nicks-para-juegos/nick-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">Free Fire</Link> y <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-pink-400 underline font-bold hover:text-pink-300">símbolos para nick gamer</Link>.
           </p>
         </header>
 
         <Converter highlightStyleId="fullwidth" />
 
-        <section className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-            <span>🌸</span> La Estética Nipona en la Cultura Digital
-          </h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            Los caracteres de ancho completo (Fullwidth) y los glifos de apariencia asiática permiten que cada letra ocupe un bloque simétrico perfecto. Esto genera un efecto visual limpio y equilibrado muy utilizado en firmas de Discord y perfiles de TikTok de temáticas anime.
-          </p>
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+              ⛩️ Estilo Anime
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+              Estética Oriental en Juegos y Discord
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+              Destaca en servidores de anime y clanes con nicks temáticos:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">1. Símbolos Torii & Katana</span>
+              <p className="text-slate-300 leading-relaxed">
+                Acompaña tu nick con toriis (⛩️), katanas (⚔️) y cerezos en flor (🌸).
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">2. Fullwidth (Ｆｕｌｌｗｉｄｔｈ)</span>
+              <p className="text-slate-300 leading-relaxed">
+                Utiliza las letras de espacio amplio que recuerdan los teclados japoneses retro.
+              </p>
+            </div>
+          </div>
         </section>
+
+        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
+
+        <ExamplesSection />
 
         <FaqSection title="Preguntas Frecuentes sobre Letras Japonesas" faqs={japonesasFaqs} />
       </main>

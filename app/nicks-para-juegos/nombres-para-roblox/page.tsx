@@ -3,59 +3,101 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
+import ExamplesSection from "@/components/ExamplesSection";
+import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Nombres para Roblox - Conversor de Display Name y Apodos 🧱",
+  title: "Nombres para Roblox - Nicks Estéticos y Creativos para Display Name 🤖",
   description:
-    "Crea nombres para Roblox estéticos y divertidos para tu Display Name. Letras en burbujas, fuentes pequeñas y adornos que no son censurados por el filtro.",
+    "Genera nombres únicos y estéticos para Roblox. Combina símbolos de caras feliz, letras diminutas y estilos chic para destacar en tu avatar.",
 };
 
 const robloxFaqs = [
   {
-    q: "¿Cuál es la diferencia entre el Username y el Display Name en Roblox?",
-    a: "El Username es único e imutable (usado para iniciar sesión), mientras que el Display Name es el nombre visible que se muestra sobre tu personaje en los juegos y se puede cambiar gratis cada 7 días.",
+    q: "¿Cuál es la diferencia entre Username y Display Name en Roblox?",
+    a: "El Username es tu identificador único de cuenta (@usuario) que requiere letras normales. El Display Name (Nombre de Pantalla) es el apodo público que ven otros jugadores dentro de los mundos y acepta tipografías estéticas y caracteres Unicode.",
   },
   {
-    q: "¿Por qué Roblox censura (###) algunos nombres con letras raras?",
-    a: "El filtro de chat y nombres de Roblox bloquea símbolos desconocidos o combinaciones sospechosas. Te sugerimos usar fuentes Unicode estándar como Burbujas (Circled) o Negritas simples que el filtro reconoce sin problemas.",
+    q: "¿Cuántas veces se puede cambiar el Display Name en Roblox gratis?",
+    a: "Roblox permite cambiar tu Display Name de forma totalmente gratuita 1 vez cada 7 días. No necesitas gastar Robux para cambiar tu nombre de pantalla.",
+  },
+  {
+    q: "¿Cuál es el límite de caracteres para los nombres en Roblox?",
+    a: "Roblox establece un límite de 3 a 20 caracteres tanto para el Nombre de Usuario como para el Nombre de Pantalla.",
+  },
+  {
+    q: "¿Se pueden poner caracteres estéticos o kawaii en Roblox?",
+    a: "¡Sí! El Nombre de Pantalla admite fuentes de espacio amplio (Fullwidth), caracteres pequeños (Small Caps), moños (🎀), destellos (✨) y caritas adorables.",
+  },
+  {
+    q: "¿Qué hacer si Roblox censura mi nombre con signos ###?",
+    a: "Si el filtro de Roblox muestra tres numerales (###), significa que el algoritmo automático de moderación detectó palabras restringidas. Elige un apodo con palabras neutras o letras estilizadas del conversor.",
   },
 ];
 
 export default function NombresParaRobloxPage() {
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
       <NavBar />
 
-      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-          <Link href="/" className="hover:text-purple-600 transition-colors">
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
+          <Link href="/" className="hover:text-pink-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-neutral-400">Nicks para Juegos</span>
+          <span className="text-slate-400">Nicks para Juegos</span>
           <span>/</span>
-          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Nombres para Roblox</span>
+          <span className="text-pink-400 font-bold">Nombres para Roblox</span>
         </nav>
 
-        <header className="flex flex-col gap-3">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50">
-            Generador de Nombres para Roblox 🧱
+        <header className="flex flex-col gap-4">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+            <span>🤖</span> Personalización para Roblox Display Names
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+            Nombres y Nicks para Roblox 🤖
           </h1>
-          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Personaliza tu Display Name de Roblox con tipografías creativas. Destaca en tus experiencias de juego favoritas como Adopt Me, Brookhaven y Blox Fruits.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
+            Crea el nombre de pantalla perfecto para tu avatar de Roblox. Utiliza <Link href="/letras-bonitas/letras-aesthetic" className="text-pink-400 underline font-bold hover:text-pink-300">letras aesthetic</Link>, <Link href="/letras-bonitas/letras-japonesas" className="text-pink-400 underline font-bold hover:text-pink-300">fuentes japonesas otaku</Link>, <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-pink-400 underline font-bold hover:text-pink-300">símbolos para nick gamer</Link> y <Link href="/nicks-para-juegos/nick-free-fire" className="text-pink-400 underline font-bold hover:text-pink-300">apodos de Free Fire</Link>.
           </p>
         </header>
 
-        <Converter highlightStyleId="bubble" />
+        <Converter highlightStyleId="small" />
 
-        <section className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-            <span>🎮</span> Consejos para Evitar la Censura en Roblox
-          </h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            Roblox tiene un filtro estricto de moderación. Elige fuentes limpias como 'Burbujas' o 'Pequeñas' y evita colocar demasiados símbolos matemáticos seguidos para prevenir que tu nombre se convierta en almohadillas (###).
-          </p>
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+              🤖 Guía de Personalización
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+              Cómo Cambiar tu Display Name en Roblox en 4 Pasos
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+              Sigue estos sencillos pasos desde la aplicación de Roblox en tu celular o PC:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">1. Abre Configuración</span>
+              <p className="text-slate-300 leading-relaxed">
+                Toca los 3 puntos (...) en el menú principal de Roblox y selecciona <strong>Configuración &gt; Información de la cuenta</strong>.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">2. Edita Display Name</span>
+              <p className="text-slate-300 leading-relaxed">
+                Toca el icono de lápiz junto a <strong>Nombre de pantalla</strong>, pega tu diseño de nuestro conversor y pulsa Guardar.
+              </p>
+            </div>
+          </div>
         </section>
+
+        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
+
+        <ExamplesSection />
 
         <FaqSection title="Preguntas Frecuentes sobre Nombres para Roblox" faqs={robloxFaqs} />
       </main>

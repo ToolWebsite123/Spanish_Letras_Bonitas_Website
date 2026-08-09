@@ -3,57 +3,106 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
+import ExamplesSection from "@/components/ExamplesSection";
+import PlatformLimitsWidget from "@/components/PlatformLimitsWidget";
+import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Fuentes para Facebook - Conversor de Letras Negritas para Posts y Grupos 📘",
+  title: "Fuentes para Facebook - Conversor de Letras para Publicaciones y Grupos 📘",
   description:
-    "Convierte tu texto en letras negritas, resaltadas y decoradas para tus publicaciones de Facebook. Llama la atención en grupos y estados sin pagar nada.",
+    "Convierte textos en letras negritas, cursivas y decoradas para destacar tus publicaciones de Facebook, nombres de grupos, anuncios y comentarios.",
 };
 
-const fbFaqs = [
+const facebookFaqs = [
   {
-    q: "¿Por qué Facebook no incluye un botón nativo para poner negrita en publicaciones normales?",
-    a: "Facebook solo habilita herramientas de formato en notas o grupos específicos. Nuestro conversor soluciona esto generando caracteres Unicode en negrita sans (𝐁𝐨𝐥𝐝) que funcionan en cualquier post público o privado.",
+    q: "¿Cómo poner texto en negrita o cursiva en publicaciones de Facebook?",
+    a: "Facebook no incluye botones de formato para publicaciones estándar de perfil. Escribe tu texto en la herramienta superior, selecciona la variante Negrita Sans (𝗕𝗼𝗹𝗱) o Cursiva (𝘚𝘤𝘳𝘪𝘱𝘵) y pégala directamente en la casilla de publicación.",
+  },
+  {
+    q: "¿Preservan los anuncios y ofertas comerciales de Facebook el formato de negrita?",
+    a: "¡Sí! El texto en negrita Unicode permanece 100% visible tanto en publicaciones orgánicas como en Facebook Ads, marketplace y comentarios.",
+  },
+  {
+    q: "¿Se pueden personalizar los nombres de los Grupos de Facebook?",
+    a: "¡Sí! Los administradores de grupos utilizan fuentes negritas y marcos de corchetes para hacer resaltar el nombre del grupo en los resultados de búsqueda de Facebook.",
+  },
+  {
+    q: "¿Es seguro usar estas letras en Facebook?",
+    a: "Totalmente seguro. No viola ninguna regla de la plataforma al tratarse de caracteres estándar internacionales Unicode.",
+  },
+  {
+    q: "¿Cómo copiar las fuentes de Facebook en celular Android o iPhone?",
+    a: "Toca cualquier tarjeta estilizada y la letra se copiará instantáneamente al portapapeles de tu teléfono lista para pegar.",
   },
 ];
 
 export default function FuentesParaFacebookPage() {
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
       <NavBar />
 
-      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-          <Link href="/" className="hover:text-purple-600 transition-colors">
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
+          <Link href="/" className="hover:text-pink-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-neutral-400">Fuentes para Redes</span>
+          <span className="text-slate-400">Fuentes para Instagram</span>
           <span>/</span>
-          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Fuentes para Facebook</span>
+          <span className="text-pink-400 font-bold">Fuentes para Facebook</span>
         </nav>
 
-        <header className="flex flex-col gap-3">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50">
-            Fuentes y Letras Negritas para Facebook 📘
+        <header className="flex flex-col gap-4">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-pink-500/10 text-pink-400 font-bold text-xs border border-pink-500/30">
+            <span>📘</span> Tipografía para Publicaciones & Anuncios de Facebook
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+            Conversor de Fuentes para Facebook 📘
           </h1>
-          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Destaca tus publicaciones, anuncios y comentarios entre miles de post. Usa tipografías resaltadas en negrita para llamar la atención en el feed de tus amigos.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
+            Destaca tus publicaciones, nombres de grupos, anuncios comerciales y comentarios. Genera <Link href="/letras-personalizadas/texto-en-negrita" className="text-pink-400 underline font-bold hover:text-pink-300">letras en negrita llamativas</Link>, <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-pink-400 underline font-bold hover:text-pink-300">fuentes para la bio de Instagram</Link> y <Link href="/fuentes-para-instagram/fuentes-para-whatsapp" className="text-pink-400 underline font-bold hover:text-pink-300">estados de WhatsApp</Link>.
           </p>
         </header>
 
-        <Converter highlightStyleId="bold" />
+        <Converter highlightStyleId="bold-sans" />
 
-        <section className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-            <span>📢</span> Cómo Aumentar el Alcance de tus Publicaciones en Facebook
-          </h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-            Las primeras 3 palabras de una publicación determinan si un usuario se detiene a leer o continúa deslizando. Al convertir los primeros términos en negrita o encerrarlos entre símbolos, incrementas la visibilidad visual de tu mensaje.
-          </p>
+        <PlatformLimitsWidget currentPlatform="facebook" />
+
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 self-start border border-purple-500/30">
+              📘 Estrategia para Facebook
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+              Cómo Aumentar el Alcance Orgánico en Facebook con Fuentes en Negrita
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+              El algoritmo de Facebook premia las publicaciones que consiguen mayor tiempo de lectura y comentarios. Aplicar fuentes llamativas en los primeros 2 renglones de tu post genera 3 ventajas competitivas:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">1. Rompe la Monotonía del Muro</span>
+              <p className="text-slate-300 leading-relaxed">
+                El feed de Facebook está lleno de texto plano idéntico. Un titular en negrita resaltado (<code className="text-pink-400 font-bold">📢 ATENCIÓN COMUNIDAD</code>) atrae inmediatamente la mirada.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-pink-400 uppercase tracking-wider">2. Resalta Precios en Marketplace</span>
+              <p className="text-slate-300 leading-relaxed">
+                Formatea las especificaciones de tus productos e precios para transmitir seriedad comercial.
+              </p>
+            </div>
+          </div>
         </section>
 
-        <FaqSection title="Preguntas Frecuentes sobre Fuentes para Facebook" faqs={fbFaqs} />
+        <RelatedCategoriesWidget currentPath="/fuentes-para-instagram/bio-para-instagram" />
+
+        <ExamplesSection />
+
+        <FaqSection title="Preguntas Frecuentes sobre Fuentes para Facebook" faqs={facebookFaqs} />
       </main>
     </div>
   );
