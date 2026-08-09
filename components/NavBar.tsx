@@ -75,45 +75,56 @@ export default function NavBar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/85 dark:bg-neutral-950/85 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-        {/* Brand / Home Link */}
+    <header className="sticky top-0 z-50 w-full bg-[#0f0c1b]/90 backdrop-blur-xl border-b border-purple-900/40 transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 sm:h-20">
+        {/* Brand Logo Link with Sunset Pink Emblem */}
         <a
           href="/"
-          className="text-lg font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
+          className="flex items-center gap-3 group cursor-pointer"
         >
-          Letras Bonitas
+          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 via-rose-500 to-purple-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-pink-500/20 group-hover:scale-105 transition-transform">
+            🌸
+          </div>
+          <div className="flex flex-col">
+            <span className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent tracking-tight">
+              Letras Bonitas
+            </span>
+            <span className="text-[10px] font-bold text-pink-400/80 tracking-widest uppercase">
+              Conversor Oficial 300+
+            </span>
+          </div>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        {/* Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-1.5">
           {navCategories.map((category) => (
             <div key={category.title} className="relative group">
               <button
                 type="button"
-                className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 transition-all cursor-pointer"
+                className="flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold text-slate-200 hover:text-pink-400 hover:bg-[#1b1530] transition-all cursor-pointer border border-transparent hover:border-purple-900/40"
               >
                 <span>{category.title}</span>
                 <svg
-                  className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180 text-neutral-400"
+                  className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-pink-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
-              {/* Dropdown Menu */}
-              <div className="absolute left-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
-                <div className="p-2 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-lg flex flex-col gap-0.5">
+              {/* Dropdown Menu Box */}
+              <div className="absolute left-0 top-full pt-2 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 z-50">
+                <div className="p-2.5 rounded-2xl bg-[#1b1530]/95 backdrop-blur-xl border border-purple-900/50 shadow-2xl flex flex-col gap-1">
                   {category.items.map((item) => (
                     <a
                       key={item.label}
                       href={item.href}
-                      className="px-3 py-2 rounded-lg text-sm text-neutral-700 dark:text-neutral-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
+                      className="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-pink-400 hover:bg-[#231c3d] transition-colors flex items-center justify-between group/item"
                     >
-                      {item.label}
+                      <span>{item.label}</span>
+                      <span className="opacity-0 group-hover/item:opacity-100 text-pink-400 transition-opacity">→</span>
                     </a>
                   ))}
                 </div>
@@ -122,11 +133,11 @@ export default function NavBar() {
           ))}
         </nav>
 
-        {/* Mobile Hamburger Toggle Button */}
+        {/* Mobile Toggle Button */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
-          className="lg:hidden p-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+          className="lg:hidden p-2.5 rounded-xl text-slate-200 hover:bg-[#1b1530] transition-colors cursor-pointer border border-purple-900/40"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? (
@@ -141,22 +152,22 @@ export default function NavBar() {
         </button>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 px-4 py-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="lg:hidden border-t border-purple-900/40 bg-[#0f0c1b]/95 backdrop-blur-xl px-4 py-4 max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div className="flex flex-col gap-2">
             {navCategories.map((category) => {
               const isExpanded = mobileExpanded === category.title;
               return (
-                <div key={category.title} className="flex flex-col border-b border-neutral-100 dark:border-neutral-900 pb-2">
+                <div key={category.title} className="flex flex-col border-b border-purple-900/30 pb-2">
                   <button
                     type="button"
                     onClick={() => toggleMobileCategory(category.title)}
-                    className="flex items-center justify-between w-full py-2 px-1 text-base font-semibold text-neutral-800 dark:text-neutral-200 cursor-pointer"
+                    className="flex items-center justify-between w-full py-2.5 px-2 text-sm font-bold text-slate-200 cursor-pointer"
                   >
                     <span>{category.title}</span>
                     <svg
-                      className={`w-5 h-5 transition-transform duration-200 text-neutral-500 ${
+                      className={`w-4 h-4 transition-transform duration-200 text-pink-400 ${
                         isExpanded ? "rotate-180" : ""
                       }`}
                       fill="none"
@@ -168,13 +179,13 @@ export default function NavBar() {
                   </button>
 
                   {isExpanded && (
-                    <div className="flex flex-col gap-1 pl-3 py-1">
+                    <div className="flex flex-col gap-1 pl-4 py-1">
                       {category.items.map((item) => (
                         <a
                           key={item.label}
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="py-1.5 px-2 rounded-md text-sm text-neutral-600 dark:text-neutral-400 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors"
+                          className="py-2 px-3 rounded-lg text-xs font-medium text-slate-400 hover:text-pink-400 hover:bg-[#1b1530] transition-colors"
                         >
                           {item.label}
                         </a>

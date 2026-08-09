@@ -108,6 +108,26 @@ export const decorators: Decorator[] = [
     name: "Año Nuevo",
     wrap: (text) => `🎆 ${text} 🎆`,
   },
+  {
+    id: "bienvenida",
+    name: "Bienvenida",
+    wrap: (text) => `🎉 ${text} 🎉`,
+  },
+  {
+    id: "disculpas",
+    name: "Disculpas",
+    wrap: (text) => `🙏 ${text} 🙏`,
+  },
+  {
+    id: "buenas-noches",
+    name: "Buenas Noches",
+    wrap: (text) => `🌙 ${text} 🌙`,
+  },
+  {
+    id: "graduacion",
+    name: "Graduación",
+    wrap: (text) => `🎓 ${text} 🎓`,
+  },
 
   // Gaming
   {

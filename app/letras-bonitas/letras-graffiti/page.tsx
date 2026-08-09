@@ -1,253 +1,108 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
-import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
-import ExamplesSection from "@/components/ExamplesSection";
 import FaqSection from "@/components/FaqSection";
 
-export const metadata = {
-  title: "Letras Graffiti | Convertidor de Fuentes Estilo Urbano",
+export const metadata: Metadata = {
+  title: "Letras Graffiti - Conversor de Fuentes Urbanas y Callejeras 🎨",
   description:
-    "Convierte tu texto en letras estilo graffiti y letras góticas urbanas. Copia y pega gratis en biografías de Instagram, nicks de juegos y TikTok.",
+    "Convierte tu texto en letras de graffiti, arte urbano y fuentes callejeras para copiar y pegar. Decora nicks de juegos, logos y perfiles con estilo hip hop.",
 };
 
-const charLimits = [
-  { platform: "Free Fire (Nick)", limit: "12 caracteres" },
-  { platform: "Instagram Bio", limit: "150 caracteres" },
-  { platform: "TikTok Bio", limit: "80 caracteres" },
-  { platform: "Discord Nick", limit: "32 caracteres" },
-  { platform: "WhatsApp Estado", limit: "139 caracteres" },
-  { platform: "Twitch Username", limit: "25 caracteres" },
-  { platform: "Twitter / X Bio", limit: "160 caracteres" },
-];
-
-const graffitiExamples = [
+const graffitiFaqs = [
   {
-    persona: "Streetwear Brand",
-    text: "𝔘𝔯𝔟𝔞𝔫 𝔖𝔱𝔶𝔩𝔢 🔥 | 𝔖𝔱𝔯𝔢𝔢𝔱𝔴𝔢𝔞𝔯 ℭ𝔬𝔩𝔩𝔢𝔠𝔱𝔦𝔬𝔫",
+    q: "¿Qué caracteriza al estilo de letras graffiti en texto digital?",
+    a: "Las letras graffiti digitales imitan los trazos robustos, contornos marcados y esquinas góticas del arte urbano callejero. Utilizan caracteres Unicode en bloque y fraktur pesada para transmitir fuerza, rebeldía y personalidad.",
   },
   {
-    persona: "Hip-Hop Artist",
-    text: "𝔅𝔢𝔞𝔱𝔪𝔞𝔭𝔢𝔯 🎙️ | ℌ𝔦𝔭-ℌ𝔬𝔭 ℭ𝔲𝔩𝔱𝔲𝔯𝔢",
+    q: "¿Cómo usar fuentes de graffiti en nicks de Free Fire o juegos de acción?",
+    a: "Son ideales para nombres de clan o apodos de batalla porque lucen imponentes. Al ser letras gruesas, te sugerimos combinarlas con símbolos de fuego (🔥) o espadas (⚔️) para dar un aspecto aún más competitivo.",
   },
   {
-    persona: "Skater Crew",
-    text: "𝔖𝔨𝔞𝔱𝔢 𝔬𝔯 𝔇𝔦𝔢 🛹 | 𝔘𝔫𝔡𝔢𝔯𝔤𝔯𝔬𝔲𝔫𝔡 ℭ𝔯𝔢𝔴",
+    q: "¿Se pueden usar letras de graffiti para crear logos rápidos?",
+    a: "¡Sí! Puedes generar las iniciales o el nombre de tu marca o canal en el conversor, copiar el resultado y usarlo en las descripciones de tu canal de YouTube o Twitch.",
   },
   {
-    persona: "Graffiti Writer",
-    text: "𝔖𝔱𝔯𝔢𝔢𝔱 𝔄𝔯𝔱𝔦𝔰𝔱 🎨 | 𝔚𝔞𝔩𝔩 ℭ𝔞𝔫𝔳𝔞𝔰",
-  },
-  {
-    persona: "Gamer Insano",
-    text: "𝔎𝔦𝔩𝔩𝔢𝔯 ℨ𝔬𝔫𝔢 ⚡ | 𝔓𝔯𝔬 𝔖𝔫𝔦𝔟𝔢𝔯",
-  },
-  {
-    persona: "DJ / Music Producer",
-    text: "ℭ𝔩𝔲𝔥 𝔅𝔢𝔞𝔱𝔰 🎧 | 𝔑𝔦𝔤𝔩𝔱 𝔙𝔦𝔥𝔢𝔰",
-  },
-  {
-    persona: "Perfil Rebelde",
-    text: "𝔑𝔬 ℜ𝔲𝔩𝔢𝔰 ☠️ | 𝔉𝔯𝔢𝔢 𝔖𝔭𝔦𝔯𝔦𝔱",
-  },
-  {
-    persona: "Tattoo Apprentice",
-    text: "ℑ𝔫𝔨 & 𝔅𝔩𝔬𝔬𝔡 🖋️ | 𝔗𝔞𝔱𝔱𝔬𝔬 𝔖𝔱𝔲𝔡𝔦𝔬",
-  },
-  {
-    persona: "Cyberpunk Vibe",
-    text: "𝔑𝔢𝔬𝔫 𝔑𝔦𝔤𝔩𝔱𝔰 🌆 | ℭ𝔶𝔥𝔢𝔯 𝔖𝔬𝔲𝔩",
-  },
-  {
-    persona: "Nick Clan",
-    text: "𝔇𝔞𝔯𝔨 𝔏𝔢𝔤𝔢𝔫𝔡𝔰 ⚔️ | ℭ𝔩𝔞𝔫 𝔏𝔢𝔞𝔡𝔢𝔯",
-  },
-];
-
-const faqs = [
-  {
-    q: "¿Qué son las letras en estilo graffiti Unicode?",
-    a: "Son caracteres especiales inspirados en el arte urbano y tipografías expresivas que utilizan símbolos Unicode avanzados para imitar el trazo de un aerosol o estilo gótico callejero.",
-  },
-  {
-    q: "¿Puedo usar letras graffiti en mi biografía de Instagram?",
-    a: "¡Sí! Puedes copiar cualquier frase convertida a estilo graffiti y pegarla directamente en la biografía, nombre o pie de foto de tu cuenta de Instagram.",
-  },
-  {
-    q: "¿Funcionan para nombres de Free Fire y TikTok?",
-    a: "Absolutamente. Son muy populares para nicks de Free Fire, clanes de PUBG, apodos de Roblox y nombres de perfil en TikTok.",
-  },
-  {
-    q: "¿Es necesario descargar tipografías o fuentes instalables?",
-    a: "No. Al ser texto en código Unicode universal, se genera en tiempo real en tu navegador y funciona sin instalar ninguna app ni paquete de fuentes.",
-  },
-  {
-    q: "¿Por qué algunos dispositivos antiguos no muestran las letras góticas urbano?",
-    a: "Algunos teléfonos o navegadores muy desactualizados pueden no incluir la fuente Unicode completa. En la gran mayoría de dispositivos modernos de los últimos años se ven perfectas.",
-  },
-  {
-    q: "¿Se pueden combinar letras graffiti con símbolos aesthetic?",
-    a: "¡Por supuesto! Puedes copiar el texto en estilo urbano y agregarle coronas, alas, estrellas o fuego para personalizar aún más tu nick.",
-  },
-  {
-    q: "¿El convertidor de letras graffiti es 100% gratuito?",
-    a: "Sí, es completamente gratis y sin límites de conversión ni registros obligatorios.",
-  },
-  {
-    q: "¿Cómo copio el texto generado en mi móvil?",
-    a: "Simplemente pulsa el botón 'Copiar' al lado del estilo deseado y el texto se guardará al instante en el portapapeles de tu teléfono.",
+    q: "¿Cuál es la diferencia entre el estilo Wildstyle y las letras de bloque góticas?",
+    a: "El Wildstyle en graffiti tradicional entrelaza letras con flechas y bordes afilados, mientras que las fuentes de bloque góticas digitales se enfocan en esquinas oscuras y bordes geométricos de alto contraste.",
   },
 ];
 
 export default function LetrasGraffitiPage() {
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
-      {/* Site Header Navigation */}
       <NavBar />
 
-      <main className="flex-1 py-8 px-4 sm:px-8">
-        <div className="max-w-4xl mx-auto flex flex-col gap-10">
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
-            <ol className="flex items-center gap-2 flex-wrap">
-              <li>
-                <a href="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                  Inicio
-                </a>
-              </li>
-              <li>/</li>
-              <li>
-                <a href="#" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                  Letras Bonitas
-                </a>
-              </li>
-              <li>/</li>
-              <li className="font-semibold text-neutral-800 dark:text-neutral-200">
-                Letras Graffiti
-              </li>
-            </ol>
-          </nav>
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
+          <Link href="/" className="hover:text-purple-600 transition-colors">
+            Inicio
+          </Link>
+          <span>/</span>
+          <span className="text-neutral-400">Letras Bonitas</span>
+          <span>/</span>
+          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Letras Graffiti</span>
+        </nav>
 
-          {/* Page Heading & Intro */}
-          <header className="flex flex-col gap-4">
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
-              Letras Graffiti: Convertidor de Fuentes Estilo Urbano
-            </h1>
-            <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Dale un toque callejero, rebelde y underground a tus textos con nuestras letras estilo graffiti.
-              Genera fuentes urbanas y trazos góticos compatibles con Instagram, TikTok, WhatsApp y nicks de juegos.
-              Escribe tu apodo o mensaje, copia el resultado y personaliza tus redes sociales en segundos.
-            </p>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Las letras en formato urbano y gótico destacan por aportar una presencia imponente en cualquier perfil. A menudo son populares en la comunidad gamer porque otorgan un toque agresivo e insano. Se usan comúnmente en apodos de clanes, y si buscas alternativas para juegos puedes consultar cómo <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">cambiar nick Free Fire</Link> o revisar la tabla del <Link href="/alfabeto-completo/alfabeto-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">alfabeto graffiti</Link> completo.
-            </p>
-          </header>
+        <header className="flex flex-col gap-3">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
+            Letras Graffiti y Arte Urbano 🎨
+          </h1>
+          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-4xl">
+            Convierte tus palabras en diseños tipográficos de estilo callejero y cultura hip-hop. Transforma apodos, marcas y títulos en letras imponentes con bordes marcados y aspecto de grafiti real.
+          </p>
+        </header>
 
-          {/* Interactive Converter with Gothic Highlighted */}
-          <Converter highlightStyleId="gothic" />
+        <Converter highlightStyleId="gothic" />
 
-          {/* Section: Cómo Usar */}
-          <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-sm isolate relative z-0">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              Cómo Usar las Letras Graffiti
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="flex flex-col gap-2 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
-                <span className="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
-                  1
-                </span>
-                <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-200">
-                  Ingresa tu Nombre o Frase
-                </h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  Escribe en el cuadro de texto la palabra o apodo que deseas transformar en graffiti.
-                </p>
-              </div>
+        {/* ARTÍCULO DETALLADO 1: Historia del Graffiti Digital */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2.5">
+            <span>🎨</span> Estética del Graffiti y la Cultura Hip-Hop Digital
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Desde el nacimiento del movimiento Wildstyle en los vagones de metro de Nueva York durante los años 70 hasta los grandes murales de arte urbano contemporáneo, la tipografía de graffiti se caracteriza por la distorsión creativa, el volumen tridimensional y la expresividad de sus trazos.
+          </p>
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            En el mundo digital, el conversor utiliza caracteres Unicode como los bloques <code className="text-purple-600 font-mono font-semibold">Fraktur (U+1D504)</code> y las letras enmarcadas en bloque negativo para trasladar esa fuerza callejera a los nombres de juegos y canales de contenido.
+          </p>
 
-              <div className="flex flex-col gap-2 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
-                <span className="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
-                  2
-                </span>
-                <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-200">
-                  Visualiza el Estilo Urbano
-                </h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  El generador creará instantáneamente la versión urbana con tipografía impactante.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
-                <span className="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
-                  3
-                </span>
-                <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-200">
-                  Copia y Personaliza
-                </h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  Presiona el botón de copiar y pégalo en tu biografía, estado o perfil de juego.
-                </p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3">
+            <div className="p-5 rounded-xl border border-amber-100 dark:border-amber-900/50 bg-amber-50/40 dark:bg-amber-950/20 flex flex-col gap-2">
+              <h3 className="font-bold text-base text-amber-700 dark:text-amber-300">𝔊ó𝔱𝔦𝔠𝔞 𝔘𝔯𝔟𝔞𝔫𝔞 (Urban Gothic)</h3>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Trazos afilados inspirados en caligrafía germánica antigua combinados con la estética de pandillas y cultura hip-hop. Excelente para nicks de Free Fire.
+              </p>
             </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
-              Transforma de inmediato cada vocal y consonante al mapa de caracteres góticos Fraktur. Puedes probar estas fuentes en un <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire masculino</Link> o combinarlas con <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos para nick</Link> decorativos.
-            </p>
-          </section>
-
-          {/* Section: Tabla de Límites de Caracteres */}
-          <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-sm isolate relative z-0">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              Límites de Caracteres en Redes y Juegos
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="border-b border-neutral-200 dark:border-neutral-800 text-sm font-semibold text-neutral-600 dark:text-neutral-400">
-                    <th className="py-3 px-4">Plataforma</th>
-                    <th className="py-3 px-4">Límite Permitido</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800 text-sm text-neutral-700 dark:text-neutral-300">
-                  {charLimits.map((item) => (
-                    <tr key={item.platform} className="hover:bg-neutral-50/50 dark:hover:bg-neutral-800/30 transition-colors">
-                      <td className="py-3.5 px-4 font-medium">{item.platform}</td>
-                      <td className="py-3.5 px-4">{item.limit}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="p-5 rounded-xl border border-red-100 dark:border-red-900/50 bg-red-50/40 dark:bg-red-950/20 flex flex-col gap-2">
+              <h3 className="font-bold text-base text-red-700 dark:text-red-300">🅱🅾🅻🅳 Block Negative</h3>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Letras encerradas en bloques oscuros rellenos que simulan plantillas de stencil o aerosol sobre pared. Perfectas para destacar palabras individuales.
+              </p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Alphabet Reference Table */}
-          <AlphabetReferenceTable styleId="gothic" />
+        {/* ARTÍCULO DETALLADO 2: Ejemplos de Nicks y Títulos de Graffiti */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2.5">
+            <span>🔥</span> Ejemplos de Nombres y Títulos de Graffiti Listos para Copiar
+          </h2>
 
-          {/* Section: Ejemplos Listos para Copiar */}
-          <ExamplesSection
-            title="Ejemplos de Bios y Nombres con Estilo Graffiti"
-            examples={graffitiExamples}
-          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Nick de Clan de Batalla</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">꧁𝔖𝔱𝔯𝔢𝔢𝔱𝔎𝔦𝔫𝔤𝔰꧂ | 🔥 𝕲𝖆𝖓𝖌𝖑𝖊𝖆𝖉𝖊𝖗</p>
+            </div>
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Título de Canal de YouTube</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">🆄🆁🅱🅰🅽 🆅🅸🅱🅴🆂 🎧 | 𝔘𝔯𝔟𝔞𝔫 𝔄𝔯𝔱 ℭ𝔥𝔞𝔫𝔫𝔢𝔩</p>
+            </div>
+          </div>
+        </section>
 
-          {/* Section: Conclusión */}
-          <section className="flex flex-col gap-4 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-              <span>💡</span> Conclusión
-            </h2>
-            <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Las letras en estilo graffiti y gótico urbano son la mejor alternativa para proyectar actitud, potencia y personalidad en tus perfiles. Su diseño con trazos marcados destaca al instante en campos de apodo de videojuegos como Free Fire y en nombres de usuario de TikTok e Instagram.
-            </p>
-          </section>
-
-          {/* Section: Pre-FAQ Related Links */}
-          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Para explorar otros estilos visuales, te recomendamos probar nuestras <Link href="/letras-bonitas/letras-cursivas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras cursivas</Link> más sutiles o descubrir el catálogo de <Link href="/letras-bonitas/letras-aesthetic" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras aesthetic</Link> para redes sociales.
-          </section>
-
-          {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
-          <FaqSection
-            title="Preguntas Frecuentes sobre Letras Graffiti"
-            faqs={faqs}
-          />
-        </div>
+        <FaqSection title="Preguntas Frecuentes sobre Letras Graffiti" faqs={graffitiFaqs} />
       </main>
     </div>
   );

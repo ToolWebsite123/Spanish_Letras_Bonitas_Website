@@ -2,219 +2,189 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
+import FaqSection from "@/components/FaqSection";
 
 export const metadata: Metadata = {
-  title: "Letras Aesthetic | Tipografías Lindas para Instagram",
+  title: "Letras Aesthetic - Generador de Tipografías Minimalistas para Copiar y Pegar 🌸",
   description:
-    "Convierte tu texto en letras aesthetic, minimalistas y letras pequeñas para copiar y pegar. Decora la biografía de tu Instagram, TikTok y Tumblr fácil.",
+    "Crea y convierte texto en letras aesthetic, minimalistas, vaporwave y letras pequeñas para copiar y pegar. Decora tu biografía de Instagram, TikTok, Tumblr y Pinterest.",
 };
+
+const aestheticFaqs = [
+  {
+    q: "¿Qué significa realmente el concepto de 'Letras Aesthetic'?",
+    a: "El término 'aesthetic' se refiere a la apreciación del arte, la simetría y el buen gusto visual. En tipografía web, las letras aesthetic combinan minúsculas pequeñas (small caps), trazos sutiles, espaciados amplios y símbolos delicados (como estrellas, destellos y flores) para proyectar una apariencia suave, cuidada y limpia.",
+  },
+  {
+    q: "¿Cómo pegar letras aesthetic en la biografía de Instagram sin que se desordenen?",
+    a: "Simplemente escribe tu frase en nuestro conversor, selecciona la categoría 'Aesthetic' o 'Pequeñas', presiona la tarjeta para copiar y pégala directamente en el campo 'Presentación' de tu perfil de Instagram. Unicode mantiene la forma exacta en celulares iOS y Android.",
+  },
+  {
+    q: "¿Por qué las tipografías aesthetic son tan populares en TikTok y Pinterest?",
+    a: "Porque destacan de manera elegante sin saturar la pantalla. En lugar de letras gruesas o estridentes, las tipografías aesthetic dan un aire poético, relajado y sofisticado que capta la atención del espectador mientras se desplaza por el feed.",
+  },
+  {
+    q: "¿Puedo usar letras aesthetic en apodos de juegos como Free Fire o Roblox?",
+    a: "Sí, aunque debes prestar atención al límite de 12 caracteres de Free Fire. Las letras aesthetic pequeñas (Small Caps) ocupan pocos caracteres y lucen fantásticas acompañadas de coronas o destellos sutiles.",
+  },
+  {
+    q: "¿Cuál es la diferencia entre letras aesthetic Soft, Coquette y Vaporwave?",
+    a: "El estilo Soft utiliza letras pequeñas sutiles (ˢᵒᶠᵗ); el estilo Coquette incorpora moños (🎀), corazones finos y trazos cursivos; mientras que el estilo Vaporwave se caracteriza por letras de ancho completo con separación amplia (Ａ ｅ ｓ ｔ ｈ ｅ ｔ ｉ ｃ).",
+  },
+  {
+    q: "¿Se pueden combinar símbolos aesthetic con letras pequeñas?",
+    a: "¡Sí! La combinación más popular en Pinterest e Instagram es encerrar una palabra corta en Small Caps dentro de destellos o estrellas (ej: ✧ ˢᵒᶠᵗ ⲯɪʙᴇs ✧).",
+  },
+];
 
 export default function LetrasAestheticPage() {
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
       <NavBar />
 
-      <main className="flex-1 py-10 px-4 sm:px-8">
-        <div className="max-w-4xl mx-auto flex flex-col gap-10">
-          {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
-            <Link href="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-              Inicio
-            </Link>
-            <span>/</span>
-            <Link href="/letras-bonitas/letras-cursivas" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-              Letras Bonitas
-            </Link>
-            <span>/</span>
-            <span className="text-neutral-900 dark:text-neutral-100 font-medium">Letras Aesthetic</span>
-          </nav>
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        {/* Breadcrumbs Navigation */}
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
+          <Link href="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+            Inicio
+          </Link>
+          <span>/</span>
+          <span className="text-neutral-400">Letras Bonitas</span>
+          <span>/</span>
+          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Letras Aesthetic</span>
+        </nav>
 
-          {/* Header */}
-          <header className="flex flex-col gap-3">
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
-              Letras Aesthetic para Copiar y Pegar
-            </h1>
-            <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              Descubre y genera tipografías aesthetic, minimalistas y delicadas para tu biografía de Instagram, TikTok, Tumblr y redes sociales. Elige entre estilos suaves, letras pequeñas y bordes decorativos aesthetic para darle un toque único a tu perfil.
-            </p>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              El concepto de letras aesthetic destaca por ofrecer una estética limpia, armónica y sofisticada en plataformas digitales. A menudo es popular entre creadores de contenido porque brinda elegancia visual sin recargar el texto. Se usa comúnmente en descripciones de foto y subtítulos, y si buscas estilos complementarios puedes probar nuestras <Link href="/letras-bonitas/letras-japonesas" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras japonesas</Link> estilizadas o combinar frases con <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link>.
-            </p>
-          </header>
+        {/* Unique Header */}
+        <header className="flex flex-col gap-3">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
+            Letras Aesthetic para Copiar y Pegar 🌸
+          </h1>
+          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-4xl">
+            Descubre y genera tipografías aesthetic, minimalistas y delicadas para tu biografía de Instagram, TikTok, Tumblr y Pinterest. Elige entre estilos suaves, letras pequeñas y bordes decorativos aesthetic para darle un toque armónico y profesional a tu perfil.
+          </p>
+        </header>
 
-          {/* Interactive Converter Tool */}
-          <Converter highlightStyleId="small" />
+        {/* Interactive Converter Tool */}
+        <Converter highlightStyleId="small" />
 
-          {/* Section: Ejemplos de Frases Aesthetic */}
-          <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              ✨ Ejemplos de Frases y Bios Aesthetic
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col gap-1">
-                <span className="text-xs text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-wider">Minimalist Bio</span>
-                <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">⋆ ˢᵒᶠᵗ ᵈʳᵉᵃᵐˢ ᵃⁿᵈ ᶜᵒᶠᶠᵉᵉ ⋆</p>
-              </div>
-              <div className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col gap-1">
-                <span className="text-xs text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-wider">Soft Vibe</span>
-                <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">♡ ʟɪᴠɪɴɢ ɪɴ ᴍʏ ᴏᴡɴ ᴡᴏʀʟᴅ ♡</p>
-              </div>
-              <div className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col gap-1">
-                <span className="text-xs text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-wider">Coquette Style</span>
-                <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">🎀 𝓈𝓌𝑒𝑒𝓉 𝓁𝒾𝓀𝑒 𝒽𝑜𝓃𝑒𝓎 🎀</p>
-              </div>
-              <div className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col gap-1">
-                <span className="text-xs text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-wider">Vintage Vibes</span>
-                <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">✧ 𝔠𝔥𝔞𝔰𝔦𝔫𝔤 𝔰𝔲𝔫𝔰𝔢𝔱𝔰 ✧</p>
-              </div>
-              <div className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col gap-1">
-                <span className="text-xs text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-wider">Clean Girl Aesthetic</span>
-                <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">•° ꜱɪᴍᴘʟʏ ᴍᴇ °•</p>
-              </div>
-              <div className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col gap-1">
-                <span className="text-xs text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-wider">Dark Aesthetic</span>
-                <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">🌙 𝔩𝔬𝔰𝔱 𝔦𝔫 𝔱𝔥𝔢 𝔫𝔦𝔤𝔥𝔱 🌙</p>
-              </div>
-              <div className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col gap-1">
-                <span className="text-xs text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-wider">Angel Vibes</span>
-                <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">ᨏ ᵃⁿᵍᵉˡ ᵉⁿᵉʳᵍʸ ᨏ</p>
-              </div>
-              <div className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 flex flex-col gap-1">
-                <span className="text-xs text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-wider">Starry Girl</span>
-                <p className="text-lg font-medium text-neutral-900 dark:text-neutral-100">💫 ᴍᴀᴅᴇ ᴏғ sᴛᴀʀᴅᴜsᴛ 💫</p>
-              </div>
+        {/* ARTÍCULO DETALLADO 1: La Filosofía Visual de la Estética Aesthetic */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2.5">
+            <span>✨</span> La Filosofía de la Tipografía Aesthetic en la Cultura Digital
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            La palabra <em>aesthetic</em> comenzó como un concepto filosófico sobre el arte y la percepción de la belleza. Con la llegada de redes visuales como Tumblr, VSCO, Pinterest y TikTok, la estética evolucionó hacia un estilo de vida digital basado en la moderación, la paleta de colores pasteles y la tipografía minimalista.
+          </p>
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Las letras aesthetic no buscan abrumar al espectador con trazos recargados o colores estridentes. Por el contrario, se apoyan en bloques de caracteres Unicode como el <code className="text-purple-600 font-mono font-semibold">Small Capitals (U+1D00)</code> o las letras de ancho completo <code className="text-purple-600 font-mono font-semibold">(Fullwidth)</code> para proyectar una sensación de calma, orden y elegancia atemporal.
+          </p>
+
+          {/* Sub-categorías Aesthetic Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-3">
+            <div className="p-5 rounded-xl border border-purple-100 dark:border-purple-900/50 bg-purple-50/40 dark:bg-purple-950/20 flex flex-col gap-2">
+              <span className="text-2xl">☕</span>
+              <h3 className="font-bold text-base text-purple-700 dark:text-purple-300">Soft & Minimalist</h3>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Utiliza minúsculas de imprenta reducida (ˢᵒᶠᵗ ᵈʳᵉᵃᵐˢ). Es la favorita de creadores de contenido que buscan una biografía limpia y sofisticada.
+              </p>
             </div>
-          </section>
-
-          {/* Reference Table */}
-          <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              📋 Tabla de Referencia de Estilos Aesthetic
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm text-neutral-700 dark:text-neutral-300 border-collapse">
-                <thead>
-                  <tr className="border-b border-neutral-200 dark:border-neutral-800 bg-neutral-100/50 dark:bg-neutral-800/40">
-                    <th className="py-3 px-4 font-semibold">Categoría Aesthetic</th>
-                    <th className="py-3 px-4 font-semibold">Ejemplo de Texto</th>
-                    <th className="py-3 px-4 font-semibold">Uso Sugerido</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-200 dark:divide-neutral-800">
-                  <tr className="hover:bg-neutral-50 dark:hover:bg-neutral-900/30">
-                    <td className="py-3 px-4 font-medium text-neutral-900 dark:text-neutral-100">Small Caps (Mayúsculas Pequeñas)</td>
-                    <td className="py-3 px-4 font-mono text-purple-600 dark:text-purple-400">ᴀᴇꜱᴛʜᴇᴛɪᴄ ᴠɪʙᴇꜱ</td>
-                    <td className="py-3 px-4 text-xs text-neutral-500">Biografías limpias e Instagram Stories</td>
-                  </tr>
-                  <tr className="hover:bg-neutral-50 dark:hover:bg-neutral-900/30">
-                    <td className="py-3 px-4 font-medium text-neutral-900 dark:text-neutral-100">Superíndice Suave</td>
-                    <td className="py-3 px-4 font-mono text-purple-600 dark:text-purple-400">ˢᵒᶠᵗ ᵈʳᵉᵃᵐˢ</td>
-                    <td className="py-3 px-4 text-xs text-neutral-500">Subtítulos y nombres aesthetic de TikTok</td>
-                  </tr>
-                  <tr className="hover:bg-neutral-50 dark:hover:bg-neutral-900/30">
-                    <td className="py-3 px-4 font-medium text-neutral-900 dark:text-neutral-100">Fullwidth (Ancho Completo)</td>
-                    <td className="py-3 px-4 font-mono text-purple-600 dark:text-purple-400">Ａ Ｅ Ｓ Ｔ Ｈ Ｅ Ｔ Ｉ Ｃ</td>
-                    <td className="py-3 px-4 text-xs text-neutral-500">Nombres en pantalla de Roblox y Discord</td>
-                  </tr>
-                  <tr className="hover:bg-neutral-50 dark:hover:bg-neutral-900/30">
-                    <td className="py-3 px-4 font-medium text-neutral-900 dark:text-neutral-100">Script Delicado</td>
-                    <td className="py-3 px-4 font-mono text-purple-600 dark:text-purple-400">𝓈𝓌𝑒𝑒𝓉 𝓋𝒾𝒷𝑒𝓈</td>
-                    <td className="py-3 px-4 text-xs text-neutral-500">Estados de WhatsApp y frases de amor</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="p-5 rounded-xl border border-pink-100 dark:border-pink-900/50 bg-pink-50/40 dark:bg-pink-950/20 flex flex-col gap-2">
+              <span className="text-2xl">🎀</span>
+              <h3 className="font-bold text-base text-pink-700 dark:text-pink-300">Coquette & Sweet</h3>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Incorpora lazos (🎀), corazones sutiles (♡) y mariposas (🦋). Proyecta un aire romántico, poético y vintage inspirado en el estilo coquette.
+              </p>
             </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
-              Copia de forma directa caracteres de superíndices o mayúsculas pequeñas. Puedes integrar este formato a tu perfil de <Link href="/fuentes-para-instagram/fuentes-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Instagram</Link> o aplicarlo a <Link href="/nicks-para-juegos/nombres-para-roblox" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nombres para Roblox</Link>.
-            </p>
-          </section>
-
-          {/* Pre-FAQ Related Links */}
-          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Descubre otras alternativas de personalización: si deseas un estilo llamativo revisa las <Link href="/letras-bonitas/letras-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras graffiti</Link> o prueba las fuentes de <Link href="/fuentes-para-instagram/fuentes-para-facebook" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Facebook</Link>.
-          </section>
-
-          {/* FAQs */}
-          <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              ❓ Preguntas Frecuentes sobre Letras Aesthetic
-            </h2>
-            <div className="flex flex-col gap-4">
-              <details className="group rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 p-4 transition-all">
-                <summary className="font-semibold text-neutral-900 dark:text-neutral-100 text-sm cursor-pointer list-none flex items-center justify-between">
-                  <span>¿Qué significa que una letra sea aesthetic?</span>
-                  <span className="text-purple-600 dark:text-purple-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  El estilo aesthetic se refiere a tipografías con un atractivo visual armónico, suave y minimalista, inspiradas en tendencias vintage, Y2K, coquette y pastel.
-                </p>
-              </details>
-              <details className="group rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 p-4 transition-all">
-                <summary className="font-semibold text-neutral-900 dark:text-neutral-100 text-sm cursor-pointer list-none flex items-center justify-between">
-                  <span>¿Cómo pego letras aesthetic en mi biografía de Instagram?</span>
-                  <span className="text-purple-600 dark:text-purple-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  Genera tu texto en el conversor superior, presiona el botón &quot;Copiar&quot;, abre Instagram &gt; Editar perfil, y pega el contenido en la sección de biografía.
-                </p>
-              </details>
-              <details className="group rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 p-4 transition-all">
-                <summary className="font-semibold text-neutral-900 dark:text-neutral-100 text-sm cursor-pointer list-none flex items-center justify-between">
-                  <span>¿Se pueden combinar letras aesthetic con emojis coquette?</span>
-                  <span className="text-purple-600 dark:text-purple-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  ¡Sí! Puedes usar nuestro selector de decoraciones opcional para añadir automáticamente moños 🎀, estrellas ⋆, o corazones ♡ alrededor de tus fuentes.
-                </p>
-              </details>
-              <details className="group rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 p-4 transition-all">
-                <summary className="font-semibold text-neutral-900 dark:text-neutral-100 text-sm cursor-pointer list-none flex items-center justify-between">
-                  <span>¿Es gratuito usar las letras aesthetic?</span>
-                  <span className="text-purple-600 dark:text-purple-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  Sí, la herramienta es 100% gratuita y sin límites de conversión.
-                </p>
-              </details>
-              <details className="group rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 p-4 transition-all">
-                <summary className="font-semibold text-neutral-900 dark:text-neutral-100 text-sm cursor-pointer list-none flex items-center justify-between">
-                  <span>¿Funcionan estas letras en WhatsApp?</span>
-                  <span className="text-purple-600 dark:text-purple-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  Sí, se pueden enviar en mensajes de chat, incluir en la Info del perfil o publicar en los estados de WhatsApp.
-                </p>
-              </details>
-              <details className="group rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 p-4 transition-all">
-                <summary className="font-semibold text-neutral-900 dark:text-neutral-100 text-sm cursor-pointer list-none flex items-center justify-between">
-                  <span>¿Qué fuentes aesthetic son las más populares?</span>
-                  <span className="text-purple-600 dark:text-purple-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  Las fuentes de letras pequeñas (Small Caps), superíndices, monoespaciadas y escrituras cursivas suaves son las más solicitadas.
-                </p>
-              </details>
-              <details className="group rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 p-4 transition-all">
-                <summary className="font-semibold text-neutral-900 dark:text-neutral-100 text-sm cursor-pointer list-none flex items-center justify-between">
-                  <span>¿Necesito instalar algún tipo de teclado especial?</span>
-                  <span className="text-purple-600 dark:text-purple-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  No se requiere instalar ningún teclado. Todo se hace mediante copiar y pegar directamente desde tu navegador.
-                </p>
-              </details>
-              <details className="group rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 p-4 transition-all">
-                <summary className="font-semibold text-neutral-900 dark:text-neutral-100 text-sm cursor-pointer list-none flex items-center justify-between">
-                  <span>¿Sirven para nicks de TikTok o Tumblr?</span>
-                  <span className="text-purple-600 dark:text-purple-400 group-open:rotate-180 transition-transform">▼</span>
-                </summary>
-                <p className="mt-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                  ¡Sí! Son 100% compatibles con nombres de usuario y descripciones de perfil en TikTok, Tumblr y Pinterest.
-                </p>
-              </details>
+            <div className="p-5 rounded-xl border border-indigo-100 dark:border-indigo-900/50 bg-indigo-50/40 dark:bg-indigo-950/20 flex flex-col gap-2">
+              <span className="text-2xl">🌌</span>
+              <h3 className="font-bold text-base text-indigo-700 dark:text-indigo-300">Vaporwave & Spaced</h3>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Caracteres con separación amplia (Ａ ｅ ｓ ｔ ｈ ｅ ｔ ｉ ｃ). Evoca la nostalgia retro de los años 80 y 90, el arte retrofuturista y la cultura anime.
+              </p>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
+        {/* ARTÍCULO DETALLADO 2: Ejemplos de Frases y Bios Aesthetic Categorizadas */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2.5">
+            <span>🎁</span> Ejemplos de Frases y Bios Aesthetic Listas para Copiar
+          </h2>
+          <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Hemos reunido las combinaciones tipográficas más populares en Pinterest e Instagram para que puedas copiarlas directamente en tu perfil:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Soft Bio</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">⋆ ˢᵒᶠᵗ ᵈʳᵉᵃᵐˢ ᵃⁿᵈ ᶜᵒᶠᶠᵉᵉ ⋆ | ☕ ᴍᴀᴅʀɪᴅ | ♡ ʟɪᴠɪɴɢ ɪɴ ᴍʏ ᴏᴡɴ ᴡᴏʀʟᴅ</p>
+            </div>
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Coquette Style</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">🎀 𝓈𝓌𝑒𝑒𝓉 𝓁𝒾𝓀𝑒 𝒽𝑜𝓃𝑒𝓎 🎀 | 🌸 𝒸𝒽𝒶𝓈𝒾𝓃𝑔 𝓈𝓊𝓃𝓈𝑒𝓉𝓈 | 💫 ᴍᴀᴅᴇ ᴏғ sᴛᴀʀᴅᴜsᴛ</p>
+            </div>
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Golden Hour Vibe</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">✧ ᴄʜᴀsɪɴɢ sᴜɴsᴇᴛs & ᴍᴇᴍᴏʀɪᴇs ✧ | 🌊 ᴏᴄᴇᴀɴ ᴍɪɴᴅ | 🌿 ꜱɪᴍᴘʟʏ ᴍᴇ</p>
+            </div>
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Dark Aesthetic</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">🌙 𝔩𝔬𝔰𝔱 𝔦𝔫 𝔱𝔥𝔢 𝔫𝔦𝔤𝔥𝔱 🌙 | 🖤 ᵐⁱᵈⁿⁱᵍʰᵗ ᵗʰᵒᵘᵍʰᵗˢ | 🥀 𝔞𝔫𝔤𝔢𝔩 𝔢𝔫𝔢𝔯𝔤𝔶</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ARTÍCULO DETALLADO 3: Tabla Comparativa de Tipografías Aesthetic */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2.5">
+            <span>📋</span> Tabla de Referencia de Estilos Tipográficos Aesthetic
+          </h2>
+          <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Compara las características visuales y compatibilidades de cada estilo dentro de la categoría aesthetic:
+          </p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs sm:text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-neutral-200 dark:border-neutral-800 bg-neutral-100/70 dark:bg-neutral-800/50 text-neutral-700 dark:text-neutral-300">
+                  <th className="py-3 px-4 font-semibold">Estilo Aesthetic</th>
+                  <th className="py-3 px-4 font-semibold">Ejemplo de Texto</th>
+                  <th className="py-3 px-4 font-semibold">Plataforma Ideal</th>
+                  <th className="py-3 px-4 font-semibold">Nivel de Compatibilidad</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800 text-neutral-600 dark:text-neutral-400">
+                <tr className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/30">
+                  <td className="py-3 px-4 font-bold text-purple-600 dark:text-purple-400">Small Caps (Pequeñas)</td>
+                  <td className="py-3 px-4 font-mono font-bold text-neutral-900 dark:text-neutral-100">ʟᴇᴛʀᴀs ᴀᴇsᴛʜᴇᴛɪᴄ</td>
+                  <td className="py-3 px-4">Bio de Instagram, TikTok</td>
+                  <td className="py-3 px-4 text-emerald-600 font-semibold">100% (Universal)</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/30">
+                  <td className="py-3 px-4 font-bold text-purple-600 dark:text-purple-400">Superíndices</td>
+                  <td className="py-3 px-4 font-mono font-bold text-neutral-900 dark:text-neutral-100">ˢᵒᶠᵗ ᵛⁱᵇᵉˢ</td>
+                  <td className="py-3 px-4">Nicks de juegos, Tumblr</td>
+                  <td className="py-3 px-4 text-emerald-600 font-semibold">99.8% High</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/30">
+                  <td className="py-3 px-4 font-bold text-purple-600 dark:text-purple-400">Fullwidth (Vaporwave)</td>
+                  <td className="py-3 px-4 font-mono font-bold text-neutral-900 dark:text-neutral-100">Ａ ｅ ｓ ｔ ｈ ｅ ｔ ｉ ｃ</td>
+                  <td className="py-3 px-4">Discord, Pinterest</td>
+                  <td className="py-3 px-4 text-emerald-600 font-semibold">100% (Universal)</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/30">
+                  <td className="py-3 px-4 font-bold text-purple-600 dark:text-purple-400">Cursiva Fina (Script)</td>
+                  <td className="py-3 px-4 font-mono font-bold text-neutral-900 dark:text-neutral-100">𝓈𝓌𝑒𝑒𝓉 𝓁𝒾𝓀𝑒 𝒽𝑜𝓃𝑒𝓎</td>
+                  <td className="py-3 px-4">Estados de WhatsApp, Instagram</td>
+                  <td className="py-3 px-4 text-emerald-600 font-semibold">99.5% High</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Unique FAQ */}
+        <FaqSection title="Preguntas Frecuentes sobre Letras Aesthetic" faqs={aestheticFaqs} />
       </main>
     </div>
   );

@@ -3,7 +3,7 @@ import React from "react";
 const unicodeExamples = [
   { normal: "A", unicode: "𝒜  /  Ａ  /  𝔄  /  𝐀  /  𝔸" },
   { normal: "B", unicode: "ℬ  /  Ｂ  /  𝔅  /  𝐁  /  𝔹" },
-  { normal: "Texto", unicode: "𝒯ℯ𝓍𝓉ℴ  /  Ｔｅｘｔｏ  /  mathcal𝔗𝔢𝔭𝔱𝔬  /  𝐓𝐞𝐱𝐭𝐨" },
+  { normal: "Texto", unicode: "𝒯ℯ𝓍𝓉ℴ  /  Ｔｅｘｔｏ  /  𝔗𝔢𝔡𝔱𝔬  /  𝐓𝐞𝐱𝐭𝐨" },
 ];
 
 export default function HowItWorksSection() {

@@ -1,227 +1,59 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
-import ExamplesSection from "@/components/ExamplesSection";
+import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
 
-interface SymbolCategory {
-  name: string;
-  items: string[];
-}
+export const metadata: Metadata = {
+  title: "Símbolos para Nick - Armas, Coronas, Alas y Corchetes Gamer ⚔️",
+  description:
+    "Copia símbolos para nicks de Free Fire, Roblox y PUBG: espadas, coronas, alas, cruces y corchetes decorativos con 1 clic.",
+};
 
-const nickSymbolCategories: SymbolCategory[] = [
+const nickSimbolosFaqs = [
   {
-    name: "Coronas y Realeza",
-    items: ["👑", "♚", "♛", "♔", "♕", "꧁👑꧂", "༺👑༻", "⚡👑⚡"],
-  },
-  {
-    name: "Espadas y Armas",
-    items: ["⚔", "⚔️", "🗡️", "⚔️💥", "🛡️", "🏹", "🔫", "💣", "☠️⚔️"],
-  },
-  {
-    name: "Calaveras y Clan Tags",
-    items: ["☠", "☠️", "💀", "【Clan】", "〖TAG〗", "꧁ Clan ꧂", "༺TAG༻", "⦇Clan⦈"],
-  },
-  {
-    name: "Alas, Corchetes y Estrellas",
-    items: ["𓆩𓆪", "ʚɞ", "≪≫", "⟨⟩", "✦", "✧", "★", "✩", "⚡", "💥", "🔥"],
-  },
-];
-
-const nickExamples = [
-  {
-    persona: "Sniper de Elite Free Fire",
-    text: "꧁⚔️𝒮𝓃𝒾𝓅ℯ𝓇⚔️꧂",
-  },
-  {
-    persona: "Líder de Clan Épico",
-    text: "【𝒦𝒾𝓃ℊ】𝒮𝒽𝒶𝒹ℴ𝓌 👑",
-  },
-  {
-    persona: "Estilo Rusk / Insano",
-    text: "☠️ ℛ𝓊𝓈𝒽ℯ𝓇𝐹𝐹 ☠️",
-  },
-  {
-    persona: "Jugadora Femenina Pro",
-    text: "𓆩♡𓆪 𝒬𝓊ℯℯ𝓃𝒴𝓊𝓇𝒾 𓆩♡𓆪",
-  },
-  {
-    persona: "Tag de Clan Destacado",
-    text: "〖𝒩𝒳𝒯〗 𝒦𝒾𝓁𝓁ℯ𝓇 ⚡",
-  },
-  {
-    persona: "Modo Leyenda PUBG",
-    text: "༺𝒯𝒾𝓉𝒶𝓃༻ 🛡️",
-  },
-  {
-    persona: "Estilo Alfa Wolf Roblox",
-    text: "🐺 𝒜𝓁𝓅𝒽𝒶𝒲ℴ𝓁𝒻 ≪≫",
-  },
-  {
-    persona: "Nick con Alas Aesthetic",
-    text: "ʚɞ 𝒜𝓃ℊℯ𝓁𝒴𝓊𝓂𝒾 ʚɞ",
-  },
-  {
-    persona: "Demon Gamer",
-    text: "👿 𝒟𝒶𝓇𝓀𝒟ℯ𝓂ℴ𝓃 🔥",
-  },
-  {
-    persona: "Guerrero Mítico",
-    text: "🗡️ 𝒱𝒶𝓁𝓀𝓎𝓇𝒾ℯ 🛡️",
-  },
-];
-
-const faqs = [
-  {
-    q: "¿Cómo uso los símbolos para nick en mis juegos?",
-    a: "Simplemente haz clic en el botón 'Copiar' del símbolo o clan tag que desees, luego pégalo directamente en la pantalla de edición de nombre de tu juego (Free Fire, Roblox, PUBG, Call of Duty).",
-  },
-  {
-    q: "¿Son compatibles las coronas y espadas con Free Fire?",
-    a: "¡Sí! Todos los símbolos de coronas, espadas, alas y corchetes decorativos presentados en esta página son 100% compatibles con la versión actual de Free Fire y Free Fire MAX.",
-  },
-  {
-    q: "¿Qué significan los símbolos ꧁꧂ y ༺༻?",
-    a: "Son adornos de marcos o alas muy populares en la comunidad gamer para encerrar el nombre de usuario o el tag del clan y darles un aspecto llamativo de torneo.",
-  },
-  {
-    q: "¿Cuentan los símbolos para el límite de 12 caracteres de Free Fire?",
-    a: "Sí, cada símbolo o adorno cuenta como uno o más caracteres según su codificación Unicode. Procura usar apodos cortos al incluir adornos para no superar los 12 caracteres.",
-  },
-  {
-    q: "¿Es seguro usar símbolos en mi nombre de usuario?",
-    a: "Totalmente seguro. Utilizar símbolos Unicode estándar permitidos en el juego no viola las normas ni causa sanciones.",
-  },
-  {
-    q: "¿Puedo copiar símbolos para nombres de clan?",
-    a: "Sí, los marcos como 【Clan】 y 〖Tag〗 son perfectos para identificar a todos los integrantes de tu equipo o clan.",
-  },
-  {
-    q: "¿Es gratis copiar los símbolos para nicks?",
-    a: "Sí, la herramienta de símbolos es completamente gratuita y libre de copiar cuantas veces quieras.",
-  },
-  {
-    q: "¿Funcionan estos símbolos en consolas y PC?",
-    a: "Sí, son compatibles en dispositivos móviles (Android, iOS), PC y plataformas de consola.",
+    q: "¿Cuáles son los símbolos más usados en apodos de juegos?",
+    a: "Las coronas de rey (👑), alas (꧁꧂), espadas cruzadas (⚔️) y diamantes (♦) son los elementos ornamentales más populares en nombres de clan.",
   },
 ];
 
 export default function SimbolosParaNickPage() {
-  const [copiedItem, setCopiedItem] = useState<string | null>(null);
-
-  const handleCopySymbol = async (symbol: string) => {
-    try {
-      await navigator.clipboard.writeText(symbol);
-      setCopiedItem(symbol);
-      setTimeout(() => {
-        setCopiedItem((prev) => (prev === symbol ? null : prev));
-      }, 2000);
-    } catch (err) {
-      console.error("Failed to copy nick symbol: ", err);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
-      {/* Site Header Navigation */}
       <NavBar />
 
-      <main className="flex-1 py-8 px-4 sm:px-8">
-        <div className="max-w-4xl mx-auto flex flex-col gap-10">
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
-            <ol className="flex items-center gap-2 flex-wrap">
-              <li>
-                <a href="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                  Inicio
-                </a>
-              </li>
-              <li>/</li>
-              <li>
-                <a href="#" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                  Símbolos Aesthetic
-                </a>
-              </li>
-              <li>/</li>
-              <li className="font-semibold text-neutral-800 dark:text-neutral-200">
-                Símbolos para Nick
-              </li>
-            </ol>
-          </nav>
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
+          <Link href="/" className="hover:text-purple-600 transition-colors">
+            Inicio
+          </Link>
+          <span>/</span>
+          <span className="text-neutral-400">Símbolos Aesthetic</span>
+          <span>/</span>
+          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Símbolos para Nick</span>
+        </nav>
 
-          {/* Page Heading & Intro */}
-          <header className="flex flex-col gap-4">
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
-              Símbolos para Nick: Coronas, Espadas y Clan Tags
-            </h1>
-            <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Copia y pega los mejores símbolos gamer para tu nick. Encuentra coronas de rey/reina, espadas
-              cruzadas, calaveras insanas, alas elegantes y marcas de clan como 【】 y ꧁꧂. Personaliza tu apodo
-              para Free Fire, Roblox, PUBG y Call of Duty en segundos.
-            </p>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              La selección de símbolos para nick destaca por aportar un distintivo visual inmediato a nombres de jugador y tags de escuadra. A menudo es muy popular entre competidores de Free Fire, PUBG y Roblox para enmarcar su apodo. Se usa comúnmente en torneos PvP, y si deseas combinar estos elementos con tipografías especiales te aconsejamos visitar la sección de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick Free Fire masculino</Link> o revisar la colección de <Link href="/simbolos-aesthetic/simbolos-coquette" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">símbolos coquette</Link>.
-            </p>
-          </header>
+        <header className="flex flex-col gap-3">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50">
+            Símbolos Gamer para Nicks y Nombres ⚔️
+          </h1>
+          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Encierra y decora tu apodo de jugador con alas, espadas y coronas compatibles con Free Fire y Roblox.
+          </p>
+        </header>
 
-          {/* Symbol Category Grids */}
-          <div className="flex flex-col gap-8">
-            {nickSymbolCategories.map((cat) => (
-              <section
-                key={cat.name}
-                className="flex flex-col gap-4 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-sm isolate relative z-0"
-              >
-                <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-100">
-                  {cat.name}
-                </h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                  {cat.items.map((item) => {
-                    const isCopied = copiedItem === item;
-                    return (
-                      <button
-                        key={item}
-                        type="button"
-                        onClick={() => handleCopySymbol(item)}
-                        className={`flex items-center justify-between gap-2 p-3 rounded-xl border transition-all cursor-pointer ${
-                          isCopied
-                            ? "bg-green-600 border-green-600 text-white shadow-sm scale-105"
-                            : "bg-neutral-50 dark:bg-neutral-800/40 border-neutral-200 dark:border-neutral-800 hover:border-purple-500 text-neutral-900 dark:text-neutral-100 hover:shadow-sm"
-                        }`}
-                      >
-                        <span className="text-lg sm:text-xl truncate">{item}</span>
-                        <span className="text-xs font-semibold shrink-0">
-                          {isCopied ? "✓ Copiado" : "Copiar"}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </section>
-            ))}
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed p-4 rounded-xl bg-white dark:bg-neutral-900/60 border border-neutral-200 dark:border-neutral-800">
-              Toca el botón &apos;Copiar&apos; en el adorno que desees para llevarlo directamente a tu juego. Puedes complementar tu perfil con nuestros <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link> o revisar el tutorial para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">cambiar nick Free Fire</Link>.
-            </p>
-          </div>
+        <Converter highlightStyleId="gothic" />
 
-          {/* Section: Ejemplos Listos para Copiar */}
-          <ExamplesSection
-            title="Nicks Gamer con Símbolos Listos para Copiar"
-            examples={nickExamples}
-          />
+        <section className="flex flex-col gap-5 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+          <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
+            <span>🛡️</span> Decoración de Nicks de Alta Competencia
+          </h2>
+          <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Colocar corchetes especiales (ej: ꧁༺TEXTO༻꧂) enmarcan tu apodo y lo vuelven inconfundible en las tablas de matar.
+          </p>
+        </section>
 
-          {/* Pre-FAQ Related Links */}
-          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Para otras redes sociales y plataformas de juego, descubre nuestras opciones de <Link href="/fuentes-para-instagram/fuentes-para-discord" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">fuentes para Discord</Link> o los <Link href="/nicks-para-juegos/nombres-para-roblox" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nombres para Roblox</Link>.
-          </section>
-
-          {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
-          <FaqSection
-            title="Preguntas Frecuentes sobre Símbolos para Nick"
-            faqs={faqs}
-          />
-        </div>
+        <FaqSection title="Preguntas Frecuentes sobre Símbolos para Nick" faqs={nickSimbolosFaqs} />
       </main>
     </div>
   );

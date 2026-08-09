@@ -1,309 +1,127 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
-import ExamplesSection from "@/components/ExamplesSection";
 import FaqSection from "@/components/FaqSection";
 
-export const metadata = {
-  title: "Letras Cursivas | Convertidor de Texto en Cursiva Bonita",
+export const metadata: Metadata = {
+  title: "Letras Cursivas - Conversor de Tipografía Script Elegante ✒️",
   description:
-    "Convierte tu texto a letras cursivas bonitas y elegantes. Copia y pega en tu biografía de Instagram, WhatsApp, TikTok y Free Fire gratis.",
+    "Convierte tu texto a letras cursivas, manuscritas y caligráficas para copiar y pegar. Decora nombres, cartas, biografías de Instagram y mensajes especiales gratis.",
 };
 
-const charLimits = [
-  { platform: "Free Fire (Nick)", limit: "12 caracteres" },
-  { platform: "Instagram Bio", limit: "150 caracteres" },
-  { platform: "WhatsApp Estado", limit: "139 caracteres" },
-  { platform: "TikTok Bio", limit: "80 caracteres" },
-  { platform: "Discord Nick", limit: "32 caracteres" },
-  { platform: "PUBG Mobile Nick", limit: "16 caracteres" },
-  { platform: "Twitter / X Bio", limit: "160 caracteres" },
-];
-
-const cursiveExamples = [
+const cursivasFaqs = [
   {
-    persona: "Fotógrafa",
-    text: "𝒞𝒶𝓅𝓉𝓊𝓇𝒶𝓃𝒹ℴ 𝓂ℴ𝓂ℯ𝓃𝓉ℴ𝓈 📸 | 𝒫𝒽ℴ𝓉ℴℊ𝓇𝒶𝓅𝒽ℯ𝓇",
+    q: "¿Qué diferencia existe entre las letras cursivas Unicode y una fuente instalada?",
+    a: "Las fuentes instaladas (archivos .ttf o .otf) solo se ven en el programa donde se instalan. En cambio, las letras cursivas Unicode que generas aquí son caracteres de texto universales que se pueden copiar y pegar en Instagram, WhatsApp o correos y se verán iguales en cualquier pantalla.",
   },
   {
-    persona: "Gamer Girl",
-    text: "𝒢𝒶𝓂ℯ𝓇 ✨ | 𝒬𝓊ℯℯ𝓃 ℴ𝒻 𝓉𝒽ℯ 𝒢𝒶𝓂ℯ 🎮",
+    q: "¿Por qué algunas palabras en cursiva se ven con diferentes tipos de trazo?",
+    a: "El estándar Unicode contiene dos bloques de cursiva principales: Cursiva Script Normal (𝓒𝓾𝓻𝓼𝓲𝓿𝓪) y Cursiva Script de Trazo Fino (𝒞𝓊𝓇𝓈𝒾𝓋𝒶). Nuestro conversor te permite probar ambos estilos para que elijas el nivel de elegancia que prefieras.",
   },
   {
-    persona: "Estudiante",
-    text: "ℰ𝓈𝓉𝓊𝒹𝒾𝒶𝓃𝓉ℯ 𝒹ℯ ℳℯ𝒹𝒾𝒸𝒾𝓃𝒶 🩺 | 𝒮𝓊ℯñℴ𝓈 ℯ𝓃 𝒸ℴ𝓃𝓈𝓉𝓇𝓊𝒸𝒸𝒾ó𝓃",
+    q: "¿Funciona el conversor de letras cursivas con tildes y nombres en español?",
+    a: "¡Sí! Nuestro motor está calibrado para mantener las vocales acentuadas (á, é, í, ó, ú) y la letra ñ dentro de la conversión cursiva, evitando que aparezcan caracteres rotos.",
   },
   {
-    persona: "Negocio / Tienda",
-    text: "ℳℴ𝒹𝒶 & ℰ𝓈𝓉𝒾𝓁ℴ 🛍️ | ℰ𝓃𝓋íℴ𝓈 a 𝓉ℴ𝒹ℴ ℯ𝓁 𝓅𝒶í𝓈",
+    q: "¿En qué casos es mejor utilizar tipografía cursiva?",
+    a: "Es idónea para firmas digitales, frases románticas, dedicatorias de cumpleaños, titulares de historias en Instagram y nombres de perfil donde desees destacar clase y delicadeza.",
   },
   {
-    persona: "Perfil Minimalista",
-    text: "𝒮𝒾𝓂𝓅𝓁ℯ𝓂ℯ𝓃𝓉ℯ 𝓎ℴ 🌿 | 𝒱𝒾𝓋𝒾ℯ𝓃𝒹ℴ ℯ𝓁 𝓅𝓇ℯ𝓈ℯ𝓃𝓉ℯ",
+    q: "¿Cómo usar letras cursivas en invitaciones digitales de boda o aniversarios?",
+    a: "Escribe los nombres de los festejados en la herramienta, convierte el texto a Cursiva Elegante (Bold Script), cópialo y pégalo directamente en la plantilla de Canva, WhatsApp o correo.",
   },
   {
-    persona: "Artista / Diseñadora",
-    text: "𝒜𝓇𝓉ℯ & 𝒟𝒾𝓈ℯñℴ 🎨 | 𝒞𝓇ℯ𝒶𝓃𝒹ℴ 𝓂𝒶ℊ𝒾𝒶",
-  },
-  {
-    persona: "Fitness / Gym",
-    text: "贵𝒾𝓉𝓃ℯ𝓈𝓈 ℒ𝒾𝒻ℯ𝓈𝓉𝓎𝓁ℯ 🏋️‍♀️ | 𝒟𝒾𝓈𝒸𝒾𝓅𝓁𝒾𝓃𝒶 𝓎 𝒫𝒶𝓈𝒾ó𝓃",
-  },
-  {
-    persona: "Viajera / Blog",
-    text: "𝒱𝒾𝒶𝒿ℯ𝓇𝒶 𝓅ℴ𝓇 ℯ𝓁 𝓂𝓊𝓃𝒹ℴ ✈️ | 𝒜𝒸𝓊𝓂𝓊𝓁𝒶𝓃𝒹ℴ 𝓇ℯ𝒸𝓊ℯ𝓇𝒹ℴ𝓈",
-  },
-  {
-    persona: "Música / Cantante",
-    text: "ℳú𝓈𝒾𝒸𝒶 & 𝒞𝒶𝓃𝒸𝒾ℴ𝓃ℯ𝓈 🎶 | 𝒜𝓁𝓂𝒶 ℯ𝓃 𝒸𝒶𝒹𝒶 𝓃ℴ𝓉𝒶",
-  },
-  {
-    persona: "Nick Gamer Free Fire",
-    text: "𝒮𝒽𝒶𝒹ℴ𝓌 𝒦𝒾𝓁𝓁ℯ𝓇 ⚡ | 𝒫𝓇ℴ 𝒫𝓁𝒶𝓎ℯ𝓇",
-  },
-];
-
-const faqs = [
-  {
-    q: "¿Qué es el texto en letras cursivas Unicode?",
-    a: "Son caracteres matemáticos especiales codificados dentro del estándar Unicode mundial. En lugar de cambiar la fuente visual de tu teclado, reemplaza cada letra por su equivalente Unicode en estilo manuscrito o cursivo, lo que permite que sea compatible directamente en bios y mensajes.",
-  },
-  {
-    q: "¿Funciona en Instagram y redes sociales?",
-    a: "¡Sí! Las letras cursivas son totalmente compatibles con la biografía, el nombre de usuario, comentarios y publicaciones de Instagram, Facebook, TikTok, X (Twitter) y Pinterest.",
-  },
-  {
-    q: "¿Es compatible con WhatsApp y Free Fire?",
-    a: "Sí, puedes copiar y pegar el texto generado directamente en tus chats y estados de WhatsApp, así como en los nombres de usuario o clanes de Free Fire, Roblox y PUBG.",
-  },
-  {
-    q: "¿Es totalmente gratis esta herramienta?",
-    a: "Absolutamente gratis. Puedes generar, convertir y copiar todas las letras cursivas que desees sin registrarte ni instalar ninguna aplicación.",
-  },
-  {
-    q: "¿Por qué a veces se ven rectángulos o cuadritos [?] en lugar de la letra?",
-    a: "Esto sucede si el sistema operativo o dispositivo del receptor es muy antiguo y no cuenta con soporte para los bloques de caracteres matemáticos Unicode. En smartphones modernos (Android e iOS) se visualizan sin problema.",
-  },
-  {
-    q: "¿Puedo usar estas letras cursivas para fines comerciales?",
-    a: "Sí. Al ser caracteres estándar del mapa Unicode mundial, puedes utilizarlos libremente en marcas, promociones, descripciones de productos y redes sociales comerciales.",
-  },
-  {
-    q: "¿Se pueden convertir números y caracteres especiales a cursiva?",
-    a: "Actualmente la conversión en cursiva está optimizada para las letras del alfabeto (A-Z y a-z). Los números y símbolos que no dispongan de equivalente Unicode se mantendrán en su formato original de forma fluida.",
-  },
-  {
-    q: "¿Necesito instalar alguna app o teclado especial para usarlo?",
-    a: "No necesitas instalar nada. Nuestra herramienta funciona 100% en el navegador desde cualquier teléfono móvil, tablet o computadora.",
+    q: "¿Las letras cursivas se leen bien en pantallas pequeñas de celular?",
+    a: "Sí, nuestras fuentes cursivas utilizan glifos equilibrados. Si deseas mayor legibilidad en textos largos, te sugerimos utilizar el control deslizante de tamaño en 20px o 24px.",
   },
 ];
 
 export default function LetrasCursivasPage() {
   return (
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 transition-colors flex flex-col">
-      {/* Site Header Navigation */}
       <NavBar />
 
-      <main className="flex-1 py-8 px-4 sm:px-8">
-        <div className="max-w-4xl mx-auto flex flex-col gap-10">
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="text-sm text-neutral-500 dark:text-neutral-400">
-            <ol className="flex items-center gap-2 flex-wrap">
-              <li>
-                <a href="/" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                  Inicio
-                </a>
-              </li>
-              <li>/</li>
-              <li>
-                <a href="#" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                  Letras Bonitas
-                </a>
-              </li>
-              <li>/</li>
-              <li className="font-semibold text-neutral-800 dark:text-neutral-200">
-                Letras Cursivas
-              </li>
-            </ol>
-          </nav>
+      <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
+          <Link href="/" className="hover:text-purple-600 transition-colors">
+            Inicio
+          </Link>
+          <span>/</span>
+          <span className="text-neutral-400">Letras Bonitas</span>
+          <span>/</span>
+          <span className="text-neutral-900 dark:text-neutral-100 font-semibold">Letras Cursivas</span>
+        </nav>
 
-          {/* Page Heading & Intro */}
-          <header className="flex flex-col gap-4">
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
-              Letras Cursivas: Convertidor de Texto en Cursiva
-            </h1>
-            <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Transforma tu texto normal en letras cursivas bonitas, manuscritas y elegantes al instante.
-              Nuestro convertidor genera caracteres Unicode especiales compatibles con biografías de Instagram,
-              mensajes de WhatsApp, nombres de Free Fire y publicaciones en redes sociales. Escribe tu texto,
-              copia con un clic y destaca donde quieras.
-            </p>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              El estilo cursivo destaca por proyectar una imagen elegante y refinada en perfiles digitales. A menudo es muy popular para personalizar la <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">bio para Instagram</Link> y estados emotivos. Se usa comúnmente en firmas y frases de amor, y si buscas algo diferente también puedes explorar nuestras <Link href="/letras-bonitas/letras-graffiti" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">letras graffiti</Link> o consultar el <Link href="/alfabeto-completo/alfabeto-cursivo" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">alfabeto cursivo</Link> completo.
-            </p>
-          </header>
+        <header className="flex flex-col gap-3">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600 bg-clip-text text-transparent">
+            Letras Cursivas y Manuscritas Elegantes ✒️
+          </h1>
+          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-4xl">
+            Transforma cualquier palabra en hermosos trazos cursivos y caligráficos. Ideal para firmar tus publicaciones, enviar notas afectuosas, diseñar invitaciones y renovar tu biografía con un estilo distinguido.
+          </p>
+        </header>
 
-          {/* Decorative Feature Badges Row */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 py-2">
-            {/* Feature 1 */}
-            <div className="flex flex-col items-center text-center gap-2 p-3 rounded-xl bg-white dark:bg-neutral-900/40 border border-neutral-200/60 dark:border-neutral-800/60 shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-600 text-white flex items-center justify-center shadow-sm shrink-0">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-              </div>
-              <span className="text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-                8+ Estilos
-              </span>
+        {/* Converter focused on Cursive */}
+        <Converter highlightStyleId="cursive" />
+
+        {/* ARTÍCULO DETALLADO 1: Origen y Elegancia de la Cursiva Script */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2.5">
+            <span>✒️</span> Historia y Elegancia de la Escritura Cursiva Digital
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            La caligrafía manuscrita ha sido desde hace siglos el símbolo supremo de sofisticación, delicadeza y toque personal en cartas de amor, títulos honoríficos y correspondencia de alta gala. En el mundo digital contemporáneo, los bloques tipográficos <code className="text-purple-600 font-mono font-semibold">Mathematical Script (U+1D49C)</code> permiten replicar esa elegancia artesanal sin necesidad de pluma de pluma ni tinta.
+          </p>
+          <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Las letras cursivas digitales imitan las variaciones de presión de las plumas de punta flexible, ofreciendo trazos ascendentes delgados y trazos descendentes con mayor grosor. Esto genera una armonía visual que capta de inmediato la atención en publicaciones de Instagram y mensajes de WhatsApp.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3">
+            <div className="p-5 rounded-xl border border-purple-100 dark:border-purple-900/50 bg-purple-50/40 dark:bg-purple-950/20 flex flex-col gap-2">
+              <h3 className="font-bold text-base text-purple-700 dark:text-purple-300">𝓒𝓾𝓻𝓼𝓲𝓿𝓪 𝓝𝓮𝓰𝓻𝓲𝓽𝓪 (Bold Script)</h3>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Trazos con mayor volumen y contraste. Perfectos para destacar nombres propios en títulos de fotos, firmas destacadas en la biografía de Instagram y tarjetas de felicitación.
+              </p>
             </div>
-
-            {/* Feature 2 */}
-            <div className="flex flex-col items-center text-center gap-2 p-3 rounded-xl bg-white dark:bg-neutral-900/40 border border-neutral-200/60 dark:border-neutral-800/60 shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-600 text-white flex items-center justify-center shadow-sm shrink-0">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <span className="text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-                Guardar Favoritos
-              </span>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="flex flex-col items-center text-center gap-2 p-3 rounded-xl bg-white dark:bg-neutral-900/40 border border-neutral-200/60 dark:border-neutral-800/60 shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-600 text-white flex items-center justify-center shadow-sm shrink-0">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <span className="text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-                Copiar y Pegar
-              </span>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="flex flex-col items-center text-center gap-2 p-3 rounded-xl bg-white dark:bg-neutral-900/40 border border-neutral-200/60 dark:border-neutral-800/60 shadow-2xs">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-indigo-600 text-white flex items-center justify-center shadow-sm shrink-0">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span className="text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200">
-                100% Gratis
-              </span>
+            <div className="p-5 rounded-xl border border-indigo-100 dark:border-indigo-900/50 bg-indigo-50/40 dark:bg-indigo-950/20 flex flex-col gap-2">
+              <h3 className="font-bold text-base text-indigo-700 dark:text-indigo-300">𝒞𝓊𝓇𝓈𝒾𝓋𝒶 𝐹𝒾𝓃𝒶 (Fine Script)</h3>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Líneas delgadas y sutiles que recuerdan la caligrafía Copperplate del siglo XVIII. Ideales para poemas, versos románticos y frases reflexivas.
+              </p>
             </div>
           </div>
+        </section>
 
-          {/* Interactive Converter with Cursive (Script) Highlighted */}
-          <Converter highlightStyleId="cursive" />
+        {/* ARTÍCULO DETALLADO 2: Aplicaciones Prácticas y Ejemplos Cursivos */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2.5">
+            <span>💌</span> Usos Recomendados y Frases Cursivas Listas para Copiar
+          </h2>
 
-          {/* Section: Cómo Usar */}
-          <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-sm isolate relative z-0">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              Cómo Usar el Convertidor de Letras Cursivas
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="flex flex-col gap-2 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
-                <span className="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
-                  1
-                </span>
-                <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-200">
-                  Escribe tu Texto
-                </h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  Ingresa cualquier palabra, nombre o biografía en el cuadro de texto principal.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
-                <span className="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
-                  2
-                </span>
-                <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-200">
-                  Elige la Cursiva
-                </h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  La herramienta convertirá automáticamente cada letra al estilo cursivo manuscrito.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
-                <span className="w-8 h-8 rounded-full bg-purple-600 text-white font-bold flex items-center justify-center text-sm">
-                  3
-                </span>
-                <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-200">
-                  Copia y Pega
-                </h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  Haz clic en &quot;Copiar&quot; y pégalo directamente en tu red social o juego preferido.
-                </p>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Invitaciones y Aniversarios</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">𝓝𝓾𝓮𝓼𝓽𝓻𝓪 𝓗𝓲𝓼𝓽𝓸𝓻𝓲𝓪 𝓭𝓮 𝓐𝓶𝓸𝓻 💕 𝟤𝟢𝟤𝟦</p>
             </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed border-t border-neutral-100 dark:border-neutral-800 pt-4">
-              Al procesar tu frase, el sistema sustituye los caracteres latinos por símbolos Unicode manuscritos. También puedes adaptar tus creaciones a un <Link href="/nicks-para-juegos/nick-free-fire" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nick para Free Fire</Link> o usarlos en <Link href="/letras-personalizadas/nombres-personalizados" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">nombres personalizados</Link> para perfiles digitales.
-            </p>
-          </section>
-
-          {/* Section: Tabla de Límites de Caracteres */}
-          <section className="flex flex-col gap-6 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-sm isolate relative z-0">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              Límites de Caracteres por Plataforma
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="border-b border-neutral-200 dark:border-neutral-800 text-sm font-semibold text-neutral-600 dark:text-neutral-400">
-                    <th className="py-3 px-4">Plataforma / Uso</th>
-                    <th className="py-3 px-4">Límite Recomendado</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-100 dark:divide-neutral-800 text-sm text-neutral-700 dark:text-neutral-300">
-                  {charLimits.map((item) => (
-                    <tr key={item.platform} className="hover:bg-neutral-50/50 dark:hover:bg-neutral-800/30 transition-colors">
-                      <td className="py-3.5 px-4 font-medium">{item.platform}</td>
-                      <td className="py-3.5 px-4">{item.limit}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Firmas Digitales</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">𝓐𝓉ℯ𝓃𝓉𝒶𝓂ℯ𝓃𝓉ℯ, 𝓜𝒶𝓇𝒾𝒶 ℱℯ𝓇𝓃𝒶𝓃𝒹𝒶 ✨</p>
             </div>
-          </section>
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Titulares de Historias</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">𝓡𝓮𝓬𝓾𝓮𝓻𝓭𝓸𝓼 𝓘𝓷𝓸𝓵𝓿𝓲𝓭𝓪𝓫𝓵𝓮𝓼 🌴 𝓢𝓾𝓶𝓶𝓮𝓻 𝓥𝓲𝓫𝓮𝓼</p>
+            </div>
+            <div className="p-4 rounded-xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-950/50 flex flex-col gap-1.5">
+              <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Citas Románticas</span>
+              <p className="font-mono text-neutral-900 dark:text-neutral-100 text-sm">𝒞𝑜𝓃𝓉𝒾𝑔𝑜, 𝓉𝑜𝒹𝑜 𝑒𝓈 𝓂á𝓈 𝒷𝑜𝓃𝒾𝓉𝑜 🌹</p>
+            </div>
+          </div>
+        </section>
 
-          {/* Alphabet Reference Table */}
-          <AlphabetReferenceTable styleId="cursive" />
-
-          {/* Section: Cómo Funciona el Generador de Letras (Unicode) */}
-          <HowItWorksSection />
-
-          {/* Section: Ejemplos Listos para Copiar */}
-          <ExamplesSection
-            title="Ejemplos de Bio y Nombres en Cursiva"
-            examples={cursiveExamples}
-          />
-
-          {/* Section: Conclusión */}
-          <section className="flex flex-col gap-4 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/60 shadow-xs">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-              <span>💡</span> Conclusión
-            </h2>
-            <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              Las letras cursivas representan la opción más sofisticada y elegante para personalizar tus textos en internet. Gracias a su estética manuscrita y compatibilidad universal Unicode, te permiten proyectar una imagen única en tu biografía de Instagram, perfil de WhatsApp y nombres de usuario sin necesidad de instalar fuentes adicionales.
-            </p>
-          </section>
-
-          {/* Section: Pre-FAQ Related Links */}
-          <section className="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800 bg-purple-50/40 dark:bg-purple-950/20 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Explora más recursos para enriquecer tus textos: si deseas resaltar avisos importantes prueba el <Link href="/letras-personalizadas/texto-en-negrita" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">texto en negrita</Link>, o si prefieres adornos gráficos complementa tu estilo con nuestros <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-purple-600 dark:text-purple-400 font-medium underline hover:opacity-80">emojis para copiar</Link>.
-          </section>
-
-          {/* Section: Preguntas Frecuentes (FAQ Accordion) */}
-          <FaqSection
-            title="Preguntas Frecuentes"
-            faqs={faqs}
-          />
-        </div>
+        {/* Unique FAQ */}
+        <FaqSection title="Preguntas Frecuentes sobre Letras Cursivas" faqs={cursivasFaqs} />
       </main>
     </div>
   );

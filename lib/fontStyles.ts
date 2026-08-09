@@ -41,13 +41,13 @@ function createCharMap(
     í: "i", ì: "i", ï: "i", î: "i",
     ó: "o", ò: "o", ö: "o", ô: "o", õ: "o",
     ú: "u", ù: "u", ü: "u", û: "u",
-    ñ: "n",
+    ñ: "n", ç: "c",
     Á: "A", À: "A", Ä: "A", Â: "A", Ã: "A",
     É: "E", È: "E", Ë: "E", Ê: "E",
     Í: "I", Ì: "I", Ï: "I", Î: "I",
     Ó: "O", Ò: "O", Ö: "O", Ô: "O", Õ: "O",
     Ú: "U", Ù: "U", Ü: "U", Û: "U",
-    Ñ: "N",
+    Ñ: "N", Ç: "C",
   };
 
   for (const [accented, base] of Object.entries(accentMap)) {
@@ -200,8 +200,8 @@ const upsideDownMap: Record<string, string> = {
 export const fontStyles: FontStyle[] = [
   {
     id: "cursive",
-    name: "Cursive",
-    category: "Script",
+    name: "Cursiva",
+    category: "Cursivas",
     map: createCharMap(
       0x1d49c,
       0x1d4b6,
@@ -226,14 +226,14 @@ export const fontStyles: FontStyle[] = [
   },
   {
     id: "bold",
-    name: "Bold",
-    category: "Mathematical",
+    name: "Negrita",
+    category: "Aesthetic",
     map: createCharMap(0x1d400, 0x1d41a),
   },
   {
     id: "bubble",
-    name: "Bubble",
-    category: "Circled",
+    name: "Burbuja",
+    category: "Decoradas",
     map: createCharMap(0x24b6, 0x24d0),
   },
   {
