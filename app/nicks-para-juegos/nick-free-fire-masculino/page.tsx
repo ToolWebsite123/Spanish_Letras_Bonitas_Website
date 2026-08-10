@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Nicks Free Fire Masculinos - Estilo Pro, Clan y Guerrero 🗡️",
+  title: "Nicks Free Fire Masculinos - Estilo Pro y Guerrero 🗡️",
   description:
     "Copia los mejores nicks masculinos para Free Fire. Letras góticas, símbolos de espadas, dragones, rayos y coronas de líder.",
 };

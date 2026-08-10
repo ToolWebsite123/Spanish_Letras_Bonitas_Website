@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Letras Graffiti - Conversor de Fuentes Urbanas y Arte Callejero 🎨",
+  title: "Letras Graffiti - Fuentes Urbanas y Arte Callejero 🎨",
   description:
     "Genera letras estilo graffiti, fuentes urbanas, letras con sombra, cuadros oscuros y trazos gruesos para copiar y pegar en nicks y redes.",
 };

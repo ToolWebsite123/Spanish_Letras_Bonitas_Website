@@ -8,7 +8,7 @@ import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Letras Cursivas - Conversor de Fuentes Cursivas y Manuscritas ✒️",
+  title: "Letras Cursivas - Conversor de Fuentes Manuscritas ✒️",
   description:
     "Convierte texto normal en letras cursivas elegantes, caligrafía fina y manuscrita para copiar y pegar en Instagram, TikTok, WhatsApp y títulos.",
 };

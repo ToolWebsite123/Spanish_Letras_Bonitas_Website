@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Nicks Free Fire Femeninos - Estilos Lindos, Reinas y Chicas Gamer 🌸",
+  title: "Nicks Free Fire Femeninos - Lindos y Chicas Gamer 🌸",
   description:
     "Copia los mejores nicks femeninos para Free Fire. Coronas de reina, moños, flores, estrellas y tipografía cursiva delicada.",
 };

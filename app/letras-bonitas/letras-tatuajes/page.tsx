@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Letras para Tatuajes - Conversor de Fuentes Góticas y Chicanas 💉",
+  title: "Letras para Tatuajes - Fuentes Góticas y Chicanas 💉",
   description:
     "Previsualiza bocetos de nombres para tatuajes en fuentes góticas, letras chicanas y caligrafía fina para llevar a tu tatuador.",
 };

@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Cambiar Nick Free Fire - Guía Paso a Paso sin Diamantes ⚙️",
+  title: "Cambiar Nick Free Fire - Guía Paso a Paso ⚙️",
   description:
     "Aprende cómo cambiar tu nombre en Free Fire paso a paso. Solución a errores de espacio transparente, límite de 12 bytes y tarjetas de cambio.",
 };

@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Letras para Firma - Generador de Estilos de Firma Personal 🖋️",
+  title: "Letras para Firma - Estilos de Firma Personal 🖋️",
   description:
     "Crea estilos de firma elegante en letras manuscritas para nombres personales, emails y marcas de agua.",
 };

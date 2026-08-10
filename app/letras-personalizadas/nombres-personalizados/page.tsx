@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 
 export const metadata: Metadata = {
-  title: "Nombres Personalizados - Generador de Nombres Bonitos y Estéticos ✨",
+  title: "Nombres Personalizados - Bonitos y Estéticos ✨",
   description:
     "Personaliza cualquier nombre propio con letras cursivas, góticas, pequeñas y decoradas para copiar y pegar en Instagram, TikTok y Free Fire.",
 };

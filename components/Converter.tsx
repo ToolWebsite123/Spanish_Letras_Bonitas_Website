@@ -35,7 +35,7 @@ export default function Converter({
   const [inputText, setInputText] = useState("Letras Bonitas");
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [selectedDecorator, setSelectedDecorator] = useState<Decorator | null>(null);
-  const [fontSize, setFontSize] = useState<number>(22);
+  const [fontSize, setFontSize] = useState<number>(18);
   const [activeCategory, setActiveCategory] = useState<string>("Todos");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -165,7 +165,7 @@ export default function Converter({
   return (
     <div className="w-full flex flex-col gap-6">
       {/* Sleek Input Container in Midnight Orchid */}
-      <div className="flex flex-col gap-4 p-6 sm:p-8 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+      <div className="flex flex-col gap-3 p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
         {/* Main Textarea Input */}
         <div className="relative w-full">
           <textarea
@@ -173,17 +173,17 @@ export default function Converter({
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             placeholder="Escribe o pega tu texto aquí..."
-            rows={3}
-            className="w-full p-5 sm:p-6 rounded-2xl border border-purple-900/50 bg-[#231c3d] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 shadow-inner text-xl sm:text-3xl font-normal leading-relaxed resize-y transition-all"
+            rows={2}
+            className="w-full p-3.5 sm:p-4 pr-10 sm:pr-12 rounded-xl sm:rounded-2xl border border-purple-900/50 bg-[#231c3d] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 shadow-inner text-base sm:text-xl font-normal leading-normal resize-y transition-all"
           />
           {inputText && (
             <button
               type="button"
               onClick={() => setInputText("")}
-              className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-red-400 hover:bg-[#231c3d] transition-colors cursor-pointer"
+              className="absolute top-3 right-3 p-1.5 rounded-full text-slate-400 hover:text-red-400 hover:bg-[#231c3d] transition-colors cursor-pointer"
               title="Borrar texto"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -198,8 +198,8 @@ export default function Converter({
             <span className="text-[10px] text-slate-500 font-bold">A</span>
             <input
               type="range"
-              min={14}
-              max={36}
+              min={12}
+              max={32}
               value={fontSize}
               onChange={(e) => setFontSize(Number(e.target.value))}
               className="w-28 sm:w-36 h-2 bg-purple-950 rounded-lg appearance-none cursor-pointer accent-teal-400"
@@ -331,7 +331,7 @@ export default function Converter({
       )}
 
       {/* Font Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3.5">
         {!isCategoryPage
           ? filteredStyles.map((style) => {
               const rawStyledText = convertText(
@@ -349,17 +349,17 @@ export default function Converter({
                 <div
                   key={style.id}
                   onClick={() => handleCopy(style.id, styledText)}
-                  className="group relative flex flex-col justify-between gap-3 p-5 sm:p-6 rounded-3xl border border-purple-900/40 bg-[#1b1530] hover:border-teal-400/60 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden min-h-[130px]"
+                  className="group relative flex flex-col justify-between gap-2 p-3 sm:p-4.5 rounded-2xl border border-purple-900/40 bg-[#1b1530] hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-500/10 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer overflow-hidden min-h-[105px] sm:min-h-[115px]"
                 >
                   {/* Top Bar: Font Name + Heart Icon */}
-                  <div className="flex items-center justify-between gap-2 z-10">
-                    <span className="text-xs font-extrabold text-slate-400 group-hover:text-teal-400 transition-colors">
+                  <div className="flex items-center justify-between gap-1.5 z-10">
+                    <span className="text-[11px] sm:text-xs font-extrabold text-slate-400 group-hover:text-teal-400 transition-colors truncate">
                       {style.name}
                     </span>
                     <button
                       type="button"
                       onClick={(e) => toggleFavorite(style.id, e)}
-                      className={`p-1 text-base transition-transform hover:scale-125 cursor-pointer ${
+                      className={`p-0.5 text-xs sm:text-sm transition-transform hover:scale-125 cursor-pointer shrink-0 ${
                         isFav ? "text-teal-400 opacity-100" : "text-slate-600 hover:text-teal-400"
                       }`}
                       title={isFav ? "Quitar de favoritos" : "Guardar en favoritos"}
@@ -369,7 +369,7 @@ export default function Converter({
                   </div>
 
                   {/* Center Converted Text Output */}
-                  <div className="my-auto py-2 text-center">
+                  <div className="my-auto py-1 text-center overflow-hidden">
                     <p
                       className="text-slate-100 break-words font-normal leading-tight transition-all"
                       style={{ fontSize: `${fontSize}px` }}
@@ -379,19 +379,19 @@ export default function Converter({
                   </div>
 
                   {/* Bottom Action Hint */}
-                  <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1 z-10">
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity text-teal-400 font-bold">
+                  <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-500 pt-0.5 z-10">
+                    <span className="hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity text-teal-400 font-bold">
                       Toca para copiar
                     </span>
-                    <span className="text-[11px] font-bold text-teal-400 group-hover:underline flex items-center gap-1.5">
+                    <span className="ml-auto px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-400 font-bold border border-teal-500/20 group-hover:bg-teal-500 group-hover:text-white transition-all flex items-center gap-1 shrink-0">
                       <span>Copiar</span>
-                      <span>📋</span>
+                      <span className="text-[9px] sm:text-[10px]">📋</span>
                     </span>
                   </div>
 
                   {/* Copied Toast Overlay Effect */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black text-base tracking-wide transition-all duration-200 z-20 ${
+                    className={`absolute inset-0 bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black text-xs sm:text-sm tracking-wide transition-all duration-200 z-20 ${
                       isCopied ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full pointer-events-none"
                     }`}
                   >
@@ -407,29 +407,34 @@ export default function Converter({
                 featuredStyle.map,
                 featuredStyle.id
               );
-              const styledText = card.wrap(rawStyledText);
+              const styledText = selectedDecorator
+                ? selectedDecorator.wrap(card.wrap(rawStyledText))
+                : card.wrap(rawStyledText);
               const isCopied = copiedId === card.id;
+              const isCardFeatured =
+                card.isFeatured ||
+                Boolean(selectedDecorator && card.id.endsWith(`-${selectedDecorator.id}`));
 
               return (
                 <div
                   key={card.id}
                   onClick={() => handleCopy(card.id, styledText)}
-                  className={`group relative flex flex-col justify-between gap-3 p-5 sm:p-6 rounded-3xl border transition-all duration-200 cursor-pointer overflow-hidden min-h-[130px] ${
-                    card.isFeatured
+                  className={`group relative flex flex-col justify-between gap-2 p-3 sm:p-4.5 rounded-2xl border transition-all duration-200 cursor-pointer overflow-hidden min-h-[105px] sm:min-h-[115px] ${
+                    isCardFeatured
                       ? "border-2 border-teal-400 bg-teal-950/30 shadow-xl shadow-teal-500/10"
                       : "border border-purple-900/40 bg-[#1b1530] hover:border-teal-400/60"
                   }`}
                 >
-                  <div className="flex items-center justify-between gap-2 z-10">
-                    <span className="text-xs font-extrabold text-slate-300">
+                  <div className="flex items-center justify-between gap-1.5 z-10">
+                    <span className="text-[11px] sm:text-xs font-extrabold text-slate-300 truncate">
                       {card.name}
                     </span>
-                    <span className="text-[10px] px-2.5 py-0.5 rounded-full font-bold bg-purple-950 text-purple-300">
+                    <span className="text-[9px] sm:text-[10px] px-2 py-0.5 rounded-full font-bold bg-purple-950 text-purple-300 shrink-0">
                       {card.decoratorName}
                     </span>
                   </div>
 
-                  <div className="my-auto py-2 text-center">
+                  <div className="my-auto py-1 text-center overflow-hidden">
                     <p
                       className="text-slate-100 break-words font-normal leading-tight"
                       style={{ fontSize: `${fontSize}px` }}
@@ -438,14 +443,18 @@ export default function Converter({
                     </p>
                   </div>
 
-                  <div className="flex justify-end pt-1 z-10">
-                    <span className="text-[11px] font-bold text-teal-400">
-                      Copiar 📋
+                  <div className="flex items-center justify-between text-[10px] sm:text-[11px] pt-0.5 z-10">
+                    <span className="hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity text-teal-400 font-bold">
+                      Toca para copiar
+                    </span>
+                    <span className="ml-auto px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-400 font-bold border border-teal-500/20 group-hover:bg-teal-500 group-hover:text-white transition-all flex items-center gap-1 shrink-0">
+                      <span>Copiar</span>
+                      <span className="text-[9px] sm:text-[10px]">📋</span>
                     </span>
                   </div>
 
                   <div
-                    className={`absolute inset-0 bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black text-base tracking-wide transition-all duration-200 z-20 ${
+                    className={`absolute inset-0 bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 flex items-center justify-center text-white font-black text-xs sm:text-sm tracking-wide transition-all duration-200 z-20 ${
                       isCopied ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full pointer-events-none"
                     }`}
                   >

@@ -8,7 +8,7 @@ import PlatformLimitsWidget from "@/components/PlatformLimitsWidget";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Fuentes para Bio de Instagram - Generador de Letras Bonitas 📸",
+  title: "Fuentes para Bio de Instagram - Letras Bonitas 📸",
   description:
     "Convierte texto en letras bonitas, cursivas finas y fuentes aesthetic para tu presentación de Instagram. Copia con 1 clic en 150 caracteres.",
 };

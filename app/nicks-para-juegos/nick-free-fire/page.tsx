@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Nicks Free Fire - Generador de Apodos Pro, Espacio Invisible y Símbolos 🎮",
+  title: "Nicks Free Fire - Generador de Apodos y Símbolos 🎮",
   description:
     "Copia los mejores nicks pro para Free Fire. Genera apodos masculinos, femeninos, espacio transparente (U+3164) y letras góticas en 12 bytes.",
 };

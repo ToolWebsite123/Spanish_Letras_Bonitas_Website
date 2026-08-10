@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Emojis para Copiar - Colección de Emojis Bonitos y Estéticos 🌸",
+  title: "Emojis para Copiar y Pegar - Bonitos y Estéticos 🌸",
   description:
     "Copia emojis estéticos, caritas kawaii, estrellas, flores, corazones y símbolos para redes sociales con 1 solo clic.",
 };

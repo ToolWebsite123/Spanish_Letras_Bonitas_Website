@@ -8,7 +8,7 @@ import PlatformLimitsWidget from "@/components/PlatformLimitsWidget";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Fuentes para Facebook - Conversor de Letras para Publicaciones y Grupos 📘",
+  title: "Fuentes para Facebook - Letras para Publicaciones 📘",
   description:
     "Convierte textos en letras negritas, cursivas y decoradas para destacar tus publicaciones de Facebook, nombres de grupos, anuncios y comentarios.",
 };

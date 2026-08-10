@@ -8,7 +8,7 @@ import PlatformLimitsWidget from "@/components/PlatformLimitsWidget";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Fuentes para WhatsApp - Letras para Info, Estados y Mensajes 💬",
+  title: "Fuentes para WhatsApp - Letras para Info y Estados 💬",
   description:
     "Genera letras bonitas, cursivas, fuentes diminutas y textos en negrita para personalizar tu Estado, Info y mensajes de WhatsApp.",
 };

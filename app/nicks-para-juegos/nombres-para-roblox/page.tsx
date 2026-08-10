@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Nombres para Roblox - Nicks Estéticos y Creativos para Display Name 🤖",
+  title: "Nombres para Roblox - Nicks Estéticos y Creativos 🤖",
   description:
     "Genera nombres únicos y estéticos para Roblox. Combina símbolos de caras feliz, letras diminutas y estilos chic para destacar en tu avatar.",
 };

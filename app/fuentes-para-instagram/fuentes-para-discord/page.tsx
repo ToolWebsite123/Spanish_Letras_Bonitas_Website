@@ -8,7 +8,7 @@ import PlatformLimitsWidget from "@/components/PlatformLimitsWidget";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Fuentes para Discord - Letras para Canales, Nicks y Servidores 👾",
+  title: "Fuentes para Discord - Letras para Canales y Nicks 👾",
   description:
     "Convierte texto en letras negritas, fuentes de bloque, símbolos góticos y caracteres diminutos para personalizar canales y nicks de Discord.",
 };

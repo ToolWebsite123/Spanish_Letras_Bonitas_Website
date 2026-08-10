@@ -8,7 +8,7 @@ import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Caligrafía - Conversor de Letras Caligráficas y Trazo Elegante ✍️",
+  title: "Caligrafía - Letras Caligráficas y Trazo Elegante ✍️",
   description:
     "Convierte texto en hermosa caligrafía clásica, trazos artísticos y letras elegantes para tarjetas, firmas e Instagram.",
 };

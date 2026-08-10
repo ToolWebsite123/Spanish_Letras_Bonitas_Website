@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Símbolos para Nick - Colección Gamer, Coronas, Espadas y Alas ⚔️",
+  title: "Símbolos para Nick - Gamer, Coronas y Espadas ⚔️",
   description:
     "Copia y pega los mejores símbolos para nicks de Free Fire, Roblox, Fortnite y Discord. Coronas, espadas, estrellas, alas y caracteres japoneses en 1 clic.",
 };

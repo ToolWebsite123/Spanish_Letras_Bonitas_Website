@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Símbolos Coquette - Moños 🎀, Corazones 💕 y Flores 🌸 para Copiar",
+  title: "Símbolos Coquette - Moños, Corazones y Flores 🎀",
   description:
     "Copia símbolos coquette, moños rosados, corazones suaves, zapatillas de ballet y tipografías delicadas para Instagram, TikTok y biografías.",
 };

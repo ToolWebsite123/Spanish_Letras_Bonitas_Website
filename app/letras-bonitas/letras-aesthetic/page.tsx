@@ -8,7 +8,7 @@ import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Letras Aesthetic - Conversor de Fuentes Lindas y Minimalistas ✨",
+  title: "Letras Aesthetic - Fuentes Lindas y Minimalistas ✨",
   description:
     "Convierte texto en letras aesthetic, fuentes lindas, estilos espacio amplio (Fullwidth), cursivas y adornos de destellos para copiar y pegar.",
 };

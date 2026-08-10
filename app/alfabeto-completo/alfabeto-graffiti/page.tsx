@@ -8,7 +8,7 @@ import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Alfabeto Graffiti Completo - Abecedario Urbano A-Z para Copiar 🎨",
+  title: "Alfabeto Graffiti - Abecedario Urbano A-Z 🎨",
   description:
     "Muestrario completo del abecedario de letras graffiti en bloques negros, cuadrados claros y círculos oscuros de la A a la Z para copiar y pegar.",
 };

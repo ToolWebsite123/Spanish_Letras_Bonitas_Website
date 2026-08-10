@@ -6,7 +6,7 @@ import FaqSection from "@/components/FaqSection";
 import ExamplesSection from "@/components/ExamplesSection";
 
 export const metadata: Metadata = {
-  title: "Invertir Texto - Conversor de Letras al Revés y De Cabeza 🔄",
+  title: "Invertir Texto - Letras al Revés y De Cabeza 🔄",
   description:
     "Gira y voltea tu texto de cabeza (Upside Down) o invierte el orden de las letras para crear mensajes secretos y estados divertidos.",
 };

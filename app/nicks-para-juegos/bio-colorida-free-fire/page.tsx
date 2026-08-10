@@ -7,7 +7,7 @@ import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Bio Colorida Free Fire - Códigos de Colores y Banderas para Perfil 🌈",
+  title: "Bio Colorida Free Fire - Códigos de Colores y Banderas 🌈",
   description:
     "Genera firmas y biografías a color en Free Fire con códigos Hexadecimales [FF0000], [00FF00], [0000FF] y códigos de banderas de países.",
 };
