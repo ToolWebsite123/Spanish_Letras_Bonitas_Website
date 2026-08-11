@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import ExamplesSection from "@/components/ExamplesSection";
 import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 
 export const metadata: Metadata = {
@@ -121,7 +120,6 @@ export default function NombresPersonalizadosPage() {
         <AlphabetReferenceTable highlightStyleId="bold-script" />
 
         {/* Examples */}
-        <ExamplesSection />
 
         {/* Comprehensive FAQ Section */}
         <FaqSection title="Preguntas Frecuentes sobre Nombres Personalizados" faqs={nombresFaqs} />

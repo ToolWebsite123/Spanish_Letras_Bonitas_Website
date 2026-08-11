@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
@@ -117,7 +116,6 @@ export default function SimbolosParaNickPage() {
         <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
 
         {/* Curated Preset Grid */}
-        <ExamplesSection />
 
         {/* Comprehensive FAQ Section */}
         <FaqSection title="Preguntas Frecuentes sobre Símbolos para Nick" faqs={simbolosFaqs} />

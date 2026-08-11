@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
@@ -84,7 +83,6 @@ export default function LetrasJaponesasPage() {
 
         <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
 
-        <ExamplesSection />
 
         <FaqSection title="Preguntas Frecuentes sobre Letras Japonesas" faqs={japonesasFaqs} />
       </main>

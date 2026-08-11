@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import ExamplesSection from "@/components/ExamplesSection";
 
 export const metadata: Metadata = {
   title: "Invertir Texto - Letras al Revés y De Cabeza 🔄",
@@ -132,7 +131,6 @@ export default function InvertirTextoPage() {
         </section>
 
         {/* Examples */}
-        <ExamplesSection />
 
         {/* Comprehensive FAQ Section */}
         <FaqSection title="Preguntas Frecuentes sobre Invertir Texto" faqs={invertirFaqs} />

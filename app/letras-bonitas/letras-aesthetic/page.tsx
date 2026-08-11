@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import ExamplesSection from "@/components/ExamplesSection";
 import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
@@ -125,7 +124,6 @@ export default function LetrasAestheticPage() {
         <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
 
         {/* Examples */}
-        <ExamplesSection />
 
         {/* Comprehensive FAQ Section */}
         <FaqSection title="Preguntas Frecuentes sobre Letras Aesthetic" faqs={aestheticFaqs} />

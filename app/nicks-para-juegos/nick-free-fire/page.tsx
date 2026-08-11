@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
@@ -102,7 +101,6 @@ export default function NickFreeFirePage() {
         {/* Related Categories internal linking widget */}
         <RelatedCategoriesWidget currentPath="/nicks-para-juegos/nick-free-fire" />
 
-        <ExamplesSection />
 
         <FaqSection title="Preguntas Frecuentes sobre Nicks Free Fire" faqs={freeFireFaqs} />
       </main>

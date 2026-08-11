@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import ExamplesSection from "@/components/ExamplesSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
@@ -97,7 +96,6 @@ export default function NombresParaRobloxPage() {
 
         <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
 
-        <ExamplesSection />
 
         <FaqSection title="Preguntas Frecuentes sobre Nombres para Roblox" faqs={robloxFaqs} />
       </main>

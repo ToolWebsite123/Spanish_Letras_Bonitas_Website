@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import ExamplesSection from "@/components/ExamplesSection";
 import PlatformLimitsWidget from "@/components/PlatformLimitsWidget";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
@@ -121,7 +120,6 @@ export default function BioParaInstagramPage() {
         <RelatedCategoriesWidget currentPath="/fuentes-para-instagram/bio-para-instagram" />
 
         {/* Examples */}
-        <ExamplesSection />
 
         {/* Comprehensive FAQ Section */}
         <FaqSection title="Preguntas Frecuentes sobre Fuentes para Instagram" faqs={bioInstagramFaqs} />
