@@ -98,6 +98,100 @@ export default function NickFreeFirePage() {
           </div>
         </section>
 
+        {/* SECTION D — Errores Comunes al Crear tu Nick de Free Fire */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              ⚠️ Prevención de Errores
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Errores Comunes al Crear tu Nick de Free Fire
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Evita estos 3 fallos habituales que provocan el rechazo del cambio de apodo en el juego:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">📏</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                1. Exceder el Límite de 12 Bytes
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Superar los 12 bytes reales UTF-8 hace que Garena recorte el nombre o devuelva el error "Nombre demasiado largo".
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🚫</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                2. Usar Símbolos No Compatibles
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Utilizar caracteres fuera de la norma Unicode aceptada por el servidor provocará que se muestren signos de interrogación [?] o cuadros vacíos.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">⌨️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                3. Usar Espacios Normales del Teclado
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                La barra espaciadora predeterminada es bloqueada por el juego. Debes usar obligatoriamente el carácter transparente U+3164.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Cómo Elegir un Nick que No Esté Ya Ocupado */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              💡 Estrategia de Nombre
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Cómo Elegir un Nick que No Esté Ya Ocupado
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Si tu nombre favorito ya fue registrado por otro jugador, aplica estas 3 técnicas para volverlo único manteniendo su esencia:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">👑</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                1. Añadir Marcos de Clan o Realeza
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Rodea tu apodo con alas o coronas simétricas (ej: ꧁༺ ༻꧂) para diferenciarlo instantáneamente en la base de datos.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🔤</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                2. Combinar Fuentes Small Caps o Góticas
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Transforma las letras normales a Small Caps (ᴘᴇǫᴜᴇñᴀs) o Góticas. Para el servidor son caracteres Unicode distintos y estará disponible.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">⚡</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                3. Intercalar Espacios Invisibles
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Coloca un espacio transparente U+3164 en medio o al final de tu nick para crear una versión única sin alterar cómo se lee.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Related Categories internal linking widget */}
         <RelatedCategoriesWidget currentPath="/nicks-para-juegos/nick-free-fire" />
 

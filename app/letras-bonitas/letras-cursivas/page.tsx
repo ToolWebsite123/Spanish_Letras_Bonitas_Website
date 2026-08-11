@@ -5,6 +5,8 @@ import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
 import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
+import fontStyles from "@/lib/fontStyles";
+import convertText from "@/lib/convertText";
 
 export const metadata: Metadata = {
   title: "Letras Cursivas - Conversor de Fuentes Manuscritas ✒️",
@@ -36,6 +38,14 @@ const cursivasFaqs = [
 ];
 
 export default function LetrasCursivasPage() {
+  const cursiveStyle = fontStyles.find((f) => f.id === "cursive") || fontStyles[0];
+
+  const occasionPhrases = [
+    { category: "💍 Aniversario", phrase: "Feliz Aniversario Mi Amor" },
+    { category: "💖 San Valentín", phrase: "Tú y Yo Por Siempre" },
+    { category: "☀️ Buenos Días", phrase: "Que Tengas Un Lindo Día" },
+    { category: "✨ Frase Motivacional", phrase: "Sueña En Grande Y Trabaja Duro" },
+  ];
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors flex flex-col">
       <NavBar />
@@ -96,6 +106,144 @@ export default function LetrasCursivasPage() {
                 Las frases motivacionales en publicaciones o estados de WhatsApp cobran un valor poético cuando se presentan en caligrafía manuscrita estilizada combinada con <Link href="/letras-bonitas/letras-aesthetic" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">letras aesthetic</Link>.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* SECTION D — 3 Variantes de Letras Cursivas que Puedes Elegir */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              ✒️ Variantes Tipográficas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              3 Variantes de Letras Cursivas que Puedes Elegir
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              En nuestro conversor dispones de tres estilos cursivos Unicode diferenciados para adaptarse a la personalidad de tu texto:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">✍️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                1. Cursiva Clásica (Mathematical Script)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                El estilo más refinado y legible. Transforma las letras estándar en trazos fluídos y elegantes con remates tradicionales. Perfecto para biografías institucionales y nombres personales.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">✒️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                2. Script Negrita (Bold Script)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Una variante con trazo grueso e imponente. Combina la sofisticación de la caligrafía clásica con la fuerza visual de la negrita, ideal para títulos destacados y marcas.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">📜</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                3. Manuscrita Fina (Caligrafía Ornamental)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Trazos delicados de pluma estilográfica. Excelente para firmas poéticas, dedicatorias y mensajes afectivos en tarjetas virtuales.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Letras Cursivas en Cada Red Social: Guía Rápida */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              📱 Compatibilidad Social
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Letras Cursivas en Cada Red Social: Guía Rápida
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Aprende dónde y cómo lucen mejor tus letras cursivas en las plataformas digitales más populares:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">📸</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Instagram (Bio & Destacados)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Utilízala en la primera línea de tu biografía (tu nombre o profesión) para lograr una estética limpia y profesional. También es excelente para títulos de historias destacadas.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">💬</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                WhatsApp (Estados & Mensajes)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Añade un toque único a tus frases diarias en los estados de WhatsApp o destaca palabras clave en chats privados sin interferir con la lectura.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🎵</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                TikTok (Nombres de Perfil & Captions)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Destaca tu nombre en la parte superior de tu canal para que tu cuenta sea fácilmente identificable en los comentarios y videos virales.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">📘</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Facebook (Publicaciones & Perfil)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Embellece eventos especiales, invitaciones digitales a cumpleaños o aniversarios y publicaciones destacadas en muros y grupos.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION F — Frases en Cursiva para Momentos Especiales */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🎉 Plantillas Dinámicas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Frases en Cursiva para Momentos Especiales
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Explora ejemplos de frases especiales convertidas en tiempo real con nuestra tipografía cursiva:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm">
+            {occasionPhrases.map((item, idx) => {
+              const converted = convertText(item.phrase, cursiveStyle.map, cursiveStyle.id);
+              return (
+                <div key={idx} className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+                    {item.category}
+                  </span>
+                  <p className="text-[var(--foreground)] font-semibold text-xs opacity-75">
+                    "{item.phrase}"
+                  </p>
+                  <div className="p-3.5 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] font-mono text-sm sm:text-base text-teal-600 dark:text-teal-300 break-words flex items-center justify-between gap-2 shadow-inner">
+                    <span className="select-all">{converted}</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
 

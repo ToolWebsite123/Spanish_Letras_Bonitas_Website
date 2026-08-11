@@ -90,6 +90,97 @@ export default function LetrasGraffitiPage() {
           </div>
         </section>
 
+        {/* SECTION D — Dónde Lucen Mejor las Letras Graffiti */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🎨 Aplicaciones Recomendadas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Dónde Lucen Mejor las Letras Graffiti
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              El estilo urbano de bloques oscuros y sombras proyecta fuerza e identidad. Descubre en qué plataformas digitales destaca más:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🎮</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Nicks de Free Fire & eSports
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Los recuadros y bloques de graffiti le dan un aspecto robusto a los apodos de jugadores competitivos y etiquetas de clan.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">👾</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Nombres de Canales de Discord
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Personaliza los títulos de tus canales de texto e hilos de chat para organizar tu servidor con una estética callejera única.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🖼️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Miniaturas y Banners Promocionales
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Aumenta el contraste de tus títulos en portadas de YouTube e historias de Instagram para capturar la atención en desplazamientos rápidos.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Graffiti vs Negrita vs Burbuja: ¿Cuál Elegir? */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              📊 Comparativa de Estilos
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Graffiti vs Negrita vs Burbuja: ¿Cuál Elegir?
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Compara las tres familias de tipografía pesada para seleccionar la que mejor se adapte a tu proyecto:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
+                1. Estilo Graffiti (Squared Dark)
+              </span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Letras encerradas en bloques sólidos oscuros (🅶🆁🅰🅵🅵🅸🆃🅸). Máxima contundencia y presencia urbana.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
+                2. Texto en Negrita (Bold Sans)
+              </span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Trazos limpios y gruesos sin marcos (𝗕𝗼𝗹𝗱 𝗦𝗮𝗻𝘀). Ideal para textos largos, biografías y descripciones formales.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
+                3. Estilo Burbuja (Circled)
+              </span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Caracteres dentro de círculos redondeados (ⒼⓇⒶⒻⒻⒾⓉⒾ). Opción más amigable y suave para perfiles estéticos.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Related Categories internal linking widget */}
         <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-graffiti" />
 

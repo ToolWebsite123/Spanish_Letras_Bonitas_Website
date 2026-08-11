@@ -115,6 +115,88 @@ export default function InvertirTextoPage() {
           </div>
         </section>
 
+        {/* SECTION D — Usos Divertidos del Texto Invertido */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🎉 Creatividad & Entretenimiento
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Usos Divertidos del Texto Invertido
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Escribir de cabeza es una excelente estrategia visual para dinamizar tus interacciones digitales:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🧩</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Acertijos e Historias Interactivas
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Coloca la pista final o la solución a un reto de cabeza para forzar a tus seguidores a interactuar y voltear su pantalla.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🙃</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Bios con Estética Alt/Vaporwave
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Dale un estilo enigmático o rebelde a tu perfil de Instagram intercalando líneas de texto invertido y caracteres normales.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">💬</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Mensajes Cifrados en Chats
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Sorprende en grupos de WhatsApp o canales de Discord enviando saludos y chistes volteados 180 grados.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Texto Invertido vs Texto Espejo: No Son lo Mismo */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🔍 Diferencias Técnicas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Texto Invertido vs Texto Espejo: No Son lo Mismo
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Comprende la diferencia entre las dos formas de transformación tipográfica:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                1. Texto de Cabeza / Upside Down (Rotación 180°)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Cada letra individual es sustituida por su glifo equivalente girado 180° verticalmente (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">ǝʇuǝɯɐʇɔǝɟɹǝd</code>). La lectura se realiza rotando el dispositivo.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                2. Texto Espejo / Inversión de Orden (Reverse String)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Conserva la orientación vertical de las letras pero invierte el orden estricto de los caracteres de derecha a izquierda (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">otxet ed olpmejE</code>). La lectura se realiza de derecha a izquierda.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* TABLA DE MAPEO DE CARACTERES ROTADOS */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
