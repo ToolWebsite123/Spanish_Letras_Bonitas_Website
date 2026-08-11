@@ -331,7 +331,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                Free Fire no mide la longitud en caracteres simples, sino en <strong>bytes de memoria UTF-8</strong>. Revisa nuestras colecciones dedicadas de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">nicks masculinos</Link>, <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">nicks femeninos</Link>, la guía para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">cambiar tu apodo en Free Fire</Link> y los códigos para <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">firmas de colores</Link>.
+                Free Fire no mide la longitud en caracteres simples, sino en <strong>bytes de memoria UTF-8</strong>. Revisa nuestra guía completa de <Link href="/nicks-para-juegos/nick-free-fire" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">nicks para Free Fire pro, femeninos, masculinos y firmas de colores</Link>.
               </p>
             </div>
 

@@ -81,6 +81,88 @@ export default function LetrasTatuajesPage() {
           </div>
         </section>
 
+        {/* SECTION D — Cómo Probar tu Diseño Antes de Tatuarte */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              💉 Planificación de Bocetos
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Cómo Probar tu Diseño Antes de Tatuarte
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Sigue estos 3 pasos prácticos para previsualizar tu frase o nombre antes de acudir al estudio de tatuajes:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">✍️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                1. Escribe tu Frase Completa
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Genera tu texto en fuentes Góticas (Fraktur) o Cursiva Fina para evaluar la longitud visual de la frase.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">📸</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                2. Montaje Digital en Foto
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Copia el texto resultando y colócalo digitalmente sobre una foto de tu brazo, antebrazo o costillas para comprobar la escala.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">👨‍🎨</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                3. Consulta con tu Tatuador
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Muestra la captura de pantalla a tu artista para ajustar el grosor de aguja y la separación entre caracteres.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Estilos que Mejor Envejecen en la Piel */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🩸 Durabilidad & Tinta
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Estilos que Mejor Envejecen en la Piel
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Elige la familia tipográfica considerando la expansión natural de la tinta con los años:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                1. Gótico Tradicional (Old English / Fraktur)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Trazos anchos con espacios internos claros. Mantienen su nitidez estructural durante décadas sin borronearse en áreas amplias como el pecho o la espalda.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                2. Caligrafía Cursiva Fina (Fine Line Script)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Estilo elegante e intemporal. Requiere un interlineado y espacio entre letras suficiente para que los trazos delgados conserven su definición con el paso del tiempo.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-graffiti" />
 
 

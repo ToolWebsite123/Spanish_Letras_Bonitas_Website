@@ -116,6 +116,88 @@ export default function NombresPersonalizadosPage() {
           </div>
         </section>
 
+        {/* SECTION D — Nombre Personalizado vs Nick de Juego: No Es lo Mismo */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🏷️ Clasificación de Nombres
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Nombre Personalizado vs Nick de Juego: No Es lo Mismo
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Comprende el propósito y la estética de cada tipo de apodo digital:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                1. Nombre Personalizado (Marca Personal & Bio)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Utiliza tu nombre real o de pila en fuentes cursivas elegantes o letras diminutas (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">𝓢𝓸𝓯í𝓪 𝓜𝓪𝓻𝓽í𝓷𝓮𝔔</code>). Diseñado para bios de Instagram, WhatsApp y tarjetas de presentación.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                2. Nick Gamer (eSports & Clanes)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Combina seudónimos agresivos con letras góticas, espadas, alas y el espacio transparente U+3164 (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">꧁👑𝕶𝖎𝖑𝖑𝖊𝖗👑꧂</code>) bajo un límite estricto de 12 bytes en Free Fire.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Combina tu Nombre con un Apellido o Apodo Corto */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              💡 Combinaciones Recomendadas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Combina tu Nombre con un Apellido o Apodo Corto
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Maximiza el equilibrio visual de tu nombre aplicando 3 fórmulas compuestas:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">✒️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Inicial de Apellido en Cursiva
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Combina tu primer nombre con la inicial estilizada de tu apellido (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">𝓒𝓪𝓻𝓵𝓸𝓼 𝓜.</code>).
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">✨</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Nombre Corto + Small Caps
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Usa diminutivos en letras pequeñas mayúsculas (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">ᴅᴀɴɪ ᴍᴏʀᴇɴᴏ</code>) para una estética minimalista.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">👑</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Título Profesional o Rol
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Añade tu profesión o especialidad junto a tu nombre de pila en negrita (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">𝗦𝗼𝗳í𝗮 | 𝗗𝗶𝘀𝗲ñ𝗼</code>).
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Alphabet Reference Table */}
         <AlphabetReferenceTable highlightStyleId="bold-script" />
 

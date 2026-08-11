@@ -117,6 +117,88 @@ export default function LetrasAestheticPage() {
           </div>
         </section>
 
+        {/* SECTION D — Aesthetic vs Cursiva: La Diferencia Clave */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              ✨ Comparativa de Estilos
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Aesthetic vs Cursiva: La Diferencia Clave
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Aprende a diferenciar ambas tendencias para usarlas en la ocasión adecuada:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                1. Fuentes Aesthetic (Fullwidth & Small Caps)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Prioriza la amplitud espacial, la simetría y los caracteres retro/vaporwave (Ｆｕｌｌｗｉｄｔｈ y ꜱᴍᴀʟʟ ᴄᴀᴘꜱ). Ideal para bios limpias, títulos relajados y estética de redes sociales.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                2. Fuentes Cursivas (Mathematical Script)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Se basa en trazos continuos de pluma manuscrita (𝓒𝓾𝓻𝓼𝓲𝓿𝓪). Transmite elegancia formal, poesía, firmas personales e invitaciones tradicionales.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Combina Aesthetic con Emojis para Más Impacto */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🌸 Combinaciones Visuales
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Combina Aesthetic con Emojis para Más Impacto
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Potencia el dinamismo visual de tu texto intercalando emojis y símbolos de tono suave:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">✨</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Marcos con Destellos y Estrellas
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Encuadra palabras clave con estrellas (✨ 𝒯𝑒𝓍𝓉𝑜 ✨) para centrar la atención del lector en publicaciones de Instagram.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🎀</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Moños & Estética Coquette
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Combina fuentes delicadas con moños (🎀) y corazones suaves para un look romántico y dulce en tu perfil.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🌙</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Elementos de Naturaleza & Nubes
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Añade nubes (☁️), lunas (🌙) y flores de cerezo (🌸) para dar una vibra relajada y nostálgica.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Alphabet Reference Table */}
         <AlphabetReferenceTable highlightStyleId="fullwidth" />
 

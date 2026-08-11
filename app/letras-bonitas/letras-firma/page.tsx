@@ -81,6 +81,88 @@ export default function LetrasFirmaPage() {
           </div>
         </section>
 
+        {/* SECTION D — Firma Digital vs Firma Manuscrita Escaneada */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🖋️ Comparativa de Métodos
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Firma Digital vs Firma Manuscrita Escaneada
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Conoce las diferencias y ventajas de usar caracteres de firma Unicode frente a imagenes escaneadas:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                1. Firma Digital Unicode (Texto Plano)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Copia y pega directamente en campos de texto, bios de Instagram y pies de correo electrónico sin cargar archivos de imagen. Carga al instante en cualquier pantalla.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                2. Firma Manuscrita Escaneada (Imagen PNG/JPG)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Ideal para documentos legales o PDFs adjuntos, pero inviable para cajas de texto estándar de redes sociales donde solo se permite texto.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Dónde Usar tu Firma Estilizada */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              📍 Aplicaciones Recomendadas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Dónde Usar tu Firma Estilizada
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Aporta un toque distintivo a tu huella digital en 3 ubicaciones clave:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">✉️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Firma de Correo Profesional
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Destaca tu nombre en el cierre de tus correos en Gmail, Outlook o Apple Mail con una caligrafía impecable.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">📸</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Marcas de Agua en Fotografía
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Añade tu nombre estilizado como sello en el pie de tus imágenes publicadas en redes sociales.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">💼</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Perfil de Instagram & LinkedIn
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Formatea la casilla de nombre principal para transmitir una imagen de marca personal exclusiva.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-cursivas" />
 
 

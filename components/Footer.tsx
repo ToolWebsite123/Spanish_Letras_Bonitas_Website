@@ -22,10 +22,6 @@ const footerLinkGroups: FooterLinkGroup[] = [
     links: [
       { label: "Nick Free Fire", href: "/nicks-para-juegos/nick-free-fire" },
       { label: "Nombres Roblox", href: "/nicks-para-juegos/nombres-para-roblox" },
-      { label: "FF Femenino", href: "/nicks-para-juegos/nick-free-fire-femenino" },
-      { label: "FF Masculino", href: "/nicks-para-juegos/nick-free-fire-masculino" },
-      { label: "Cambiar Nick FF", href: "/nicks-para-juegos/cambiar-nick-free-fire" },
-      { label: "Bio Colorida FF", href: "/nicks-para-juegos/bio-colorida-free-fire" },
     ],
   },
   {

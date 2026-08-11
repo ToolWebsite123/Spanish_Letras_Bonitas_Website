@@ -81,6 +81,88 @@ export default function LetrasJaponesasPage() {
           </div>
         </section>
 
+        {/* SECTION D — ¿Son Caracteres Japoneses Reales? */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              ⛩️ Aclaración Lingüística
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              ¿Son Caracteres Japoneses Reales?
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Conoce la naturaleza técnica y estética de las letras estilo oriental en Unicode:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                1. Mapeo Tipográfico Faux-Japanese
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Son caracteres del alfabeto latino adaptados con trazos caligráficos orientales (CJK strokes). Esto permite conservar la lectura completa de palabras en español mientras lucen una estética japonesa.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400">
+                2. Simbolismo Kanji y Hiragana Real
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Para ideogramas con significado lingüístico estricto (como 'amor', 'fuerza' o 'dragón'), se emplean los ideogramas originales de la tabla Unicode japonesa.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Popular en Comunidades de Anime y Manga */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🎮 Cultura Otaku & Gamer
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Popular en Comunidades de Anime y Manga
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Descubre por qué las letras orientales son la tendencia principal en espacios gaming y otaku:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">👾</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Discord Servers & Roles
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Personaliza nombres de canales, categorías e insignias de roles en servidores temáticos de anime y manga.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">⚔️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Nicks de Roblox & Free Fire
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Crea apodos inspirados en personajes legendarios acompañados de katanas, flores de cerezo y marcos de honor.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">📱</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Biografías de TikTok & Instagram
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Dale un toque visual minimalista y asiático a las descripciones y subtítulos de tus videos virales.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
 
 
