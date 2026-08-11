@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import ThemeScript from "@/components/ThemeScript";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -91,9 +92,12 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      data-theme="dark"
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <ThemeScript />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}
@@ -103,9 +107,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdApp) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#0f0c1b] text-slate-100 relative">
+      <body className="min-h-full flex flex-col relative">
         {/* Background Ambient Radial Glow Blobs (Deep Rose, Orchid & Indigo) */}
-        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0 ambient-glow transition-opacity">
           <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-pink-600/15 rounded-full blur-[130px]" />
           <div className="absolute top-1/3 -right-40 w-[450px] h-[450px] bg-rose-500/15 rounded-full blur-[130px]" />
           <div className="absolute bottom-1/4 left-1/3 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[130px]" />

@@ -164,8 +164,8 @@ export default function Converter({
 
   return (
     <div className="w-full flex flex-col gap-6">
-      {/* Sleek Input Container in Midnight Orchid */}
-      <div className="flex flex-col gap-3 p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+      {/* Sleek Input Container */}
+      <div className="flex flex-col gap-3 p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
         {/* Main Textarea Input */}
         <div className="relative w-full">
           <textarea
@@ -174,13 +174,13 @@ export default function Converter({
             onChange={(e) => setInputText(e.target.value)}
             placeholder="Escribe o pega tu texto aquí..."
             rows={2}
-            className="w-full p-3.5 sm:p-4 pr-10 sm:pr-12 rounded-xl sm:rounded-2xl border border-purple-900/50 bg-[#231c3d] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 shadow-inner text-base sm:text-xl font-normal leading-normal resize-y transition-all"
+            className="w-full p-3.5 sm:p-4 pr-10 sm:pr-12 rounded-xl sm:rounded-2xl border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 shadow-inner text-base sm:text-xl font-normal leading-normal resize-y transition-all"
           />
           {inputText && (
             <button
               type="button"
               onClick={() => setInputText("")}
-              className="absolute top-3 right-3 p-1.5 rounded-full text-slate-400 hover:text-red-400 hover:bg-[#231c3d] transition-colors cursor-pointer"
+              className="absolute top-3 right-3 p-1.5 rounded-full text-[var(--foreground)] opacity-60 hover:opacity-100 hover:text-red-400 hover:bg-[var(--input-bg)] transition-colors cursor-pointer"
               title="Borrar texto"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -191,34 +191,34 @@ export default function Converter({
         </div>
 
         {/* Integrated Control Row (Slider + Decorator + Counter) */}
-        <div className="flex flex-wrap items-center justify-between gap-3 px-1 text-xs text-slate-400 font-semibold">
+        <div className="flex flex-wrap items-center justify-between gap-3 px-1 text-xs text-[var(--foreground)] opacity-80 font-semibold">
           {/* Font Size Slider */}
-          <div className="flex items-center gap-2 flex-1 min-w-[220px] bg-[#231c3d] p-2.5 rounded-xl border border-purple-900/40">
-            <span className="text-[11px] font-extrabold text-teal-400 shrink-0">Tamaño</span>
-            <span className="text-[10px] text-slate-500 font-bold">A</span>
+          <div className="flex items-center gap-2 flex-1 min-w-[220px] bg-[var(--input-bg)] p-2.5 rounded-xl border border-[var(--border-color)]">
+            <span className="text-[11px] font-extrabold text-teal-600 dark:text-teal-400 shrink-0">Tamaño</span>
+            <span className="text-[10px] opacity-60 font-bold">A</span>
             <input
               type="range"
               min={12}
               max={32}
               value={fontSize}
               onChange={(e) => setFontSize(Number(e.target.value))}
-              className="w-28 sm:w-36 h-2 bg-purple-950 rounded-lg appearance-none cursor-pointer accent-teal-400"
+              className="w-28 sm:w-36 h-2 bg-[var(--card-bg)] rounded-lg appearance-none cursor-pointer accent-teal-400"
               title="Ajustar tamaño de fuente"
             />
-            <span className="text-sm font-bold text-slate-300">A</span>
-            <span className="text-[11px] font-mono text-teal-400 font-extrabold ml-1">{fontSize}px</span>
+            <span className="text-sm font-bold text-[var(--foreground)]">A</span>
+            <span className="text-[11px] font-mono text-teal-600 dark:text-teal-400 font-extrabold ml-1">{fontSize}px</span>
           </div>
 
           {/* Decorator Selector */}
-          <div className="flex items-center gap-2 bg-[#231c3d] p-2.5 rounded-xl border border-purple-900/40 shrink-0">
-            <span className="text-[11px] font-bold text-slate-300">Marco:</span>
+          <div className="flex items-center gap-2 bg-[var(--input-bg)] p-2.5 rounded-xl border border-[var(--border-color)] shrink-0">
+            <span className="text-[11px] font-bold text-[var(--foreground)] opacity-80">Marco:</span>
             <select
               value={selectedDecorator?.id || ""}
               onChange={(e) => {
                 const dec = decorators.find((d) => d.id === e.target.value) || null;
                 setSelectedDecorator(dec);
               }}
-              className="px-3 py-1 rounded-lg text-xs font-bold border border-purple-900/50 bg-[#1b1530] text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/30 cursor-pointer"
+              className="px-3 py-1 rounded-lg text-xs font-bold border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-teal-500/30 cursor-pointer"
             >
               <option value="">Sin marco</option>
               {decorators.map((dec) => (
@@ -231,7 +231,7 @@ export default function Converter({
 
           {/* Character & Byte Counter Stat */}
           <div className="flex items-center gap-2 shrink-0 text-[11px]">
-            <span className="px-3.5 py-2 rounded-xl bg-[#231c3d] text-slate-300 font-bold border border-purple-900/40">
+            <span className="px-3.5 py-2 rounded-xl bg-[var(--input-bg)] text-[var(--foreground)] opacity-90 font-bold border border-[var(--border-color)]">
               {inputText.length} caracteres
             </span>
             <span
@@ -269,7 +269,7 @@ export default function Converter({
                   className={`px-4.5 py-2 rounded-2xl text-xs font-extrabold whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
                     isActive
                       ? "bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 text-white shadow-lg shadow-teal-500/25 scale-105"
-                      : "bg-[#1b1530] hover:bg-[#231c3d] text-slate-300 border border-purple-900/40"
+                      : "bg-[var(--card-bg)] hover:bg-[var(--input-bg)] text-[var(--foreground)] opacity-90 border border-[var(--border-color)]"
                   }`}
                 >
                   {cat === "Favoritos" && <span>❤️</span>}
@@ -279,7 +279,7 @@ export default function Converter({
                       className={`px-2 py-0.3 text-[10px] rounded-full font-black ${
                         isActive
                           ? "bg-white/20 text-white"
-                          : "bg-purple-950 text-slate-400"
+                          : "bg-[var(--input-bg)] text-teal-600 dark:text-teal-400 border border-[var(--border-color)]"
                       }`}
                     >
                       {count}
@@ -297,14 +297,14 @@ export default function Converter({
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar estilo o fuente..."
-              className="w-full pl-9 pr-4 py-2 rounded-2xl text-xs font-bold border border-purple-900/40 bg-[#1b1530] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400"
+              className="w-full pl-9 pr-4 py-2 rounded-2xl text-xs font-bold border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--foreground)] placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400"
             />
-            <span className="absolute left-3 top-2.5 text-xs text-teal-400">🔍</span>
+            <span className="absolute left-3 top-2.5 text-xs text-teal-600 dark:text-teal-400">🔍</span>
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-2.5 text-xs text-slate-400 hover:text-slate-200"
+                className="absolute right-3 top-2.5 text-xs text-[var(--foreground)] opacity-60 hover:opacity-100"
               >
                 ✕
               </button>
@@ -315,14 +315,14 @@ export default function Converter({
 
       {/* Empty State */}
       {!isCategoryPage && filteredStyles.length === 0 && (
-        <div className="text-center py-14 px-6 rounded-3xl border border-dashed border-purple-900/40 bg-[#1b1530]/60 backdrop-blur-md flex flex-col items-center gap-3">
+        <div className="text-center py-14 px-6 rounded-3xl border border-dashed border-[var(--border-color)] bg-[var(--card-bg)]/60 backdrop-blur-md flex flex-col items-center gap-3">
           <span className="text-4xl">{activeCategory === "Favoritos" ? "💔" : "🔎"}</span>
-          <h3 className="font-extrabold text-base text-slate-200">
+          <h3 className="font-extrabold text-base text-[var(--foreground)]">
             {activeCategory === "Favoritos"
               ? "No tienes fuentes guardadas en Favoritos"
               : "No se encontraron fuentes con ese criterio"}
           </h3>
-          <p className="text-xs text-slate-400 max-w-sm">
+          <p className="text-xs text-[var(--foreground)] opacity-70 max-w-sm">
             {activeCategory === "Favoritos"
               ? "Haz clic en el corazón (❤️) de cualquier tarjeta de fuente para tenerla siempre guardada."
               : "Prueba buscando otra palabra clave o haz clic en 'Todos'."}
@@ -349,18 +349,18 @@ export default function Converter({
                 <div
                   key={style.id}
                   onClick={() => handleCopy(style.id, styledText)}
-                  className="group relative flex flex-col justify-between gap-2 p-3 sm:p-4.5 rounded-2xl border border-purple-900/40 bg-[#1b1530] hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-500/10 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer overflow-hidden min-h-[105px] sm:min-h-[115px]"
+                  className="group relative flex flex-col justify-between gap-2 p-3 sm:p-4.5 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-500/10 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer overflow-hidden min-h-[105px] sm:min-h-[115px]"
                 >
                   {/* Top Bar: Font Name + Heart Icon */}
                   <div className="flex items-center justify-between gap-1.5 z-10">
-                    <span className="text-[11px] sm:text-xs font-extrabold text-slate-400 group-hover:text-teal-400 transition-colors truncate">
+                    <span className="text-[11px] sm:text-xs font-extrabold text-[var(--foreground)] opacity-80 group-hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors truncate">
                       {style.name}
                     </span>
                     <button
                       type="button"
                       onClick={(e) => toggleFavorite(style.id, e)}
                       className={`p-0.5 text-xs sm:text-sm transition-transform hover:scale-125 cursor-pointer shrink-0 ${
-                        isFav ? "text-teal-400 opacity-100" : "text-slate-600 hover:text-teal-400"
+                        isFav ? "text-teal-600 dark:text-teal-400 opacity-100" : "text-slate-400 hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400"
                       }`}
                       title={isFav ? "Quitar de favoritos" : "Guardar en favoritos"}
                     >
@@ -371,7 +371,7 @@ export default function Converter({
                   {/* Center Converted Text Output */}
                   <div className="my-auto py-1 text-center overflow-hidden">
                     <p
-                      className="text-slate-100 break-words font-normal leading-tight transition-all"
+                      className="text-[var(--foreground)] break-words font-normal leading-tight transition-all"
                       style={{ fontSize: `${fontSize}px` }}
                     >
                       {styledText}
@@ -379,11 +379,11 @@ export default function Converter({
                   </div>
 
                   {/* Bottom Action Hint */}
-                  <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-500 pt-0.5 z-10">
-                    <span className="hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity text-teal-400 font-bold">
+                  <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-[var(--foreground)] opacity-60 pt-0.5 z-10">
+                    <span className="hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity text-teal-600 dark:text-teal-400 font-bold">
                       Toca para copiar
                     </span>
-                    <span className="ml-auto px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-400 font-bold border border-teal-500/20 group-hover:bg-teal-500 group-hover:text-white transition-all flex items-center gap-1 shrink-0">
+                    <span className="ml-auto px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold border border-teal-500/20 group-hover:bg-teal-500 group-hover:text-white transition-all flex items-center gap-1 shrink-0">
                       <span>Copiar</span>
                       <span className="text-[9px] sm:text-[10px]">📋</span>
                     </span>
@@ -422,21 +422,21 @@ export default function Converter({
                   className={`group relative flex flex-col justify-between gap-2 p-3 sm:p-4.5 rounded-2xl border transition-all duration-200 cursor-pointer overflow-hidden min-h-[105px] sm:min-h-[115px] ${
                     isCardFeatured
                       ? "border-2 border-teal-400 bg-teal-950/30 shadow-xl shadow-teal-500/10"
-                      : "border border-purple-900/40 bg-[#1b1530] hover:border-teal-400/60"
+                      : "border border-[var(--border-color)] bg-[var(--card-bg)] hover:border-teal-400/60"
                   }`}
                 >
                   <div className="flex items-center justify-between gap-1.5 z-10">
-                    <span className="text-[11px] sm:text-xs font-extrabold text-slate-300 truncate">
+                    <span className="text-[11px] sm:text-xs font-extrabold text-[var(--foreground)] opacity-90 truncate">
                       {card.name}
                     </span>
-                    <span className="text-[9px] sm:text-[10px] px-2 py-0.5 rounded-full font-bold bg-purple-950 text-purple-300 shrink-0">
+                    <span className="text-[9px] sm:text-[10px] px-2 py-0.5 rounded-full font-bold bg-[var(--input-bg)] text-teal-600 dark:text-teal-400 border border-[var(--border-color)] shrink-0">
                       {card.decoratorName}
                     </span>
                   </div>
 
                   <div className="my-auto py-1 text-center overflow-hidden">
                     <p
-                      className="text-slate-100 break-words font-normal leading-tight"
+                      className="text-[var(--foreground)] break-words font-normal leading-tight"
                       style={{ fontSize: `${fontSize}px` }}
                     >
                       {styledText}
@@ -444,10 +444,10 @@ export default function Converter({
                   </div>
 
                   <div className="flex items-center justify-between text-[10px] sm:text-[11px] pt-0.5 z-10">
-                    <span className="hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity text-teal-400 font-bold">
+                    <span className="hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity text-teal-600 dark:text-teal-400 font-bold">
                       Toca para copiar
                     </span>
-                    <span className="ml-auto px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-400 font-bold border border-teal-500/20 group-hover:bg-teal-500 group-hover:text-white transition-all flex items-center gap-1 shrink-0">
+                    <span className="ml-auto px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold border border-teal-500/20 group-hover:bg-teal-500 group-hover:text-white transition-all flex items-center gap-1 shrink-0">
                       <span>Copiar</span>
                       <span className="text-[9px] sm:text-[10px]">📋</span>
                     </span>

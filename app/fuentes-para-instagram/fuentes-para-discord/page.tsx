@@ -38,29 +38,29 @@ const discordFaqs = [
 
 export default function FuentesParaDiscordPage() {
   return (
-    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors flex flex-col">
       <NavBar />
 
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
-          <Link href="/" className="hover:text-teal-400 transition-colors">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-[var(--foreground)] opacity-75 font-medium">
+          <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-slate-400">Fuentes para Instagram</span>
+          <span className="text-[var(--foreground)] opacity-75">Fuentes para Instagram</span>
           <span>/</span>
-          <span className="text-teal-400 font-bold">Fuentes para Discord</span>
+          <span className="text-teal-600 dark:text-teal-400 font-bold">Fuentes para Discord</span>
         </nav>
 
         <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
             <span>👾</span> Estructura & Estética para Servidores de Discord
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
             Conversor de Fuentes para Discord 👾
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
-            Organiza tus canales de texto (#canales), categorías de voz, roles de servidor y apodos de usuario con <Link href="/letras-bonitas/letras-graffiti" className="text-teal-400 underline font-bold hover:text-teal-300">letras de bloque u urbano</Link>, <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-teal-400 underline font-bold hover:text-teal-300">símbolos para nick gamer</Link>, <Link href="/nicks-para-juegos/nick-free-fire" className="text-teal-400 underline font-bold hover:text-teal-300">nicks de Free Fire</Link> y <Link href="/alfabeto-completo/alfabeto-graffiti" className="text-teal-400 underline font-bold hover:text-teal-300">abecedario graffiti A-Z</Link>.
+          <p className="text-base sm:text-lg text-[var(--foreground)] opacity-80 leading-relaxed max-w-4xl font-medium">
+            Organiza tus canales de texto (#canales), categorías de voz, roles de servidor y apodos de usuario con <Link href="/letras-bonitas/letras-graffiti" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">letras de bloque u urbano</Link>, <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">símbolos para nick gamer</Link>, <Link href="/nicks-para-juegos/nick-free-fire" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">nicks de Free Fire</Link> y <Link href="/letras-bonitas/letras-graffiti" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">abecedario graffiti A-Z</Link>.
           </p>
         </header>
 
@@ -68,32 +68,32 @@ export default function FuentesParaDiscordPage() {
 
         <PlatformLimitsWidget currentPlatform="discord" />
 
-        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
-          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
               👾 Guía de Servidores
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
               Cómo Estructurar Canales de Discord Pro
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
               Los servidores con mayor retención de usuarios utilizan estructuras ordenadas con símbolos de separación:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">1. Canales de Texto con Íconos</span>
-              <p className="text-slate-300 leading-relaxed font-mono">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Canales de Texto con Íconos</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed font-mono">
                 💬│ ᴄʜᴀᴛ-ɢᴇɴᴇʀᴀʟ <br />
                 📢│ ᴀɴᴜɴᴄɪᴏs-ᴏғɪᴄɪᴀʟᴇs <br />
                 🎮│ ɢᴀᴍɪɴɢ-ʏ-ᴍᴇᴍᴇs
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">2. Apodos de Servidor con Tags</span>
-              <p className="text-slate-300 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">2. Apodos de Servidor con Tags</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
                 Utiliza letras góticas o pequeñas para distinguir a los Moderadores y Administradores en la lista lateral.
               </p>
             </div>

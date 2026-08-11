@@ -34,15 +34,15 @@ export default function AlphabetReferenceTable({
   };
 
   return (
-    <section className="w-full flex flex-col gap-6 p-5 sm:p-8 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+    <section className="w-full flex flex-col gap-6 p-5 sm:p-8 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>🔤</span> Muestrario de Abecedario A-Z
         </div>
-        <h2 className="text-2xl sm:text-3xl font-black text-slate-100 flex items-center gap-2.5">
+        <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)] flex items-center gap-2.5">
           {title || `Tabla del Abecedario: ${currentStyle.name}`}
         </h2>
-        <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+        <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
           {subtitle || "Toca sobre cualquier letra mayúscula o minúscula para copiarla individualmente a tu portapapeles."}
         </p>
       </div>
@@ -59,9 +59,9 @@ export default function AlphabetReferenceTable({
           return (
             <div
               key={letter}
-              className="p-3 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col items-center justify-between gap-2 text-center hover:border-teal-400/60 transition-all group"
+              className="p-3 rounded-2xl border border-[var(--border-color)] bg-[var(--input-bg)] flex flex-col items-center justify-between gap-2 text-center hover:border-teal-400/60 transition-all group"
             >
-              <span className="text-[10px] font-extrabold text-slate-400">
+              <span className="text-[10px] font-extrabold text-[var(--foreground)] opacity-70">
                 Letra {letter}
               </span>
 
@@ -73,7 +73,7 @@ export default function AlphabetReferenceTable({
                   className={`relative flex-1 py-1.5 px-1 rounded-xl text-base sm:text-lg font-normal transition-all cursor-pointer border ${
                     isUpperCopied
                       ? "bg-teal-500 text-white border-teal-400 font-bold scale-105"
-                      : "bg-[#1b1530] text-slate-100 border-purple-900/50 hover:bg-teal-500/20 hover:border-teal-400/80 hover:text-teal-300"
+                      : "bg-[var(--card-bg)] text-[var(--foreground)] border-[var(--border-color)] hover:bg-teal-500/20 hover:border-teal-400/80 hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400"
                   }`}
                   title={`Copiar mayúscula ${upperConv}`}
                 >
@@ -92,7 +92,7 @@ export default function AlphabetReferenceTable({
                   className={`relative flex-1 py-1.5 px-1 rounded-xl text-base sm:text-lg font-normal transition-all cursor-pointer border ${
                     isLowerCopied
                       ? "bg-teal-500 text-white border-teal-400 font-bold scale-105"
-                      : "bg-[#1b1530] text-slate-100 border-purple-900/50 hover:bg-teal-500/20 hover:border-teal-400/80 hover:text-teal-300"
+                      : "bg-[var(--card-bg)] text-[var(--foreground)] border-[var(--border-color)] hover:bg-teal-500/20 hover:border-teal-400/80 hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400"
                   }`}
                   title={`Copiar minúscula ${lowerConv}`}
                 >
@@ -105,7 +105,7 @@ export default function AlphabetReferenceTable({
                 </button>
               </div>
 
-              <div className="flex items-center justify-between w-full text-[9px] text-slate-500 font-bold px-0.5">
+              <div className="flex items-center justify-between w-full text-[9px] text-[var(--foreground)] opacity-60 font-bold px-0.5">
                 <span>Mayús</span>
                 <span>Minús</span>
               </div>
@@ -115,8 +115,8 @@ export default function AlphabetReferenceTable({
       </div>
 
       {/* Special Spanish Characters (Accents & Ñ) */}
-      <div className="mt-2 pt-4 border-t border-purple-900/40 flex flex-col gap-3">
-        <span className="text-xs font-bold text-slate-300">
+      <div className="mt-2 pt-4 border-t border-[var(--border-color)] flex flex-col gap-3">
+        <span className="text-xs font-bold text-[var(--foreground)] opacity-90">
           Caracteres Especiales en Español (Acentos y Ñ):
         </span>
         <div className="flex flex-wrap gap-2">
@@ -130,16 +130,16 @@ export default function AlphabetReferenceTable({
             return (
               <div
                 key={char}
-                className="flex items-center gap-1.5 bg-[#231c3d] p-1.5 px-3 rounded-xl border border-purple-900/40"
+                className="flex items-center gap-1.5 bg-[var(--input-bg)] p-1.5 px-3 rounded-xl border border-[var(--border-color)]"
               >
-                <span className="text-[10px] font-bold text-slate-400">{char}:</span>
+                <span className="text-[10px] font-bold text-[var(--foreground)] opacity-70">{char}:</span>
                 <button
                   type="button"
                   onClick={() => handleCopy(upperConv)}
                   className={`px-2 py-0.5 rounded-lg text-sm transition-all cursor-pointer border ${
                     isUpperCopied
                       ? "bg-teal-500 text-white border-teal-400"
-                      : "bg-[#1b1530] text-slate-100 border-purple-900/50 hover:border-teal-400 hover:text-teal-300"
+                      : "bg-[var(--card-bg)] text-[var(--foreground)] border-[var(--border-color)] hover:border-teal-400 hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400"
                   }`}
                   title={`Copiar ${upperConv}`}
                 >
@@ -151,7 +151,7 @@ export default function AlphabetReferenceTable({
                   className={`px-2 py-0.5 rounded-lg text-sm transition-all cursor-pointer border ${
                     isLowerCopied
                       ? "bg-teal-500 text-white border-teal-400"
-                      : "bg-[#1b1530] text-slate-100 border-purple-900/50 hover:border-teal-400 hover:text-teal-300"
+                      : "bg-[var(--card-bg)] text-[var(--foreground)] border-[var(--border-color)] hover:border-teal-400 hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400"
                   }`}
                   title={`Copiar ${lowerConv}`}
                 >

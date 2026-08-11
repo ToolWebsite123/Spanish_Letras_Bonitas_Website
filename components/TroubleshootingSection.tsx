@@ -63,15 +63,15 @@ export default function TroubleshootingSection() {
   };
 
   return (
-    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-rose-500/10 text-rose-400 font-bold text-xs border border-rose-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-rose-500/10 text-rose-700 dark:text-rose-400 font-bold text-xs border border-rose-500/30">
           <span>🛠️</span> Guía de Ayuda Rápida
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] flex items-center gap-2.5">
           Problemas Comunes y Soluciones Rápidas
         </h2>
-        <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-medium">
+        <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
           Resuelve en segundos cualquier duda sobre compatibilidad de símbolos, cuadrados vacíos o límites de caracteres en tus juegos y redes.
         </p>
       </div>
@@ -83,21 +83,21 @@ export default function TroubleshootingSection() {
           return (
             <div
               key={item.id}
-              className="p-6 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col justify-between gap-4 hover:border-teal-400/60 transition-colors"
+              className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--input-bg)] flex flex-col justify-between gap-4 hover:border-teal-400/60 transition-colors"
             >
               <div className="flex flex-col gap-2.5">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl p-2.5 rounded-xl bg-purple-950/80 border border-purple-800 text-teal-400 shrink-0">
+                  <span className="text-2xl p-2.5 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] text-teal-600 dark:text-teal-400 shrink-0">
                     {item.icon}
                   </span>
-                  <h3 className="font-extrabold text-base text-slate-100 leading-snug">
+                  <h3 className="font-extrabold text-base text-[var(--foreground)] leading-snug">
                     {item.question}
                   </h3>
                 </div>
-                <p className="text-xs font-extrabold text-teal-400 pt-1">
+                <p className="text-xs font-extrabold text-teal-600 dark:text-teal-400 pt-1">
                   {item.shortText}
                 </p>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-[var(--foreground)] opacity-80 leading-relaxed">
                   {item.detail}
                 </p>
               </div>

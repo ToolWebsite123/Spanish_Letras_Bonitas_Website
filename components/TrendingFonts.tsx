@@ -36,15 +36,15 @@ export default function TrendingFonts({ inputText = "Letras Bonitas" }: Trending
   };
 
   return (
-    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>🔥</span> Más Usadas esta Semana
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] flex items-center gap-2.5">
           Tipografías Tendencia para Redes y Juegos
         </h2>
-        <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-medium">
+        <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
           Los estilos más elegidos por creadores de contenido y gamers para personalizar biografías y apodos.
         </p>
       </div>
@@ -58,25 +58,25 @@ export default function TrendingFonts({ inputText = "Letras Bonitas" }: Trending
             <div
               key={style.id}
               onClick={() => handleCopy(style.id, styled)}
-              className="group relative flex flex-col justify-between p-5 sm:p-6 rounded-3xl border border-purple-900/40 bg-[#231c3d] hover:border-teal-400/60 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden min-h-[130px]"
+              className="group relative flex flex-col justify-between p-5 sm:p-6 rounded-3xl border border-[var(--border-color)] bg-[var(--input-bg)] hover:border-teal-400/60 hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-1 transition-all duration-200 cursor-pointer overflow-hidden min-h-[130px]"
             >
               <div className="flex items-center justify-between gap-2 z-10">
-                <span className="text-xs font-extrabold text-slate-400 group-hover:text-teal-400 transition-colors">
+                <span className="text-xs font-extrabold text-[var(--foreground)] opacity-80 group-hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors">
                   {style.name}
                 </span>
-                <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-teal-500/10 text-teal-400 border border-teal-500/30">
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/30">
                   Popular
                 </span>
               </div>
 
               <div className="my-auto py-2 text-center">
-                <p className="text-slate-100 break-words font-normal text-lg sm:text-xl leading-tight">
+                <p className="text-[var(--foreground)] break-words font-normal text-lg sm:text-xl leading-tight">
                   {styled}
                 </p>
               </div>
 
               <div className="flex justify-end pt-1 z-10">
-                <span className="text-[11px] font-bold text-teal-400 group-hover:underline flex items-center gap-1">
+                <span className="text-[11px] font-bold text-teal-600 dark:text-teal-400 group-hover:underline flex items-center gap-1">
                   <span>Copiar</span>
                   <span>📋</span>
                 </span>

@@ -92,15 +92,15 @@ export default function PlatformLimitsWidget({ currentPlatform }: PlatformLimits
   const isExceeded = currentCount > currentRule.limit;
 
   return (
-    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>📏</span> Simulador de Límites en Vivo
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] flex items-center gap-2.5">
           Calculadora de Límites por Red Social y Juego
         </h2>
-        <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-medium">
+        <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
           Selecciona una plataforma y comprueba en tiempo real si tu nombre o frase cumple los límites oficiales de memoria o caracteres.
         </p>
       </div>
@@ -118,7 +118,7 @@ export default function PlatformLimitsWidget({ currentPlatform }: PlatformLimits
                 className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
                   isActive
                     ? "bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 text-white shadow-lg shadow-teal-500/25 scale-105"
-                    : "bg-[#231c3d] hover:bg-[#2c234a] text-slate-300 border border-purple-900/40"
+                    : "bg-[var(--input-bg)] hover:bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--border-color)]"
                 }`}
               >
                 <span>{rule.icon}</span>
@@ -129,14 +129,14 @@ export default function PlatformLimitsWidget({ currentPlatform }: PlatformLimits
         </div>
 
         {/* Live Calculation Panel */}
-        <div className="p-6 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col gap-4">
+        <div className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--input-bg)] flex flex-col gap-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <input
               type="text"
               value={testText}
               onChange={(e) => setTestText(e.target.value)}
               placeholder="Prueba tu texto..."
-              className="w-full sm:flex-1 px-4 py-2.5 rounded-xl text-sm border border-purple-900/50 bg-[#1b1530] text-slate-100 placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
+              className="w-full sm:flex-1 px-4 py-2.5 rounded-xl text-sm border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--foreground)] placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30"
             />
             <div className="flex items-center gap-2 shrink-0">
               <span
@@ -151,7 +151,7 @@ export default function PlatformLimitsWidget({ currentPlatform }: PlatformLimits
             </div>
           </div>
 
-          <p className="text-xs text-slate-300 leading-relaxed">
+          <p className="text-xs text-[var(--foreground)] opacity-80 leading-relaxed">
             {currentRule.notes}
           </p>
         </div>

@@ -37,58 +37,58 @@ const robloxFaqs = [
 
 export default function NombresParaRobloxPage() {
   return (
-    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors flex flex-col">
       <NavBar />
 
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
-          <Link href="/" className="hover:text-teal-400 transition-colors">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-[var(--foreground)] opacity-75 font-medium">
+          <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-slate-400">Nicks para Juegos</span>
+          <span className="text-[var(--foreground)] opacity-75">Nicks para Juegos</span>
           <span>/</span>
-          <span className="text-teal-400 font-bold">Nombres para Roblox</span>
+          <span className="text-teal-600 dark:text-teal-400 font-bold">Nombres para Roblox</span>
         </nav>
 
         <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
             <span>🤖</span> Personalización para Roblox Display Names
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
             Nombres y Nicks para Roblox 🤖
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
-            Crea el nombre de pantalla perfecto para tu avatar de Roblox. Utiliza <Link href="/letras-bonitas/letras-aesthetic" className="text-teal-400 underline font-bold hover:text-teal-300">letras aesthetic</Link>, <Link href="/letras-bonitas/letras-japonesas" className="text-teal-400 underline font-bold hover:text-teal-300">fuentes japonesas otaku</Link>, <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-teal-400 underline font-bold hover:text-teal-300">símbolos para nick gamer</Link> y <Link href="/nicks-para-juegos/nick-free-fire" className="text-teal-400 underline font-bold hover:text-teal-300">apodos de Free Fire</Link>.
+          <p className="text-base sm:text-lg text-[var(--foreground)] opacity-80 leading-relaxed max-w-4xl font-medium">
+            Crea el nombre de pantalla perfecto para tu avatar de Roblox. Utiliza <Link href="/letras-bonitas/letras-aesthetic" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">letras aesthetic</Link>, <Link href="/letras-bonitas/letras-japonesas" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">fuentes japonesas otaku</Link>, <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">símbolos para nick gamer</Link> y <Link href="/nicks-para-juegos/nick-free-fire" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">apodos de Free Fire</Link>.
           </p>
         </header>
 
         <Converter highlightStyleId="small" />
 
-        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
-          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
               🤖 Guía de Personalización
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
               Cómo Cambiar tu Display Name en Roblox en 4 Pasos
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
               Sigue estos sencillos pasos desde la aplicación de Roblox en tu celular o PC:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">1. Abre Configuración</span>
-              <p className="text-slate-300 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Abre Configuración</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
                 Toca los 3 puntos (...) en el menú principal de Roblox y selecciona <strong>Configuración &gt; Información de la cuenta</strong>.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">2. Edita Display Name</span>
-              <p className="text-slate-300 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">2. Edita Display Name</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
                 Toca el icono de lápiz junto a <strong>Nombre de pantalla</strong>, pega tu diseño de nuestro conversor y pulsa Guardar.
               </p>
             </div>

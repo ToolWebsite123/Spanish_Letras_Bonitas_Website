@@ -76,15 +76,15 @@ export default function ExamplesSection() {
   };
 
   return (
-    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>🎁</span> Plantillas Listas en 1-Clic
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] flex items-center gap-2.5">
           50+ Ejemplos Listos para Copiar y Pegar por Categoría
         </h2>
-        <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-medium">
+        <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
           Ahorra tiempo copiando cualquiera de estos diseños probados y optimizados para el límite de caracteres de cada red social.
         </p>
       </div>
@@ -93,9 +93,9 @@ export default function ExamplesSection() {
         {DEFAULT_CATEGORIES.map((cat) => (
           <div
             key={cat.id}
-            className="p-6 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col gap-4"
+            className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--input-bg)] flex flex-col gap-4"
           >
-            <h3 className="font-extrabold text-base text-teal-400 flex items-center gap-2 pb-2.5 border-b border-purple-900/40">
+            <h3 className="font-extrabold text-base text-teal-600 dark:text-teal-400 flex items-center gap-2 pb-2.5 border-b border-[var(--border-color)]">
               <span className="text-xl">{cat.categoryIcon}</span> {cat.categoryTitle}
             </h3>
 
@@ -107,10 +107,10 @@ export default function ExamplesSection() {
                 return (
                   <div
                     key={itemKey}
-                    className="p-4 rounded-xl bg-[#1b1530] border border-purple-900/40 flex flex-col gap-2.5 relative overflow-hidden group hover:border-teal-400/60 transition-colors"
+                    className="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] flex flex-col gap-2.5 relative overflow-hidden group hover:border-teal-400/60 transition-colors"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[11px] font-extrabold text-teal-400">
+                      <span className="text-[11px] font-extrabold text-teal-600 dark:text-teal-400">
                         {item.persona}
                       </span>
                       <button
@@ -127,7 +127,7 @@ export default function ExamplesSection() {
                       </button>
                     </div>
 
-                    <pre className="text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed bg-[#0f0c1b]/80 p-3 rounded-lg border border-purple-900/40">
+                    <pre className="text-xs font-mono text-[var(--foreground)] opacity-90 whitespace-pre-wrap leading-relaxed bg-[var(--background)]/80 p-3 rounded-lg border border-[var(--border-color)]">
                       {item.text}
                     </pre>
 

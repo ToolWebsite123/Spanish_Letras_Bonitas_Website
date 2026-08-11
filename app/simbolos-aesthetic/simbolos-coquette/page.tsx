@@ -37,58 +37,58 @@ const coquetteFaqs = [
 
 export default function SimbolosCoquettePage() {
   return (
-    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors flex flex-col">
       <NavBar />
 
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
-          <Link href="/" className="hover:text-teal-400 transition-colors">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-[var(--foreground)] opacity-75 font-medium">
+          <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-slate-400">Símbolos Aesthetic</span>
+          <span className="text-[var(--foreground)] opacity-75">Símbolos Aesthetic</span>
           <span>/</span>
-          <span className="text-teal-400 font-bold">Símbolos Coquette</span>
+          <span className="text-teal-600 dark:text-teal-400 font-bold">Símbolos Coquette</span>
         </nav>
 
         <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
             <span>🎀</span> Estética Romántica & Hiperfemenina
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
             Símbolos Coquette, Moños y Corazones 🎀
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
-            Expresa tu lado más dulce y delicado. Copia la colección definitiva de moños rosados, corazones entrelazados, flores vintage y <Link href="/letras-bonitas/letras-cursivas" className="text-teal-400 underline font-bold hover:text-teal-300">letras cursivas románticas</Link> para tu <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-teal-400 underline font-bold hover:text-teal-300">perfil de Instagram</Link>, <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-teal-400 underline font-bold hover:text-teal-300">emojis para copiar</Link> y <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-teal-400 underline font-bold hover:text-teal-300">nicks femeninos de Free Fire</Link>.
+          <p className="text-base sm:text-lg text-[var(--foreground)] opacity-80 leading-relaxed max-w-4xl font-medium">
+            Expresa tu lado más dulce y delicado. Copia la colección definitiva de moños rosados, corazones entrelazados, flores vintage y <Link href="/letras-bonitas/letras-cursivas" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">letras cursivas románticas</Link> para tu <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">perfil de Instagram</Link>, <Link href="/simbolos-aesthetic/emojis-para-copiar" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">emojis para copiar</Link> y <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">nicks femeninos de Free Fire</Link>.
           </p>
         </header>
 
         <Converter highlightStyleId="cursive" />
 
-        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
-          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
               🎀 Anatomía del Diseño Coquette
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
               Guía de Estilo: Cómo Diseñar una Biografía Coquette de Impacto
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
               La tendencia coquette celebra la inocencia, el encanto clásico y la estética romántica. Para lograr un diseño impecable en tus redes sociales:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">1. Encuadre con Moños (🎀)</span>
-              <p className="text-slate-300 leading-relaxed">
-                Utiliza el moño 🎀 a ambos lados de tu nombre personal para crear un marco de cinta victoriana (ej: <code className="text-teal-400">🎀 𝓥𝓪𝓵𝓮𝓷𝓽𝓲𝓷𝓪 🎀</code>).
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Encuadre con Moños (🎀)</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Utiliza el moño 🎀 a ambos lados de tu nombre personal para crear un marco de cinta victoriana (ej: <code className="text-teal-600 dark:text-teal-400">🎀 𝓥𝓪𝓵𝓮𝓷𝓽𝓲𝓷𝓪 🎀</code>).
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-2.5">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">2. Viñetas de Flores y Perlas</span>
-              <p className="text-slate-300 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">2. Viñetas de Flores y Perlas</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
                 Intercala flores de cerezo (🌸) y perlas (🦪) en tu lista de aficiones combinadas con letras pequeñas en formato Small Caps.
               </p>
             </div>

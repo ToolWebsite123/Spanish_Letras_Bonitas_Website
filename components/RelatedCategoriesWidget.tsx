@@ -37,7 +37,7 @@ const ALL_HUBS: Record<string, HubLink[]> = {
     },
     {
       title: "Abecedario Cursivo Completo",
-      href: "/alfabeto-completo/alfabeto-cursivo",
+      href: "/letras-bonitas/letras-cursivas",
       description: "Muestrario A-Z en mayúsculas y minúsculas.",
       icon: "✒️",
       badge: "Abecedario",
@@ -46,7 +46,7 @@ const ALL_HUBS: Record<string, HubLink[]> = {
   "/letras-bonitas/letras-graffiti": [
     {
       title: "Alfabeto Graffiti Completo",
-      href: "/alfabeto-completo/alfabeto-graffiti",
+      href: "/letras-bonitas/letras-graffiti",
       description: "Abecedario urbano A-Z en bloques negros.",
       icon: "🎨",
       badge: "Urbano",
@@ -200,15 +200,15 @@ export default function RelatedCategoriesWidget({ currentPath }: RelatedCategori
   const hubs = ALL_HUBS[currentPath] || DEFAULT_HUBS;
 
   return (
-    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>🔗</span> Navegación Recomendada
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] flex items-center gap-2.5">
           Otras Herramientas de Letras Bonitas Relacionadas
         </h2>
-        <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-medium">
+        <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
           Explora nuestros conversores especializados y potencia tus textos en redes sociales y juegos.
         </p>
       </div>
@@ -218,25 +218,25 @@ export default function RelatedCategoriesWidget({ currentPath }: RelatedCategori
           <Link
             key={hub.href}
             href={hub.href}
-            className="group relative flex flex-col justify-between p-5 rounded-2xl border border-purple-900/40 bg-[#231c3d] hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-500/10 hover:-translate-y-1 transition-all duration-200"
+            className="group relative flex flex-col justify-between p-5 rounded-2xl border border-[var(--border-color)] bg-[var(--input-bg)] hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-500/10 hover:-translate-y-1 transition-all duration-200"
           >
             <div className="flex items-center justify-between gap-2">
               <span className="text-2xl">{hub.icon}</span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-teal-500/10 text-teal-400 border border-teal-500/30">
+              <span className="text-[10px] px-2 py-0.5 rounded-full font-bold bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/30">
                 {hub.badge}
               </span>
             </div>
 
             <div className="flex flex-col gap-1 my-3">
-              <h3 className="font-extrabold text-sm text-slate-100 group-hover:text-teal-400 transition-colors">
+              <h3 className="font-extrabold text-sm text-[var(--foreground)] group-hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors">
                 {hub.title}
               </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-[var(--foreground)] opacity-80 leading-relaxed">
                 {hub.description}
               </p>
             </div>
 
-            <div className="flex items-center gap-1 text-[11px] font-bold text-teal-400 group-hover:underline">
+            <div className="flex items-center gap-1 text-[11px] font-bold text-teal-600 dark:text-teal-400 group-hover:underline">
               <span>Probar conversor</span>
               <span>→</span>
             </div>

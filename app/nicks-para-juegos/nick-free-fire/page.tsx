@@ -37,31 +37,31 @@ const freeFireFaqs = [
 
 export default function NickFreeFirePage() {
   return (
-    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors flex flex-col">
       <NavBar />
 
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
         {/* Breadcrumbs Navigation */}
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
-          <Link href="/" className="hover:text-teal-400 transition-colors">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-[var(--foreground)] opacity-75 font-medium">
+          <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-slate-400">Nicks para Juegos</span>
+          <span className="text-[var(--foreground)] opacity-75">Nicks para Juegos</span>
           <span>/</span>
-          <span className="text-teal-400 font-bold">Nick Free Fire</span>
+          <span className="text-teal-600 dark:text-teal-400 font-bold">Nick Free Fire</span>
         </nav>
 
         {/* Hero Header */}
         <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
             <span>🎮</span> Generador Pro para Garena Free Fire
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
             Nicks para Free Fire Pro 🎮
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
-            Genera apodos pro con espadas, coronas, alas de ángel, espacio invisible y letras góticas. Explora nuestras guías de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-teal-400 underline font-bold hover:text-teal-300">nicks masculinos</Link>, <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-teal-400 underline font-bold hover:text-teal-300">nicks femeninos</Link> y el tutorial paso a paso para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-teal-400 underline font-bold hover:text-teal-300">cambiar tu nick de Free Fire</Link>.
+          <p className="text-base sm:text-lg text-[var(--foreground)] opacity-80 leading-relaxed max-w-4xl font-medium">
+            Genera apodos pro con espadas, coronas, alas de ángel, espacio invisible y letras góticas. Explora nuestras guías de <Link href="/nicks-para-juegos/nick-free-fire-masculino" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">nicks masculinos</Link>, <Link href="/nicks-para-juegos/nick-free-fire-femenino" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">nicks femeninos</Link> y el tutorial paso a paso para <Link href="/nicks-para-juegos/cambiar-nick-free-fire" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">cambiar tu nick de Free Fire</Link>.
           </p>
         </header>
 
@@ -69,30 +69,30 @@ export default function NickFreeFirePage() {
         <Converter highlightStyleId="gothic" />
 
         {/* ARTÍCULO DEEP 1 */}
-        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
-          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
               🎮 Anatomía de un Nick Pro
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
               Guía de Estructura de Clan y Espacio Transparente
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
-              Para armar un nick imponente en eSports, combina <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-teal-400 underline font-bold hover:text-teal-300">símbolos para nick de armas</Link> con <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-teal-400 underline font-bold hover:text-teal-300">códigos de colores para tu firma de Free Fire</Link> y <Link href="/nicks-para-juegos/nombres-para-roblox" className="text-teal-400 underline font-bold hover:text-teal-300">apodos de Roblox</Link>:
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Para armar un nick imponente en eSports, combina <Link href="/simbolos-aesthetic/simbolos-para-nick" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">símbolos para nick de armas</Link> con <Link href="/nicks-para-juegos/bio-colorida-free-fire" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">códigos de colores para tu firma de Free Fire</Link> y <Link href="/nicks-para-juegos/nombres-para-roblox" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">apodos de Roblox</Link>:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">1. Tag de Clan Volada</span>
-              <p className="text-slate-300 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Tag de Clan Volada</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
                 Utiliza letras pequeñas voladas (ej: ᵀᴳ) para ahorrar bytes y dejar espacio al nombre central.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">2. Espacio Invisible U+3164</span>
-              <p className="text-slate-300 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">2. Espacio Invisible U+3164</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
                 Intercala el espacio transparente para separar limpiamente tu sigla del resto del apodo.
               </p>
             </div>

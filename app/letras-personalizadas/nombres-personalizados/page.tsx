@@ -41,31 +41,31 @@ const nombresFaqs = [
 
 export default function NombresPersonalizadosPage() {
   return (
-    <div className="min-h-screen bg-[#0f0c1b] text-slate-100 transition-colors flex flex-col">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors flex flex-col">
       <NavBar />
 
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
         {/* Breadcrumbs Navigation */}
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-medium">
-          <Link href="/" className="hover:text-teal-400 transition-colors">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-[var(--foreground)] opacity-75 font-medium">
+          <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors">
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-slate-400">Letras Personalizadas</span>
+          <span className="text-[var(--foreground)] opacity-75">Letras Personalizadas</span>
           <span>/</span>
-          <span className="text-teal-400 font-bold">Nombres Personalizados</span>
+          <span className="text-teal-600 dark:text-teal-400 font-bold">Nombres Personalizados</span>
         </nav>
 
         {/* Hero Header */}
         <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
             <span>✨</span> Generador de Nombres Bonitos & Estéticos Unicode
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
             Generador de Nombres Personalizados ✨
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl font-medium">
-            Transforma cualquier nombre propio o apodo en <strong className="text-teal-400 font-extrabold">combinaciones estéticas, marcas artísticas, firmas elegantes e íconos para redes sociales y videojuegos</strong> de forma 100% gratuita.
+          <p className="text-base sm:text-lg text-[var(--foreground)] opacity-80 leading-relaxed max-w-4xl font-medium">
+            Transforma cualquier nombre propio o apodo en <strong className="text-teal-600 dark:text-teal-400 font-extrabold">combinaciones estéticas, marcas artísticas, firmas elegantes e íconos para redes sociales y videojuegos</strong> de forma 100% gratuita.
           </p>
         </header>
 
@@ -73,45 +73,45 @@ export default function NombresPersonalizadosPage() {
         <Converter highlightStyleId="bold-script" />
 
         {/* ARTÍCULO DETALLADO DEEP 1: Cómo Diseñar Nombres de Impacto */}
-        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
-          <div className="flex flex-col gap-3 border-b border-purple-900/40 pb-5">
-            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 self-start border border-teal-500/30">
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
               ✨ Estrategia de Marca Personal
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-100">
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
               Guía Definitiva: 4 Formas de Personalizar tu Nombre para Redes Sociales y Juegos
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
               Tu nombre es tu firma digital. A la hora de construir una presencia atractiva en Instagram, TikTok o servidores de juegos, existen 4 composiciones tipográficas recomendadas:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">1. Estilo Cursiva Elegante (Script)</span>
-              <p className="text-slate-300 leading-relaxed">
-                Utiliza la fuente Script Cursiva (ej: <code className="text-teal-400 font-bold">𝓢𝓸𝓯í𝓪 𝓜𝓪𝓻𝓽í𝓷𝓮𝔔</code>) para transmitir refinamiento, creatividad y caligrafía de firma personal en perfiles artísticos o de moda.
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Estilo Cursiva Elegante (Script)</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Utiliza la fuente Script Cursiva (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">𝓢𝓸𝓯í𝓪 𝓜𝓪𝓻𝓽í𝓷𝓮𝔔</code>) para transmitir refinamiento, creatividad y caligrafía de firma personal en perfiles artísticos o de moda.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">2. Estilo Minimalista (Small Caps)</span>
-              <p className="text-slate-300 leading-relaxed">
-                Transforma tu nombre a letras diminutas en mayúsculas (ej: <code className="text-teal-400 font-bold">ᴅᴀɴɪᴇʟ ᴍᴏʀᴇɴᴏ</code>). Ocupa menos espacio horizontal y da una estética limpia y moderna.
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">2. Estilo Minimalista (Small Caps)</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Transforma tu nombre a letras diminutas en mayúsculas (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">ᴅᴀɴɪᴇʟ ᴍᴏʀᴇɴᴏ</code>). Ocupa menos espacio horizontal y da una estética limpia y moderna.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">3. Estilo Guerrero eSports (Gótica)</span>
-              <p className="text-slate-300 leading-relaxed">
-                Combina fuentes góticas con coronas y alas (ej: <code className="text-teal-400 font-bold">꧁👑𝕮𝖆𝖗𝖑𝖔𝖘👑꧂</code>) para infundir respeto en Free Fire, Roblox y Discord.
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">3. Estilo Guerrero eSports (Gótica)</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Combina fuentes góticas con coronas y alas (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">꧁👑𝕮𝖆𝖗𝖑𝖔𝖘👑꧂</code>) para infundir respeto en Free Fire, Roblox y Discord.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#231c3d] border border-purple-900/40 flex flex-col gap-3">
-              <span className="text-xs font-extrabold text-teal-400 uppercase tracking-wider">4. Estilo Coquette & Cute</span>
-              <p className="text-slate-300 leading-relaxed">
-                Acompaña tu nombre de pila con moños y destellos (ej: <code className="text-teal-400 font-bold">🎀 𝓛𝓾𝓬í𝓪 🌸</code>) para perfiles dulces y románticos.
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">4. Estilo Coquette & Cute</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Acompaña tu nombre de pila con moños y destellos (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">🎀 𝓛𝓾𝓬í𝓪 🌸</code>) para perfiles dulces y románticos.
               </p>
             </div>
           </div>

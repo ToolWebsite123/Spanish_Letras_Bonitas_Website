@@ -64,15 +64,15 @@ interface ProTipsSectionProps {
 
 export default function ProTipsSection({ platform }: ProTipsSectionProps) {
   return (
-    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>🎨</span> Guía Profesional de Diseño
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] flex items-center gap-2.5">
           El Arte de la Tipografía Digital: 6 Principios Aesthetic
         </h2>
-        <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-medium">
+        <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
           Aplica estos principios fundamentales de diseño para lograr un perfil memorable y profesional en cualquier red social.
         </p>
       </div>
@@ -81,25 +81,25 @@ export default function ProTipsSection({ platform }: ProTipsSectionProps) {
         {PRO_TIPS.map((tip) => (
           <div
             key={tip.id}
-            className="p-6 rounded-2xl border border-purple-900/40 bg-[#231c3d] flex flex-col justify-between gap-3 hover:border-teal-400/60 transition-colors"
+            className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--input-bg)] flex flex-col justify-between gap-3 hover:border-teal-400/60 transition-colors"
           >
             <div className="flex items-center justify-between">
-              <span className="text-2xl p-2 rounded-xl bg-purple-950/80 border border-purple-800 text-teal-400">
+              <span className="text-2xl p-2 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] text-teal-600 dark:text-teal-400">
                 {tip.icon}
               </span>
-              <span className="text-xs font-black text-teal-400 font-mono">
+              <span className="text-xs font-black text-teal-600 dark:text-teal-400 font-mono">
                 {tip.numberStr}
               </span>
             </div>
 
             <div className="flex flex-col gap-1.5 pt-2">
-              <span className="text-[11px] font-extrabold text-teal-400 uppercase tracking-wider">
+              <span className="text-[11px] font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
                 {tip.shortTag}
               </span>
-              <h3 className="font-extrabold text-base text-slate-100 leading-snug">
+              <h3 className="font-extrabold text-base text-[var(--foreground)] leading-snug">
                 {tip.title}
               </h3>
-              <p className="text-xs text-slate-300 leading-relaxed pt-1">
+              <p className="text-xs text-[var(--foreground)] opacity-80 leading-relaxed pt-1">
                 {tip.detail}
               </p>
             </div>

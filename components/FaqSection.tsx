@@ -38,7 +38,7 @@ export default function FaqSection({
   };
 
   return (
-    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-purple-900/40 bg-[#1b1530]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+    <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
       {/* Inject FAQ JSON-LD */}
       <script
         type="application/ld+json"
@@ -46,13 +46,13 @@ export default function FaqSection({
       />
 
       <div className="flex flex-col gap-2">
-        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-400 font-bold text-xs border border-teal-500/30">
+        <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
           <span>❓</span> Preguntas Frecuentes
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 flex items-center gap-2.5">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] flex items-center gap-2.5">
           {title}
         </h2>
-        <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-medium">
+        <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
           Respuestas a las dudas más comunes sobre la conversión de letras, fuentes Unicode y compatibilidad.
         </p>
       </div>
@@ -63,17 +63,17 @@ export default function FaqSection({
           return (
             <div
               key={idx}
-              className="rounded-2xl border border-purple-900/40 bg-[#231c3d] overflow-hidden transition-all relative hover:border-teal-400/60"
+              className="rounded-2xl border border-[var(--border-color)] bg-[var(--input-bg)] overflow-hidden transition-all relative hover:border-teal-400/60"
             >
               <button
                 type="button"
                 onClick={() => toggleFaq(idx)}
-                className="w-full text-left p-5 font-bold text-sm sm:text-base text-slate-100 flex items-center justify-between gap-3 cursor-pointer hover:text-teal-400 transition-colors"
+                className="w-full text-left p-5 font-bold text-sm sm:text-base text-[var(--foreground)] flex items-center justify-between gap-3 cursor-pointer hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors"
                 aria-expanded={isOpen}
               >
                 <span className="flex-1 pr-2">{faq.q}</span>
                 <span
-                  className={`w-7 h-7 rounded-full bg-teal-500/10 text-teal-400 font-extrabold flex items-center justify-center text-xs shrink-0 transition-transform duration-200 border border-teal-500/30 ${
+                  className={`w-7 h-7 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-extrabold flex items-center justify-center text-xs shrink-0 transition-transform duration-200 border border-teal-500/30 ${
                     isOpen ? "rotate-180 bg-gradient-to-r from-teal-500 to-indigo-600 text-white" : ""
                   }`}
                 >
@@ -82,7 +82,7 @@ export default function FaqSection({
               </button>
 
               {isOpen && (
-                <div className="p-5 pt-3 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-purple-900/40 bg-[#1b1530]/90">
+                <div className="p-5 pt-3 text-xs sm:text-sm text-[var(--foreground)] opacity-85 leading-relaxed border-t border-[var(--border-color)] bg-[var(--card-bg)]/90">
                   {faq.a}
                 </div>
               )}
