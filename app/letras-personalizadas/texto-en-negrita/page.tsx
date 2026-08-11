@@ -120,6 +120,88 @@ export default function TextoEnNegritaPage() {
           </div>
         </section>
 
+        {/* SECTION D — Negrita Sans vs Negrita Serif: ¿Cuál Elegir? */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              📊 Comparativa de Estilos
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Negrita Sans vs Negrita Serif: ¿Cuál Elegir?
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Conoce cuál variante de negrita se adapta mejor al formato y la intención de tu publicación:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
+                Negrita Sans (Sin Remates)
+              </span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                La <strong className="text-teal-600 dark:text-teal-400 font-bold">Negrita Sans</strong> (sin remates) se ve moderna y limpia, ideal para bios de Instagram y TikTok, nombres de usuario y llamados a la acción rápidos.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">
+                Negrita Serif (Con Remates)
+              </span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                La <strong className="text-teal-600 dark:text-teal-400 font-bold">Negrita Serif</strong> (con remates) transmite formalidad y autoridad, mejor para citas célebres, anuncios profesionales o textos tipo "editorial".
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION E — Por Qué la Negrita Mejora el Engagement en Publicaciones Largas */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              📈 Optimización de Engagement
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Por Qué la Negrita Mejora el Engagement en Publicaciones Largas
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              En textos largos (como descripciones de LinkedIn o publicaciones de Facebook), usar negrita en la primera línea o en palabras clave ayuda al lector a decidir en segundos si vale la pena seguir leyendo — mejora la tasa de lectura completa.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">👀</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Gancho Inicial Inmediato
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                El primer renglón en negrita actúa como titular atrapante que detiene el scroll acelerado en redes.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">⚡</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Escaneo Rápido de Puntos Clave
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Palabras destacadas en negrita guían la mirada del lector a través de los conceptos más valiosos del mensaje.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🚀</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Mayor Retención & Clics
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Facilitar la lectura aumenta significativamente el tiempo de permanencia y las respuestas al llamado a la acción.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* COMPARATIVA DE ESTILOS EN NEGRITA */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
