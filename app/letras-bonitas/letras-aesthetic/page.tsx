@@ -203,7 +203,7 @@ export default function LetrasAestheticPage() {
         <AlphabetReferenceTable highlightStyleId="fullwidth" />
 
         {/* Related Categories Widget */}
-        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
+        <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-aesthetic" />
 
         {/* Examples */}
 

@@ -163,7 +163,7 @@ export default function LetrasTatuajesPage() {
           </div>
         </section>
 
-        <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-graffiti" />
+        <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-tatuajes" />
 
 
         <FaqSection title="Preguntas Frecuentes sobre Letras para Tatuajes" faqs={tatuajesFaqs} />

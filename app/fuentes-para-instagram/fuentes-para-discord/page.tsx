@@ -171,7 +171,7 @@ export default function FuentesParaDiscordPage() {
           </div>
         </section>
 
-        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
+        <RelatedCategoriesWidget currentPath="/fuentes-para-instagram/fuentes-para-discord" />
 
 
         <FaqSection title="Preguntas Frecuentes sobre Fuentes para Discord" faqs={discordFaqs} />

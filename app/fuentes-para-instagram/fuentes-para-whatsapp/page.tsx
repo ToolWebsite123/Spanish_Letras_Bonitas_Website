@@ -184,7 +184,7 @@ export default function FuentesParaWhatsAppPage() {
           </div>
         </section>
 
-        <RelatedCategoriesWidget currentPath="/fuentes-para-instagram/bio-para-instagram" />
+        <RelatedCategoriesWidget currentPath="/fuentes-para-instagram/fuentes-para-whatsapp" />
 
         <FaqSection title="Preguntas Frecuentes sobre Fuentes para WhatsApp" faqs={whatsappFaqs} />
       </main>

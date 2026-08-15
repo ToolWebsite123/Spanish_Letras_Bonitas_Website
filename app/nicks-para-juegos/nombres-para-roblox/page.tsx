@@ -200,7 +200,7 @@ export default function NombresParaRobloxPage() {
           </div>
         </section>
 
-        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
+        <RelatedCategoriesWidget currentPath="/nicks-para-juegos/nombres-para-roblox" />
 
 
         <FaqSection title="Preguntas Frecuentes sobre Nombres para Roblox" faqs={robloxFaqs} />

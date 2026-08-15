@@ -163,7 +163,7 @@ export default function LetrasJaponesasPage() {
           </div>
         </section>
 
-        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
+        <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-japonesas" />
 
 
         <FaqSection title="Preguntas Frecuentes sobre Letras Japonesas" faqs={japonesasFaqs} />

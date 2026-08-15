@@ -196,7 +196,7 @@ export default function EmojisParaCopiarPage() {
           </div>
         </section>
 
-        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
+        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/emojis-para-copiar" />
 
 
         <FaqSection title="Preguntas Frecuentes sobre Emojis para Copiar" faqs={emojisFaqs} />

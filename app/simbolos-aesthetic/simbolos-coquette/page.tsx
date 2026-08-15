@@ -186,7 +186,7 @@ export default function SimbolosCoquettePage() {
           </div>
         </section>
 
-        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
+        <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-coquette" />
 
 
         <FaqSection title="Preguntas Frecuentes sobre Símbolos Coquette" faqs={coquetteFaqs} />

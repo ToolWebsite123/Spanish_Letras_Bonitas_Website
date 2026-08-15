@@ -163,7 +163,7 @@ export default function LetrasFirmaPage() {
           </div>
         </section>
 
-        <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-cursivas" />
+        <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-firma" />
 
 
         <FaqSection title="Preguntas Frecuentes sobre Letras para Firma" faqs={firmaFaqs} />

@@ -292,7 +292,7 @@ export default function FuentesParaFacebookPage() {
           </div>
         </section>
 
-        <RelatedCategoriesWidget currentPath="/fuentes-para-instagram/bio-para-instagram" />
+        <RelatedCategoriesWidget currentPath="/fuentes-para-instagram/fuentes-para-facebook" />
 
 
         <FaqSection title="Preguntas Frecuentes sobre Fuentes para Facebook" faqs={facebookFaqs} />

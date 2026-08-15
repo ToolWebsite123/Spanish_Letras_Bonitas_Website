@@ -170,7 +170,7 @@ export default function CaligrafiaPage() {
 
         <AlphabetReferenceTable highlightStyleId="bold-script" />
 
-        <RelatedCategoriesWidget currentPath="/letras-bonitas/letras-cursivas" />
+        <RelatedCategoriesWidget currentPath="/letras-bonitas/caligrafia" />
 
 
         <FaqSection title="Preguntas Frecuentes sobre Caligrafía" faqs={caligrafiaFaqs} />
