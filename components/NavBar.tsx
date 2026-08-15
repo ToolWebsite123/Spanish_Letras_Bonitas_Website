@@ -28,8 +28,8 @@ const navPills: NavPill[] = [
   { label: "Símbolos Nick", href: "/simbolos-aesthetic/simbolos-para-nick", icon: "⚔️" },
   { label: "Emojis", href: "/simbolos-aesthetic/emojis-para-copiar", icon: "🌸" },
   { label: "Coquette", href: "/simbolos-aesthetic/simbolos-coquette", icon: "🎀" },
-  { label: "Negrita", href: "/letras-personalizadas/texto-en-negrita", icon: "<b>B</b>" },
-  { label: "Itálico", href: "/letras-personalizadas/texto-italico", icon: "<i>I</i>" },
+  { label: "Negrita", href: "/letras-personalizadas/texto-en-negrita", icon: "💪" },
+  { label: "Itálico", href: "/letras-personalizadas/texto-italico", icon: "✍️" },
   { label: "Invertir Texto", href: "/letras-personalizadas/invertir-texto", icon: "🔄" },
   { label: "Nombres Personalizados", href: "/letras-personalizadas/nombres-personalizados", icon: "🏷️" },
 ];

@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import PlatformLimitsWidget from "@/components/PlatformLimitsWidget";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
@@ -65,8 +64,6 @@ export default function FuentesParaWhatsAppPage() {
 
         <Converter highlightStyleId="bold-script" />
 
-        <PlatformLimitsWidget currentPlatform="whatsapp" />
-
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
             <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
@@ -94,6 +91,96 @@ export default function FuentesParaWhatsAppPage() {
                 Utiliza letras en negrita o recuadros negros para que el nombre del grupo destaque en la lista de chats.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* SECTION D — Nombre de Grupo vs Estado: Diferentes Límites de Caracteres */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              💬 Límites de Mensajería
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Nombre de Grupo vs Estado: Diferentes Límites de Caracteres
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              El nombre de un grupo de WhatsApp permite hasta 25 caracteres, mientras que un Estado permite hasta 700. Ajusta la longitud de tu texto decorado según dónde lo vayas a pegar.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION E — Dónde Puedes Usar Fuentes Estilizadas en WhatsApp */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              💬 Ubicaciones en WhatsApp
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Dónde Puedes Usar Fuentes Estilizadas en WhatsApp
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Aprovecha las tipografías Unicode en 4 secciones clave de la aplicación para personalizar tu comunicación diaria:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Casilla de Info Personal</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Remplaza el texto plano por frases motivacionales en cursiva o negrita elegante que definan tu estado de ánimo o profesión.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">2. Nombres de Grupos</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Aplica letras en negrita o recuadros negros para que tus grupos familiares, de trabajo o amigos destaquen en la lista de chats.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">3. Publicaciones de Estados</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Decora pensamientos, canciones o avisos en tus Estados con fuentes tipográficas únicas que atraigan mayor atención.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">4. Mensajes Directos y Encabezados</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Resalta la primera línea o títulos importantes de tus mensajes para estructurar mejor la información enviada a tus contactos.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION F — WhatsApp Business vs WhatsApp Normal: ¿Se Ve Igual el Texto Decorado? */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              💼 WhatsApp Business
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              WhatsApp Business vs WhatsApp Normal: ¿Se Ve Igual el Texto Decorado?
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              ¡Sí! Las fuentes Unicode se renderizan de manera 100% idéntica en WhatsApp Business y en la aplicación estándar. En perfiles comerciales, aplicar negritas en catálogos de productos, listas de precios y respuestas automáticas transmite un perfil empresarial estructurado y profesional frente a tus clientes.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION G — Consejos para Usar Fuentes sin Perder Legibilidad en Chats Largos */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              💡 Consejos de Legibilidad
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Consejos para Usar Fuentes sin Perder Legibilidad en Chats Largos
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Al comunicarte en chats grupales o extensos, usa fuentes decoradas principalmente en palabras clave o titulares. Evita transformar párrafos enteros a tipografías excesivamente cursivas o complejas para que la lectura fluya con rapidez sin cansar la vista de tus interlocutores.
+            </p>
           </div>
         </section>
 

@@ -91,6 +91,112 @@ export default function NombresParaRobloxPage() {
                 Toca el icono de lápiz junto a <strong>Nombre de pantalla</strong>, pega tu diseño de nuestro conversor y pulsa Guardar.
               </p>
             </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">3. Copia tu Diseño</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Regresa a nuestro conversor, elige el estilo que más te guste (kawaii, aesthetic, con símbolos) y toca "Copiar" para guardarlo en tu portapapeles.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">4. Guarda los Cambios</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Después de pegar tu nuevo Display Name, presiona el botón de guardar (✓) en la esquina superior. El cambio puede tardar unos minutos en reflejarse en todo el juego.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION D — Roblox vs Free Fire: Diferencias en Nombres de Usuario */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🤖 Comparativa de Plataformas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Roblox vs Free Fire: Diferencias en Nombres de Usuario
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Roblox permite cambiar el "Display Name" cuantas veces quieras gratis (a diferencia de Free Fire), pero el "@username" real solo puede cambiarse una vez sin costo. Usa estilos decorativos solo en el Display Name.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION E — Cómo Evitar que Roblox Censure tu Nombre (###) */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🛡️ Filtro de Moderación
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Cómo Evitar que Roblox Censure tu Nombre (###)
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Roblox censura automáticamente palabras que detecta como inapropiadas, incluso por error (falsos positivos). Si tu nombre se convierte en "###", evita palabras comunes mal interpretadas y usa símbolos decorativos entre letras para evadir el filtro sin perder legibilidad.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION F — Guía Completa: Cómo Crear el Nombre Perfecto para tu Avatar de Roblox */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🤖 Guía de Avatar
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Guía Completa: Cómo Crear el Nombre Perfecto para tu Avatar de Roblox
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              El Display Name de tu avatar en Roblox refleja tu personalidad dentro de los mundos virtuales (Adopt Me!, Brookhaven, Blox Fruits o Tower of Hell). Combina estas 3 estrategias para lograr un apodo único y memorable:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">✨</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                1. Estilo Kawaii & Soft
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Utiliza caritas adorables, destellos y moños (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">🌸 𝐿𝓊𝒸í𝒶 ✨</code>) para experiencias de rol casual y convivencia social.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">⚔️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                2. Estilo Competitivo & RPG
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Mezcla fuentes góticas, espadas y letras diminutas en mayúsculas (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">⚔️𝕾𝖍𝖆𝖉𝖔𝖜⚔️</code>) para destacar en arenas de combate PvP.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🔤</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                3. Fuentes Small Caps (Pequeñas)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Transforma tu nombre a minúsculas o Small Caps para dar un aire minimalista y moderno que no obstaculice la vista durante el juego.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION G — Roblox para Creadores: Nombres para Grupos y Juegos Propios */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🎮 Creadores & Desarrollo
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Roblox para Creadores: Nombres para Grupos y Juegos Propios
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Si desarrollas experiencias en Roblox Studio o administras un grupo comunitario, personalizar el título con fuentes tipográficas en negrita o recuadros atrae mayor número de visitas orgánicas y miembros activos. Asegúrate de incluir palabras clave reconocibles del género de tu mapa (Tycoon, Simulator, Obby o Roleplay).
+            </p>
           </div>
         </section>
 

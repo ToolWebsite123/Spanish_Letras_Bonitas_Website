@@ -116,6 +116,21 @@ export default function TextoItalicoPage() {
           </div>
         </section>
 
+        {/* SECTION D — Itálica vs Cursiva: El Error Común que Debes Evitar */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              𝘐 Tipografía Editorial
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Itálica vs Cursiva: El Error Común que Debes Evitar
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Mucha gente confunde ambos términos: la itálica es texto normal inclinado (como este), mientras que la cursiva imita caligrafía manuscrita conectada — son estilos Unicode completamente distintos, no confundas uno con otro al elegir.
+            </p>
+          </div>
+        </section>
+
         {/* Alphabet Reference Table */}
         <AlphabetReferenceTable highlightStyleId="sans-italic" />
 

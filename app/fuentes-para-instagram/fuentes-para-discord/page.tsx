@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import PlatformLimitsWidget from "@/components/PlatformLimitsWidget";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
@@ -65,8 +64,6 @@ export default function FuentesParaDiscordPage() {
 
         <Converter highlightStyleId="squared-negative" />
 
-        <PlatformLimitsWidget currentPlatform="discord" />
-
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
             <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
@@ -96,6 +93,81 @@ export default function FuentesParaDiscordPage() {
                 Utiliza letras góticas o pequeñas para distinguir a los Moderadores y Administradores en la lista lateral.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* SECTION D — Nitro vs Sin Nitro: ¿Afecta el Uso de Fuentes Especiales? */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              👾 Compatibilidad de Cuentas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Nitro vs Sin Nitro: ¿Afecta el Uso de Fuentes Especiales?
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              No necesitas Discord Nitro para usar letras Unicode decoradas; funcionan igual en cuentas gratuitas. Nitro solo desbloquea emojis animados y insignias, no fuentes de texto.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION E — Dónde Puedes Usar Fuentes Estilizadas en Discord */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              👾 Ubicaciones en Discord
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Dónde Puedes Usar Fuentes Estilizadas en Discord
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Personaliza la arquitectura visual de tu servidor de Discord en 4 áreas estratégicas:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Nombres de Canales (#canales)</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Utiliza fuentes pequeñas (Small Caps) o letras cuadradas con símbolos divisores para organizar las salas de texto e idear canales estéticos.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">2. Títulos de Categorías</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Aplica letras de bloque o bordes simétricos (ej: <code className="text-teal-600 dark:text-teal-400">『💬』INFORMACIÓN</code>) para agrupar canales de voz y texto.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">3. Apodos de Servidor (Server Nicknames)</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Destaca tu nombre en la lista lateral de miembros con letras góticas, espadas o marcos de clan eSports.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">4. Nombres de Roles de Servidor</span>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Formatea los rangos de tu servidor (Admin, Mod, VIP, Booster) con fuentes negritas y emojis que reflejen jerarquía.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION F — Compatibilidad con Bots y Comandos de Discord */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🤖 Compatibilidad con Bots
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Compatibilidad con Bots y Comandos de Discord
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Ten en cuenta que bots automatizados (como MEE6, Dyno o Carl-bot) procesan menciones mediante el ID único de usuario o comandos slash (<code className="text-teal-600 dark:text-teal-400 font-bold">/</code>). Las fuentes Unicode estilizadas en tu apodo público no interfieren con el funcionamiento de los comandos del bot ni impiden que te mencionen con la arroba (<code className="text-teal-600 dark:text-teal-400 font-bold">@</code>).
+            </p>
           </div>
         </section>
 

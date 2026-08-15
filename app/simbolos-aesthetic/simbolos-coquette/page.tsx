@@ -94,6 +94,98 @@ export default function SimbolosCoquettePage() {
           </div>
         </section>
 
+        {/* SECTION D — El Origen de la Estética Coquette: Lazos y Perlas */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🎀 Historia & Origen
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              El Origen de la Estética Coquette: Lazos y Perlas
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              La estética coquette nació de la moda francesa vintage (lazos, encaje, tonos pastel) y se trasladó a redes sociales como una identidad visual hiperfemenina y romántica — los símbolos de moños (🎀) y corazones son su firma visual principal.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION E — Cómo Construir un Feed Completo con Estética Coquette */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🩰 Diseño de Feed & Perfil
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Cómo Construir un Feed Completo con Estética Coquette
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Mantener una estética coquette constante en tu perfil de Instagram o TikTok requiere armonizar 3 elementos visuales principales:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🎀</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                1. Tipografía Cursiva Elegante
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Usa fuentes manuscritas finas en el nombre de perfil y destacados para proyectar dulzura y romance.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🌸</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                2. Paleta de Tonos Pastel
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Predominan los colores rosa claro, crema, blanco perla y lavanda en fotografías y portadas de historias.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🦪</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                3. Símbolos Temáticos Delicados
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Integra viñetas con moños (🎀), perlas (🦪) y zapatillas de ballet (🩰) en los subtítulos de tus publicaciones.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION F — Coquette vs Otras Estéticas Populares: Diferencias Clave */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              📊 Comparativa de Estéticas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Coquette vs Otras Estéticas Populares: Diferencias Clave
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              A diferencia del estilo <em>Y2K</em> (enfocado en tonos neón y futurismo retro) o el estilo <em>Dark Academia</em> (centrado en libros antiguos y tonos café oscuros), la estética <strong>Coquette</strong> es marcadamente romántica y suave, destacando por el uso distintivo de moños rosados, perlas y encajes victorianos.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION G — Símbolos Coquette Más Usados y Su Significado */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🎀 Simbología & Significado
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Símbolos Coquette Más Usados y Su Significado
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Cada elemento transmite una intención visual específica: el moño rosado (<code className="text-teal-600 dark:text-teal-400 font-bold">🎀</code>) representa dulzura y unión, las zapatillas de ballet (<code className="text-teal-600 dark:text-teal-400 font-bold">🩰</code>) simbolizan gracia y disciplina artística, mientras que las perlas (<code className="text-teal-600 dark:text-teal-400 font-bold">🦪</code>) evocan elegancia vintage atemporal.
+            </p>
+          </div>
+        </section>
+
         <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
 
 

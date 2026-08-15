@@ -112,6 +112,21 @@ export default function SimbolosParaNickPage() {
           </div>
         </section>
 
+        {/* SECTION D — Símbolos que Free Fire NO Recorta (Los Más Seguros) */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              ⚔️ Optimización de Bytes
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Símbolos que Free Fire NO Recorta (Los Más Seguros)
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Símbolos simples de 1 byte como ✰ ✿ ♛ ⚔ suelen sobrevivir mejor al límite de 12 bytes que combinaciones Unicode complejas de 3-4 bytes — prioriza estos si tu nick ya es largo.
+            </p>
+          </div>
+        </section>
+
         {/* Related Categories internal linking widget */}
         <RelatedCategoriesWidget currentPath="/simbolos-aesthetic/simbolos-para-nick" />
 

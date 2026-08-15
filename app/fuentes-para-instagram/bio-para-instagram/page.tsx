@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import FaqSection from "@/components/FaqSection";
-import PlatformLimitsWidget from "@/components/PlatformLimitsWidget";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
@@ -68,9 +67,6 @@ export default function BioParaInstagramPage() {
         {/* Converter Tool */}
         <Converter highlightStyleId="cursive" />
 
-        {/* Platform Limits Widget */}
-        <PlatformLimitsWidget currentPlatform="instagram" />
-
         {/* ARTÍCULO DETALLADO DEEP 1: La Fórmula de la Bio Perfecta */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
@@ -113,6 +109,247 @@ export default function BioParaInstagramPage() {
                 Dirige el tráfico hacia tu enlace con una flecha o emoji de dedo apuntando hacia abajo (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">👇 Descarga mi guía gratis</code>).
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* SECTION D — Emojis vs Símbolos en tu Bio: Cuándo Usar Cada Uno */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              📸 Estrategia Visual
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Emojis vs Símbolos en tu Bio: Cuándo Usar Cada Uno
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Los emojis (🌸✨) dan calidez y cercanía, ideales para bios personales o de lifestyle. Los símbolos Unicode (☾ ⋆ ˚) dan un aire minimalista y editorial, mejor para marcas o portafolios creativos.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION E — Guía Completa: Cómo Escribir una Bio de Instagram que Genere Seguidores */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              📸 Guía de Conversión
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Guía Completa: Cómo Escribir una Bio de Instagram que Genere Seguidores
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Escribir una biografía efectiva no consiste solo en usar letras bonitas, sino en estructurar una propuesta clara que responda a tres preguntas instantáneas cuando un visitante entra a tu perfil: ¿quién eres?, ¿qué ofreces? y ¿qué debe hacer a continuación?
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🎯</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                1. Claridad sobre Estilo Excesivo
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Prioriza la legibilidad. Combina máximo dos tipos de fuentes Unicode para no abrumar al visitante y mantener tu mensaje profesional.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">💡</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                2. Palabras Clave en el Nombre
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Incluye tu especialidad junto a tu nombre (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">María | Diseño Web</code>) para posicionar en el buscador interno de Instagram.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">🔗</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                3. Llamado a la Acción Claro (CTA)
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Guía al usuario hacia tu enlace principal usando indicadores visuales como flechas hacia abajo (👇) o destellos (✨).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION F — 10 Ejemplos de Bio de Instagram por Nicho (Listos para Copiar) */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              📋 Plantillas Listas
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              10 Ejemplos de Bio de Instagram por Nicho (Listos para Copiar)
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Explora plantillas optimizadas para diferentes sectores y adapta el texto con nuestras fuentes personalizadas:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Creadora de Contenido / Lifestyle</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                ✨ 𝖢𝗋𝖾𝖺𝖽𝗈𝗋𝖺 𝖽𝖾 𝖢𝗈𝗇𝗍𝖾𝗇𝗂𝖽𝗈{"\n"}
+                🌸 Lifestyle & Moda Vintage{"\n"}
+                📍 Madrid | 💌 contacto@email.com{"\n"}
+                👇 Mira mi último video
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">2. Emprendimiento & Negocios</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                📈 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠 & 𝐍𝐞𝐠𝐨𝐜𝐢𝐨𝐬{"\n"}
+                🚀 Te ayudo a escalar tu marca{"\n"}
+                🎙️ Host de Podcast Emprendedores{"\n"}
+                👇 Asesoría gratuita aquí
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">3. Fitness & Vida Saludable</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                💪 𝐹𝒾𝓉𝓃ℯ𝓈𝓈 & 𝒩𝓊𝓉𝓇𝒾𝒸𝒾ó𝓃{"\n"}
+                🥗 Recetas saludables y rutinas{"\n"}
+                🏋️‍♂️ Entrenamientos personalizados{"\n"}
+                👇 Empieza tu cambio hoy
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">4. Arte & Fotografía</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                📷 𝔽𝕠𝕥𝕠𝕘𝕣𝕒𝕗í𝕒 𝕕𝕖 𝕍𝕚𝕒𝕛𝕖𝕤{"\n"}
+                🌌 Capturando momentos únicos{"\n"}
+                🎨 Impresiones disponibles{"\n"}
+                👇 Ve mi portafolio completo
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">5. Gamer & Streamer</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                🎮 𝕲𝖆𝖒𝖊𝖗 & 𝕾𝖙𝖗𝖊𝖆𝖒𝖊𝖗{"\n"}
+                ⚡ Directos diarios en Twitch{"\n"}
+                ⚔️ Capitán de escuadra eSports{"\n"}
+                👇 Únete al servidor de Discord
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">6. Moda & Belleza Aesthetic</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                🎀 𝒞𝑜𝓆𝓊𝑒𝓉𝓉ℯ & ℬℯ𝒶𝓊𝓉𝓎{"\n"}
+                🩰 Outfits e inspiración diaria{"\n"}
+                ✨ Colaboraciones por DM{"\n"}
+                👇 Mis prendas favoritas
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">7. Gastronomía & Recetas</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                🍳 𝖢𝗈𝖼𝗂𝗇𝖺 𝖥á𝖼𝗂𝗅 y 𝖱á𝗉𝗂𝖽𝖺{"\n"}
+                🍕 Recetas para todos los días{"\n"}
+                🍷 Amante de la buena mesa{"\n"}
+                👇 Recetario en PDF gratis
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">8. Viajes & Aventura</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                ✈️ 𝒱𝒾𝒶𝒿ℯ𝓇ℴ 𝒮ℴ𝓁𝒾𝓉𝒶𝓇𝒾ℴ{"\n"}
+                🌍 45 países visitados{"\n"}
+                🎒 Consejos para mochileros{"\n"}
+                👇 Guías de viaje detalladas
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">9. Frases & Motivación</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                🌙 𝔽𝕣𝕒𝕤𝕖𝕤 & 𝕄𝕖𝕕𝕚𝕥𝕒𝕔𝕚ó𝕟{"\n"}
+                ✨ Un recordatorio diario para ti{"\n"}
+                🕊️ Crecimiento y paz mental{"\n"}
+                👇 Lee nuestro blog semanal
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
+              <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">10. Tienda Online / E-commerce</span>
+              <p className="font-mono text-[var(--foreground)] opacity-90 whitespace-pre-line leading-relaxed">
+                🛍️ 𝖢𝗈𝗆𝗉𝗋𝖺𝗌 𝖮𝗇𝗅𝗂𝗇𝖾{"\n"}
+                📦 Envíos a todo el país{"\n"}
+                💳 Pago seguro y cuotas{"\n"}
+                👇 Compra la nueva colección
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION G — Símbolos y Emojis por Categoría de Bio */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🎨 Decoración por Categorías
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Símbolos y Emojis por Categoría de Bio
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Selecciona combinaciones de símbolos temáticos para estructurar visualmente tus renglones:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm">
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">✨ 🌸 ☁️</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Aesthetic & Soft
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Símbolos delicados (✨ 🌸 ☁️ 🎀 🕊️ 🌙 🦪) perfectos para blogs de estilo de vida, belleza y moda romántica.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">⚡ 🎮 🔥</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Gamer & Gaming
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Símbolos dinámicos (⚡ 🎮 🔥 ⚔️ 🏆 💥 🎯) para streamers, creadores de contenido eSports y gaming.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
+              <span className="text-2xl">📈 🚀 📍</span>
+              <h3 className="font-extrabold text-base text-[var(--foreground)]">
+                Profesional & Negocios
+              </h3>
+              <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
+                Símbolos corporativos (📈 🚀 📍 💌 🎙️ 💼 🔗) ideales para emprendedores, consultores y marcas comerciales.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION H — Bio Pública vs Privada: ¿Afecta tu Alcance? */}
+        <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 self-start border border-teal-500/30">
+              🔒 Configuración de Cuenta
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Bio Pública vs Privada: ¿Afecta tu Alcance?
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
+              Tener una cuenta pública es indispensable si buscas crecimiento orgánico, ya que Instagram solo indexa biografías e impresiones de perfiles públicos en su motor de búsqueda interno. Mantener una biografía bien estructurada con fuentes bonitas en un perfil público aumenta la tasa de conversión de visitas a seguidores hasta un 40%.
+            </p>
           </div>
         </section>
 
