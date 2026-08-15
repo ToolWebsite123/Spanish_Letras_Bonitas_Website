@@ -1,7 +1,6 @@
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
-import ExamplesSection from "@/components/ExamplesSection";
 import TroubleshootingSection from "@/components/TroubleshootingSection";
 import FaqSection from "@/components/FaqSection";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
@@ -12,6 +11,7 @@ import decorators from "@/lib/decorators";
 export default function Home() {
   const totalStyles = fontStyles.length;
   const totalDecorators = decorators.length;
+  const totalCombinations = totalStyles * (totalDecorators + 1);
 
   const cursiveStyle = fontStyles.find((f) => f.id === "cursive") || fontStyles[0];
   const occasionTemplates = [
@@ -64,17 +64,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors flex flex-col w-full overflow-x-hidden">
       {/* Top Navigation Bar */}
-      <NavBar />
+      <NavBar showCategoryNav={false} />
 
       <main className="flex-1 py-10 sm:py-14 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
         {/* Sleek Hero Header */}
         <header className="text-center flex flex-col gap-4 w-full max-w-3xl mx-auto pt-2">
           <div className="inline-flex items-center justify-center gap-2 self-center px-4 py-1.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-extrabold text-xs border border-teal-500/30 shadow-lg shadow-teal-500/10">
-            <span>✨</span> Conversor Oficial con {totalStyles}+ Tipografías & {totalDecorators} Marcos Decorativos
+            <span>✨</span> Conversor Oficial con {totalCombinations}+ Estilos & Tipografías Unicode
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
-            Letras Bonitas: Conversor de Fuentes para Copiar y Pegar 🌸
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
+            Conversor de Letras — Copia y Pega Textos Bonitos
           </h1>
 
           <p className="text-base sm:text-lg text-[var(--foreground)] opacity-80 max-w-3xl mx-auto leading-relaxed font-medium">
@@ -84,7 +84,7 @@ export default function Home() {
           {/* Value Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2 pt-2 text-xs font-extrabold text-[var(--foreground)]">
             <span className="px-4 py-2 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow-md">
-              ⚡ {totalStyles}+ Estilos Unicode
+              ⚡ {totalCombinations}+ Estilos Unicode
             </span>
             <span className="px-4 py-2 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow-md">
               🌐 Acentos (á, é, í, ó, ú, ñ) OK
@@ -99,7 +99,7 @@ export default function Home() {
         </header>
 
         {/* Master Interactive Converter Tool */}
-        <Converter />
+        <Converter showCategoryNav={true} />
 
         {/* SECTION A — Cómo Usar el Conversor de Letras Bonitas en 3 Pasos */}
         <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
@@ -358,8 +358,32 @@ export default function Home() {
         {/* GUÍA 4: Solución de Problemas Frecuentes (Troubleshooting) */}
         <TroubleshootingSection />
 
-        {/* GUÍA 5: 50+ Ejemplos y Plantillas de Texto Listos por Categoría */}
-        <ExamplesSection />
+        {/* GUÍA 5: Ejemplos de Uso en Personas Reales */}
+        <section className="w-full flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
+          <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
+            <span className="text-xs font-bold px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-700 dark:text-teal-400 self-start border border-teal-500/30">
+              💡 Casos Prácticos
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[var(--foreground)]">
+              Ejemplos de Uso: Cómo Personas Reales Usan Letras Bonitas
+            </h2>
+          </div>
+
+          <div className="flex flex-col gap-4 text-sm sm:text-base text-[var(--foreground)] opacity-85 leading-relaxed font-medium">
+            <p>
+              Miles de personas usan generadores de letras bonitas cada día para personalizar su presencia digital. Los fotógrafos y creadores de contenido estilizan su biografía de Instagram combinando su nombre en cursiva con su ubicación y una llamada a la acción, creando un perfil que se siente cuidado y profesional desde el primer vistazo. Los entrenadores personales y profesionales de fitness hacen lo mismo, usando fuentes en negrita para su título profesional y símbolos temáticos (💪 🏋️) para reforzar visualmente su nicho.
+            </p>
+            <p>
+              En el mundo de los videojuegos, especialmente en Free Fire, los jugadores combinan letras Unicode con símbolos como espadas (⚔️), coronas (👑) y chispas (✨) para crear nicks que se destaquen en el lobby y sean difíciles de imitar. Un nick como "★Pro★" o uno con estilo "Sombra" transmite personalidad e intimidación antes de que la partida siquiera comience.
+            </p>
+            <p>
+              Para WhatsApp y estados personales, la tendencia es usar frases motivacionales o citas cortas en cursiva fina — un estilo delicado que se siente más íntimo que el texto plano estándar de la aplicación. En TikTok, los creadores prefieren fuentes en negrita o con símbolos minimalistas para que su nombre de usuario destaque en el feed vertical de descubrimiento.
+            </p>
+            <p>
+              Sin importar la plataforma, el patrón se repite: el texto estilizado no es solo decoración — es una herramienta que ayuda a comunicar identidad, profesión o personalidad en los primeros segundos de contacto con un visitante, algo que el texto plano simplemente no logra.
+            </p>
+          </div>
+        </section>
 
         {/* GUÍA 6: Preguntas Frecuentes Expandidas (FAQ) */}
         <FaqSection title="Preguntas Frecuentes sobre el Conversor de Letras" faqs={faqsList} />

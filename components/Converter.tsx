@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
-import { fontStyles } from "@/lib/fontStyles";
+import { useState, useMemo } from "react";
+import { fontStyles, FontStyle } from "@/lib/fontStyles";
 import { convertText } from "@/lib/convertText";
 import { decorators, Decorator } from "@/lib/decorators";
+import { CategoryNav } from "@/components/NavBar";
 
 export interface StyleOverride {
   name?: string;
@@ -15,60 +16,27 @@ interface ConverterProps {
   highlightStyleId?: string;
   styleOverrides?: Record<string, StyleOverride>;
   filterByHighlightedCategory?: boolean;
+  showCategoryNav?: boolean;
 }
 
-const CATEGORIES = [
-  "Todos",
-  "Favoritos",
-  "Cursivas",
-  "Góticas",
-  "Aesthetic",
-  "Gaming",
-  "Pequeñas",
-  "Decoradas",
-];
+export interface StyleCombination {
+  id: string;
+  name: string;
+  baseStyle: FontStyle;
+  decorator: Decorator | null;
+}
 
 export default function Converter({
   highlightStyleId,
   styleOverrides,
+  showCategoryNav = false,
 }: ConverterProps) {
   const [inputText, setInputText] = useState("Letras Bonitas");
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [selectedDecorator, setSelectedDecorator] = useState<Decorator | null>(null);
   const [fontSize, setFontSize] = useState<number>(18);
-  const [activeCategory, setActiveCategory] = useState<string>("Todos");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [favorites, setFavorites] = useState<string[]>([]);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-
-  // Load favorites from localStorage
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem("letras_bonitas_favs");
-      if (saved) {
-        setFavorites(JSON.parse(saved));
-      }
-    } catch (e) {
-      console.error("Could not load favorites from localStorage", e);
-    }
-    setIsLoaded(true);
-  }, []);
-
-  // Toggle favorite style
-  const toggleFavorite = (styleId: string, e?: React.MouseEvent) => {
-    if (e) e.stopPropagation();
-    setFavorites((prev) => {
-      const updated = prev.includes(styleId)
-        ? prev.filter((id) => id !== styleId)
-        : [...prev, styleId];
-      try {
-        localStorage.setItem("letras_bonitas_favs", JSON.stringify(updated));
-      } catch (err) {
-        console.error("Could not save favorites to localStorage", err);
-      }
-      return updated;
-    });
-  };
+  const [visibleCount, setVisibleCount] = useState<number>(40);
 
   const effectiveStyles = useMemo(() => {
     return styleOverrides
@@ -84,40 +52,47 @@ export default function Converter({
       : fontStyles;
   }, [styleOverrides]);
 
-  const filteredStyles = useMemo(() => {
-    return effectiveStyles.filter((style) => {
-      if (activeCategory === "Favoritos") {
-        if (!favorites.includes(style.id)) return false;
-      } else if (activeCategory === "Cursivas") {
-        const cat = style.category.toLowerCase();
-        if (!cat.includes("script") && !cat.includes("cursiva") && !cat.includes("firma")) return false;
-      } else if (activeCategory === "Góticas") {
-        const cat = style.category.toLowerCase();
-        if (!cat.includes("fraktur") && !cat.includes("gótica")) return false;
-      } else if (activeCategory === "Aesthetic") {
-        const cat = style.category.toLowerCase();
-        if (!cat.includes("small") && !cat.includes("matemático") && !cat.includes("especial")) return false;
-      } else if (activeCategory === "Gaming") {
-        const cat = style.category.toLowerCase();
-        if (!cat.includes("sans") && !cat.includes("técnico") && !cat.includes("squared")) return false;
-      } else if (activeCategory === "Pequeñas") {
-        const cat = style.category.toLowerCase();
-        if (!cat.includes("small") && !cat.includes("especial")) return false;
-      } else if (activeCategory === "Decoradas") {
-        const cat = style.category.toLowerCase();
-        if (!cat.includes("circled") && !cat.includes("squared")) return false;
-      }
+  // Combine every base font style with every decorator (plus 1 plain version)
+  const allCombinations = useMemo(() => {
+    const list: StyleCombination[] = [];
 
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase();
-        const matchesName = style.name.toLowerCase().includes(q);
-        const matchesCat = style.category.toLowerCase().includes(q);
-        return matchesName || matchesCat;
-      }
+    effectiveStyles.forEach((style) => {
+      // 1. Plain base style
+      list.push({
+        id: `${style.id}-plain`,
+        name: style.name,
+        baseStyle: style,
+        decorator: null,
+      });
 
-      return true;
+      // 2. Base style + each decorator frame
+      decorators.forEach((dec) => {
+        list.push({
+          id: `${style.id}-${dec.id}`,
+          name: `${style.name} + ${dec.name}`,
+          baseStyle: style,
+          decorator: dec,
+        });
+      });
     });
-  }, [effectiveStyles, activeCategory, searchQuery, favorites]);
+
+    return list;
+  }, [effectiveStyles]);
+
+  const filteredCombinations = useMemo(() => {
+    if (!searchQuery.trim()) return allCombinations;
+
+    const q = searchQuery.toLowerCase();
+    return allCombinations.filter((combo) => {
+      const nameMatch = combo.name.toLowerCase().includes(q);
+      const catMatch = combo.baseStyle.category.toLowerCase().includes(q);
+      return nameMatch || catMatch;
+    });
+  }, [allCombinations, searchQuery]);
+
+  const displayedCombinations = useMemo(() => {
+    return filteredCombinations.slice(0, visibleCount);
+  }, [filteredCombinations, visibleCount]);
 
   const featuredStyle = useMemo(() => {
     if (!highlightStyleId) return null;
@@ -158,6 +133,11 @@ export default function Converter({
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setVisibleCount(40);
   };
 
   const isCategoryPage = Boolean(highlightStyleId && featuredStyle);
@@ -247,64 +227,37 @@ export default function Converter({
         </div>
       </div>
 
-      {/* Category Filter Pills & Search Bar */}
-      {!isCategoryPage && (
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-          {/* Category Filter Buttons */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 max-w-full no-scrollbar">
-            {CATEGORIES.map((cat) => {
-              const isActive = activeCategory === cat;
-              const count =
-                cat === "Favoritos"
-                  ? favorites.length
-                  : cat === "Todos"
-                  ? effectiveStyles.length
-                  : null;
+      {/* Category Pills Filter Bar */}
+      {showCategoryNav && <CategoryNav />}
 
-              return (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4.5 py-2 rounded-2xl text-xs font-extrabold whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 shrink-0 ${
-                    isActive
-                      ? "bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 text-white shadow-lg shadow-teal-500/25 scale-105"
-                      : "bg-[var(--card-bg)] hover:bg-[var(--input-bg)] text-[var(--foreground)] opacity-90 border border-[var(--border-color)]"
-                  }`}
-                >
-                  {cat === "Favoritos" && <span>❤️</span>}
-                  <span>{cat}</span>
-                  {count !== null && (
-                    <span
-                      className={`px-2 py-0.3 text-[10px] rounded-full font-black ${
-                        isActive
-                          ? "bg-white/20 text-white"
-                          : "bg-[var(--input-bg)] text-teal-600 dark:text-teal-400 border border-[var(--border-color)]"
-                      }`}
-                    >
-                      {count}
-                    </span>
-                  )}
-                </button>
-              );
-            })}
+      {/* Search Bar & Total Combinations Counter */}
+      {!isCategoryPage && (
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 w-full">
+          <div className="text-xs font-bold text-[var(--foreground)] opacity-80 flex items-center gap-1.5">
+            <span className="px-2.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/30 font-extrabold">
+              {allCombinations.length}+ Estilos Combinados
+            </span>
+            <span className="hidden sm:inline opacity-60">— Generador automático</span>
           </div>
 
-          {/* Search Box */}
-          <div className="relative shrink-0 sm:w-60">
+          <div className="relative w-full sm:w-72 shrink-0">
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Buscar estilo o fuente..."
-              className="w-full pl-9 pr-4 py-2 rounded-2xl text-xs font-bold border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--foreground)] placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400"
+              onChange={handleSearchChange}
+              placeholder="Buscar estilo o marco (ej. Cursiva, Corazones)..."
+              className="w-full pl-9 pr-8 py-2.5 rounded-2xl text-xs font-bold border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--foreground)] placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 shadow-sm"
             />
             <span className="absolute left-3 top-2.5 text-xs text-teal-600 dark:text-teal-400">🔍</span>
             {searchQuery && (
               <button
                 type="button"
-                onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-2.5 text-xs text-[var(--foreground)] opacity-60 hover:opacity-100"
+                onClick={() => {
+                  setSearchQuery("");
+                  setVisibleCount(40);
+                }}
+                className="absolute right-3 top-2.5 text-xs text-[var(--foreground)] opacity-60 hover:opacity-100 p-0.5 cursor-pointer"
+                title="Limpiar búsqueda"
               >
                 ✕
               </button>
@@ -314,18 +267,14 @@ export default function Converter({
       )}
 
       {/* Empty State */}
-      {!isCategoryPage && filteredStyles.length === 0 && (
+      {!isCategoryPage && filteredCombinations.length === 0 && (
         <div className="text-center py-14 px-6 rounded-3xl border border-dashed border-[var(--border-color)] bg-[var(--card-bg)]/60 backdrop-blur-md flex flex-col items-center gap-3">
-          <span className="text-4xl">{activeCategory === "Favoritos" ? "💔" : "🔎"}</span>
+          <span className="text-4xl">🔎</span>
           <h3 className="font-extrabold text-base text-[var(--foreground)]">
-            {activeCategory === "Favoritos"
-              ? "No tienes fuentes guardadas en Favoritos"
-              : "No se encontraron fuentes con ese criterio"}
+            No se encontraron fuentes con ese criterio
           </h3>
           <p className="text-xs text-[var(--foreground)] opacity-70 max-w-sm">
-            {activeCategory === "Favoritos"
-              ? "Haz clic en el corazón (❤️) de cualquier tarjeta de fuente para tenerla siempre guardada."
-              : "Prueba buscando otra palabra clave o haz clic en 'Todos'."}
+            Prueba buscando otra palabra clave o borra el texto del buscador.
           </p>
         </div>
       )}
@@ -333,39 +282,28 @@ export default function Converter({
       {/* Font Cards Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3.5">
         {!isCategoryPage
-          ? filteredStyles.map((style) => {
+          ? displayedCombinations.map((combo) => {
               const rawStyledText = convertText(
                 inputText || "Escribe tu texto arriba",
-                style.map,
-                style.id
+                combo.baseStyle.map,
+                combo.baseStyle.id
               );
-              const styledText = selectedDecorator
-                ? selectedDecorator.wrap(rawStyledText)
+              const styledText = combo.decorator
+                ? combo.decorator.wrap(rawStyledText)
                 : rawStyledText;
-              const isCopied = copiedId === style.id;
-              const isFav = isLoaded && favorites.includes(style.id);
+              const isCopied = copiedId === combo.id;
 
               return (
                 <div
-                  key={style.id}
-                  onClick={() => handleCopy(style.id, styledText)}
+                  key={combo.id}
+                  onClick={() => handleCopy(combo.id, styledText)}
                   className="group relative flex flex-col justify-between gap-2 p-3 sm:p-4.5 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-500/10 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer overflow-hidden min-h-[105px] sm:min-h-[115px]"
                 >
-                  {/* Top Bar: Font Name + Heart Icon */}
+                  {/* Top Bar: Font Name */}
                   <div className="flex items-center justify-between gap-1.5 z-10">
                     <span className="text-[11px] sm:text-xs font-extrabold text-[var(--foreground)] opacity-80 group-hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors truncate">
-                      {style.name}
+                      {combo.name}
                     </span>
-                    <button
-                      type="button"
-                      onClick={(e) => toggleFavorite(style.id, e)}
-                      className={`p-0.5 text-xs sm:text-sm transition-transform hover:scale-125 cursor-pointer shrink-0 ${
-                        isFav ? "text-teal-600 dark:text-teal-400 opacity-100" : "text-slate-400 hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400"
-                      }`}
-                      title={isFav ? "Quitar de favoritos" : "Guardar en favoritos"}
-                    >
-                      {isFav ? "❤️" : "🤍"}
-                    </button>
                   </div>
 
                   {/* Center Converted Text Output */}
@@ -464,6 +402,25 @@ export default function Converter({
               );
             })}
       </div>
+
+      {/* Load More Button for Pagination */}
+      {!isCategoryPage && visibleCount < filteredCombinations.length && (
+        <div className="flex flex-col items-center gap-2 pt-4">
+          <button
+            type="button"
+            onClick={() => setVisibleCount((prev) => prev + 40)}
+            className="px-6 py-3 rounded-2xl text-xs sm:text-sm font-extrabold bg-gradient-to-r from-teal-500 via-emerald-500 to-indigo-600 hover:from-teal-600 hover:to-indigo-700 text-white shadow-xl shadow-teal-500/20 hover:scale-105 transition-all cursor-pointer flex items-center gap-2"
+          >
+            <span>Cargar más estilos</span>
+            <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-xs font-black">
+              ({displayedCombinations.length} de {filteredCombinations.length})
+            </span>
+          </button>
+          <span className="text-[11px] font-medium text-[var(--foreground)] opacity-60">
+            Mostrando {displayedCombinations.length} de {filteredCombinations.length} combinaciones disponibles
+          </span>
+        </div>
+      )}
     </div>
   );
 }

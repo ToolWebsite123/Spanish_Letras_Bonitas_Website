@@ -34,7 +34,38 @@ const navPills: NavPill[] = [
   { label: "Nombres Personalizados", href: "/letras-personalizadas/nombres-personalizados", icon: "🏷️" },
 ];
 
-export default function NavBar() {
+export function CategoryNav() {
+  const pathname = usePathname();
+  return (
+    <div className="w-full border-t border-[var(--border-color)]/60 bg-[var(--card-bg)]/40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth">
+        {navPills.map((pill) => {
+          const isActive = pathname === pill.href;
+          return (
+            <Link
+              key={pill.href}
+              href={pill.href}
+              className={`whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 shrink-0 ${
+                isActive
+                  ? "bg-teal-500/20 text-teal-700 dark:text-teal-400 border border-teal-500/50 font-bold shadow-sm"
+                  : "bg-[var(--card-bg)] text-[var(--foreground)] opacity-85 border border-[var(--border-color)] hover:border-teal-500/40 hover:text-teal-700 dark:hover:text-teal-400 font-medium"
+              }`}
+            >
+              <span>{pill.icon}</span>
+              <span>{pill.label}</span>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+interface NavBarProps {
+  showCategoryNav?: boolean;
+}
+
+export default function NavBar({ showCategoryNav = true }: NavBarProps) {
   const pathname = usePathname();
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
@@ -88,27 +119,7 @@ export default function NavBar() {
       </div>
 
       {/* Flat, Horizontal, Scrollable Pill Filter Bar */}
-      <div className="w-full border-t border-[var(--border-color)]/60 bg-[var(--card-bg)]/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth">
-          {navPills.map((pill) => {
-            const isActive = pathname === pill.href;
-            return (
-              <Link
-                key={pill.href}
-                href={pill.href}
-                className={`whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 shrink-0 ${
-                  isActive
-                    ? "bg-teal-500/20 text-teal-700 dark:text-teal-400 border border-teal-500/50 font-bold shadow-sm"
-                    : "bg-[var(--card-bg)] text-[var(--foreground)] opacity-85 border border-[var(--border-color)] hover:border-teal-500/40 hover:text-teal-700 dark:hover:text-teal-400 font-medium"
-                }`}
-              >
-                <span>{pill.icon}</span>
-                <span>{pill.label}</span>
-              </Link>
-            );
-          })}
-        </div>
-      </div>
+      {showCategoryNav && <CategoryNav />}
     </header>
   );
 }
