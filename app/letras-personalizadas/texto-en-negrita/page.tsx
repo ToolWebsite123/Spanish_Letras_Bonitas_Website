@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Texto en Negrita - Conversor de Letras Negritas para Copiar y Pegar <b>",
   description:
     "Convierte texto normal a letras en negrita (Bold Sans, Serif, Italic) para destacar palabras clave en Facebook, Instagram, WhatsApp y TikTok.",
+  alternates: {
+    canonical: "/letras-personalizadas/texto-en-negrita",
+  },
 };
 
 const negritaFaqs = [
@@ -42,35 +45,17 @@ const negritaFaqs = [
 export default function TextoEnNegritaPage() {
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors flex flex-col">
-      <NavBar />
+      <NavBar showCategoryNav={false} />
 
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
-        {/* Breadcrumbs Navigation */}
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-[var(--foreground)] opacity-75 font-medium">
-          <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors">
-            Inicio
-          </Link>
-          <span>/</span>
-          <span className="text-[var(--foreground)] opacity-75">Letras Personalizadas</span>
-          <span>/</span>
-          <span className="text-teal-600 dark:text-teal-400 font-bold">Texto en Negrita</span>
-        </nav>
-
         {/* Hero Header */}
-        <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
-            <span>💪</span> Generador de Letras Negritas Unicode 100% Gratuito
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
+        <header className="flex flex-col gap-3">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
             Conversor de Texto en Negrita (Bold Text Generator) 💪
           </h1>
-          <p className="text-base sm:text-lg text-[var(--foreground)] opacity-80 leading-relaxed max-w-4xl font-medium">
-            Transforma cualquier texto convencional en <strong className="text-teal-600 dark:text-teal-400 font-extrabold">letras en negrita Sans, Serif, Cursiva Negrita y Bloques en Negrita</strong>. Copia con 1 solo toque y destaca tus publicaciones de Facebook, <Link href="/fuentes-para-instagram/bio-para-instagram" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">biografías de Instagram</Link>, descripciones de TikTok y mensajes de WhatsApp sin perder el formato.
-          </p>
         </header>
 
-        {/* Converter Tool */}
-        <Converter highlightStyleId="bold" />
+        <Converter showCategoryNav={true} highlightStyleId="bold" />
 
         {/* ARTÍCULO DETALLADO DEEP 1: Por qué la Negrita es la Mejor Herramienta de Lectura Rápida */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">

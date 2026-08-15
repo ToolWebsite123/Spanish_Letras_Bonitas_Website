@@ -34,6 +34,14 @@ const navPills: NavPill[] = [
   { label: "Nombres Personalizados", href: "/letras-personalizadas/nombres-personalizados", icon: "🏷️" },
 ];
 
+const newToolsPills: NavPill[] = [
+  { label: "Números en Letras", href: "/letras-personalizadas/numeros-en-letras", icon: "🔢" },
+  { label: "Mayúsculas/Minúsculas", href: "/letras-personalizadas/mayusculas-minusculas", icon: "🔤" },
+  { label: "Kaomojis", href: "/simbolos-aesthetic/kaomojis", icon: "😊" },
+  { label: "Texto Invisible", href: "/letras-personalizadas/texto-invisible", icon: "👻" },
+  { label: "Letras Góticas", href: "/letras-bonitas/letras-goticas", icon: "🏰" },
+];
+
 export function CategoryNav() {
   const pathname = usePathname();
   return (
@@ -49,6 +57,36 @@ export function CategoryNav() {
                 isActive
                   ? "bg-teal-500/20 text-teal-700 dark:text-teal-400 border border-teal-500/50 font-bold shadow-sm"
                   : "bg-[var(--card-bg)] text-[var(--foreground)] opacity-85 border border-[var(--border-color)] hover:border-teal-500/40 hover:text-teal-700 dark:hover:text-teal-400 font-medium"
+              }`}
+            >
+              <span>{pill.icon}</span>
+              <span>{pill.label}</span>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export function NewToolsNav() {
+  const pathname = usePathname();
+  return (
+    <div className="w-full border-t border-[var(--border-color)]/60 bg-gradient-to-r from-teal-500/10 via-emerald-500/10 to-indigo-500/10 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth">
+        <span className="text-[11px] font-extrabold uppercase tracking-wider text-teal-600 dark:text-teal-400 shrink-0 mr-1 flex items-center gap-1">
+          <span>✨</span> Nuevas Herramientas:
+        </span>
+        {newToolsPills.map((pill) => {
+          const isActive = pathname === pill.href;
+          return (
+            <Link
+              key={pill.href}
+              href={pill.href}
+              className={`whitespace-nowrap px-3 py-1 rounded-full text-xs transition-all flex items-center gap-1.5 shrink-0 ${
+                isActive
+                  ? "bg-teal-500/30 text-teal-800 dark:text-teal-300 border border-teal-500/60 font-bold shadow-sm"
+                  : "bg-[var(--card-bg)] text-[var(--foreground)] opacity-90 border border-teal-500/30 hover:border-teal-500/60 hover:text-teal-700 dark:hover:text-teal-400 font-semibold"
               }`}
             >
               <span>{pill.icon}</span>
@@ -120,6 +158,9 @@ export default function NavBar({ showCategoryNav = true }: NavBarProps) {
 
       {/* Flat, Horizontal, Scrollable Pill Filter Bar */}
       {showCategoryNav && <CategoryNav />}
+
+      {/* Separate New Tools Row (rendered on all pages) */}
+      <NewToolsNav />
     </header>
   );
 }

@@ -232,23 +232,27 @@ export default function Converter({
 
       {/* Search Bar & Total Combinations Counter */}
       {!isCategoryPage && (
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 w-full">
-          <div className="text-xs font-bold text-[var(--foreground)] opacity-80 flex items-center gap-1.5">
-            <span className="px-2.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/30 font-extrabold">
-              {allCombinations.length}+ Estilos Combinados
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 w-full p-2.5 sm:p-3 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)]/80 backdrop-blur-xl shadow-lg shadow-purple-950/10">
+          <div className="text-xs font-bold text-[var(--foreground)] opacity-90 flex items-center gap-2 px-1">
+            <span className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-teal-500/15 via-emerald-500/15 to-indigo-500/15 text-teal-600 dark:text-teal-400 border border-teal-500/30 font-extrabold flex items-center gap-1.5 shadow-sm">
+              <span>✨</span> {allCombinations.length}+ Estilos Combinados
             </span>
-            <span className="hidden sm:inline opacity-60">— Generador automático</span>
+            <span className="hidden md:inline opacity-60 font-medium">— Buscador instantáneo</span>
           </div>
 
-          <div className="relative w-full sm:w-72 shrink-0">
+          <div className="relative w-full sm:w-80 shrink-0">
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-teal-600 dark:text-teal-400">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
             <input
               type="text"
               value={searchQuery}
               onChange={handleSearchChange}
               placeholder="Buscar estilo o marco (ej. Cursiva, Corazones)..."
-              className="w-full pl-9 pr-8 py-2.5 rounded-2xl text-xs font-bold border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--foreground)] placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 shadow-sm"
+              className="w-full pl-10 pr-9 py-2.5 rounded-xl text-xs font-bold border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-400 shadow-inner transition-all"
             />
-            <span className="absolute left-3 top-2.5 text-xs text-teal-600 dark:text-teal-400">🔍</span>
             {searchQuery && (
               <button
                 type="button"
@@ -256,10 +260,12 @@ export default function Converter({
                   setSearchQuery("");
                   setVisibleCount(40);
                 }}
-                className="absolute right-3 top-2.5 text-xs text-[var(--foreground)] opacity-60 hover:opacity-100 p-0.5 cursor-pointer"
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-xs text-[var(--foreground)] opacity-60 hover:opacity-100 hover:text-rose-400 transition-colors cursor-pointer"
                 title="Limpiar búsqueda"
               >
-                ✕
+                <div className="w-5 h-5 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] flex items-center justify-center text-[10px] font-bold">
+                  ✕
+                </div>
               </button>
             )}
           </div>

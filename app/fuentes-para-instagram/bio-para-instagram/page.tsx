@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Fuentes para Bio de Instagram - Letras Bonitas 📸",
   description:
     "Convierte texto en letras bonitas, cursivas finas y fuentes aesthetic para tu presentación de Instagram. Copia con 1 clic en 150 caracteres.",
+  alternates: {
+    canonical: "/fuentes-para-instagram/bio-para-instagram",
+  },
 };
 
 const bioInstagramFaqs = [
@@ -37,35 +40,17 @@ const bioInstagramFaqs = [
 export default function BioParaInstagramPage() {
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors flex flex-col">
-      <NavBar />
+      <NavBar showCategoryNav={false} />
 
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
-        {/* Breadcrumbs Navigation */}
-        <nav className="flex items-center gap-2 text-xs sm:text-sm text-[var(--foreground)] opacity-75 font-medium">
-          <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-600 dark:text-teal-400 transition-colors">
-            Inicio
-          </Link>
-          <span>/</span>
-          <span className="text-[var(--foreground)] opacity-75">Fuentes para Instagram</span>
-          <span>/</span>
-          <span className="text-teal-600 dark:text-teal-400 font-bold">Bio de Instagram</span>
-        </nav>
-
         {/* Hero Header */}
-        <header className="flex flex-col gap-4">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold text-xs border border-teal-500/30">
-            <span>📸</span> Optimización de Biografías & Marca Personal
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
+        <header className="flex flex-col gap-3">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
             Fuentes Bonitas para Bio de Instagram 📸
           </h1>
-          <p className="text-base sm:text-lg text-[var(--foreground)] opacity-80 leading-relaxed max-w-4xl font-medium">
-            Personaliza tu perfil con las mejores <Link href="/letras-bonitas/letras-cursivas" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">letras cursivas finas</Link>, fuentes pequeñas (Small Caps), símbolos aesthetic y estructuras de 4 renglones diseñadas para convertir visitantes en seguidores.
-          </p>
         </header>
 
-        {/* Converter Tool */}
-        <Converter highlightStyleId="cursive" />
+        <Converter showCategoryNav={true} highlightStyleId="cursive" />
 
         {/* ARTÍCULO DETALLADO DEEP 1: La Fórmula de la Bio Perfecta */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">

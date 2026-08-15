@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
 import TroubleshootingSection from "@/components/TroubleshootingSection";
@@ -7,6 +8,12 @@ import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 import fontStyles from "@/lib/fontStyles";
 import convertText from "@/lib/convertText";
 import decorators from "@/lib/decorators";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   const totalStyles = fontStyles.length;
@@ -68,34 +75,10 @@ export default function Home() {
 
       <main className="flex-1 py-10 sm:py-14 px-4 sm:px-8 w-full max-w-5xl mx-auto flex flex-col gap-10 sm:gap-14">
         {/* Sleek Hero Header */}
-        <header className="text-center flex flex-col gap-4 w-full max-w-3xl mx-auto pt-2">
-          <div className="inline-flex items-center justify-center gap-2 self-center px-4 py-1.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 font-extrabold text-xs border border-teal-500/30 shadow-lg shadow-teal-500/10">
-            <span>✨</span> Conversor Oficial con {totalCombinations}+ Estilos & Tipografías Unicode
-          </div>
-
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
+        <header className="text-center flex flex-col gap-4 w-full max-w-5xl mx-auto pt-2">
+          <h1 className="text-lg sm:text-2xl lg:text-3xl font-black tracking-tight bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-teal-400 dark:via-cyan-300 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
             Conversor de Letras — Copia y Pega Textos Bonitos
           </h1>
-
-          <p className="text-base sm:text-lg text-[var(--foreground)] opacity-80 max-w-3xl mx-auto leading-relaxed font-medium">
-            Eleva tu presencia digital y dale una personalidad única a tus publicaciones. Transforma cualquier texto plano en hermosas <Link href="/letras-bonitas/letras-cursivas" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">letras cursivas elegantes</Link>, tipografías aesthetic y trazos de impacto. Copia en 1 toque y destaca con los mejores <Link href="/nicks-para-juegos/nick-free-fire" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">nicks para Free Fire</Link>, biografías de Instagram, WhatsApp y TikTok de forma 100% gratuita.
-          </p>
-
-          {/* Value Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-2 text-xs font-extrabold text-[var(--foreground)]">
-            <span className="px-4 py-2 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow-md">
-              ⚡ {totalCombinations}+ Estilos Unicode
-            </span>
-            <span className="px-4 py-2 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow-md">
-              🌐 Acentos (á, é, í, ó, ú, ñ) OK
-            </span>
-            <span className="px-4 py-2 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow-md">
-              📱 Copia en 1 Tocado
-            </span>
-            <span className="px-4 py-2 rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow-md">
-              🔒 100% Gratuito & Seguro
-            </span>
-          </div>
         </header>
 
         {/* Master Interactive Converter Tool */}
