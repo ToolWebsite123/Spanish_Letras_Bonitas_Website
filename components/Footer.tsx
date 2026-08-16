@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
-              El conversor de letras bonitas y fuentes estéticas #1 en español. Genera más de 300+ tipografías gratis para Instagram, TikTok, WhatsApp y Free Fire.
+              El conversor de letras bonitas y fuentes estéticas #1 en español. Genera más de 1300+ combinaciones de letras gratis para Instagram, TikTok, WhatsApp y Free Fire.
             </p>
           </div>
 

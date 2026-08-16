@@ -101,9 +101,10 @@ export function NewToolsNav() {
 
 interface NavBarProps {
   showCategoryNav?: boolean;
+  showNewToolsNav?: boolean;
 }
 
-export default function NavBar({ showCategoryNav = true }: NavBarProps) {
+export default function NavBar({ showCategoryNav = true, showNewToolsNav = true }: NavBarProps) {
   const pathname = usePathname();
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
@@ -152,15 +153,15 @@ export default function NavBar({ showCategoryNav = true }: NavBarProps) {
               <span className="text-indigo-400 text-sm">🌙</span>
               <span className="hidden sm:inline">Modo Oscuro</span>
             </>
-          )}
+          ) }
         </button>
       </div>
 
       {/* Flat, Horizontal, Scrollable Pill Filter Bar */}
       {showCategoryNav && <CategoryNav />}
 
-      {/* Separate New Tools Row (rendered on all pages) */}
-      <NewToolsNav />
+      {/* Separate New Tools Row */}
+      {showNewToolsNav && <NewToolsNav />}
     </header>
   );
 }

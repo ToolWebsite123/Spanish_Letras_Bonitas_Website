@@ -323,6 +323,17 @@ function convertBatch(input: string, isFeminine: boolean, currency: Currency): s
     .join("\n");
 }
 
+const QUICK_NUMBERS = [
+  { label: "1", val: "1" },
+  { label: "21", val: "21" },
+  { label: "100", val: "100" },
+  { label: "500", val: "500" },
+  { label: "1,000", val: "1000" },
+  { label: "1,000,000", val: "1000000" },
+  { label: "1,500.50", val: "1500.50" },
+  { label: "999,999,999", val: "999999999" },
+];
+
 // --- MAIN COMPONENT ---
 
 export default function NumberToWordsConverter() {
@@ -369,190 +380,233 @@ export default function NumberToWordsConverter() {
   };
 
   return (
-    <div className="w-full flex flex-col gap-6 p-5 sm:p-8 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
+    <div className="w-full max-w-4xl mx-auto flex flex-col gap-4 p-4 sm:p-6 rounded-2xl border border-slate-200/80 dark:border-zinc-800 bg-[#faf8f5] dark:bg-zinc-900 shadow-xs">
+      {/* Title Header */}
+      <h2 className="text-lg sm:text-xl font-bold text-center text-slate-800 dark:text-slate-100">
+        Números en Letras
+      </h2>
+
       {/* Mode Selector Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 border-b border-[var(--border-color)]">
+      <div className="bg-[#ede7df]/80 dark:bg-zinc-800/80 p-1 rounded-xl flex items-center justify-between gap-1 overflow-x-auto no-scrollbar">
         <button
+          type="button"
           onClick={() => {
             setMode("cardinal");
             if (inputVal.includes("\n")) setInputVal("25");
           }}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+          className={`flex-1 min-w-[80px] py-2 px-2.5 rounded-lg text-xs sm:text-sm transition-all whitespace-nowrap cursor-pointer text-center ${
             mode === "cardinal"
-              ? "bg-teal-500/20 text-teal-700 dark:text-teal-400 border border-teal-500/50 shadow-sm"
-              : "bg-[var(--input-bg)] text-[var(--foreground)] opacity-80 border border-[var(--border-color)] hover:border-teal-500/30"
+              ? "bg-white dark:bg-zinc-700 text-slate-900 dark:text-white font-bold shadow-xs"
+              : "text-slate-600 dark:text-zinc-400 font-medium hover:text-slate-900 hover:bg-white/40 dark:hover:bg-zinc-700/40"
           }`}
         >
-          🔢 Cardinal (1, 2, 3...)
+          Cardinal
         </button>
         <button
+          type="button"
           onClick={() => {
             setMode("ordinal");
             if (inputVal.includes("\n")) setInputVal("25");
           }}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+          className={`flex-1 min-w-[80px] py-2 px-2.5 rounded-lg text-xs sm:text-sm transition-all whitespace-nowrap cursor-pointer text-center ${
             mode === "ordinal"
-              ? "bg-teal-500/20 text-teal-700 dark:text-teal-400 border border-teal-500/50 shadow-sm"
-              : "bg-[var(--input-bg)] text-[var(--foreground)] opacity-80 border border-[var(--border-color)] hover:border-teal-500/30"
+              ? "bg-white dark:bg-zinc-700 text-slate-900 dark:text-white font-bold shadow-xs"
+              : "text-slate-600 dark:text-zinc-400 font-medium hover:text-slate-900 hover:bg-white/40 dark:hover:bg-zinc-700/40"
           }`}
         >
-          🥇 Ordinal (1º, 2º, 3º...)
+          Ordinal
         </button>
         <button
+          type="button"
           onClick={() => {
             setMode("romano");
             if (inputVal.includes("\n")) setInputVal("25");
           }}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+          className={`flex-1 min-w-[80px] py-2 px-2.5 rounded-lg text-xs sm:text-sm transition-all whitespace-nowrap cursor-pointer text-center ${
             mode === "romano"
-              ? "bg-teal-500/20 text-teal-700 dark:text-teal-400 border border-teal-500/50 shadow-sm"
-              : "bg-[var(--input-bg)] text-[var(--foreground)] opacity-80 border border-[var(--border-color)] hover:border-teal-500/30"
+              ? "bg-white dark:bg-zinc-700 text-slate-900 dark:text-white font-bold shadow-xs"
+              : "text-slate-600 dark:text-zinc-400 font-medium hover:text-slate-900 hover:bg-white/40 dark:hover:bg-zinc-700/40"
           }`}
         >
-          🏛️ Números Romanos
+          Romano
         </button>
         <button
+          type="button"
           onClick={() => {
             setMode("batch");
             setInputVal("25, 150, 2500, 1000000");
           }}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+          className={`flex-1 min-w-[80px] py-2 px-2.5 rounded-lg text-xs sm:text-sm transition-all whitespace-nowrap cursor-pointer text-center ${
             mode === "batch"
-              ? "bg-teal-500/20 text-teal-700 dark:text-teal-400 border border-teal-500/50 shadow-sm"
-              : "bg-[var(--input-bg)] text-[var(--foreground)] opacity-80 border border-[var(--border-color)] hover:border-teal-500/30"
+              ? "bg-white dark:bg-zinc-700 text-slate-900 dark:text-white font-bold shadow-xs"
+              : "text-slate-600 dark:text-zinc-400 font-medium hover:text-slate-900 hover:bg-white/40 dark:hover:bg-zinc-700/40"
           }`}
         >
-          📋 Conversión por Lote
+          Lote
         </button>
       </div>
 
-      {/* Inputs & Controls Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Input Box */}
-        <div className="flex flex-col gap-2">
-          <label className="text-xs font-bold text-[var(--foreground)] opacity-90 flex items-center justify-between">
-            <span>{mode === "batch" ? "Ingresa lista de números:" : "Ingresa el número a convertir:"}</span>
-            <span className="text-[11px] opacity-60 font-normal">Soporta decimales (.)</span>
-          </label>
-          {mode === "batch" ? (
-            <textarea
-              rows={4}
-              value={inputVal}
-              onChange={(e) => setInputVal(e.target.value)}
-              placeholder="Ej. 25, 100, 2500, 15000"
-              className="w-full p-3.5 rounded-2xl text-sm font-semibold border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-500 shadow-inner resize-none transition-all"
-            />
-          ) : (
-            <input
-              type="text"
-              value={inputVal}
-              onChange={(e) => setInputVal(e.target.value)}
-              placeholder="Ej. 1250000 o 25.50"
-              className="w-full p-3.5 rounded-2xl text-sm font-semibold border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-500 shadow-inner transition-all"
-            />
-          )}
-        </div>
+      {/* Input Box & Quick Select */}
+      <div className="flex flex-col gap-1.5">
+        <label className="text-[10px] sm:text-[11px] font-bold tracking-wider text-slate-500 dark:text-zinc-400 uppercase">
+          NÚMERO
+        </label>
+        {mode === "batch" ? (
+          <textarea
+            rows={3}
+            value={inputVal}
+            onChange={(e) => setInputVal(e.target.value)}
+            placeholder="Escribe números..."
+            className="w-full p-2.5 sm:p-3 rounded-lg text-sm font-medium border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all resize-none shadow-xs"
+          />
+        ) : (
+          <input
+            type="text"
+            value={inputVal}
+            onChange={(e) => setInputVal(e.target.value)}
+            placeholder="Escribe un número..."
+            className="w-full p-2.5 sm:p-3 rounded-lg text-sm sm:text-base font-medium border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all shadow-xs"
+          />
+        )}
 
-        {/* Customization Controls */}
-        <div className="flex flex-col gap-3 justify-between">
-          <div className="grid grid-cols-2 gap-3">
-            {/* Formato Dropdown */}
-            <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-bold text-[var(--foreground)] opacity-90">Formato:</label>
-              <select
-                value={caseType}
-                onChange={(e) => setCaseType(e.target.value as CaseType)}
-                className="w-full p-2.5 rounded-xl text-xs font-bold border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-teal-500/40 cursor-pointer"
-              >
-                <option value="lowercase">Minúsculas (veinticinco)</option>
-                <option value="uppercase">MAYÚSCULAS (VEINTICINCO)</option>
-                <option value="titlecase">Formato Título (Veinticinco)</option>
-              </select>
-            </div>
-
-            {/* Moneda Dropdown */}
-            <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-bold text-[var(--foreground)] opacity-90">Moneda:</label>
-              <select
-                value={currency}
-                disabled={mode === "romano" || mode === "ordinal"}
-                onChange={(e) => setCurrency(e.target.value as Currency)}
-                className="w-full p-2.5 rounded-xl text-xs font-bold border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-teal-500/40 cursor-pointer disabled:opacity-50"
-              >
-                <option value="none">Sin Moneda</option>
-                <option value="pesos">Pesos (MXN/ARS)</option>
-                <option value="dolares">Dólares (USD)</option>
-                <option value="euros">Euros (EUR)</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Gender Toggle */}
-          <div className="flex items-center justify-between p-3 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)]">
-            <span className="text-xs font-bold text-[var(--foreground)] opacity-90">
-              Género Femenino (una, doscientas):
-            </span>
+        {/* Quick Select Numbers */}
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 px-0.5">
+          {QUICK_NUMBERS.map((item) => (
             <button
+              key={item.label}
               type="button"
-              onClick={() => setIsFeminine(!isFeminine)}
-              className={`w-12 h-6 rounded-full p-1 transition-colors duration-200 ease-in-out cursor-pointer ${
-                isFeminine ? "bg-teal-500" : "bg-[var(--border-color)]"
-              }`}
+              onClick={() => setInputVal(item.val)}
+              className="text-[11px] sm:text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 cursor-pointer transition-colors"
             >
-              <div
-                className={`w-4 h-4 rounded-full bg-white transition-transform duration-200 ease-in-out ${
-                  isFeminine ? "translate-x-6" : "translate-x-0"
-                }`}
-              />
+              {item.label}
             </button>
-          </div>
+          ))}
         </div>
       </div>
 
-      {/* Output Result Card */}
-      <div className="flex flex-col gap-2 pt-2 border-t border-[var(--border-color)]">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 flex items-center gap-1.5">
-            <span>✨</span> Resultado Convertido:
+      {/* Controls Row (Femenino, Formato, Moneda) */}
+      <div className="bg-[#ede7df]/50 dark:bg-zinc-800/50 p-2.5 sm:p-3 rounded-xl border border-slate-200/60 dark:border-zinc-700/60 flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+        {/* Femenino Toggle */}
+        <div className="flex items-center gap-2">
+          <span className="text-[10px] sm:text-[11px] font-bold tracking-wider text-slate-500 dark:text-zinc-400 uppercase">
+            FEMENINO
           </span>
-          <span className="text-xs font-mono text-[var(--foreground)] opacity-60">
-            {finalOutput.length} caracteres
-          </span>
-        </div>
-
-        <div className="relative w-full">
-          {mode === "batch" ? (
-            <textarea
-              readOnly
-              rows={5}
-              value={finalOutput}
-              className="w-full p-4 pr-24 rounded-2xl text-xs font-mono border border-teal-500/30 bg-[var(--input-bg)] text-[var(--foreground)] focus:outline-none shadow-inner resize-none font-semibold leading-relaxed"
-            />
-          ) : (
-            <div className="w-full p-4 pr-24 rounded-2xl text-sm sm:text-base font-extrabold border border-teal-500/30 bg-[var(--input-bg)] text-teal-600 dark:text-teal-300 min-h-[56px] flex items-center shadow-inner break-words">
-              {finalOutput}
-            </div>
-          )}
-
           <button
-            onClick={handleCopy}
-            className={`absolute right-3 top-3 px-4 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 shadow-md cursor-pointer ${
-              copied
-                ? "bg-emerald-500 text-slate-950 scale-105"
-                : "bg-teal-500 hover:bg-teal-400 text-slate-950 hover:scale-105"
+            type="button"
+            onClick={() => setIsFeminine(!isFeminine)}
+            className={`w-10 h-5.5 rounded-full p-0.5 transition-colors duration-200 ease-in-out cursor-pointer ${
+              isFeminine ? "bg-amber-600" : "bg-slate-300 dark:bg-zinc-600"
             }`}
           >
-            {copied ? (
-              <>
-                <span>✓</span> ¡Copiado!
-              </>
-            ) : (
-              <>
-                <span>📋</span> Copiar
-              </>
-            )}
+            <div
+              className={`w-4.5 h-4.5 rounded-full bg-white shadow-xs transition-transform duration-200 ease-in-out ${
+                isFeminine ? "translate-x-4.5" : "translate-x-0"
+              }`}
+            />
           </button>
         </div>
+
+        {/* Formato Buttons */}
+        <div className="flex items-center gap-2">
+          <span className="text-[10px] sm:text-[11px] font-bold tracking-wider text-slate-500 dark:text-zinc-400 uppercase">
+            FORMATO
+          </span>
+          <div className="flex items-center bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 rounded-lg p-0.5 gap-0.5">
+            <button
+              type="button"
+              onClick={() => setCaseType("titlecase")}
+              className={`px-2.5 py-0.5 text-[11px] sm:text-xs font-bold rounded transition-all cursor-pointer ${
+                caseType === "titlecase"
+                  ? "bg-slate-100 dark:bg-zinc-800 text-slate-900 dark:text-slate-100 shadow-xs"
+                  : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"
+              }`}
+            >
+              Aa
+            </button>
+            <button
+              type="button"
+              onClick={() => setCaseType("uppercase")}
+              className={`px-2.5 py-0.5 text-[11px] sm:text-xs font-bold rounded transition-all cursor-pointer ${
+                caseType === "uppercase"
+                  ? "bg-slate-100 dark:bg-zinc-800 text-slate-900 dark:text-slate-100 shadow-xs"
+                  : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"
+              }`}
+            >
+              AA
+            </button>
+            <button
+              type="button"
+              onClick={() => setCaseType("lowercase")}
+              className={`px-2.5 py-0.5 text-[11px] sm:text-xs font-bold rounded transition-all cursor-pointer ${
+                caseType === "lowercase"
+                  ? "bg-slate-100 dark:bg-zinc-800 text-slate-900 dark:text-slate-100 shadow-xs"
+                  : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"
+              }`}
+            >
+              aa
+            </button>
+          </div>
+        </div>
+
+        {/* Moneda Dropdown */}
+        <div className="flex items-center gap-2">
+          <span className="text-[10px] sm:text-[11px] font-bold tracking-wider text-slate-500 dark:text-zinc-400 uppercase">
+            MONEDA
+          </span>
+          <select
+            value={currency}
+            disabled={mode === "romano" || mode === "ordinal"}
+            onChange={(e) => setCurrency(e.target.value as Currency)}
+            className="px-2.5 py-1 rounded-lg text-[11px] sm:text-xs font-semibold border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-500/50 disabled:opacity-50 cursor-pointer shadow-xs"
+          >
+            <option value="none">Sin moneda</option>
+            <option value="pesos">Pesos (MXN/ARS)</option>
+            <option value="dolares">Dólares (USD)</option>
+            <option value="euros">Euros (EUR)</option>
+          </select>
+        </div>
+      </div>
+
+      {/* Output / Result Box */}
+      <div className="rounded-xl border-l-[4px] border-l-amber-600 bg-[#ede7df]/60 dark:bg-zinc-800/60 p-3.5 sm:p-4 flex flex-col gap-2">
+        <div className="flex items-center justify-between">
+          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">
+            RESULTADO
+          </span>
+          <button
+            type="button"
+            onClick={handleCopy}
+            className="flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-slate-700 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white transition-colors cursor-pointer"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 012-2v-8a2 2 0 01-2-2h-8a2 2 0 01-2 2v8a2 2 0 012 2z"
+              />
+            </svg>
+            <span>{copied ? "¡Copiado!" : "Copiar"}</span>
+          </button>
+        </div>
+
+        {mode === "batch" ? (
+          <textarea
+            readOnly
+            rows={4}
+            value={finalOutput}
+            placeholder="Tu resultado aparecerá aquí..."
+            className="w-full bg-transparent text-sm sm:text-base font-bold text-slate-800 dark:text-slate-100 focus:outline-none resize-none leading-relaxed"
+          />
+        ) : (
+          <div className="text-sm sm:text-base font-bold text-slate-800 dark:text-slate-100 break-words min-h-[28px] flex items-center">
+            {finalOutput || (
+              <span className="text-slate-400 font-normal text-xs sm:text-sm">
+                Tu resultado aparecerá aquí...
+              </span>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
