@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
@@ -83,7 +82,7 @@ export default function NombresParaRobloxPage() {
             <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
               <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">3. Copia tu Diseño</span>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                Regresa a nuestro conversor, elige el estilo que más te guste (kawaii, aesthetic, con símbolos) y toca "Copiar" para guardarlo en tu portapapeles.
+                Regresa a nuestro conversor, elige el estilo que más te guste (kawaii, aesthetic, con símbolos) y toca &quot;Copiar&quot; para guardarlo en tu portapapeles.
               </p>
             </div>
 
@@ -106,7 +105,7 @@ export default function NombresParaRobloxPage() {
               Roblox vs Free Fire: Diferencias en Nombres de Usuario
             </h2>
             <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
-              Roblox permite cambiar el "Display Name" cuantas veces quieras gratis (a diferencia de Free Fire), pero el "@username" real solo puede cambiarse una vez sin costo. Usa estilos decorativos solo en el Display Name.
+              Roblox permite cambiar el &quot;Display Name&quot; cuantas veces quieras gratis (a diferencia de Free Fire), pero el &quot;@username&quot; real solo puede cambiarse una vez sin costo. Usa estilos decorativos solo en el Display Name.
             </p>
           </div>
         </section>
@@ -121,7 +120,7 @@ export default function NombresParaRobloxPage() {
               Cómo Evitar que Roblox Censure tu Nombre (###)
             </h2>
             <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
-              Roblox censura automáticamente palabras que detecta como inapropiadas, incluso por error (falsos positivos). Si tu nombre se convierte en "###", evita palabras comunes mal interpretadas y usa símbolos decorativos entre letras para evadir el filtro sin perder legibilidad.
+              Roblox censura automáticamente palabras que detecta como inapropiadas, incluso por error (falsos positivos). Si tu nombre se convierte en &quot;###&quot;, evita palabras comunes mal interpretadas y usa símbolos decorativos entre letras para evadir el filtro sin perder legibilidad.
             </p>
           </div>
         </section>

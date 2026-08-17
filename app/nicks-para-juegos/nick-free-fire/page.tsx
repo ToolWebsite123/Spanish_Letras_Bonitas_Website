@@ -104,7 +104,7 @@ export default function NickFreeFirePage() {
                 1. Exceder el Límite de 12 Bytes
               </h3>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                Superar los 12 bytes reales UTF-8 hace que Garena recorte el nombre o devuelva el error "Nombre demasiado largo".
+                Superar los 12 bytes reales UTF-8 hace que Garena recorte el nombre o devuelva el error &quot;Nombre demasiado largo&quot;.
               </p>
             </div>
 

@@ -21,7 +21,7 @@ export default function AccentGuaranteeSection() {
           Garantía Anti-Errores para Acentos y Tildes (á, é, í, ó, ú, ñ, ç)
         </h2>
         <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
-          A diferencia de herramientas anglosajonas que rompen palabras como "Corazón" o "España", nuestro conversor integra un motor adaptado para el idioma español que preserva la ortografía exacta.
+          A diferencia de herramientas anglosajonas que rompen palabras como &quot;Corazón&quot; o &quot;España&quot;, nuestro conversor integra un motor adaptado para el idioma español que preserva la ortografía exacta.
         </p>
       </div>
 

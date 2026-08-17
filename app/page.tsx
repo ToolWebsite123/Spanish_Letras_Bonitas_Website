@@ -178,7 +178,7 @@ export default function Home() {
                 3. Copia y pega donde quieras
               </h3>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                Haz clic o toca el botón "Copiar" al lado de la fuente que más te guste. ¡Listo! Pégalo directamente en Instagram, WhatsApp, Free Fire, TikTok, Discord o Facebook.
+                Haz clic o toca el botón &quot;Copiar&quot; al lado de la fuente que más te guste. ¡Listo! Pégalo directamente en Instagram, WhatsApp, Free Fire, TikTok, Discord o Facebook.
               </p>
               <div className="mt-auto pt-2 text-xs text-teal-700 dark:text-teal-400 font-medium bg-teal-500/5 p-2.5 rounded-xl border border-teal-500/20">
                 💡 <strong>Tip:</strong> Si una red social corta el texto, consulta nuestra guía de límites de caracteres y bytes.
@@ -277,7 +277,7 @@ export default function Home() {
                     {item.category}
                   </span>
                   <p className="text-[var(--foreground)] font-semibold text-xs opacity-75">
-                    "{item.phrase}"
+                    &quot;{item.phrase}&quot;
                   </p>
                   <div className="p-3.5 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] font-mono text-sm sm:text-base text-teal-700 dark:text-teal-300 break-words flex items-center justify-between gap-2 shadow-inner">
                     <span className="select-all">{converted}</span>
@@ -298,7 +298,7 @@ export default function Home() {
               Guía Definitiva: El Motor Unicode y el Soporte Real para Acentos en Español (á, é, í, ó, ú, ñ)
             </h2>
             <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
-              Muchos usuarios se preguntan por qué al intentar transformar su nombre en conversores convencionales de la web, palabras tan comunes como <strong className="text-teal-600 dark:text-teal-400">"Corazón"</strong>, <strong className="text-teal-600 dark:text-teal-400">"Información"</strong>, <strong className="text-teal-600 dark:text-teal-400">"España"</strong> o <strong className="text-teal-600 dark:text-teal-400">"Niño"</strong> pierden sus tildes o se convierten en extraños símbolos rotos como <code className="text-rose-700 dark:text-rose-400 bg-rose-950/80 border border-rose-800/80 px-2 py-0.5 rounded font-mono font-bold">[?]</code>. Prueba nuestro <Link href="/letras-bonitas/caligrafia" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">conversor de caligrafía</Link> o consulta el <Link href="/letras-bonitas/letras-cursivas" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">abecedario cursivo completo</Link> para verificar la ortografía.
+              Muchos usuarios se preguntan por qué al intentar transformar su nombre en conversores convencionales de la web, palabras tan comunes como <strong className="text-teal-600 dark:text-teal-400">&quot;Corazón&quot;</strong>, <strong className="text-teal-600 dark:text-teal-400">&quot;Información&quot;</strong>, <strong className="text-teal-600 dark:text-teal-400">&quot;España&quot;</strong> o <strong className="text-teal-600 dark:text-teal-400">&quot;Niño&quot;</strong> pierden sus tildes o se convierten en extraños símbolos rotos como <code className="text-rose-700 dark:text-rose-400 bg-rose-950/80 border border-rose-800/80 px-2 py-0.5 rounded font-mono font-bold">[?]</code>. Prueba nuestro <Link href="/letras-bonitas/caligrafia" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">conversor de caligrafía</Link> o consulta el <Link href="/letras-bonitas/letras-cursivas" className="text-teal-600 dark:text-teal-400 underline font-bold hover:text-teal-700 dark:hover:text-teal-700 dark:text-teal-300">abecedario cursivo completo</Link> para verificar la ortografía.
             </p>
           </div>
 
@@ -398,7 +398,7 @@ export default function Home() {
               Miles de personas usan generadores de letras bonitas cada día para personalizar su presencia digital. Los fotógrafos y creadores de contenido estilizan su biografía de Instagram combinando su nombre en cursiva con su ubicación y una llamada a la acción, creando un perfil que se siente cuidado y profesional desde el primer vistazo. Los entrenadores personales y profesionales de fitness hacen lo mismo, usando fuentes en negrita para su título profesional y símbolos temáticos (💪 🏋️) para reforzar visualmente su nicho.
             </p>
             <p>
-              En el mundo de los videojuegos, especialmente en Free Fire, los jugadores combinan letras Unicode con símbolos como espadas (⚔️), coronas (👑) y chispas (✨) para crear nicks que se destaquen en el lobby y sean difíciles de imitar. Un nick como "★Pro★" o uno con estilo "Sombra" transmite personalidad e intimidación antes de que la partida siquiera comience.
+              En el mundo de los videojuegos, especialmente en Free Fire, los jugadores combinan letras Unicode con símbolos como espadas (⚔️), coronas (👑) y chispas (✨) para crear nicks que se destaquen en el lobby y sean difíciles de imitar. Un nick como &quot;★Pro★&quot; o uno con estilo &quot;Sombra&quot; transmite personalidad e intimidación antes de que la partida siquiera comience.
             </p>
             <p>
               Para WhatsApp y estados personales, la tendencia es usar frases motivacionales o citas cortas en cursiva fina — un estilo delicado que se siente más íntimo que el texto plano estándar de la aplicación. En TikTok, los creadores prefieren fuentes en negrita o con símbolos minimalistas para que su nombre de usuario destaque en el feed vertical de descubrimiento.

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
@@ -92,7 +91,7 @@ export default function FuentesParaFacebookPage() {
               Facebook Prioriza Texto Simple en el Algoritmo, ¿Afecta la Negrita?
             </h2>
             <p className="text-sm sm:text-base text-[var(--foreground)] opacity-80 leading-relaxed font-medium">
-              La negrita Unicode no reduce tu alcance orgánico (no es "texto especial" para el algoritmo, son solo caracteres normales), pero abusar de ella en publicaciones largas puede parecer spam visual — úsala solo en la primera línea o palabras clave.
+              La negrita Unicode no reduce tu alcance orgánico (no es &quot;texto especial&quot; para el algoritmo, son solo caracteres normales), pero abusar de ella en publicaciones largas puede parecer spam visual — úsala solo en la primera línea o palabras clave.
             </p>
           </div>
         </section>
@@ -130,7 +129,7 @@ export default function FuentesParaFacebookPage() {
             <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
               <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Nombre de Perfil</span>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                Normal → "Carlos Mendoza" | Estilizado → <code className="text-teal-600 dark:text-teal-400 font-bold">𝓒𝒶𝓇𝓁𝑜𝓈 𝓜𝑒𝓃𝒹𝑜𝔃𝒶</code>. Un nombre distintivo se recuerda más fácilmente entre amigos en común.
+                Normal → &quot;Carlos Mendoza&quot; | Estilizado → <code className="text-teal-600 dark:text-teal-400 font-bold">𝓒𝒶𝓇𝓁𝑜𝓈 𝓜𝑒𝓃𝒹𝑜𝔃𝒶</code>. Un nombre distintivo se recuerda más fácilmente entre amigos en común.
               </p>
             </div>
 
@@ -158,7 +157,7 @@ export default function FuentesParaFacebookPage() {
             <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5 md:col-span-2 lg:col-span-1">
               <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">5. Títulos de Páginas y Grupos</span>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                Normal → "Gaming World" | Estilizado → <code className="text-teal-600 dark:text-teal-400 font-bold">𝙂𝙖𝙢𝙞𝙣𝙜 𝙒𝙤𝙧𝙡𝙙</code>. Un título creativo capta más atención cuando alguien navega por categorías de páginas.
+                Normal → &quot;Gaming World&quot; | Estilizado → <code className="text-teal-600 dark:text-teal-400 font-bold">𝙂𝙖𝙢𝙞𝙣𝙜 𝙒𝙤𝙧𝙡𝙙</code>. Un título creativo capta más atención cuando alguien navega por categorías de páginas.
               </p>
             </div>
           </div>
@@ -203,7 +202,7 @@ export default function FuentesParaFacebookPage() {
             <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-2.5">
               <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">4. Copia al Portapapeles</span>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                Toca "Copiar" para guardar el texto estilizado en tu portapapeles.
+                Toca &quot;Copiar&quot; para guardar el texto estilizado en tu portapapeles.
               </p>
             </div>
 

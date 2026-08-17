@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -105,13 +105,10 @@ interface NavBarProps {
 }
 
 export default function NavBar({ showCategoryNav = true, showNewToolsNav = true }: NavBarProps) {
-  const pathname = usePathname();
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-
-  useEffect(() => {
-    const currentTheme = (document.documentElement.getAttribute("data-theme") as "dark" | "light") || "dark";
-    setTheme(currentTheme);
-  }, []);
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof document === "undefined") return "dark";
+    return (document.documentElement.getAttribute("data-theme") as "dark" | "light") || "dark";
+  });
 
   const toggleTheme = () => {
     const nextTheme = theme === "light" ? "dark" : "light";

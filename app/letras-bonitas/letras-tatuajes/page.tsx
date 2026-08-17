@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";

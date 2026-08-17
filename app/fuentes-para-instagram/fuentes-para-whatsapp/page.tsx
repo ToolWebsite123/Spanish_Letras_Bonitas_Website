@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
@@ -69,7 +68,7 @@ export default function FuentesParaWhatsAppPage() {
             <div className="p-6 rounded-2xl bg-[var(--input-bg)] border border-[var(--border-color)] flex flex-col gap-3">
               <span className="text-xs font-extrabold text-teal-600 dark:text-teal-400 uppercase tracking-wider">1. Casilla de Info Personal</span>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                Sustituye la aburrida frase predeterminada ('Disponible') por una frase motivacional en letras cursivas finas (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">✨ 𝒱𝒾𝓋ℯ ℯ𝓁 𝓅𝓇ℯ𝓈ℯ𝓃𝓉ℯ ✨</code>).
+                Sustituye la aburrida frase predeterminada (&apos;Disponible&apos;) por una frase motivacional en letras cursivas finas (ej: <code className="text-teal-600 dark:text-teal-400 font-bold">✨ 𝒱𝒾𝓋ℯ ℯ𝓁 𝓅𝓇ℯ𝓈ℯ𝓃𝓉ℯ ✨</code>).
               </p>
             </div>
 

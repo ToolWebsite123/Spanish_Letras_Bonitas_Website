@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Converter from "@/components/Converter";
@@ -98,7 +97,7 @@ export default function LetrasJaponesasPage() {
                 2. Simbolismo Kanji y Hiragana Real
               </h3>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                Para ideogramas con significado lingüístico estricto (como 'amor', 'fuerza' o 'dragón'), se emplean los ideogramas originales de la tabla Unicode japonesa.
+                Para ideogramas con significado lingüístico estricto (como &apos;amor&apos;, &apos;fuerza&apos; o &apos;dragón&apos;), se emplean los ideogramas originales de la tabla Unicode japonesa.
               </p>
             </div>
           </div>

@@ -134,7 +134,7 @@ export default function TextoEnNegritaPage() {
                 Negrita Serif (Con Remates)
               </span>
               <p className="text-[var(--foreground)] opacity-80 leading-relaxed">
-                La <strong className="text-teal-600 dark:text-teal-400 font-bold">Negrita Serif</strong> (con remates) transmite formalidad y autoridad, mejor para citas célebres, anuncios profesionales o textos tipo "editorial".
+                La <strong className="text-teal-600 dark:text-teal-400 font-bold">Negrita Serif</strong> (con remates) transmite formalidad y autoridad, mejor para citas célebres, anuncios profesionales o textos tipo &quot;editorial&quot;.
               </p>
             </div>
           </div>

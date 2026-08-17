@@ -221,7 +221,7 @@ export default function LetrasCursivasPage() {
                     {item.category}
                   </span>
                   <p className="text-[var(--foreground)] font-semibold text-xs opacity-75">
-                    "{item.phrase}"
+                    &quot;{item.phrase}&quot;
                   </p>
                   <div className="p-3.5 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] font-mono text-sm sm:text-base text-teal-600 dark:text-teal-300 break-words flex items-center justify-between gap-2 shadow-inner">
                     <span className="select-all">{converted}</span>
