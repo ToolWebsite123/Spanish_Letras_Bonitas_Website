@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     "letras diferentes",
   ],
   authors: [{ name: "Letras Bonitas" }],
+  icons: "/favicon.ico",
   robots: {
     index: true,
     follow: true,
@@ -48,12 +49,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     siteName: "Letras Bonitas",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Letras Bonitas - Conversor de Fuentes",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Letras Bonitas - 1300+ Fuentes para Copiar y Pegar",
     description:
       "Genera fuentes de letras bonitas gratis para Instagram, WhatsApp, Free Fire y TikTok.",
+    images: ["/og-image.png"],
   },
 };
 
