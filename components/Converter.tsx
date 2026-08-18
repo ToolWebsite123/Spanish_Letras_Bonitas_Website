@@ -294,7 +294,9 @@ export default function Converter({
                 combo.baseStyle.map,
                 combo.baseStyle.id
               );
-              const styledText = combo.decorator
+              const styledText = selectedDecorator
+                ? selectedDecorator.wrap(rawStyledText)
+                : combo.decorator
                 ? combo.decorator.wrap(rawStyledText)
                 : rawStyledText;
               const isCopied = copiedId === combo.id;

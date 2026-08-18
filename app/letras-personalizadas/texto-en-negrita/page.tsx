@@ -7,7 +7,7 @@ import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 import RelatedCategoriesWidget from "@/components/RelatedCategoriesWidget";
 
 export const metadata: Metadata = {
-  title: "Texto en Negrita - Conversor de Letras Negritas para Copiar y Pegar <b>",
+  title: "Texto en Negrita - Conversor de Letras Negritas para Copiar y Pegar",
   description:
     "Convierte texto normal a letras en negrita (Bold Sans, Serif, Italic) para destacar palabras clave en Facebook, Instagram, WhatsApp y TikTok.",
   alternates: {

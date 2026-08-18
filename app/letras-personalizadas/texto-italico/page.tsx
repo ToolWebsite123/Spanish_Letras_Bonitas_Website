@@ -5,7 +5,7 @@ import FaqSection from "@/components/FaqSection";
 import AlphabetReferenceTable from "@/components/AlphabetReferenceTable";
 
 export const metadata: Metadata = {
-  title: "Texto Itálico - Conversor de Letras Inclinadas e Itálicas <i>",
+  title: "Texto Itálico - Conversor de Letras Inclinadas e Itálicas",
   description:
     "Convierte texto normal a letras itálicas (Italic Sans, Italic Serif y Bold Italic) para destacar palabras y citas en redes sociales.",
   alternates: {

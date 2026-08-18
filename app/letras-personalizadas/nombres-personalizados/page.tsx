@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const nombresFaqs = [
   {
     q: "¿Cómo personalizar mi nombre propio con letras bonitas y símbolos?",
-    a: "Escribe tu nombre de pila o apodo en el conversor dinámico superior. El sistema generará automáticamente más de 300 variaciones estilizadas en letras cursivas, góticas, diminutas, encuadradas y adornadas con coronas y alas.",
+    a: "Escribe tu nombre de pila o apodo en el conversor dinámico superior. El sistema generará automáticamente más de 1300 variaciones estilizadas en letras cursivas, góticas, diminutas, encuadradas y adornadas con coronas y alas.",
   },
   {
     q: "¿Puedo usar un nombre personalizado en el Nombre de Usuario de Instagram?",

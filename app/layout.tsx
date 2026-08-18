@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import ThemeScript from "@/components/ThemeScript";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Letras Bonitas - 300+ Conversor de Fuentes para Copiar y Pegar 🌸",
+  // TODO: update this to the real purchased domain before deploying to Vercel
+  metadataBase: new URL("https://letrasbonitas.com"),
+  title: "Letras Bonitas - 1300+ Conversor de Fuentes para Copiar y Pegar 🌸",
   description:
     "Generador de letras bonitas y fuentes gratis. Convierte texto normal a cursiva, gótica, aesthetic, negrita y símbolos para Instagram, TikTok, WhatsApp y Free Fire.",
   keywords: [
@@ -43,14 +44,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Letras Bonitas - Conversor de Fuentes para Copiar y Pegar 🌸",
     description:
-      "Transforma texto en 300+ letras bonitas, cursivas, góticas y aesthetic gratis. Funciona en Instagram, TikTok, WhatsApp y juegos.",
+      "Transforma texto en 1300+ letras bonitas, cursivas, góticas y aesthetic gratis. Funciona en Instagram, TikTok, WhatsApp y juegos.",
     type: "website",
     locale: "es_ES",
     siteName: "Letras Bonitas",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Letras Bonitas - 300+ Fuentes para Copiar y Pegar",
+    title: "Letras Bonitas - 1300+ Fuentes para Copiar y Pegar",
     description:
       "Genera fuentes de letras bonitas gratis para Instagram, WhatsApp, Free Fire y TikTok.",
   },
@@ -81,7 +82,7 @@ const jsonLdApp = {
     priceCurrency: "USD",
   },
   description:
-    "Generador y conversor de letras bonitas en línea con más de 300 estilos Unicode para Instagram, WhatsApp, TikTok y juegos.",
+    "Generador y conversor de letras bonitas en línea con más de 1300 estilos Unicode para Instagram, WhatsApp, TikTok y juegos.",
 };
 
 export default function RootLayout({
@@ -97,7 +98,21 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <ThemeScript />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var savedTheme = localStorage.getItem('theme');
+                  var theme = savedTheme || 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                }
+              })();
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}

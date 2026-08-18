@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -34,7 +34,7 @@ const navPills: NavPill[] = [
   { label: "Nombres Personalizados", href: "/letras-personalizadas/nombres-personalizados", icon: "🏷️" },
 ];
 
-const newToolsPills: NavPill[] = [
+const mainHeaderTools: NavPill[] = [
   { label: "Números en Letras", href: "/letras-personalizadas/numeros-en-letras", icon: "🔢" },
   { label: "Mayúsculas/Minúsculas", href: "/letras-personalizadas/mayusculas-minusculas", icon: "🔤" },
   { label: "Kaomojis", href: "/simbolos-aesthetic/kaomojis", icon: "😊" },
@@ -69,46 +69,19 @@ export function CategoryNav() {
   );
 }
 
-export function NewToolsNav() {
-  const pathname = usePathname();
-  return (
-    <div className="w-full border-t border-[var(--border-color)]/60 bg-gradient-to-r from-teal-500/10 via-emerald-500/10 to-indigo-500/10 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth">
-        <span className="text-[11px] font-extrabold uppercase tracking-wider text-teal-600 dark:text-teal-400 shrink-0 mr-1 flex items-center gap-1">
-          <span>✨</span> Nuevas Herramientas:
-        </span>
-        {newToolsPills.map((pill) => {
-          const isActive = pathname === pill.href;
-          return (
-            <Link
-              key={pill.href}
-              href={pill.href}
-              className={`whitespace-nowrap px-3 py-1 rounded-full text-xs transition-all flex items-center gap-1.5 shrink-0 ${
-                isActive
-                  ? "bg-teal-500/30 text-teal-800 dark:text-teal-300 border border-teal-500/60 font-bold shadow-sm"
-                  : "bg-[var(--card-bg)] text-[var(--foreground)] opacity-90 border border-teal-500/30 hover:border-teal-500/60 hover:text-teal-700 dark:hover:text-teal-400 font-semibold"
-              }`}
-            >
-              <span>{pill.icon}</span>
-              <span>{pill.label}</span>
-            </Link>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
 interface NavBarProps {
   showCategoryNav?: boolean;
-  showNewToolsNav?: boolean;
 }
 
-export default function NavBar({ showCategoryNav = true, showNewToolsNav = true }: NavBarProps) {
-  const [theme, setTheme] = useState<"dark" | "light">(() => {
-    if (typeof document === "undefined") return "dark";
-    return (document.documentElement.getAttribute("data-theme") as "dark" | "light") || "dark";
-  });
+export default function NavBar({ showCategoryNav = true }: NavBarProps) {
+  const pathname = usePathname();
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+  useEffect(() => {
+    const currentTheme = (document.documentElement.getAttribute("data-theme") as "dark" | "light") || "dark";
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reading theme from DOM/localStorage on mount is a required exception, cannot be known during SSR
+    setTheme(currentTheme);
+  }, []);
 
   const toggleTheme = () => {
     const nextTheme = theme === "light" ? "dark" : "light";
@@ -123,9 +96,9 @@ export default function NavBar({ showCategoryNav = true, showNewToolsNav = true 
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[var(--background)]/95 backdrop-blur-xl border-b border-[var(--border-color)] transition-colors">
-      {/* Top Header: Brand Logo & Theme Toggle */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16">
-        <Link href="/" className="flex items-center gap-2.5 group cursor-pointer">
+      {/* Top Header: Brand Logo, Main Tools Links & Theme Toggle */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16 gap-3 sm:gap-4">
+        <Link href="/" className="flex items-center gap-2.5 group cursor-pointer shrink-0">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-teal-600 via-emerald-600 to-indigo-600 dark:from-teal-400 dark:via-emerald-500 dark:to-indigo-600 flex items-center justify-center text-slate-950 font-black text-sm shadow-md group-hover:scale-105 transition-transform">
             LB
           </div>
@@ -134,11 +107,32 @@ export default function NavBar({ showCategoryNav = true, showNewToolsNav = true 
           </span>
         </Link>
 
+        {/* 5 Plain Text Header Links */}
+        <nav className="flex items-center gap-3 sm:gap-4.5 overflow-x-auto no-scrollbar scroll-smooth py-1 px-1">
+          {mainHeaderTools.map((tool) => {
+            const isActive = pathname === tool.href;
+            return (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className={`whitespace-nowrap text-xs font-medium transition-colors flex items-center gap-1 shrink-0 ${
+                  isActive
+                    ? "text-teal-600 dark:text-teal-400 font-bold"
+                    : "text-[var(--foreground)] opacity-80 hover:opacity-100 hover:text-teal-600 dark:hover:text-teal-400"
+                }`}
+              >
+                <span>{tool.icon}</span>
+                <span>{tool.label}</span>
+              </Link>
+            );
+          })}
+        </nav>
+
         {/* Theme Toggle Button */}
         <button
           onClick={toggleTheme}
           aria-label="Toggle Theme"
-          className="px-3 py-1.5 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--foreground)] hover:border-teal-500/40 transition-colors flex items-center gap-2 text-xs font-bold shadow-sm cursor-pointer"
+          className="px-3 py-1.5 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--foreground)] hover:border-teal-500/40 transition-colors flex items-center gap-2 text-xs font-bold shadow-sm cursor-pointer shrink-0"
         >
           {theme === "dark" ? (
             <>
@@ -150,15 +144,12 @@ export default function NavBar({ showCategoryNav = true, showNewToolsNav = true 
               <span className="text-indigo-400 text-sm">🌙</span>
               <span className="hidden sm:inline">Modo Oscuro</span>
             </>
-          ) }
+          )}
         </button>
       </div>
 
       {/* Flat, Horizontal, Scrollable Pill Filter Bar */}
       {showCategoryNav && <CategoryNav />}
-
-      {/* Separate New Tools Row */}
-      {showNewToolsNav && <NewToolsNav />}
     </header>
   );
 }
