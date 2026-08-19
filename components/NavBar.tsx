@@ -42,10 +42,10 @@ const mainHeaderTools: NavPill[] = [
   { label: "Letras Góticas", href: "/letras-bonitas/letras-goticas", icon: "🏰" },
 ];
 
-export function CategoryNav() {
+export function CategoryNav({ bare = false }: { bare?: boolean } = {}) {
   const pathname = usePathname();
   return (
-    <div className="w-full border-t border-[var(--border-color)]/60 bg-[var(--card-bg)]/40">
+    <div className={bare ? "w-full" : "w-full border-t border-[var(--border-color)]/60 bg-[var(--card-bg)]/40"}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth">
         {navPills.map((pill) => {
           const isActive = pathname === pill.href;

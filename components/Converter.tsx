@@ -143,45 +143,51 @@ export default function Converter({
   const isCategoryPage = Boolean(highlightStyleId && featuredStyle);
 
   return (
-    <div className="w-full flex flex-col gap-6">
-      {/* Sleek Input Container */}
-      <div className="flex flex-col gap-3 p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/20">
-        {/* Main Textarea Input */}
-        <div className="relative w-full">
-          <textarea
-            id="text-input"
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value)}
-            placeholder="Escribe o pega tu texto aquí..."
-            rows={2}
-            className="w-full p-3.5 sm:p-4 pr-10 sm:pr-12 rounded-xl sm:rounded-2xl border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:border-teal-400 shadow-inner text-base sm:text-xl font-normal leading-normal resize-y transition-all"
-          />
-          {inputText && (
-            <button
-              type="button"
-              onClick={() => setInputText("")}
-              className="absolute top-3 right-3 p-1.5 rounded-full text-[var(--foreground)] opacity-60 hover:opacity-100 hover:text-red-400 hover:bg-[var(--input-bg)] transition-colors cursor-pointer"
-              title="Borrar texto"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+    <div className="w-full flex flex-col gap-4">
+      {/* Sleek, Compact Pill-Shaped Main Input Container */}
+      <div className="w-full flex flex-col gap-2 p-2 sm:p-2.5 rounded-3xl sm:rounded-full border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-lg shadow-purple-950/10">
+        <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full">
+          {/* Main Text Input Field */}
+          <div className="relative w-full flex-1">
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-teal-600 dark:text-teal-400">
+              <svg className="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-            </button>
-          )}
-        </div>
+            </div>
+            <input
+              id="text-input"
+              type="text"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              placeholder="Escribe o pega tu texto aquí..."
+              className="w-full pl-11 pr-10 py-2.5 sm:py-3 rounded-full border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] placeholder-purple-300/40 focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-400 text-sm sm:text-base font-medium shadow-inner transition-all"
+            />
+            {inputText && (
+              <button
+                type="button"
+                onClick={() => setInputText("")}
+                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[var(--foreground)] opacity-60 hover:opacity-100 hover:text-rose-400 transition-colors cursor-pointer"
+                title="Borrar texto"
+              >
+                <div className="w-5 h-5 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] flex items-center justify-center text-[10px] font-bold">
+                  ✕
+                </div>
+              </button>
+            )}
+          </div>
 
-        {/* Integrated Control Row (Decorator + Counter) */}
-        <div className="flex flex-wrap items-center justify-between gap-3 px-1 text-xs text-[var(--foreground)] opacity-80 font-semibold">
-          {/* Decorator Selector */}
-          <div className="flex items-center gap-2 bg-[var(--input-bg)] p-2.5 rounded-xl border border-[var(--border-color)] shrink-0">
-            <span className="text-[11px] font-bold text-[var(--foreground)] opacity-80">Marco:</span>
+          {/* Integrated Compact Decorator Dropdown */}
+          <div className="flex items-center gap-2 bg-[var(--input-bg)] px-3.5 py-1.5 sm:py-2 rounded-full border border-[var(--border-color)] shrink-0 w-full sm:w-auto justify-between sm:justify-start">
+            <span className="text-[11px] font-extrabold text-[var(--foreground)] opacity-80 whitespace-nowrap flex items-center gap-1">
+              <span>🖼️</span> Marco:
+            </span>
             <select
               value={selectedDecorator?.id || ""}
               onChange={(e) => {
                 const dec = decorators.find((d) => d.id === e.target.value) || null;
                 setSelectedDecorator(dec);
               }}
-              className="px-3 py-1 rounded-lg text-xs font-bold border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-teal-500/30 cursor-pointer"
+              className="px-2.5 py-1 rounded-full text-xs font-bold border border-[var(--border-color)] bg-[var(--card-bg)] text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-teal-500/30 cursor-pointer"
             >
               <option value="">Sin marco</option>
               {decorators.map((dec) => (
@@ -191,38 +197,38 @@ export default function Converter({
               ))}
             </select>
           </div>
-
-          {/* Character & Byte Counter Stat */}
-          {inputText.length > 6 && (
-            <div className="flex items-center gap-2 shrink-0 text-[11px]">
-              <span
-                className={`px-3.5 py-2 rounded-xl font-bold border ${
-                  inputText.length > 12
-                    ? "bg-rose-950/80 text-rose-300 border-rose-800"
-                    : "bg-emerald-950/80 text-emerald-300 border-emerald-800"
-                }`}
-              >
-                Free Fire (12 max): {inputText.length > 12 ? "⚠️ Excede" : "✓ OK"}
-              </span>
-            </div>
-          )}
         </div>
+
+        {/* Character & Byte Counter Stat (Shown when text typed) */}
+        {inputText.length > 6 && (
+          <div className="flex items-center justify-end px-3 text-[11px] shrink-0">
+            <span
+              className={`px-3 py-0.5 rounded-full font-bold border ${
+                inputText.length > 12
+                  ? "bg-rose-950/80 text-rose-300 border-rose-800"
+                  : "bg-emerald-950/80 text-emerald-300 border-emerald-800"
+              }`}
+            >
+              Free Fire (12 max): {inputText.length > 12 ? "⚠️ Excede" : "✓ OK"}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Category Pills Filter Bar */}
-      {showCategoryNav && <CategoryNav />}
+      {showCategoryNav && <CategoryNav bare />}
 
       {/* Search Bar & Total Combinations Counter */}
       {!isCategoryPage && (
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 w-full p-2.5 sm:p-3 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)]/80 backdrop-blur-xl shadow-lg shadow-purple-950/10">
-          <div className="text-xs font-bold text-[var(--foreground)] opacity-90 flex items-center gap-2 px-1">
-            <span className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-teal-500/15 via-emerald-500/15 to-indigo-500/15 text-teal-600 dark:text-teal-400 border border-teal-500/30 font-extrabold flex items-center gap-1.5 shadow-sm">
-              <span>✨</span> {allCombinations.length}+ Estilos Combinados
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 w-full p-2 sm:p-2.5 rounded-3xl sm:rounded-full border border-[var(--border-color)] bg-[var(--card-bg)]/80 backdrop-blur-xl shadow-md shadow-purple-950/5">
+          <div className="text-xs font-bold text-[var(--foreground)] opacity-90 flex items-center gap-2 px-2">
+            <span className="px-3 py-1 rounded-full bg-gradient-to-r from-teal-500/15 via-emerald-500/15 to-indigo-500/15 text-teal-600 dark:text-teal-400 border border-teal-500/30 font-extrabold flex items-center gap-1.5 shadow-sm text-xs">
+              <span>✨</span> {allCombinations.length}+ Estilos
             </span>
-            <span className="hidden md:inline opacity-60 font-medium">— Buscador instantáneo</span>
+            <span className="hidden md:inline opacity-60 font-medium text-xs">— Buscador instantáneo</span>
           </div>
 
-          <div className="relative w-full sm:w-80 shrink-0">
+          <div className="relative w-full sm:w-72 shrink-0">
             <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-teal-600 dark:text-teal-400">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -232,8 +238,8 @@ export default function Converter({
               type="text"
               value={searchQuery}
               onChange={handleSearchChange}
-              placeholder="Buscar estilo o marco (ej. Cursiva, Corazones)..."
-              className="w-full pl-10 pr-9 py-2.5 rounded-xl text-xs font-bold border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-400 shadow-inner transition-all"
+              placeholder="Buscar estilo o marco..."
+              className="w-full pl-9 pr-8 py-2 rounded-full text-xs font-bold border border-[var(--border-color)] bg-[var(--input-bg)] text-[var(--foreground)] placeholder-[var(--foreground)]/40 focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-400 shadow-inner transition-all"
             />
             {searchQuery && (
               <button
@@ -242,10 +248,10 @@ export default function Converter({
                   setSearchQuery("");
                   setVisibleCount(40);
                 }}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-xs text-[var(--foreground)] opacity-60 hover:opacity-100 hover:text-rose-400 transition-colors cursor-pointer"
+                className="absolute inset-y-0 right-0 pr-2.5 flex items-center text-xs text-[var(--foreground)] opacity-60 hover:opacity-100 hover:text-rose-400 transition-colors cursor-pointer"
                 title="Limpiar búsqueda"
               >
-                <div className="w-5 h-5 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] flex items-center justify-center text-[10px] font-bold">
+                <div className="w-4 h-4 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] flex items-center justify-center text-[9px] font-bold">
                   ✕
                 </div>
               </button>
