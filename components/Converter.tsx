@@ -34,7 +34,7 @@ export default function Converter({
   const [inputText, setInputText] = useState("Letras Bonitas");
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [selectedDecorator, setSelectedDecorator] = useState<Decorator | null>(null);
-  const [fontSize, setFontSize] = useState<number>(18);
+  const [fontSize] = useState<number>(18);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState<number>(40);
 
@@ -170,25 +170,8 @@ export default function Converter({
           )}
         </div>
 
-        {/* Integrated Control Row (Slider + Decorator + Counter) */}
+        {/* Integrated Control Row (Decorator + Counter) */}
         <div className="flex flex-wrap items-center justify-between gap-3 px-1 text-xs text-[var(--foreground)] opacity-80 font-semibold">
-          {/* Font Size Slider */}
-          <div className="flex items-center gap-2 flex-1 min-w-[220px] bg-[var(--input-bg)] p-2.5 rounded-xl border border-[var(--border-color)]">
-            <span className="text-[11px] font-extrabold text-teal-600 dark:text-teal-400 shrink-0">Tamaño</span>
-            <span className="text-[10px] opacity-60 font-bold">A</span>
-            <input
-              type="range"
-              min={12}
-              max={32}
-              value={fontSize}
-              onChange={(e) => setFontSize(Number(e.target.value))}
-              className="w-28 sm:w-36 h-2 bg-[var(--card-bg)] rounded-lg appearance-none cursor-pointer accent-teal-400"
-              title="Ajustar tamaño de fuente"
-            />
-            <span className="text-sm font-bold text-[var(--foreground)]">A</span>
-            <span className="text-[11px] font-mono text-teal-600 dark:text-teal-400 font-extrabold ml-1">{fontSize}px</span>
-          </div>
-
           {/* Decorator Selector */}
           <div className="flex items-center gap-2 bg-[var(--input-bg)] p-2.5 rounded-xl border border-[var(--border-color)] shrink-0">
             <span className="text-[11px] font-bold text-[var(--foreground)] opacity-80">Marco:</span>
@@ -210,20 +193,19 @@ export default function Converter({
           </div>
 
           {/* Character & Byte Counter Stat */}
-          <div className="flex items-center gap-2 shrink-0 text-[11px]">
-            <span className="px-3.5 py-2 rounded-xl bg-[var(--input-bg)] text-[var(--foreground)] opacity-90 font-bold border border-[var(--border-color)]">
-              {inputText.length} caracteres
-            </span>
-            <span
-              className={`px-3.5 py-2 rounded-xl font-bold border ${
-                inputText.length > 12
-                  ? "bg-rose-950/80 text-rose-300 border-rose-800"
-                  : "bg-emerald-950/80 text-emerald-300 border-emerald-800"
-              }`}
-            >
-              Free Fire (12 max): {inputText.length > 12 ? "⚠️ Excede" : "✓ OK"}
-            </span>
-          </div>
+          {inputText.length > 6 && (
+            <div className="flex items-center gap-2 shrink-0 text-[11px]">
+              <span
+                className={`px-3.5 py-2 rounded-xl font-bold border ${
+                  inputText.length > 12
+                    ? "bg-rose-950/80 text-rose-300 border-rose-800"
+                    : "bg-emerald-950/80 text-emerald-300 border-emerald-800"
+                }`}
+              >
+                Free Fire (12 max): {inputText.length > 12 ? "⚠️ Excede" : "✓ OK"}
+              </span>
+            </div>
+          )}
         </div>
       </div>
 

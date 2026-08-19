@@ -86,34 +86,6 @@ export default function Home() {
 
         {/* Value Badges & Intro Section */}
         <section className="w-full flex flex-col gap-6">
-          {/* Value Badges Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 w-full">
-            <div className="flex items-center gap-2.5 p-3.5 sm:p-4 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] shadow-sm">
-              <span className="text-lg">⚡</span>
-              <span className="text-xs sm:text-sm font-extrabold text-[var(--foreground)]">
-                {totalCombinations}+ Estilos Unicode
-              </span>
-            </div>
-            <div className="flex items-center gap-2.5 p-3.5 sm:p-4 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] shadow-sm">
-              <span className="text-lg">🌐</span>
-              <span className="text-xs sm:text-sm font-extrabold text-[var(--foreground)]">
-                Acentos (á, é, í, ó, ú, ñ) OK
-              </span>
-            </div>
-            <div className="flex items-center gap-2.5 p-3.5 sm:p-4 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] shadow-sm">
-              <span className="text-lg">📱</span>
-              <span className="text-xs sm:text-sm font-extrabold text-[var(--foreground)]">
-                Copia en 1 Tocado
-              </span>
-            </div>
-            <div className="flex items-center gap-2.5 p-3.5 sm:p-4 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] shadow-sm">
-              <span className="text-lg">🔒</span>
-              <span className="text-xs sm:text-sm font-extrabold text-[var(--foreground)]">
-                100% Gratuito & Seguro
-              </span>
-            </div>
-          </div>
-
           {/* Intro Heading & Description */}
           <div className="flex flex-col gap-3 p-6 sm:p-8 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-xl shadow-purple-950/10">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight text-[var(--foreground)] leading-tight">
