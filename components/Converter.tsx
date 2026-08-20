@@ -14,6 +14,7 @@ export interface StyleOverride {
 interface ConverterProps {
   initialCategory?: string;
   highlightStyleId?: string;
+  highlightStyleIds?: string[];
   styleOverrides?: Record<string, StyleOverride>;
   filterByHighlightedCategory?: boolean;
   showCategoryNav?: boolean;
@@ -28,6 +29,7 @@ export interface StyleCombination {
 
 export default function Converter({
   highlightStyleId,
+  highlightStyleIds,
   styleOverrides,
   showCategoryNav = false,
 }: ConverterProps) {
@@ -110,6 +112,7 @@ export default function Converter({
       decoratorName: "Sin decoración",
       wrap: (t: string) => t,
       isFeatured: true,
+      baseStyle: featuredStyle,
     };
 
     const decCards = decorators.map((dec) => ({
@@ -118,10 +121,26 @@ export default function Converter({
       decoratorName: dec.name,
       wrap: dec.wrap,
       isFeatured: false,
+      baseStyle: featuredStyle,
     }));
 
     return [plainCard, ...decCards];
   }, [featuredStyle]);
+
+  const multiStyleCards = useMemo(() => {
+    if (!highlightStyleIds || highlightStyleIds.length === 0) return [];
+    return highlightStyleIds
+      .map((id) => effectiveStyles.find((s) => s.id === id))
+      .filter((s): s is FontStyle => Boolean(s))
+      .map((style) => ({
+        id: `${style.id}-plain`,
+        name: style.name,
+        decoratorName: "Sin decoración",
+        wrap: (t: string) => t,
+        isFeatured: false,
+        baseStyle: style,
+      }));
+  }, [highlightStyleIds, effectiveStyles]);
 
   const handleCopy = async (id: string, text: string) => {
     try {
@@ -140,7 +159,10 @@ export default function Converter({
     setVisibleCount(40);
   };
 
-  const isCategoryPage = Boolean(highlightStyleId && featuredStyle);
+  const isCategoryPage = Boolean(
+    (highlightStyleId && featuredStyle) ||
+    (highlightStyleIds && highlightStyleIds.length > 0)
+  );
 
   return (
     <div className="w-full flex flex-col gap-4">
@@ -334,12 +356,11 @@ export default function Converter({
                 </div>
               );
             })
-          : featuredStyle &&
-            categoryCards.map((card) => {
+          : (multiStyleCards.length > 0 ? multiStyleCards : categoryCards).map((card) => {
               const rawStyledText = convertText(
                 inputText || "Escribe tu texto arriba",
-                featuredStyle.map,
-                featuredStyle.id
+                card.baseStyle.map,
+                card.baseStyle.id
               );
               const styledText = selectedDecorator
                 ? selectedDecorator.wrap(card.wrap(rawStyledText))
