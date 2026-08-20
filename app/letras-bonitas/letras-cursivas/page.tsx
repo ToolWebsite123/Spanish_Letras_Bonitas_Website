@@ -61,7 +61,7 @@ export default function LetrasCursivasPage() {
           </h1>
         </header>
 
-        <Converter showCategoryNav={true} highlightStyleId="cursive" />
+        <Converter showCategoryNav={true} highlightStyleId="cursive" highlightStyleIds={["cursive", "elegant-script", "italic-serif", "bold-script", "sans-italic", "bold-italic-sans"]} />
 
         {/* ARTÍCULO DEEP 1: Con Enlaces Internos Contextuales */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">

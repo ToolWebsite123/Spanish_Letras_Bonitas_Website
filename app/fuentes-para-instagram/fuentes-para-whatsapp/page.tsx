@@ -49,7 +49,7 @@ export default function FuentesParaWhatsAppPage() {
           </h1>
         </header>
 
-        <Converter showCategoryNav={true} highlightStyleId="bold-script" />
+        <Converter showCategoryNav={true} highlightStyleId="bold-script" highlightStyleIds={["bold-script", "cursive", "elegant-script", "sans-bold", "italic-serif", "bold"]} />
 
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">

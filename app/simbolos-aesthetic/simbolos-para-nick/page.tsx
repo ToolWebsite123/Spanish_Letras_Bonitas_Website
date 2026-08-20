@@ -54,7 +54,7 @@ export default function SimbolosParaNickPage() {
           </h1>
         </header>
 
-        <Converter showCategoryNav={true} highlightStyleId="circled-negative" />
+        <Converter showCategoryNav={true} highlightStyleId="circled-negative" highlightStyleIds={["circled-negative", "squared-negative", "gothic", "double-struck", "greek-lookalike", "cyrillic-lookalike"]} />
 
         {/* ARTÍCULO DEEP 1 */}
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">

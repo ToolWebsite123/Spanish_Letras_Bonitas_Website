@@ -37,7 +37,7 @@ export default function LetrasTatuajesPage() {
           </h1>
         </header>
 
-        <Converter showCategoryNav={true} highlightStyleId="gothic" />
+        <Converter showCategoryNav={true} highlightStyleId="gothic" highlightStyleIds={["gothic", "serif-bold-italic", "bold-script", "bold", "double-struck", "squared-negative"]} />
 
         <section className="flex flex-col gap-6 p-6 sm:p-10 rounded-3xl border border-[var(--border-color)] bg-[var(--card-bg)]/90 backdrop-blur-xl shadow-2xl shadow-purple-950/50">
           <div className="flex flex-col gap-3 border-b border-[var(--border-color)] pb-5">
